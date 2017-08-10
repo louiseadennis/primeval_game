@@ -1,0 +1,10 @@
+describe users;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| user_id  | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name     | char(50)    | NO   |     | NULL    |                |
+| password | char(64)    | NO   |     | NULL    |                |
+| salt     | char(15)    | NO   |     | NULL    |                |
+| email    | varchar(60) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+

@@ -1,5 +1,5 @@
 <?php
 
-require_once('/Users/louiseadennis/Personal/urbandead/fortress_zombie_game/localfiles/config.inc.php');
+require_once('/Users/louiseadennis/Personal/primeval/primeval_game/localfiles/config.inc.php');
 
 ?>
