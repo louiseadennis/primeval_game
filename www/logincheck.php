@@ -22,7 +22,7 @@ if (authenticateUser($mysql, $loginUsername, $loginPassword))
   $_SESSION["loginIP"] = $_SERVER["REMOTE_ADDR"];
 
   // Relocate back to the first page
-  header("Location: character_select_form.php");
+  header("Location: main.php");
   exit;
 } else {
   // The authentication failed
