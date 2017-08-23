@@ -3,6 +3,7 @@
 
 require_once('./config/MySQL.php');
 require_once('./config/accesscontrol.php');
+require_once('utilities.php');
 
 $mysql = mysql_connect($mysql_host, $mysql_user, $mysql_password);
 if (!mysql_select_db($mysql_database))

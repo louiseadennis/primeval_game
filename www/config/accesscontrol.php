@@ -14,7 +14,7 @@ function authenticateUser($connection, $username, $password)
  if (!$result = @mysql_query($query, $connection))
      showerror();
 
- // Exactly oe row? then we have found the user
+ // Exactly one row? then we have found the user
  if (mysql_num_rows($result) != 1)
   return false;
  else {
