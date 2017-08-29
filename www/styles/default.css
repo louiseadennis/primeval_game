@@ -27,8 +27,8 @@ a:hover {
 	text-decoration: underline;
 }
 
-form {
-	background-color: #FFFFFF;
+.device {
+    background-color: #549F9C;
 }
 
 td.b {height:100px;width:100px}
