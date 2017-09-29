@@ -28,7 +28,11 @@ a:hover {
 }
 
 .device {
-    background-color: #549F9C;
+    background-color: #9FBDC1;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: #333333;
 }
 
 td.b {height:100px;width:100px}

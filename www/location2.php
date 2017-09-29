@@ -22,29 +22,38 @@ check_location(2, $mysql);
 </head>
 <body>
 <?php
-print_header();
+print_header($mysql);
+
+$phase = get_user_phase($mysql);
+$stephen_collected = 1;
+$stephen_collected = check_for_character('stephen', $mysql);
+if (!$stephen_collected) {
+   add_equipment("tranquiliser rifle", $mysql);
+   add_location_clue(2, $mysql);
+}
+
+
 print_device($mysql);
-print_anomaly($mysql);
 ?>
 <div class=main>
-<h2>Somewhere</h2>
-
-<p>Somewhere description</o>
 <?php
-$phase = get_user_phase($mysql);
+print_standard_start($mysql);
+?>
+<h2>The Forest of Seed Ferns</h2>
 
-if ($phase == 1) {
-   if (!check_for_character('stephen', $mysql)) {
+<p>You are in a forest made up of seed ferns of various sizes.  Small dinsaur like creatures, which Stephen identifies as Sacisaurus, can be seen running through the trees.</p>
+<?php
+
+if (!$stephen_collected) {
+      update_users("new_character", "stephen", $mysql);
       print "<img src=assets/stephen.png align=left>";
       print "<p>Stephen is here.</p>";
 
-      print "<p>He is holding a strange device which, he claims, Helen left him with.  It has a dial, a toggle switch and an activate button.  Stephen says Helen told him to  select X on the dial and Y on the switch.  He had been about to try it when you arrived.</p>";
-   }
-} else {
-?>
-<p>Other Phase Message</p>
-<?php
+      print "<p>He is holding a strange device which, he claims, Helen left with him.  It has a dial, a three way switch and an activate button.  Stephen says Helen told him to  select 4 on the dial and A on the switch.  He had been about to try it when you arrived.</p>";
+      print "<p>He has a tranquiliser rifle with five darts.</p>";
 }
+
+print_equipment($mysql);
 ?>
 </body>
 </html>
