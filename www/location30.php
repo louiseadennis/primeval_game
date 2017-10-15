@@ -26,22 +26,18 @@ print_header($mysql);
 
 $phase = get_user_phase($mysql);
 add_location_clue(30, $mysql);
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location30.png>
 <h2>A Forest Stream</h2>
 
 <p>You are standing by a stream through a forest of seed ferns.  A piece of paper has been left on a rock.  It reads:</p>
 
-<ul><li>0: Pre-Cambrain and Cambrian</li><li>1: Silurian/Devonian/Ordovician</li><li>2: Carboniferous</li><li>3: Permian</li><li>4: Triassic</li><li>5: Jurassic</li><li>6: Cretaceous</li><li>7: Pleistocene/Pliocene</li><li>8: Holocene</li><li>9: Post-Holocene</li></ul>
-
-<?php
-
-print_equipment($mysql);
-?>
+<ul><li>0: Pre-Cambrain and Cambrian</li><li>1: Silurian/Devonian/Ordovician</li><li>2: Carboniferous</li><li>3: Permian</li><li>4: Triassic</li><li>5: Jurassic</li><li>6: Cretaceous</li><li>7: Paleogene/Neogene/Pleistocene</li><li>8: Holocene</li><li>9: Post-Holocene</li></ul>
+</div>
 </body>
 </html>

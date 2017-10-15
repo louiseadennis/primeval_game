@@ -26,22 +26,19 @@ add_location_clue(3, $mysql);
 print_header($mysql);
 
 $phase = get_user_phase($mysql);
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location3.png>
 <h2>The Edge of a Floodplain</h2>
 
 <p>You are standing on a small hillock in the middle of a flooded plain.  In the distance you can make out where you think the river must be.   A small pack of Coelophysis dart across the muddy ground, wading through pools of water and, it would appear, hunting for lizards.</p>
 
-<p>A large rock sits on the top of the hillock into which someone has carved the letters IB.  Stephen mutters something about it confusing archeologists.</p>
+<p>A large rock sits on the top of the hillock into which someone has carved IB.  Stephen mutters something about it confusing archeologists.</p>
 
-
-<?php
-print_equipment($mysql);
-?>
+</div>
 </body>
 </html>

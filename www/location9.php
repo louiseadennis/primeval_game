@@ -26,31 +26,35 @@ print_header($mysql);
 
 $phase = get_user_phase($mysql);
 $ryan_collected = check_for_character('ryan', $mysql);
+$visited_already = get_value_from_users("new_character", $mysql);
 if (!$ryan_collected) {
-   create_new_fight_event($critter_id, $mysql);
-   $event_id = get_unresolved_event_id($mysql);
-   update_event("critter_hp", 3, $mysql);
-   add_equipment("assault rifle", $mysql);
-   update_users("random_anomalies", 1, $mysql);
-   add_location_clue(9, $mysql);
+   if ($visited_already != 'ryan') {
+      create_new_fight_event(1, $mysql);
+      $event_id = get_unresolved_event_id($mysql);
+      update_event($event_id, "critter_hp", 3, $mysql);
+      update_users("random_anomalies", 1, $mysql);
+      add_location_clue(9, $mysql);
+      add_equipment("assault rifle", $mysql);
+   }
 }
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location9.png>
 <h2>Coastal Area</h2>
 
-<p>You are standing by the shore of a wide, salty sea.  A dank forest grows along the shore containing ferms, broad-leaved trees and conifers.</p>
+<p>You are standing by the banks of a river.  There are flowering shrubs and seed fern trees.  You can see a volcano in the distance.</p>
 
 <?php
 
 if (!$ryan_collected) {
      update_users("new_character", "ryan", $mysql);
      print "<img src=assets/ryan.png align=left>";
-     print "<p>Ryan is here</p>";
+     print "<p>Ryan is here.  He has a spare assault rifle.</p>";
      $critter_hp = get_value_for_location_id(9, "critter_hp", $mysql);
      if ($critter_hp > 0) {
           print "<p>He is being attacked by a Future Predator which he has wounded.</p>";
@@ -60,7 +64,7 @@ if (!$ryan_collected) {
 
 }
 
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

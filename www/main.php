@@ -19,7 +19,7 @@ $travel_type = mysqlclean($_POST, "travel_type", 10, $mysql);
 $prev_location = get_location($mysql);
 $location_id = mysqlclean($_POST, "location", 10, $mysql);
 
-if ($last_action == "item") {
+if ($last_action == "item" || $last_action == "wait") {
    $current_location = get_location($mysql);
    $action_required = get_value_for_location_id("action_required", $current_location, $mysql);
    $action_done = get_value_from_users("action_done", $mysql);
@@ -31,6 +31,7 @@ if ($last_action == "item") {
 	      $last_action = "travel";
 	      $travel_type = "anomaly";
 	      $location_id = get_value_from_users("prev_location", $mysql);
+	      update_users("needed_boat", 1, $mysql);
           } else if ($action_required == 'breathing aparatus') {
 	    $hp = get_value_from_users("hp", $mysql);
 	    $hp = $hp - 1;

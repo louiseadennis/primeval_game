@@ -28,12 +28,13 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $nick_collected = check_for_character('nick', $mysql);
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location5.png>
 <h2>A Stream in Silurian Wales/England</h2>
 
 <p>You are the edge of a stream.  Strange and small vascular plants cluster at the water's edge, but inland all is bare rock.</p>
@@ -49,8 +50,7 @@ if (!$nick_collected) {
      print "<p>Nick admires the device and suggests you use his notebook to keep a log of all the locations it takes you to.</p>";
      print "<p><b>You now have a Log Book</b></p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

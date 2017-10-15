@@ -23,19 +23,24 @@ check_location(39, $mysql);
 <body>
 <?php
 print_header($mysql);
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
-<h2>Green Choking Fog</h2>
+<div class=location>
+<img src=assets/location39.png>
+<h2>The Shores of a Lake</h2>
 
-<p>You are standing on bare rocks.  You can see virtually nothing beyond a thick green fog that makes it difficult to breath.   <b>You must use breathing apparatus or will take damage.</b></p>
+<p>You are standing on the shore of a lake and you can see a volcano in the distance.  The ground is bare of life and the atmosphere is difficult to breath.</p>
 
 <?php
-print_equipment($mysql);
+
+$action_done = get_value_from_users("action_done", $mysql);
+if (!$action_done) {
+   print "<p><b>You must use breathing apparatus or will take damage.</b></p>";
+}
 ?>
+</div>
 </body>
 </html>

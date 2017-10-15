@@ -27,30 +27,32 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $ross_collected = check_for_character('ross', $mysql);
 if (!$ross_collected) {
-   add_equipment("hand gun", $mysql);
+   $visited = get_value_from_users("new_character", $mysql);
+   if ($visited != 'ross') {
+      add_equipment("hand gun", $mysql);
+   }
    add_location_clue(6, $mysql);
 }
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
-<h2>A Tidal Flat</h2>
+<div class=location>
+<img src=assets/location6.png>
+<h2>A Tidal Flat at Sunset</h2>
 
-<p>You are on the banks of beach or tidal flat.  Nothing much appears to be growing on land, but there are mat like structures floating in pools left behind by the receding tide.</p>
+<p>You are on the banks of a beach or tidal flat at sunset.  Nothing much appears to be growing on land, but there are mat like structures floating in pools left behind by the receding tide.  Layered biological seeming structures also cluster in the shallows.</p>
 
 <?php
 
 if (!$ross_collected) {
      update_users("new_character", "ross", $mysql);
      print "<img src=assets/ross.png align=left>";
-     print "<p>Ross is here</p>";
-     print "<p>He has a hand gun.  He has a note which reads simply \"Sounds like Monet\"</p>";
+     print "<p>Ross Jenkins is here</p>";
+     print "<p>He has a hand gun.  He also has a note which reads simply \"Sounds like Monet\"</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

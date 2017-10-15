@@ -28,20 +28,24 @@ $phase = get_user_phase($mysql);
 $stephen_collected = 1;
 $stephen_collected = check_for_character('stephen', $mysql);
 if (!$stephen_collected) {
-   add_equipment("tranquiliser rifle", $mysql);
+   $visited = get_value_from_users("new_character", $mysql);
+   update_users("has_device", 1, $mysql);
+   if ($visited != 'stephen') {
+      add_equipment("tranquiliser rifle", $mysql);
+   }
    add_location_clue(2, $mysql);
 }
 
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
-<h2>The Forest of Seed Ferns</h2>
+<div class=location>
+<img src=assets/location2.png>
+<h2>High Ground</h2>
 
-<p>You are in a forest made up of seed ferns of various sizes.  Small dinsaur like creatures, which Stephen identifies as Sacisaurus, can be seen running through the trees.</p>
+<p>You are standing on high ground above a plain containing confiers and seed ferns.</p>
 <?php
 
 if (!$stephen_collected) {
@@ -50,10 +54,9 @@ if (!$stephen_collected) {
       print "<p>Stephen is here.</p>";
 
       print "<p>He is holding a strange device which, he claims, Helen left with him.  It has a dial, a three way switch and an activate button.  Stephen says Helen told him to  select 4 on the dial and A on the switch.  He had been about to try it when you arrived.</p>";
-      print "<p>He has a tranquiliser rifle with five darts.</p>";
+      print "<p>He has a tranquiliser rifle with darts.</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

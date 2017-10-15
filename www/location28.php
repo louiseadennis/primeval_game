@@ -27,15 +27,16 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $rex_collected = check_for_character('rex', $mysql);
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location28.png>
 <h2>A Dusty Plain</h2>
 
-<p>You are standing in a dusty plain surrounded by conifers, with mountains in the distance.  Coelurosauravus' circle overhead.</p>
+<p>You are standing in a dusty plain surrounded by conifers, with a volcano in the distance.  Coelurosauravus' circle overhead.</p>
 
 <?php
 
@@ -44,8 +45,7 @@ if (!$rex_collected) {
      print "<img src=assets/rex.png align=left>";
      print "<p>Rex is here.  He flies down into your arms.</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

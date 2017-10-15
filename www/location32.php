@@ -25,18 +25,24 @@ check_location(32, $mysql);
 print_header($mysql);
 
 $phase = get_user_phase($mysql);
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div  class=location>
+<img src=assets/location32.png>
 <h2>A Sandy Desert</h2>
 
-<p>You find yourself standing on a rocky outcrop in the middle of a sea of sand.  The air is low in oxygen which makes it hard, but not impossible, to breathe. <b>You must use breathing apparatus or take damage.</b></p>
-
+<p>You find yourself standing on a rocky outcrop in the middle of a sea of sand.  The air is low in oxygen which makes it hard, but not impossible, to breathe.
 <?php
-   print_equipment($mysql);
+
+$action_done = get_value_from_users("action_done", $mysql);
+if ($action_done) {
+   print "<b>You must use breathing apparatus or take damage.</b>";
+}
 ?>
+</p>
+</div>
 </body>
 </html>

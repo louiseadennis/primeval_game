@@ -29,28 +29,26 @@ $blade_collected = check_for_character('blade', $mysql);
 if (!$blade_collected) {
    add_equipment("knife", $mysql);
 }
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location21.png>
 <h2>A River in a Forest</h2>
 
-<p>You are standing on a river bank.  Seed ferns grow down close to the water.  Small lizard-like Kenyasaurus' dart along theh banks.</p>
+<p>You are standing on a river bank in a forest of conifers and seed ferns.  Coelphysis dart along the banks opposite more placid Placerias.</p>
 
 <?php
 
 if (!$blade_collected) {
      update_users("new_character", 'blade', $mysql);
      print "<img src=assets/blade.png align=left>";
-     print "<p>Blade is here.  Obviously he has knives and generously let's you have one.</p>";
+     print "<p>Blade is here.  Obviously he has knives and generously lets you have one.</p>";
      print "On the ground is written: <p><table><tr><td>4</td><td>N</td><td>0</td></tr><tr><td>3</td><td>M</td><td>4</td></tr><tr><td>L</td><td>C</td><td>Y</td></tr></table></p>";
      add_location_clue(21, $mysql);
 }
-
-print_equipment($mysql);
 ?>
 </body>
 </html>

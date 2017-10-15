@@ -25,18 +25,17 @@ check_location(20, $mysql);
 print_header($mysql);
 
 $phase = get_user_phase($mysql);
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location20.png>
 <h2>A Rocky Plain</h2>
 
-<p>You find yourself standing in a rocky plain.  There are graves here, boxes of equipment, and a dead gorgonopsid.</p>
+<p>You find yourself standing in a rocky plain.  There are graves here, boxes of equipment, and a dead future predator.</p>
 
-<?php
-   print_equipment($mysql);
-?>
+</div>
 </body>
 </html>

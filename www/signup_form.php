@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="styles/default.css" type="text/css">
 </head>
 <body>
+  <div class=main>
 <h1>Register</h1>
 <form method="POST" action="signup.php">
 <?php
@@ -30,6 +31,7 @@
 </table>
 <p><input type="submit" value="Register">
 </form>
+</div>
 </body>
 </html>
 

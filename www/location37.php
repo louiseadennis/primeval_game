@@ -24,14 +24,16 @@ check_location(37, $mysql);
 <?php
 print_header($mysql);
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
-print_health($mysql);
+print "<div class=\"dynamic\">";
+print "<div class=\"action\">";
 print_character_joined($mysql);
 print_item_used(0, $mysql);
 critter_attack(0, $mysql);
+print_health($mysql);
+print_wait($mysql);
 $prev_location = get_value_from_users("prev_location", $mysql);
 
 if (!junction_here($mysql)) {
@@ -43,11 +45,23 @@ if ($coin == 1) {
    $d10 = rand(1, 10);
    change_anomaly($d10, $prev_location, $mysql);
 }
-
+print "</div>";
+      $has_device = get_value_from_users("has_device", $mysql);
+      $phase = get_value_from_users("phase", $mysql);
+      if ($phase > 1 || $has_device) {
+            update_prev_coordinates($mysql);
+      	    print "<div class=device>";
+          print_device($mysql);
+        print_equipment($mysql);
+         print "</div>";
+      }
+print "</div>";
 ?>
+<div class=location>
+<img src="assets/location37.png">
 <h2>An Anomaly Junction</h2>
 
-<p>You are standing in a grassy landscape.  Anomalies stretch as far as the eye can see.  A large cross is marked out in stones.  As you stand at the cross:</p>
+<p>You are standing in a grassy landscape.  Anomalies stretch as far as the eye can see.  There will probably be a lot of random creatures wandering about here.  A large cross is marked out in stones.  As you stand at the cross:</p>
 
 <?php
 print "<ul>";
@@ -167,9 +181,6 @@ if (!$extra_anomaly) {
    print_anomaly_no_random($mysql);
 }
 ?>
-
-<?php
-   print_equipment($mysql);
-?>
+</div>
 </body>
 </html>

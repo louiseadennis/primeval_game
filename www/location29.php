@@ -25,10 +25,11 @@ $phase = get_user_phase($mysql);
 <body>
 <?php
 print_header($mysql);
-print_device($mysql);
 print_standard_start($mysql);
 ?>
 <div class=main>
+<div class=location>
+<img src=assets/location29.png>
 <h2>The Forest of Dean</h2>
 <?php
 
@@ -53,9 +54,7 @@ foreach ($accessible as $by_car) {
     }
 }
 print "</ul></p>";
-
-print_equipment($mysql);
-
 ?>
+</div>
 </body>
 </html>

@@ -27,16 +27,20 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $finn_collected = check_for_character('finn', $mysql);
 if (!$finn_collected) {
-   add_equipment("sniper rifle", $mysql);
+     $visited = get_value_from_users("new_character", $mysql);
+     if ($visited != 'finn') {
+         add_equipment("sniper rifle", $mysql);
+     }
    add_location_clue(4, $mysql);
 }
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location4.png>
 <h2>An Estuary</h2>
 
 <p>You are on the banks of a wide estuary that flows into the sea.  Mosses and ferns surround you, none growing very high.  In the water of the river, amonites can  be seen.</p>
@@ -49,8 +53,7 @@ if (!$finn_collected) {
      print "<p>Finn is here</p>";
      print "<p>He has a sniper rifle and is looking in confusion at a piece of paper with the number 2 and the letter A written on it.</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

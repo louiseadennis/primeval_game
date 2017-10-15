@@ -27,28 +27,37 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $danny_collected = check_for_character('danny', $mysql);
 if (!$danny_collected) {
-   add_equipment("a big stick", $mysql);
+     $visited = get_value_from_users("new_character", $mysql);
+     if ($visited != 'danny') {
+          add_equipment("a big stick", $mysql);
+     }
 }
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location26.png>
 <h2>A Desolate Landscape</h2>
 
-<p>You are standing in a windswept dusty plain.  There is an acrid smell in the air and a yellowish tinge to the atmosphere.  You can see dust devils on the horizon.</p>
+<p>You are standing in a windswept dusty plain.  There is an acrid smell in the air and a yellowish tinge to the atmosphere.</p>
+
+<?php
+$action_done = get_value_from_users("action_done", $mysql);
+if (!$action_done) {
+   print "<p><b>You must use breathing apparatus or you will take damage.</b></p>";
+}
+?>
 
 <?php
 
 if (!$danny_collected) {
-     update_users("new_character", 'danny', $mysql);
+      update_users("new_character", 'danny', $mysql);
      print "<img src=assets/danny.png align=left>";
      print "<p>Danny is here. He says he has been holding future predators off with Molly.  When you asks he says that  Helen didn't say anything to him and he hasn't seen anything that looks like a clue.  He recommends returning to the ARC.</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

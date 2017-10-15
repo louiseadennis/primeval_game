@@ -26,26 +26,25 @@ print_header($mysql);
 
 $phase = get_user_phase($mysql);
 $sid_collected = check_for_character('sid', $mysql);
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location34.png>
 <h2>A Hot Desert</h2>
 
-<p>You are standing in a hot desert surrounded by burrows.</p>
+<p>You are standing in a hot desert surrounded by diictodon burrows.</p>
 
 <?php
 
-if (!$rex_collected) {
+if (!$sid_collected) {
      update_users("new_character", "sid", $mysql);
      print "<img src=assets/sid.png align=left>";
      print "<p>Sid is here.  He leaps out of his burrow and runs eagerly towards you.</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

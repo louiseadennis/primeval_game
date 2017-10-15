@@ -25,18 +25,16 @@ check_location(36, $mysql);
 print_header($mysql);
 
 $phase = get_user_phase($mysql);
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location36.png>
 <h2>A River Bank</h2>
 
 <p>You are standing on the banks of a sluggish river.  Creatures that look like primitive crocodiles are sunning themselves a little further up-stream.</p>
-
-<?php
-   print_equipment($mysql);
-?>
+</div>
 </body>
 </html>

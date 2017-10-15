@@ -27,16 +27,20 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $fiver_collected = check_for_character('fiver', $mysql);
 if (!$fiver_collected) {
-   add_equipment("sniper rifle", $mysql);
+   $visited = get_value_from_users("new_character", $mysql);
+   if ($visited != 'fiver') {
+      add_equipment("sniper rifle", $mysql);
+   }
    add_location_clue(12, $mysql);
 }
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location12.png>
 <h2>A Mountain Range</h2>
 
 <p>You are high up on a Mountain overlooking a vast forest.  You can see what appear to be giant dragonflies flitting up above the trees.</p>
@@ -46,11 +50,10 @@ print_standard_start($mysql);
 if (!$fiver_collected) {
      update_users("new_character", "fiver", $mysql);
      print "<img src=assets/fiver.png align=left>";
-     print "<p>Fiver is here</p>";
+     print "<p>Fiver is here.</p>";
      print "<p>He has a sniper rifle and is looking in at a piece of paper which says \"my first is in love and not in live, my second is in clove and not in sieve\".</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

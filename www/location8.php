@@ -27,19 +27,23 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $ditzy_collected = check_for_character('ditzy', $mysql);
 if (!$ditzy_collected) {
-   add_equipment("first aid kit", $mysql);
+   $visited = get_value_from_users("new_character", $mysql);
+   if ($visited != 'ditzy') {
+        add_equipment("first aid kit", $mysql);
+   }
    add_location_clue(8, $mysql);
 }
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
-<h2>A Deserted Plain</h2>
+<div class=location>
+<img src=assets/location8.png>
+<h2>A Desolate Rocky Plain</h2>
 
-<p>You are standing on a rocky plain.  Nothing  is growing.</p>
+<p>You are standing on a rocky plain.  Nothing is growing.</p>
 
 <?php
 
@@ -49,8 +53,7 @@ if (!$ditzy_collected) {
      print "<p>Ditzy is here</p>";
      print "<p>He has a first aid kit and a note which reads \"BERTH E\"</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

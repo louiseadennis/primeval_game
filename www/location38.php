@@ -25,31 +25,38 @@ $phase = get_user_phase($mysql);
 <body>
 <?php
 print_header($mysql);
-print_device($mysql);
+$ange_recharges = 0;
+
+if ($phase == 5) {
+$d100_roll = rand(1, 100);
+if ($d100_roll < default_lester_recharges()) {
+     $equip_list = get_value_from_users("equipment", $mysql);
+     $equip_id_array = explode(",", $equip_list);
+     $random = rand(0, count($equip_id_array) - 1);
+     $name = get_value_for_equip_id("name", $equip_id_array[$random], $mysql);
+     add_equipment($name, $mysql);
+     $default_uses = get_value_for_equip_id("default_uses", $equip_id_array[$random], $mysql);
+     $ange_recharges = 1;
+ }
+}
+
+
 print_standard_start($mysql);
 ?>
 <div class=main>
+<div class=location>
+<img src=assets/location38.png>
 <h2>Cross Photonics</h2>
 <?php
 
 if ($phase == 5) {
-    print "<p>You arrive at Cross Photonics where Ange Finch shows you yet another note from Helen.  \"If you want the men of Cross Photonics and Project Magnet back then solve this revelation:";
-    print "<ul><li>Set the dial to the number mentioned in 6:6</li><li>Set the first switch to the first letter of what these omens portend</li><li>Set the last switch to the word contained in 6:2</li></ul>\"";
+    print "<p>You arrive at Cross Photonics where Ange Finch shows you yet another note from Helen.  \"If you want the men of Cross Photonics and Project Magnet back then solve these Revelations:";
+    print "<ul><li>Set the dial to the number of living creatures mentioned in 6:6</li><li>Set the first switch to the first letter of what these omens portend</li><li>Set the last switch to the word contained in 6:10</li></ul>\"";
     add_location_clue(38, $mysql);
 
-    $d100_roll = rand(1, 100);
-    if ($d100_roll < default_lester_recharges()) {
-       $equip_list = get_value_from_users("equipment", $mysql);
-       $equip_id_array = explode(",", $equip_list);
-       $random = rand(0, count($equip_id_array));
-       $name = get_value_for_equip_id("name", $equip_id_array[$random], $mysql);
-       add_equipment($name, $mysql);
-       $default_uses = get_value_for_equip_id("default_uses", $equip_id_array[$random], $mysql);
-       if ($default_uses < 500) {
-       	  print "<p>Ange offers to resupply your $name.</p>";
-       }
-    }
-
+    if ($ange_recharges == 1 & $default_uses < 500) {
+      	  print "<p>Ange offers to resupply your $name.</p>";
+     }
 
 } else {
     print "<p>You arrive at Cross Photonics in Canada and are shown politely around.</p>";
@@ -66,9 +73,7 @@ foreach ($accessible as $by_car) {
     }
 }
 print "</ul></p>";
-
-print_equipment($mysql);
-
 ?>
+</div>
 </body>
 </html>

@@ -31,7 +31,6 @@ if (!$leek_collected && $phase == 2 && $critter_number >= 4) {
 <body>
 <?php
 print_header($mysql);
-print_device($mysql);
 ?>
 <div class=main>
 <?php
@@ -41,6 +40,8 @@ if ($phase == 2) {
    print_standard_start($mysql);
 }
 ?>
+<div class=location>
+<img src=assets/location19.png>
 <h2>A Warehouse</h2>
 <?php
 
@@ -67,7 +68,7 @@ if ($phase == 1) {
       	 $critter_hp = get_value_for_critter_id("hp", $critter_id, $mysql);
 	 update_users("leek_critter_hp", $critter_hp, $mysql);
       }
-      print "<p>You see a Smilodon.</p>";
+      print "<p>You see a Smilodon.  <b>It is about to attack.</b></p>";
    } else if ($critter_number == 2) {
      print "<p>There are a number of creatures loose in here.</p>";
       $critter_id = 5;
@@ -75,7 +76,7 @@ if ($phase == 1) {
       	 $critter_hp = get_value_for_critter_id("hp", $critter_id, $mysql);
 	 update_users("leek_critter_hp", $critter_hp, $mysql);
       }
-      print "<p>You see a Scutosaurus.</p>";
+      print "<p>You see a Scutosaurus. <b>It is about to attack.</b></p>";
    } else if ($critter_number == 3) {
      print "<p>There are a number of creatures loose in here.</p>";
       $critter_id = 1;
@@ -83,7 +84,7 @@ if ($phase == 1) {
       	 $critter_hp = get_value_for_critter_id("hp", $critter_id, $mysql);
 	 update_users("leek_critter_hp", $critter_hp, $mysql);
       }
-      print "<p>You see a Future Predator.</p>";
+      print "<p>You see a Future Predator.  <b>It is about to attack.</b></p>";
 
    } else {
      if (!$leek_collected) {
@@ -108,9 +109,7 @@ if ($phase == 1) {
   }
   print "</ul></p>";
 }
-
-print_equipment($mysql);
-
 ?>
+</div>
 </body>
 </html>

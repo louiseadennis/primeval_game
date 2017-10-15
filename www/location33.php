@@ -26,15 +26,16 @@ print_header($mysql);
 
 $phase = get_user_phase($mysql);
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
-<h2>A Rocky Outcrop</h2>
+<div class=location>
+<img src=assets/location25.png>
+<h2>A Cliff overlooking a Canyon</h2>
 
-<p>You are standing on high rocks above a plain.  The plain itself is green, though you can't identify anything like a forest.</p>
+<p>You are standing on a high cliff above a canyon through which a river runs.  You can see many strange plants on the canyon  floor.</p>
 
 <?php
 
@@ -43,8 +44,7 @@ if ($phase > 3) {
    print "<p>On one of the rocks has been carved.  The square root of 49 be: the answer.</p>";
    add_location_clue(33, $mysql);
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

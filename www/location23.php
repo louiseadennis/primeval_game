@@ -12,6 +12,13 @@ if (!mysql_select_db($mysql_database))
   showerror();
 
 check_location(23, $mysql);
+$wilder_collected = check_for_character('wilder', $mysql);
+if (!$wilder_collected & $phase > 2) {
+     $visited=get_value_from_users("new_character", $mysql);
+     if ($visited != 'wilder') {
+         add_equipment("hand gun", $mysql);
+     }
+}
 
 ?>
 <html>
@@ -25,30 +32,26 @@ check_location(23, $mysql);
 print_header($mysql);
 
 $phase = get_user_phase($mysql);
-$wilder_collected = check_for_character('wilder', $mysql);
-if (!$wilder_collected) {
-   add_equipment("hand gun", $mysql);
-}
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location23.png>
 <h2>A Rocky Shore</h2>
 
 <p>You are on a bare rocky sea shore.  You can see strange tubular, frond-shaped organisms in the rock pools.</p>
 
 <?php
 
-if (!$wilder_collected) {
+if (!$wilder_collected & $phase > 3) {
      update_users("new_character", "wilder", $mysql);
      print "<img src=assets/wilder.png align=left>";
-     print "<p>Wilder is here.</p>";
+     print "<p>Wilder is here.  He tells you that Captain Ross is in the Silurian.</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

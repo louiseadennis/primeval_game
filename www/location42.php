@@ -25,28 +25,26 @@ check_location(42, $mysql);
 print_header($mysql);
 
 $phase = get_user_phase($mysql);
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location42.png>
 <h2>A Jungle</h2>
 
-<p>You are standing in a lush jungle.  You recognise many of the trees but sense there are large creatures moving around in the undergrowth.</p>
+<p>You are standing at the edge of a  jungle, looking out over a plain teaming with mammalian life.</p>
 
 <?php
 if ($phase > 4) {
    add_location_clue(42, $mysql);
 ?>
-<p>You see a strange symbol carved onto a rock:</p>
-<center>
-<img src=assets/clue42.png>
-</center>
+<p>A piece of paper is held pinned to a tree.  It reads:</p>
+<center><img src=assets/clue42.png></center><h3>Across</h3><ol><li>Five squared.</li><li>An unhealthy pale complexion.</li><li>The last word.</li></ol><h3>Down</h3><ol><li>The duration of a UK Parliament according to the Fixed Term Parliaments Act 2011.</li><li>Of, relating to, or belonging to oneself or itself.</li></ol>
 <?php
 }
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

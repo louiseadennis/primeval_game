@@ -27,12 +27,13 @@ print_header($mysql);
 
 $phase = get_user_phase($mysql);
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location24.png>
 <h2>A Medieval Village</h2>
 
 <p>You are standing on a muddy road with small cottages alongside it made from stone and wood.  There is a tiny church at the end of the street next to where you are standing.  Several of the cottages have a pig or chickens penned nearby.  In the churchyard you spot a new looking gravestone with the words:</p>
@@ -41,8 +42,6 @@ print_standard_start($mysql);
 1208-1217<br>
 No Backwards</p>
 
-<?php
-print_equipment($mysql);
-?>
+</div>
 </body>
 </html>

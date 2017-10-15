@@ -25,18 +25,16 @@ check_location(14, $mysql);
 print_header($mysql);
 
 $phase = get_user_phase($mysql);
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location14.png>
 <h2>A Spider-Web strewn Forest</h2>
 
 <p>You find yourself standing in a small clearing in a dense forest, made of tall trees with long and narrow leaves at the top.  Massive spider webs are strung between the trees.</p>
-
-<?php
-   print_equipment($mysql);
-?>
+</div>
 </body>
 </html>

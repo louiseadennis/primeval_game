@@ -27,7 +27,7 @@ if (authenticateUser($mysql, $loginUsername, $loginPassword))
 } else {
   // The authentication failed
   $message = 
-    "Could not connect to Fortress Zombie Game as '{$loginUsername}'";
+    "Could not connect to 52 Weeks of Primeval Game as '{$loginUsername}'";
 
   // Relocate back to login page
   header("Location: login_form.php?msg=$message");

@@ -27,16 +27,19 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $matt_collected = check_for_character('matt Rees', $mysql);
 if (!$matt_collected) {
-   add_equipment("first aid kit", $mysql);
+   $visited = get_value_from_users("new_character", $mysql);
+   if ($visited != 'matt Rees') {
+        add_equipment("first aid kit", $mysql);
+   }
    add_location_clue(18, $mysql);
 }
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location18.png>
 <h2>A Desert</h2>
 
 <p>You are standing in desert environment with only the odd cycad breaking up the sand.  In the distance you can see what looks like a Gorgonopsid.</p>
@@ -47,10 +50,9 @@ if (!$matt_collected) {
      update_users("new_character", "matt Rees", $mysql);
      print "<img src=assets/matt_Rees.png align=left>";
      print "<p>Matt Rees is here</p>";
-     print "<p>He has a first aid kit.  He says when Helen left him here, she said to remember the name Vic.</p>";
+     print "<p>He has a first aid kit.  He says when Helen left him here, she said to remember the letters IVC.</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

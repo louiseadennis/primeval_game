@@ -21,6 +21,18 @@ $location = get_location($mysql);
 
 <link rel="stylesheet" href="./styles/default.css" type="text/css">
 </head>
+<body>
+<div class="main">
+<p><form method="POST" action="main.php">
+<input type="hidden" name="location_id" value="
+<?php
+echo $location
+?>
+">
+<input type="hidden" name="last_action" value="profile_check">
+<input type="submit" value="Back to Game">
+</form>
+</p>
 <h2>Log Book</h2>
 <h3>Device Notes</h3>
 <?php
@@ -128,6 +140,7 @@ echo $location
 <input type="submit" value="Back to Game">
 </form>
 </p>
+</div>
 </body>
 </head>
 </html>

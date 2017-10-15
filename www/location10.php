@@ -25,18 +25,23 @@ check_location(10, $mysql);
 print_header($mysql);
 
 $phase = get_user_phase($mysql);
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
-<h2>An Ocean</h2>
+<div class=location>
+<img src=assets/location10.png>
+<h2>An Coral Reef</h2>
 
-<p>You in the middle of a wide ocean, though you can see a reef beneath you with ammonites swimming about.  You will need a boat otherwise you will be swept out of the anomaly again!</p>
-
+<p>You are in the middle of a wide ocean, though you can see a reef beneath you with ammonites swimming about.</p>  
 <?php
-   print_equipment($mysql);
+
+$action_done = get_value_from_users("action_done", $mysql);
+if (!$action_done) {
+   print "<p><b>You will need a boat otherwise you will be swept out of the anomaly again!</b></p>";
+}
 ?>
+</div>
 </body>
 </html>

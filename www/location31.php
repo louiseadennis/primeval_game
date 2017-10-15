@@ -27,12 +27,13 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $ethan_collected = check_for_character('ethan', $mysql);
 
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location31.png>
 <h2>Marshy Pools</h2>
 
 <p>You are standing in a landscape of marshy pools.  An Eryops flops about in the water of one of the larger ones.</p>
@@ -45,8 +46,7 @@ if ($phase > 3 && !$ethan_collected) {
      print "<p>Ethan is here.  He says Helen said to look to the Devonian Sea.</p>";
      add_location_clue(31, $mysql);
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

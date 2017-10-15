@@ -9,12 +9,12 @@ function showerror()
 
 function default_charge()
 {
-	return 20;
+	return 10;
 }
 
 function default_health()
 {
-	return 5;
+	return 20;
 }
 
 function maximum_phase()
@@ -23,11 +23,20 @@ function maximum_phase()
 }
 
 function default_lester_recharges() {
-	 return 10;
+	 return 20;
 }
 
 function default_stunned() {
 	 return 5;
+}
+
+function critter_number($connection) {
+  $sql = "SELECT * FROM critters";
+
+  if (!$result = mysql_query($sql, $connection)) 
+      showerror();
+  
+  return mysql_num_rows($result);
 }
 
 
@@ -59,6 +68,23 @@ function add_location_clue($location_id, $connection) {
 	      update_users("locationclues", $new_clues, $connection);
 	      }
 	 }
+}
+
+
+function add_critter($critter_id, $connection) {
+      $uname = $_SESSION["loginUsername"];
+
+      $critter_id_list = get_value_from_users("critter_id_list", $connection);
+      $critter_id_array = explode(",", $critter_id_list);
+
+      if (is_null($critter_id_list)) {
+      	 update_users("critter_id_list", $critter_id, $connection);
+      } else {
+            if (!in_array($critter_id, $critter_id_array)) {
+      	    	 $new_critter_id_list = $critter_id_list . "," . $critter_id;
+		 update_users("critter_id_list", $new_critter_id_list, $connection);
+	    }
+      }
 }
 
 function get_present_day_locations($connection) {
@@ -131,7 +157,7 @@ function change_anomaly($anomaly,  $prev_location, $connection) {
     while ($row=mysql_fetch_array($result)) {
           $value = $row["$anomaly_string"];
 	  if ($value == 0) {
-	     $d60 = rand(1, 60);
+	    $d60 = rand(1, 60);
     	    $sql = "UPDATE junctions SET {$anomaly_string}=$d60 WHERE location_id='$location_id' AND user_id='$user_id'";
 	    if (!mysql_query($sql, $connection)) {
        	       showerror();
@@ -151,7 +177,6 @@ function unresolved_event($connection) {
     $user_id = get_user_id($connection);
     $location_id = get_location($connection);
     $sql = "SELECT event_id FROM events WHERE user_id='$user_id' AND location_id='$location_id' AND resolved=0";
-
     if (!$result = mysql_query($sql, $connection)) 
       showerror();
   
@@ -201,8 +226,11 @@ function get_anomaly_destination($anomaly, $connection) {
 function fight($connection) {
     if (unresolved_event($connection)) {
        $event_id = get_unresolved_event_id($connection);
-       $fight = get_value_for_event_id("fight", $event_id, $connection);
-       return fight;
+       $stunned = get_value_for_event_id("stunned", $event_id, $connection);
+       if (!$stunned) {
+              $fight = get_value_for_event_id("fight", $event_id, $connection);
+       	      return fight;
+       }
     }
 
     return 0;
@@ -436,8 +464,9 @@ function print_header($connection) {
     print "<a href=profile.php>User Profile</a>";
     $has_log = get_value_from_users("has_log", $connection);
     if ($has_log) {
-       print "       <a href=log.php>Log Book</a>";
+       print "&nbsp; &nbsp; &nbsp;       <a href=log.php>Log Book</a>";
     }
+       print "&nbsp; &nbsp; &nbsp;       <a href=logout.php>Log Out</a>";
     print "<hr>";
     print "</div>";
 }
@@ -445,14 +474,13 @@ function print_header($connection) {
 function print_anomaly($connection) {
    $travel_type = get_value_from_users("travel_type", $connection);
    $random_anomalies = get_value_from_users("random_anomalies", $connection);
+   $hp = get_value_from_users("hp", $connection);
    $second_anomaly = 0;
-   if ($random_anomalies) {
+   if ($random_anomalies && $hp > 0) {
       $location_id = get_location($connection);
       $anomaly_chance = get_value_for_location_id("anomaly_chance", $location_id, $connection);
       $has_device = get_value_from_users("has_device", $connection);
-      if (!$has_device) {
-      	 $anomaly_chance = 40;
-      }
+
       $d100_roll = rand(1, 100);
       if ($d100_roll <= $anomaly_chance) {
 	    $second_anomaly = 1;
@@ -471,13 +499,23 @@ function print_anomaly($connection) {
 
 	$last_action = get_value_from_users("last_action", $connection);
    	if ($last_action == "travel") {
-           $hp = get_value_from_users("hp", $connection);
       	   if ($hp > 0) {
             if ($travel_type == "anomaly") {
+	      $needed_boat = get_value_from_users("needed_boat", $connection);
               if (fight($connection)) {
-	      	 print "<p>You walk through the anomaly and are attacked.  <input type=\"submit\" value=\"Run back to the anomaly\"></p></form>";
+	      	 if ($needed_boat) {
+		      print "<p><b>You are swept back out of the anomaly and are attacked.</b>  <input type=\"submit\" value=\"Run back to the anomaly\"></p></form>";
+		      update_users("needed_boat", 0, $connection);
+		 } else {
+	      	   print "<p>You walk through the anomaly and are attacked.  <input type=\"submit\" value=\"Run back to the anomaly\"></p></form>";
+		 }
 	      } else {
-     	      	print "<p>You have come through an anomaly. <input type=\"submit\" value=\"Go back through\"></p></form>";
+	      	if ($needed_boat) {
+		     	print "<p><b>You are swept back out of the anomaly</b>. <input type=\"submit\" value=\"Go back through\"></p></form>";
+		      update_users("needed_boat", 0, $connection);
+		} else {
+		      	print "<p>You have come through an anomaly. <input type=\"submit\" value=\"Go back through\"></p></form>";
+		}
               }
 
             } else {
@@ -518,6 +556,7 @@ function print_anomaly($connection) {
 	    if ($water) {
       	       print "<p>There is water pouring out of the anomaly.</p>";
       	    }
+	    critter_from_anomaly($d60_roll, $connection);
       }
   } else if ($second_anomaly) {
              $water = get_value_for_location_id("water", $d60_roll, $connection);
@@ -533,7 +572,44 @@ function print_anomaly($connection) {
 	    if ($water) {
       	       print "<p>There is water pouring out of the anomaly.</p>";
       	    }
+	    critter_from_anomaly($d60_roll, $connection);
   }
+}
+
+function print_wait($mysql) {
+	 $location_id=get_location($mysql);
+	 print "<form method=\"POST\" action=\"main.php\">";
+	 print "<input type=\"hidden\" name=\"travel_type\" value=\"none\">";
+	 print "<input type=\"hidden\" name=\"last_action\" value=\"wait\">";
+         print "<input type=\"hidden\" name=\"location\" value=\"" . $location_id . "\">";
+	 print "<input type=\"submit\" value=\"Wait here a bit\"></p></form>";
+}
+
+function critter_from_anomaly($anomaly_location, $mysql) {
+	 $fight = unresolved_event($mysql);
+	 if (!$fight) {
+	    $coin_toss = rand(0, 1);
+	    if ($coin_toss) {
+	       $critters = get_value_for_location_id("critter", $anomaly_location, $mysql);
+	       if (!is_null($critters)) {
+         	  $critter_id = get_a_critter($anomaly_location, $mysql);
+                  add_critter($critter_id, $mysql);
+		  create_new_fight_event($critter_id, $mysql);
+		  $critter_name = get_value_for_critter_id("name", $critter_id, $mysql);
+		  print "<p><b>A $critter_name has come through the anomaly!</b></p>";
+		  $location_id = get_location($mysql);
+		  $water_here = get_value_for_location_id("water", $location_id, $mysql);
+		  $aquatic = get_value_for_critter_id("aquatic", $critter_id, $mysql);
+		  if ($water_here & !$acquatic) {
+		     print "<p>It drowns!</p>";
+		  } else if ($acquatic & !$water_here) {
+		    print "<p>It flops about helplessly on the ground.</p>";
+		  } else {
+		    critter_attack(0, $mysql);
+		  }
+	       }
+	    }
+	 }
 }
 
 function print_anomaly_no_random($connection) {
@@ -651,7 +727,10 @@ function junction_anomaly_set($anomaly, $connection) {
 
 function critter_attack($leek, $connection) {
          $location_id = get_value_from_users("location_id", $connection);
-	 $fight_just_done = 0;
+         $hp = get_value_from_users("hp", $connection);
+	 $critter_hp=1;
+
+         $fight_just_done = 0;
 	 if ($leek) {
  	      $leek_critter = get_value_from_users("leek_critter", $connection);
 	      if ($leek_critter < 4) {
@@ -665,12 +744,18 @@ function critter_attack($leek, $connection) {
 
 	 if ($unresolved_event) {
 	    $event_id = get_unresolved_event_id($connection);
+	    if ($hp <= 0) {
+	       update_event($event_id, "fight", 0, $connection);
+	       update_event($event_id, "resolved", 1, $connection);
+	       $fight_just_done = 1;
+	       $fight = 0;
+	    }
 	    $critter_stunned = get_value_for_event_id("stunned", $event_id, $connection);
 	 } else {
 	    $critter_stunned = 0;
 	 }
 
-	 if (!$unresolved_event && !$leek && !$fight_just_done) {
+	 if (!$unresolved_event && !$leek && !$fight_just_done && $hp > 0) {
 	    $fight_chance = get_value_for_location_id("fight_chance", $location_id, $connection);
 	    if ($fight_chance > 0) {
 	       $dice = rand(0,100);
@@ -679,7 +764,6 @@ function critter_attack($leek, $connection) {
          	  $critter_id = get_a_critter($location_id, $connection);
 		  create_new_fight_event($critter_id, $connection);
                   $event_id = get_unresolved_event_id($connection);
-		  update_location($location_id, "current_critter", $critter_id, $connection);
 	       }
 	    }
 	 } 
@@ -695,12 +779,24 @@ function critter_attack($leek, $connection) {
           	 $critter_name = get_value_for_critter_id("name", $critter_id, $connection);
 
 		 if ($critter_hp > 0 && $critter_stunned == 0) {
+		    $critter_icon = get_value_for_critter_id("icon", $critter_id, $connection);
+		    if (!is_null($critter_icon)) {
+		       print "<img src=$critter_icon align=left>";
+		    }
                     print "<p><b>You are being attacked by a $critter_name</b></p>";
+		    add_critter($critter_id, $connection);
 		    $hit_percentage = get_value_for_critter_id("hit_percentage", $critter_id, $connection);
 		    $d10_roll = rand(0, 100);
 		    if ($d10_roll < $hit_percentage) {
-		       $hp = get_value_from_users("hp", $connection);
-		       $hp = $hp - 1;
+		       $damage = get_value_for_critter_id("damage", $critter_id, $connection);
+		       $hp = $hp - $damage;
+		       if ($hp < 0) {
+		       	  $hp = 0;
+		       }
+		       if ($hp == 0) {
+		       	       update_event($event_id, "fight", 0, $connection);
+	       		       update_event($event_id, "resolved", 1, $connection);
+		       }
 		       update_users("hp", $hp, $connection);
 		       $now = now();
       	 	       update_users("healing_start", $now, $connection);
@@ -716,10 +812,11 @@ function critter_attack($leek, $connection) {
 		   update_event($event_id, "resolved", 1, $connection);
 		 }
 	 }
-	 if ($critter_stunned > 0) {
+
+	 if ($critter_stunned > 0 && $critter_hp > 0) {
  	      $critter_id = get_value_for_event_id("critter", $event_id, $connection);
        	      $critter_name = get_value_for_critter_id("name", $critter_id, $connection);
-	      print "<p>There is an unconscious $critter_name here</p>";
+	      print "<p>There is an unconscious $critter_name here.</p>";
 	      $new_stunned = $critter_stunned - 1;
 	      update_event($event_id, "stunned", $new_stunned, $connection);
 	      if ($critter_stunned == 1) {
@@ -755,26 +852,47 @@ function player_attack($leek, $weapon_id, $connection) {
 		          update_event($event_id, "critter_hp", $critter_hp, $connection);
 		       }
 		       if ($critter_hp <= 0) {
-		       	  print "<p>The $critter_name falls to the ground dead.</p>";
+		          $water = get_value_for_location_id("water", $location_id, $connection);
+			  if (!$water) {
+		       	     print "<p>The $critter_name falls to the ground dead.</p>";
+			  } else {
+			     print "<p>The $critter_name sinks beneath the waves.</p>";
+			  }
 		       } else {
+			 $present_day = get_value_for_location_id("present_day", $location_id, $connection);
+	                 $water = get_value_for_location_id("water", $location_id, $connection);
 		         if ($weapon_id == 5) {
  		       	    print "<p>You stab the $critter_name but it continues to attack.</p>";
 			 } else if ($weapon_id == 6) {
  		       	    print "<p>You hit the $critter_name and knock it out.</p>";
-			    if (!$leek) {
+			    if ($water) {
+			       print "<p>It sinks beneath the waves.</p>";
+      		               update_event($event_id, "critter_hp", -1, $connection);
+			    }
+			    if (!$present_day) {
 			       update_event($event_id, "stunned", default_stunned(), $connection);
 			    } else {
-			      update_users("leek_critter_hp", -1, $connection);
+			      if ($leek) {
+			      	 update_users("leek_critter_hp", -1, $connection);
+			      }
 			      print "<p>It is removed to the menagerie</p>";
 			    }
 			 } else if (get_value_for_weapon_id("stuns", $weapon_id, $connection)) {
 			    print "<p>You stun the $critter_name.</p>";
-			    if (!$leek) {
-			       update_event($event_id, "stunned", default_stunned(), $connection);
-			    } else {
-			      update_users("leek_critter_hp", -1, $connection);
-			      print "<p>It is removed to the menagerie</p>";
+			    if ($water) {
+			       print "<p>It sinks beneath the waves.</p>";
+      		               update_event($event_id, "critter_hp", -1, $connection);
 			    }
+			    if ($present_day) {
+			      print "<p>It is removed to the menagerie</p>";
+			      if (!$leek) {
+			          update_event($event_id, "critter_hp", -1, $connection);
+			      } else {
+			      	update_users("leek_critter_hp", -1, $connection);
+			     }
+			   } else {
+			       update_event($event_id, "stunned", default_stunned(), $connection);
+			   }
 			} else {
  		       	  print "<p>You shoot the $critter_name but it continues to attack.</p>";
 			}
@@ -820,8 +938,10 @@ function print_device($connection) {
      $h = get_value_from_users("has_device", $connection);
      if ($h == 1) {
      	   $charge = get_value_from_users("charge", $connection);
+	   $c1 = get_value_from_users("c1_prev", $connection);
+	   $c2 = get_value_from_users("c2_prev", $connection);
+	   $c3 = get_value_from_users("c3_prev", $connection);
        
-           print "<div class=device>";
        	   print "<h4>The Device</h4>";
        	   if (is_null($charge)) {
        	      $default_charge = default_charge();
@@ -829,6 +949,10 @@ function print_device($connection) {
 	      $charge = $default_charge;
            } else {
              $recharge_start = get_value_from_users("recharge_start", $connection);
+	     if (is_null($recharge_start)) {
+	     	$recharge_start = now();
+	     }
+	     
              $time_difference = check_charge($recharge_start, $connection);
              if ($time_difference > 0) {
              if ($time_difference + $charge > default_charge()) {
@@ -843,33 +967,79 @@ function print_device($connection) {
             }
           }
      print "<p>Charge: " . $charge . "</p>";
-     print "<form method=\"POST\" action=\"main.php\">";
-     print "<table>";
+     print "<p><form method=\"POST\" action=\"main.php\">";
+     print "<center><table>";
      print "<tr><td><select name=\"dial\">";
-     print "<option select value=\"0\">0</option>";
-     print "<option value=\"1\">1</option>";
-     print "<option value=\"2\">2</option>";
-     print "<option value=\"3\">3</option>";
-     print "<option value=\"4\">4</option>";
-     print "<option value=\"5\">5</option>";
-     print "<option value=\"6\">6</option>";
-     print "<option value=\"7\">7</option>";
-     print "<option value=\"8\">8</option>";
-     print "<option value=\"9\">9</option>";
+     $select0 = "";
+     $select1 = "";
+     $select2 = "";
+     $select3 = "";
+     $select4 = "";
+     $select5 = "";
+     $select6 = "";
+     $select7 = "";
+     $select8 = "";
+     $select9 = "";
+     if ($c1 == 0) {
+     	$select0 = 'selected';
+     } else if ($c1 == 1) {
+     	$select1 = 'selected';
+     } else if ($c1 == 2) {
+     	$select2 = 'selected';
+     } else if ($c1 == 3) {
+     	$select3 = 'selected';
+     } else if ($c1 == 4) {
+     	$select4 = 'selected';
+     } else if ($c1 == 5) {
+     	$select5 = 'selected';
+     } else if ($c1 == 6) {
+     	$select6 = 'selected';
+     } else if ($c1 == 7) {
+     	$select7 = 'selected';
+     } else if ($c1 == 8) {
+     	$select8 = 'selected';
+     } else {
+     	$select9 = 'selected';
+     }
+     print "<option $select0 value=\"0\">0</option>";
+     print "<option $select1 value=\"1\">1</option>";
+     print "<option $select2 value=\"2\">2</option>";
+     print "<option $select3 value=\"3\">3</option>";
+     print "<option $select4 value=\"4\">4</option>";
+     print "<option $select5 value=\"5\">5</option>";
+     print "<option $select6 value=\"6\">6</option>";
+     print "<option $select7 value=\"7\">7</option>";
+     print "<option $select8 value=\"8\">8</option>";
+     print "<option $select9 value=\"9\">9</option>";
      print "</select> &nbsp; &nbsp; </td>";
      print "<td>";
-     print "<input checked type=\"radio\" name=\"button1\" value=\"0\">A<br>";
-     print "<input type=\"radio\" name=\"button1\" value=\"1\">B<br>";
-     print "<input type=\"radio\" name=\"button1\" value=\"2\">C&nbsp; &nbsp;</td>";
+     $checkedA = "";
+     $checkedB = "";
+     $checkedC = "";
+     if ($c2 == 0 ) {
+     	$checkedA = 'checked';
+     } else if ($c2 == 1) {
+     	$checkedB = 'checked';
+     } else {
+        $checkedC = 'checked';
+     }
+     print "<input $checkedA type=\"radio\" name=\"button1\" value=\"0\">A<br>";
+     print "<input $checkedB type=\"radio\" name=\"button1\" value=\"1\">B<br>";
+     print "<input $checkedC type=\"radio\" name=\"button1\" value=\"2\">C&nbsp; &nbsp;</td>";
      print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
      print "<input type=\"hidden\" name=\"travel_type\" value=\"device\">";
      $phase = get_value_from_users("phase", $connection);
      if ($phase < 3) {
-     	print "<input type=\"hidden\" name=\"button2\" value=\"0\"></tr></table>";
+     	print "<input type=\"hidden\" name=\"button2\" value=\"0\"></tr></table></center></p>";
      } else {
      print "<td>";
+         if ($c3) {
+     	   print "<input type=\"radio\" name=\"button2\" value=\"0\">Off<br>";
+     	   print "<input checked type=\"radio\" name=\"button2\" value=\"1\">On<br></td></tr></table></center></p>";
+	 } else {
      	   print "<input checked type=\"radio\" name=\"button2\" value=\"0\">Off<br>";
-     	   print "<input type=\"radio\" name=\"button2\" value=\"1\">On<br></td></tr></table>";
+     	   print "<input type=\"radio\" name=\"button2\" value=\"1\">On<br></td></tr></table></center></p>";
+	}
      }
      if ($charge > 0) {
          $hp = get_value_from_users("hp", $connection);
@@ -886,8 +1056,6 @@ function print_device($connection) {
         print "<p>The device is out of charge.  It recharges at 1 unit per hour.  You will need to wait.</p>";
      }
      print "</form>";
-     print "<hr>";
-     print "</div>";
      }
 }
 
@@ -972,19 +1140,66 @@ function get_location_from_coords($dial, $button1, $button2, $connection) {
 }
 
 function print_standard_start($mysql) {
-      print_health($mysql);
+      print "<div class=\"dynamic\">";
+      print "<div class=\"action\">";
       print_character_joined($mysql);
       print_item_used(0, $mysql);
       critter_attack(0, $mysql);
+      print_health($mysql);
       print_anomaly($mysql);
+      print_wait($mysql);
+      print "</div>";
+      $has_device = get_value_from_users("has_device", $mysql);
+      $phase = get_value_from_users("phase", $mysql);
+      if ($phase > 1 || $has_device) {
+            update_prev_coordinates($mysql);
+      	    print "<div class=device>";
+          print_device($mysql);
+        print_equipment($mysql);
+         print "</div>";
+      }
+      print "</div>";
+      
+}
+
+function update_prev_coordinates($mysql) {
+      $travel_type = get_value_from_users("travel_type", $mysql);
+      if ($travel_type == 'device') {
+      	 $location_id = get_location($mysql);
+	 $c1 = get_value_for_location_id("tm_coord_1", $location_id, $mysql);
+	 update_users("c1_prev", $c1, $mysql);
+	 $c2 = get_value_for_location_id("tm_coord_2", $location_id, $mysql);
+	 update_users("c2_prev", $c2, $mysql);
+	 $c3 = get_value_for_location_id("tm_coord_3", $location_id, $mysql);
+	 update_users("c3_prev", $c3, $mysql);
+      }
 }
 
 function print_leek_start($mysql) {
-      print_health($mysql);
+      print "<div class=\"dynamic\">";
+      print "<div class=\"action\">";
       print_character_joined($mysql);
       print_item_used(1, $mysql);
       critter_attack(1, $mysql);
+      print_health($mysql);
       print_anomaly($mysql);
+      print_wait($mysql);
+      print "</div>";
+      $has_device = get_value_from_users("has_device", $mysql);
+      $phase = get_value_from_users("phase", $mysql);
+      $critter_hp = get_value_from_users("leek_critter_hp", $mysql);
+      $critter_number = get_value_from_users("leek_critter", $mysql);
+      if ($critter_number > 2 && $critter_hp <=0) {
+      	    update_users("has_device", 1, $mysql);
+      }
+      if ($phase > 1 || $has_device) {
+        update_prev_coordinates($mysql);
+      	print "<div class=device>";
+        print_device($mysql);
+        print_equipment($mysql);
+        print "</div>";
+      }
+      print "</div>";
 }
 
 function print_health($mysql) {
@@ -1008,14 +1223,16 @@ function print_health($mysql) {
      }
      if ($hp == 0) {
      	print "<p><b>You are Unconscious!</b>  You can do nothing.  Check back in 1 hour.</p>";
-     } else if ($hp == 1) {
-        print "<p>You are badly injured</p>";
-     } else if ($hp == 2) {
-        print "<p>You are injured</p>";
-     } else if ($hp == 3) {
-        print "<p>You are slightly injured</p>";
-     } else if ($hp == 4) {
-        print "<p>You are grazed</p>";
+     } else if ($hp < 4) {
+        print "<p><b><font color=red>You are very badly hurt.</font></b></p>";
+     } else if ($hp < 8) {
+        print "<p><b>You are badly hurt.</b></p>";
+     } else if ($hp < 12) {
+        print "<p>You are hurt.</p>";
+     } else if ($hp < 16) {
+        print "<p>You are slightly hurt.</p>";
+     } else if ($hp < 20) {
+        print "<p>You are OK, but not at full health.</p>";
      }
 }
 
@@ -1031,8 +1248,11 @@ function print_character_joined($connection) {
 	      update_users("new_character", '', $connection);
 	      update_users("char_id_list", $new_char_id_list, $connection);
            } else {
-	      update_users("new_character", '', $connection);
-	      update_users("char_id_list", $char_id, $connection);
+	      $char_id_array = explode(",", $char_id_list);
+	      if (!in_array($char_id, $char_id_array)) {
+	      	      update_users("new_character", '', $connection);
+		      update_users("char_id_list", $char_id, $connection);
+	      }
 	   }
 	   $ucchar = ucfirst($new_character);
 	   print "<p>$ucchar has joined you on your travels.  He is stored in your user profile.</o>";	   
@@ -1043,6 +1263,7 @@ function print_character_joined($connection) {
 function print_equipment($connection) {
    $equip_id_list = get_value_from_users("equipment", $connection);
    $uses_list = get_value_from_users("uses", $connection);
+   print "<div class=equipment>";
    if (! is_null($equip_id_list) && $equip_id_list != "") {
       print "<h2>Equipment</h2>";
       $hp = get_value_from_users("hp", $connection);
@@ -1063,6 +1284,8 @@ function print_equipment($connection) {
 	      	      print $uses_array[$i];
 	      }
 	      print "</td><td>";
+	      $location_id=get_location($connection);
+              print "<input type=\"hidden\" name=\"location\" value=\"" . $location_id . "\">";
 	      print "<input type=\"hidden\" name=\"travel_type\" value=\"none\">";
 	      print "<input type=\"hidden\" name=\"item_used\" value=$equip>";
 	      print "<input type=\"hidden\" name=\"last_action\" value=\"item\">";
@@ -1077,6 +1300,7 @@ function print_equipment($connection) {
       	 print "<p>You are unconscious and unable to use your equipment.</p>";
       }
    }
+   print "</div>";
 }
 
 function print_item_used($leek, $connection) {
@@ -1099,7 +1323,19 @@ function print_item_used($leek, $connection) {
 	      if ($can_use) {
 	         if (!$fight || !is_weapon($item_used, $connection)) {
 		      $default_message = get_value_for_equip_id("use_message", $item_used, $connection);
-	      	      print "<p>$default_message</p>";
+		      if ($item_used != 12) {
+		      	   print "<p>$default_message</p>";
+		      } else {
+		      	   print "<p>$default_message";
+		           $d60_roll = rand(1, 60);
+			   print "<form method=\"POST\" action=\"main.php\">";
+	 		   print "<input type=\"hidden\" name=\"location\" value=\"" . $d60_roll . "\">";
+	                   print "<input type=\"hidden\" name=\"travel_type\" value=\"anomaly\">";
+	       	          print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+	                  print "<input type=\"submit\" value=\"Go through the anomaly\">";
+	                  print "</form>";
+	                  print "</p>";
+		      }
 		 }
 	      } else {
 	      	 print "<p>You can no longer use this item</p>";
@@ -1124,7 +1360,7 @@ function item_used($leek, $fight, $equip_id, $connection) {
 		    if ($equip_name == "first aid kit") {
 		       $hp = get_value_from_users("hp", $connection);
 		       if ($hp < default_health()) {
-		       	  $hp = $hp + 1;
+		       	  $hp = $hp + 3;
 			  update_users("hp", $hp, $connection);
 		       }
 		    }

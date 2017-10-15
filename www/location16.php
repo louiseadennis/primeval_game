@@ -27,19 +27,22 @@ print_header($mysql);
 $phase = get_user_phase($mysql);
 $lyle_collected = check_for_character('lyle', $mysql);
 if (!$lyle_collected) {
-   add_equipment("assault rifle", $mysql);
+   $visited = get_value_from_users("new_character", $mysql);
+   if ($visited != 'lyle') {
+      add_equipment("assault rifle", $mysql);
+   }
    add_location_clue(16, $mysql);
 }
-
-print_device($mysql);
 ?>
 <div class=main>
 <?php
 print_standard_start($mysql);
 ?>
+<div class=location>
+<img src=assets/location16.png>
 <h2>A Dusty Plain</h2>
 
-<p>You are standing in a dusty plain.  A few small seed ferns grow here and there and what look like conifers are visible in the distance.</p>
+<p>You are standing in a dusty plain.  A few small seed ferns grow here and there and what look like conifers are visible in the distance.  Large animals such as therocephalians and scutosaurus roam the plain.</p>
 
 <?php
 
@@ -49,8 +52,7 @@ if (!$lyle_collected) {
      print "<p>Lyle is here</p>";
      print "<p>He has an assault rifle and is looking in at a piece of paper which says \"Jurassic Site A\".</p>";
 }
-
-print_equipment($mysql);
 ?>
+</div>
 </body>
 </html>

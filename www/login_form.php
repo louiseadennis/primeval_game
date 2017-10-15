@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="styles/default.css" type="text/css">
 </head>
 <body>
+  <div class=main>
 <h1>Log In</h1>
 <form method="POST" action="logincheck.php">
 <?php
@@ -26,6 +27,7 @@
 </form>
 
 <p>Or <a href=signup_form.php>Sign Up</a></p>
+</div>
 </body>
 </html>
 
