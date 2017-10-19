@@ -16,50 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `weapons`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `weapons`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` char(50) NOT NULL,
-  `password` char(64) NOT NULL,
-  `salt` char(15) NOT NULL,
-  `email` varchar(60) DEFAULT NULL,
-  `location_id` smallint(6) NOT NULL DEFAULT '1',
-  `anomaly` smallint(6) NOT NULL DEFAULT '1',
-  `char_id_list` text,
-  `charge` tinyint(4) DEFAULT NULL,
-  `phase` tinyint(4) NOT NULL DEFAULT '1',
-  `equipment` text,
-  `has_device` tinyint(4) NOT NULL DEFAULT '0',
-  `has_log` tinyint(4) NOT NULL DEFAULT '0',
-  `random_anomalies` tinyint(4) NOT NULL DEFAULT '0',
-  `hp` tinyint(4) NOT NULL DEFAULT '20',
-  `prev_location` smallint(6) DEFAULT NULL,
-  `travel_type` char(50) DEFAULT 'start',
-  `uses` text,
-  `item_used` smallint(6) DEFAULT '0',
-  `new_character` char(50) DEFAULT NULL,
-  `last_action` char(50) DEFAULT 'start',
-  `log` text,
-  `recharge_start` datetime DEFAULT NULL,
-  `healing_start` datetime DEFAULT NULL,
-  `action_done` tinyint(4) DEFAULT '0',
-  `leek_critter` tinyint(4) DEFAULT '1',
-  `leek_critter_hp` tinyint(4) DEFAULT NULL,
-  `locationclues` text,
-  `c1_prev` smallint(6) DEFAULT NULL,
-  `c2_prev` smallint(6) DEFAULT NULL,
-  `c3_prev` smallint(6) DEFAULT NULL,
-  `critter_id_list` text,
-  `needed_boat` tinyint(4) DEFAULT '0',
-  PRIMARY KEY (`user_id`)
+CREATE TABLE `weapons` (
+  `weapon_id` int(11) NOT NULL AUTO_INCREMENT,
+  `equip_id` int(11) DEFAULT NULL,
+  `hit_percentage` smallint(6) DEFAULT NULL,
+  `damage` smallint(6) DEFAULT NULL,
+  `stuns` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`weapon_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `weapons`
+--
+
+LOCK TABLES `weapons` WRITE;
+/*!40000 ALTER TABLE `weapons` DISABLE KEYS */;
+INSERT INTO `weapons` VALUES (1,1,60,1,1),(2,2,50,5,0),(3,3,80,2,0),(4,5,90,4,0),(5,8,80,1,NULL),(6,9,80,1,1),(7,10,80,3,0),(8,11,80,0,1),(9,13,50,1,NULL);
+/*!40000 ALTER TABLE `weapons` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -70,4 +51,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-19 20:44:37
+-- Dump completed on 2017-10-19 20:45:10

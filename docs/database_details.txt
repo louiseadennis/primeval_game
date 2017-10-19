@@ -1,10 +1,152 @@
+show tables;
++-------------------------+
+| Tables_in_primeval_game |
++-------------------------+
+| characters              |
+| critters                |
+| equipment               |
+| events                  |
+| junctions               |
+| locations               |
+| users                   |
+| weapons                 |
++-------------------------+
+
+describe characters;
++---------+---------+------+-----+---------+----------------+
+| Field   | Type    | Null | Key | Default | Extra          |
++---------+---------+------+-----+---------+----------------+
+| char_id | int(11) | NO   | PRI | NULL    | auto_increment |
+| name    | text    | YES  |     | NULL    |                |
++---------+---------+------+-----+---------+----------------+
+
+describe critters;
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| critter_id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name           | text        | YES  |     | NULL    |                |
+| hp             | smallint(6) | YES  |     | NULL    |                |
+| hit_percentage | int(11)     | YES  |     | NULL    |                |
+| damage         | smallint(6) | YES  |     | 1       |                |
+| icon           | text        | YES  |     | NULL    |                |
+| aquatic        | tinyint(4)  | YES  |     | NULL    |                |
+| era            | text        | YES  |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+
+describe equipment;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| equip_id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name         | text        | YES  |     | NULL    |                |
+| use_message  | text        | YES  |     | NULL    |                |
+| default_uses | smallint(5) | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+
+describe events;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| event_id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| user_id     | int(11)     | YES  |     | NULL    |                |
+| location_id | int(11)     | YES  |     | NULL    |                |
+| fight       | tinyint(4)  | YES  |     | NULL    |                |
+| critter     | int(11)     | YES  |     | NULL    |                |
+| critter_hp  | smallint(6) | YES  |     | NULL    |                |
+| stunned     | tinyint(4)  | YES  |     | NULL    |                |
+| resolved    | tinyint(4)  | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+
+describe junctions;
++-------------+---------+------+-----+---------+-------+
+| Field       | Type    | Null | Key | Default | Extra |
++-------------+---------+------+-----+---------+-------+
+| location_id | int(11) | YES  |     | NULL    |       |
+| user_id     | int(11) | YES  |     | NULL    |       |
+| a1          | int(11) | YES  |     | NULL    |       |
+| a2          | int(11) | YES  |     | NULL    |       |
+| a3          | int(11) | YES  |     | NULL    |       |
+| a4          | int(11) | YES  |     | NULL    |       |
+| a5          | int(11) | YES  |     | NULL    |       |
+| a6          | int(11) | YES  |     | NULL    |       |
+| a7          | int(11) | YES  |     | NULL    |       |
+| a8          | int(11) | YES  |     | NULL    |       |
+| a9          | int(11) | YES  |     | NULL    |       |
+| a10         | int(11) | YES  |     | NULL    |       |
++-------------+---------+------+-----+---------+-------+
+
+describe locations;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| location_id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| tm_coord_1      | tinyint(4)  | YES  |     | NULL    |                |
+| tm_coord_2      | tinyint(4)  | YES  |     | NULL    |                |
+| tm_coord_3      | tinyint(4)  | YES  |     | NULL    |                |
+| static_text_p1  | text        | YES  |     | NULL    |                |
+| static_text_p2  | text        | YES  |     | NULL    |                |
+| static_text_p3  | text        | YES  |     | NULL    |                |
+| static_text_p4  | text        | YES  |     | NULL    |                |
+| static_text_p5  | text        | YES  |     | NULL    |                |
+| anomaly_chance  | double      | YES  |     | NULL    |                |
+| fight           | tinyint(4)  | YES  |     | 0       |                |
+| critter         | text        | YES  |     | NULL    |                |
+| anomaly         | int(11)     | YES  |     | NULL    |                |
+| action_required | char(60)    | YES  |     | NULL    |                |
+| water           | tinyint(4)  | YES  |     | 0       |                |
+| fight_chance    | smallint(6) | YES  |     | 0       |                |
+| present_day     | tinyint(4)  | YES  |     | 0       |                |
+| name            | char(60)    | YES  |     |         |                |
+| clue            | text        | YES  |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+
 describe users;
-+----------+-------------+------+-----+---------+----------------+
-| Field    | Type        | Null | Key | Default | Extra          |
-+----------+-------------+------+-----+---------+----------------+
-| user_id  | int(11)     | NO   | PRI | NULL    | auto_increment |
-| name     | char(50)    | NO   |     | NULL    |                |
-| password | char(64)    | NO   |     | NULL    |                |
-| salt     | char(15)    | NO   |     | NULL    |                |
-| email    | varchar(60) | YES  |     | NULL    |                |
-+----------+-------------+------+-----+---------+----------------+
++------------------+-------------+------+-----+---------+----------------+
+| Field            | Type        | Null | Key | Default | Extra          |
++------------------+-------------+------+-----+---------+----------------+
+| user_id          | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name             | char(50)    | NO   |     | NULL    |                |
+| password         | char(64)    | NO   |     | NULL    |                |
+| salt             | char(15)    | NO   |     | NULL    |                |
+| email            | varchar(60) | YES  |     | NULL    |                |
+| location_id      | smallint(6) | NO   |     | 1       |                |
+| anomaly          | smallint(6) | NO   |     | 1       |                |
+| char_id_list     | text        | YES  |     | NULL    |                |
+| charge           | tinyint(4)  | YES  |     | NULL    |                |
+| phase            | tinyint(4)  | NO   |     | 1       |                |
+| equipment        | text        | YES  |     | NULL    |                |
+| has_device       | tinyint(4)  | NO   |     | 0       |                |
+| has_log          | tinyint(4)  | NO   |     | 0       |                |
+| random_anomalies | tinyint(4)  | NO   |     | 0       |                |
+| hp               | tinyint(4)  | NO   |     | 20      |                |
+| prev_location    | smallint(6) | YES  |     | NULL    |                |
+| travel_type      | char(50)    | YES  |     | start   |                |
+| uses             | text        | YES  |     | NULL    |                |
+| item_used        | smallint(6) | YES  |     | 0       |                |
+| new_character    | char(50)    | YES  |     | NULL    |                |
+| last_action      | char(50)    | YES  |     | start   |                |
+| log              | text        | YES  |     | NULL    |                |
+| recharge_start   | datetime    | YES  |     | NULL    |                |
+| healing_start    | datetime    | YES  |     | NULL    |                |
+| action_done      | tinyint(4)  | YES  |     | 0       |                |
+| leek_critter     | tinyint(4)  | YES  |     | 1       |                |
+| leek_critter_hp  | tinyint(4)  | YES  |     | NULL    |                |
+| locationclues    | text        | YES  |     | NULL    |                |
+| c1_prev          | smallint(6) | YES  |     | NULL    |                |
+| c2_prev          | smallint(6) | YES  |     | NULL    |                |
+| c3_prev          | smallint(6) | YES  |     | NULL    |                |
+| critter_id_list  | text        | YES  |     | NULL    |                |
+| needed_boat      | tinyint(4)  | YES  |     | 0       |                |
++------------------+-------------+------+-----+---------+----------------+
+
+describe weapons;
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| weapon_id      | int(11)     | NO   | PRI | NULL    | auto_increment |
+| equip_id       | int(11)     | YES  |     | NULL    |                |
+| hit_percentage | smallint(6) | YES  |     | NULL    |                |
+| damage         | smallint(6) | YES  |     | NULL    |                |
+| stuns          | tinyint(4)  | YES  |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+

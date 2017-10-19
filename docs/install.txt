@@ -1,6 +1,8 @@
 To install Primeval Game:
 
-1.  Set up a MySQL database with a user and a password.  Edit the .dat files in users.dat appropriately to set up your database tables.
+1.  Set up a MySQL database with a user and a password.
+
+Import the .dat files in utils:
 
 e.g.
 
