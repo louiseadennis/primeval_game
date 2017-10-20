@@ -1142,20 +1142,29 @@ function check_charge($recharge_start, $connection) {
 }
 
 function check_healing($healing_start, $connection) {
-	 $now = new DateTime();
-	 $htime = DateTime::createFromFormat('Y\-m\-d\ H:i:s', $healing_start);
-	 $diff  = $htime->diff($now);
-	 if (($t = $diff->format("%m")) > 0)
-	    $heals = default_charge();
-	 else if (($t = $diff->format("%d")) > 0)
-	    $heals = default_charge();
-	 else if (($t = $diff->format("%H")) > 0)
-	    $heals = $t;
+	 $unixOriginalDate = strtotime($healing_start);
+    	 $unixNowDate = strtotime('now');
+    	 $difference = $unixNowDate - $unixOriginalDate ;
+    	 $days = (int)($difference / 86400);
+    	 $hours = (int)($difference / 3600);
+    	 $minutes = (int)($difference / 60);
+    	 $seconds = $difference;
+	 //$now = new DateTime();
+	 //$rtime = date_create_from_format('Y\-m\-d\ H:i:s', $recharge_start);
+	 // $diff  = $rtime->diff($now);
+	// if (($t = $diff->format("%m")) > 0)
+	 if ($days > 0) 
+	    $charges = default_health();
+//	 else if (($t = $diff->format("%d")) > 0)
+//	    $charges = default_health();
+//	 else if (($t = $diff->format("%H")) > 0)
+	 else if ($hours > 0)
+	    $charges = $hours;
 //	 else if (($t = $diff->format("%i")) > 0)
-//	    $heals = 2; 
+//	    $charges = 2; 
 	 else
-	    $heals = 0;
-	 return $heals;
+	    $charges = 0;
+	 return $charges;
 }
 
 function now() {
