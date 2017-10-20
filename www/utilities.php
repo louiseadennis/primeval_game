@@ -1117,7 +1117,7 @@ function use_device($dial, $button1, $button2, $connection) {
 
 function check_charge($recharge_start, $connection) {
 	 $now = new DateTime();
-	 $rtime = DateTime::createFromFormat('Y\-m\-d\ H:i:s', $recharge_start);
+	 $rtime = date_create_from_format('Y\-m\-d\ H:i:s', $recharge_start);
 	 $diff  = $rtime->diff($now);
 	 if (($t = $diff->format("%m")) > 0)
 	    $charges = default_charge();
