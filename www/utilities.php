@@ -1116,15 +1116,24 @@ function use_device($dial, $button1, $button2, $connection) {
 }
 
 function check_charge($recharge_start, $connection) {
-	 $now = new DateTime();
-	 $rtime = date_create_from_format('Y\-m\-d\ H:i:s', $recharge_start);
-	 $diff  = $rtime->diff($now);
-	 if (($t = $diff->format("%m")) > 0)
+	 $unixOriginalDate = strtotime($recharge_start);
+    	 $unixNowDate = strtotime('now');
+    	 $difference = $unixNowDate - $unixOriginalDate ;
+    	 $days = (int)($difference / 86400);
+    	 $hours = (int)($difference / 3600);
+    	 $minutes = (int)($difference / 60);
+    	 $seconds = $difference;
+	 //$now = new DateTime();
+	 //$rtime = date_create_from_format('Y\-m\-d\ H:i:s', $recharge_start);
+	 // $diff  = $rtime->diff($now);
+	// if (($t = $diff->format("%m")) > 0)
+	 if ($days > 0) 
 	    $charges = default_charge();
-	 else if (($t = $diff->format("%d")) > 0)
-	    $charges = default_charge();
-	 else if (($t = $diff->format("%H")) > 0)
-	    $charges = $t;
+//	 else if (($t = $diff->format("%d")) > 0)
+//	    $charges = default_charge();
+//	 else if (($t = $diff->format("%H")) > 0)
+	 else if ($hours > 0)
+	    $charges = $hours;
 //	 else if (($t = $diff->format("%i")) > 0)
 //	    $charges = 2; 
 	 else
