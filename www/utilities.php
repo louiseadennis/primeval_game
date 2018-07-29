@@ -34,9 +34,9 @@ if( !function_exists("date_create_from_format") )
  DEFINE_date_create_from_format();
 
 // Stolen from PHP and MySQL by Hugh E. Williams and David Lane
-function showerror() 
+function showerror($mysql) 
 {
-  die("Error " . mysql_errno() . " : " . mysql_error());
+  die("Error " . mysqli_errno($mysql) . " : " . mysqli_error($mysql));
 }
 
 function default_charge()
@@ -65,10 +65,10 @@ function default_stunned() {
 function critter_number($connection) {
   $sql = "SELECT * FROM critters";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  return mysql_num_rows($result);
+  return $result->num_rows;
 }
 
 
@@ -122,11 +122,11 @@ function add_critter($critter_id, $connection) {
 function get_present_day_locations($connection) {
     $sql = "SELECT * FROM locations WHERE present_day=1";
     
-    if (!$result = mysql_query($sql, $connection)) 
+    if (!$result = $connection->query($sql)) 
       showerror();
   
     $location_array = array();
-    while ($row=mysql_fetch_array($result)) {
+    while ($row=$result->fetch_assoc()) {
     	  $location_id = $row["location_id"];
 	  $phase = get_value_from_users("phase", $connection);
 	  if ($phase != 1 || $location_id != 19) {
@@ -141,13 +141,13 @@ function get_value_from_users($column, $connection) {
 
   $sql = "SELECT {$column}  FROM users WHERE name = '{$uname}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["$column"];
 	   return $value;
      }
@@ -157,7 +157,7 @@ function get_value_from_users($column, $connection) {
 function update_users($column, $value, $connection) {
     $uname = $_SESSION["loginUsername"];
     $sql = "UPDATE users SET {$column}='{$value}' WHERE name='$uname'";
-    if (!mysql_query($sql, $connection)) {
+    if (!$connection->query($sql)) {
        showerror();
     }
     return 1;
@@ -167,10 +167,10 @@ function junction_here($connection) {
     $user_id = get_user_id($connection);
     $location_id = get_location($connection);
     $sql = "SELECT a1 FROM junctions WHERE user_id='$user_id' AND location_id='$location_id'";
-    if (!$result = mysql_query($sql, $connection)) 
+    if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
      return 1;
@@ -183,20 +183,20 @@ function change_anomaly($anomaly,  $prev_location, $connection) {
     $anomaly_string = "a" . $anomaly;
     $sql = "SELECT $anomaly_string FROM junctions WHERE user_id='$user_id' AND location_id='$location_id'";
 
-    if (!$result = mysql_query($sql, $connection)) 
+    if (!$result = $connection->query($sql)) 
       showerror();
 
-    while ($row=mysql_fetch_array($result)) {
+    while ($row=$result->fetch_assoc()) {
           $value = $row["$anomaly_string"];
 	  if ($value == 0) {
 	    $d60 = rand(1, 60);
     	    $sql = "UPDATE junctions SET {$anomaly_string}=$d60 WHERE location_id='$location_id' AND user_id='$user_id'";
-	    if (!mysql_query($sql, $connection)) {
+	    if (!$connection->query($sql)) {
        	       showerror();
     	    }
 	  } else if ($value != $prev_location) {
     	    $sql = "UPDATE junctions SET {$anomaly_string}=0 WHERE location_id='$location_id' AND user_id='$user_id'";
-	    if (!mysql_query($sql, $connection)) {
+	    if (!$connection->query($sql)) {
        	       showerror();
     	    }
 	  }
@@ -209,10 +209,10 @@ function unresolved_event($connection) {
     $user_id = get_user_id($connection);
     $location_id = get_location($connection);
     $sql = "SELECT event_id FROM events WHERE user_id='$user_id' AND location_id='$location_id' AND resolved=0";
-    if (!$result = mysql_query($sql, $connection)) 
+    if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
      return 1;
@@ -224,13 +224,13 @@ function get_unresolved_event_id($connection) {
     $location_id = get_location($connection);
     $sql = "SELECT event_id FROM events WHERE user_id='$user_id' AND location_id='$location_id' AND resolved=0";
 
-    if (!$result = mysql_query($sql, $connection)) 
+    if (!$result = $connection->query($sql)) 
       showerror();
   
-    if (mysql_num_rows($result) != 1)
+    if ($result->num_rows != 1)
       return 0;
     else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
       $value = $row["event_id"];
       return $value;
       }
@@ -242,13 +242,13 @@ function get_anomaly_destination($anomaly, $connection) {
     $location_id = get_location($connection);
     $sql = "SELECT {$anomaly} FROM junctions WHERE user_id='$user_id' AND location_id='$location_id'";
 
-    if (!$result = mysql_query($sql, $connection)) 
+    if (!$result = $connection->query($sql)) 
       showerror();
   
-    if (mysql_num_rows($result) != 1)
+    if ($result->num_rows != 1)
       return 0;
     else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
       $value = $row["$anomaly"];
       return $value;
       }
@@ -270,7 +270,7 @@ function fight($connection) {
 
 function update_location($location_id, $column, $value, $connection) {
     $sql = "UPDATE locations SET {$column}='{$value}' WHERE location_id='$location_id'";
-    if (!mysql_query($sql, $connection)) {
+    if (!$connection->query($sql)) {
        showerror();
     }
     return 1;
@@ -278,7 +278,7 @@ function update_location($location_id, $column, $value, $connection) {
 
 function update_event($event_id, $column, $value, $connection) {
     $sql = "UPDATE events SET {$column}='{$value}' WHERE event_id='$event_id'";
-    if (!mysql_query($sql, $connection)) {
+    if (!$connection->query($sql)) {
        showerror();
     }
     return 1;
@@ -287,13 +287,13 @@ function update_event($event_id, $column, $value, $connection) {
 function get_value_for_name_from($column, $table, $name, $connection) {
   $sql = "SELECT {$column} FROM {$table} WHERE name = '{$name}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["$column"];
 	   return $value;
      }
@@ -303,13 +303,13 @@ function get_value_for_name_from($column, $table, $name, $connection) {
 function get_value_for_equip_id($column, $equip_id, $connection) {
   $sql = "SELECT {$column} FROM equipment WHERE equip_id = '{$equip_id}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["$column"];
 	   return $value;
      }
@@ -319,13 +319,13 @@ function get_value_for_equip_id($column, $equip_id, $connection) {
 function get_value_for_critter_id($column, $critter_id, $connection) {
   $sql = "SELECT {$column} FROM critters WHERE critter_id = '{$critter_id}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["$column"];
 	   return $value;
      }
@@ -335,13 +335,13 @@ function get_value_for_critter_id($column, $critter_id, $connection) {
 function get_value_for_weapon_id($column, $weapon_id, $connection) {
   $sql = "SELECT {$column} FROM weapons WHERE weapon_id = '{$weapon_id}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["$column"];
 	   return $value;
      }
@@ -351,13 +351,13 @@ function get_value_for_weapon_id($column, $weapon_id, $connection) {
 function get_weapon_id($equip_id, $connection) {
   $sql = "SELECT weapon_id FROM weapons WHERE equip_id = '{$equip_id}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["weapon_id"];
 	   return $value;
      }
@@ -367,13 +367,13 @@ function get_weapon_id($equip_id, $connection) {
 function get_value_for_location_id($column, $location_id, $connection) {
   $sql = "SELECT {$column} FROM locations WHERE location_id = '{$location_id}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["$column"];
 	   return $value;
      }
@@ -383,13 +383,13 @@ function get_value_for_location_id($column, $location_id, $connection) {
 function get_value_for_event_id($column, $event_id, $connection) {
   $sql = "SELECT {$column} FROM events WHERE event_id = '{$event_id}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["$column"];
 	   return $value;
      }
@@ -400,13 +400,13 @@ function get_value_for_event_id($column, $event_id, $connection) {
 function get_value_for_char_id($column, $char_id, $connection) {
   $sql = "SELECT {$column} FROM characters WHERE char_id = '{$char_id}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["$column"];
 	   return $value;
      }
@@ -715,7 +715,7 @@ function create_new_fight_event($critter_id, $connection) {
 	 $location_id = get_location($connection);
          $default_hp = get_value_for_critter_id("hp", $critter_id, $connection);
 	 $sql = "INSERT INTO events (user_id, location_id, fight, critter, critter_hp, resolved) values ('$user_id', $location_id, 1, $critter_id, $default_hp, 0)";
-	 if (!mysql_query($sql))
+	 if (!$connection->query($sql))
 	    showerror();
 }
 
@@ -723,7 +723,7 @@ function create_anomaly_junction($connection) {
 	 $user_id = get_user_id($connection);
 	 $location_id = get_location($connection);
 	 $sql = "INSERT INTO junctions (user_id, location_id) values ('$user_id', $location_id)";
-	 if (!mysql_query($sql))
+	 if (!$connection->query($sql))
 	    showerror();
 
 	 junction_anomaly_set("a1", $connection);
@@ -745,13 +745,13 @@ function junction_anomaly_set($anomaly, $connection) {
          $coin = rand(0,1);
 	 if ($coin == 0) {
 	    $sql = "UPDATE junctions set {$anomaly}=0 where user_id='$user_id' AND location_id='$location_id'";
-	    if (!mysql_query($sql, $connection)) {
+	    if (!$connection->query($sql)) {
        	       showerror();
             }
 	 } else {
 	    $dice = rand(1, 60);
 	    $sql = "UPDATE junctions set {$anomaly}=$dice where user_id='$user_id' AND location_id='$location_id'";
-	    if (!mysql_query($sql, $connection)) {
+	    if (!$connection->query($sql)) {
        	       showerror();
             }
 	 }
@@ -939,10 +939,10 @@ function resolve_events($connection) {
     $user_id = get_user_id($connection);
     $sql = "SELECT event_id FROM events WHERE user_id='$user_id' AND location_id='$location_id' AND resolved=0";
 
-    if (!$result = mysql_query($sql, $connection)) 
+    if (!$result = $connection->query($sql)) 
       showerror();
 
-    while ($row=mysql_fetch_array($result)) {
+    while ($row=$result->fetch_assoc()) {
       $value = $row["event_id"];
       $critter_stunned = get_value_for_event_id("stunned", $event_id, $connection);
       if ($critter_stunned > 0) {
@@ -1176,13 +1176,13 @@ function now() {
 function get_location_from_coords($dial, $button1, $button2, $connection) {
   $sql = "SELECT location_id FROM locations WHERE tm_coord_1 = {$dial} AND tm_coord_2 = {$button1} AND tm_coord_3 = {$button2}";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
-     while ($row=mysql_fetch_array($result)) {
+     while ($row=$result->fetch_assoc()) {
      	   $value = $row["location_id"];
 	   return $value;
      }
@@ -1438,10 +1438,10 @@ function item_used($leek, $fight, $equip_id, $connection) {
 function is_weapon($equip_id, $connection) {
   $sql = "SELECT *  FROM weapons WHERE equip_id = '{$equip_id}'";
 
-  if (!$result = mysql_query($sql, $connection)) 
+  if (!$result = $connection->query($sql)) 
       showerror();
   
-  if (mysql_num_rows($result) != 1)
+  if ($result->num_rows != 1)
       return 0;
   else {
        return 1;

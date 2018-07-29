@@ -2,18 +2,19 @@
 require ('./config/accesscontrol.php');
 require ('./config/MySQL.php');
 
-$mysql = mysql_connect($mysql_host, $mysql_user, $mysql_password);
-if (!mysql_select_db($mysql_database))
-  showerror();
+$db = new mysqli($mysql_host, $mysql_user, $mysql_password,$mysql_database);
+if ($db -> connect_errno > 0) {
+   die('Unable to connect to database [' . $mysql_host . $mysql_user .  $mysql_password . $mysql_database . $db->connect_error . ']');
+   }
 
 // Clean the data collected in the form
-$loginUsername = mysqlclean($_POST, "loginUsername", 10, $mysql);
-$loginPassword = mysqlclean($_POST, "loginPassword", 10, $mysql);
+$loginUsername = mysqlclean($_POST, "loginUsername", 10, $db);
+$loginPassword = mysqlclean($_POST, "loginPassword", 10, $db);
 
 session_start();
 
 // Authenticate the User
-if (authenticateUser($mysql, $loginUsername, $loginPassword))
+if (authenticateUser($db, $loginUsername, $loginPassword))
 {
   // Register the loginUsername
   $_SESSION["loginUsername"] = $loginUsername;

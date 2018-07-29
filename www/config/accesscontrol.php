@@ -1,7 +1,7 @@
 <?php
 // Shamelessly stolen from PHP and MySQL by Hugh E. Williams and David Lane
 
-function authenticateUser($connection, $username, $password)
+function authenticateUser($db, $username, $password)
 {
  // Test the username and password parameter
  if (!isset($username) || !isset($password))
@@ -11,14 +11,14 @@ function authenticateUser($connection, $username, $password)
  $query = "SELECT password FROM users WHERE name = '{$username}'";
 
  // Execute the query
- if (!$result = @mysql_query($query, $connection))
+ if (!$result = $db->query($query))
      showerror();
 
  // Exactly one row? then we have found the user
- if (mysql_num_rows($result) != 1)
+ if ($result->num_rows != 1)
   return false;
  else {
-    while($row = mysql_fetch_array($result)) {
+    while($row = $result->fetch_assoc()) {
          $crypt_password = $row["password"];
          // Create a digest of the password  collected from the challenge
          // $crypt_password acts as the salt.
@@ -60,12 +60,12 @@ function sessionAuthenticate()
 }
 
 // Stolen from PHP and MySQL by Hugh E. Williams and David Lane
-function mysqlclean($array, $index, $maxlength, $connection) 
+function mysqlclean($array, $index, $maxlength, $db) 
 {
   if (isset($array["{$index}"]))
   {
     $input = substr($array["{$index}"], 0, $maxlength);
-    $input = mysql_real_escape_string($input, $connection);
+    $input = mysqli_real_escape_string($db, $input);
     return ($input);
   }
   return NULL;

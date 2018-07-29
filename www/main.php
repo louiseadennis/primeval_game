@@ -8,79 +8,80 @@ require_once('utilities.php');
 session_start();
 sessionAuthenticate();
 
-$mysql = mysql_connect($mysql_host, $mysql_user, $mysql_password);
-if (!mysql_select_db($mysql_database))
-  showerror();
+$db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
+if ($db -> connect_errno > 0) {
+   die('Unable to connect to database [' . $mysql_host . $mysql_user .  $mysql_password . $mysql_database . $db->connect_error . ']');
+   }
 
-$last_action = mysqlclean($_POST, "last_action", 10, $mysql);
+$last_action = mysqlclean($_POST, "last_action", 10, $db);
 
 
-$travel_type = mysqlclean($_POST, "travel_type", 10, $mysql);
-$prev_location = get_location($mysql);
-$location_id = mysqlclean($_POST, "location", 10, $mysql);
+$travel_type = mysqlclean($_POST, "travel_type", 10, $db);
+$prev_location = get_location($db);
+$location_id = mysqlclean($_POST, "location", 10, $db);
 
 if ($last_action == "item" || $last_action == "wait") {
-   $current_location = get_location($mysql);
-   $action_required = get_value_for_location_id("action_required", $current_location, $mysql);
-   $action_done = get_value_from_users("action_done", $mysql);
-   $item_used = mysqlclean($_POST, "item_used", 10, $mysql);
+   $current_location = get_location($db);
+   $action_required = get_value_for_location_id("action_required", $current_location, $db);
+   $action_done = get_value_from_users("action_done", $db);
+   $item_used = mysqlclean($_POST, "item_used", 10, $db);
    if ($action_required != '' && !$action_done) {
-       $item_name = get_value_for_equip_id("name", $item_used, $mysql);
+       $item_name = get_value_for_equip_id("name", $item_used, $db);
        if ($item_name !== $action_required) {
        	  if ($action_required == 'inflatable dinghy') {
 	      $last_action = "travel";
 	      $travel_type = "anomaly";
-	      $location_id = get_value_from_users("prev_location", $mysql);
-	      update_users("needed_boat", 1, $mysql);
+	      $location_id = get_value_from_users("prev_location", $db);
+	      update_users("needed_boat", 1, $db);
           } else if ($action_required == 'breathing aparatus') {
-	    $hp = get_value_from_users("hp", $mysql);
+	    $hp = get_value_from_users("hp", $db);
 	    $hp = $hp - 1;
-	    update_users("hp", $hp, $mysql);
+	    update_users("hp", $hp, $db);
 	    $now = now();
-      	    update_users("healing_start", $now, $mysql);
+      	    update_users("healing_start", $now, $db);
 	  }
       } else {
-      	update_users("action_done", 1, $mysql);
+      	update_users("action_done", 1, $db);
       }
    }
 }
 
 if ($last_action == "travel") {
-   resolve_events($mysql);
-   update_users("anomaly", 0, $mysql);
+   resolve_events($db);
+   update_users("anomaly", 0, $db);
 }
 
-update_users("last_action", $last_action, $mysql);
+update_users("last_action", $last_action, $db);
 
 if ($travel_type == "device") {
-   $dial = mysqlclean($_POST, "dial", 10, $mysql);
-   $button1 = mysqlclean($_POST, "button1", 10, $mysql);
+   $dial = mysqlclean($_POST, "dial", 10, $db);
+   $button1 = mysqlclean($_POST, "button1", 10, $db);
    $button2 =$_POST["button2"];
-   $location_id = use_device($dial, $button1, $button2, $mysql);
+   $location_id = use_device($dial, $button1, $button2, $db);
 }
 
 
 if ($travel_type != '' && $travel_type != "none") {
-   update_users("travel_type", $travel_type, $mysql);
-   update_users("action_done", 0, $mysql);
+   update_users("travel_type", $travel_type, $db);
+   update_users("action_done", 0, $db);
 } else {
-   $item_used = mysqlclean($_POST, "item_used", 10, $mysql);
+   $item_used = mysqlclean($_POST, "item_used", 10, $db);
    if ($item_used != '') {
-      update_users("item_used", $item_used, $mysql);
+      update_users("item_used", $item_used, $db);
    } else {
-      update_users("item_used", 2, $mysql);
+      update_users("item_used", 2, $db);
    }
 }
 
-$user_id = get_user_id($mysql);
+$user_id = get_user_id($db);
 
 if ($location_id=='') {
    header("Location: location1.php");
    exit;
 } else if ($prev_location!=$location_id) {
-   update_users("prev_location", $prev_location, $mysql);
-   update_location($prev_location, "anomaly", 0, $mysql);
-   update_users("location_id", $location_id, $mysql);
+   update_users("prev_location", $prev_location, $db);
+   update_location($prev_location, "anomaly", 0, $db);
+   update_users("location_id", $location_id, $db);
 }
 
 $location_string = "location" . $location_id;

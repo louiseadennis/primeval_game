@@ -8,13 +8,14 @@ require_once('./config/MySQL.php');
 session_start();
 sessionAuthenticate();
 
-$mysql = mysql_connect($mysql_host, $mysql_user, $mysql_password);
-if (!mysql_select_db($mysql_database))
-  showerror();
+$db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
+if ($db -> connect_errno > 0) {
+   die('Unable to connect to database [' . $mysql_host . $mysql_user .  $mysql_password . $mysql_database . $db->connect_error . ']');
+   }
 
-check_location(1, $mysql);
+check_location(1, $db);
 
-$phase = get_user_phase($mysql);
+$phase = get_user_phase($db);
 
 
 $d100_roll = rand(1, 100);
@@ -28,73 +29,73 @@ $d100_roll = rand(1, 100);
 </head>
 <body>
 <?php
-print_header($mysql);
+print_header($db);
 ?>
 <div class=main>
 <?php
       print "<div class=\"dynamic\">";
       print "<div class=\"action\">";
-      print_character_joined($mysql);
+      print_character_joined($db);
 
-$connor_collected = check_for_character('connor', $mysql);
-$nick_collected = check_for_character('nick', $mysql);
-$stephen_collected = check_for_character('stephen', $mysql);
-$lester_collected = check_for_character('lester', $mysql);
-$ryan_collected = check_for_character('ryan', $mysql);
+$connor_collected = check_for_character('connor', $db);
+$nick_collected = check_for_character('nick', $db);
+$stephen_collected = check_for_character('stephen', $db);
+$lester_collected = check_for_character('lester', $db);
+$ryan_collected = check_for_character('ryan', $db);
 
 if ($connor_collected && $nick_collected && $stephen_collected && $lester_collected && $ryan_collected && $phase ==1 && maximum_phase() > 1) {
-   update_users("phase", 2, $mysql);
+   update_users("phase", 2, $db);
    $phase=2;
 }
 
-$leek_collected = check_for_character('leek', $mysql);
+$leek_collected = check_for_character('leek', $db);
 if (!$leek_collected && $phase == 2) {
-   $new_character = get_value_from_users("new_character", $mysql);
+   $new_character = get_value_from_users("new_character", $db);
    if ($new_character != 'leek') {
-      update_users("has_device", 0, $mysql);
+      update_users("has_device", 0, $db);
    }
 }
 
-$leek_collected = check_for_character('leek', $mysql);
+$leek_collected = check_for_character('leek', $db);
 if ($leek_collected && $phase == 2 && maximum_phase() > 2) {
-  update_users("phase", 3, $mysql);
+  update_users("phase", 3, $db);
   $phase = 3;
 }
 
-$becker_collected = check_for_character('becker', $mysql);
-$danny_collected = check_for_character('danny', $mysql);
+$becker_collected = check_for_character('becker', $db);
+$danny_collected = check_for_character('danny', $db);
 if ($becker_collected && $danny_collected && $phase==3 && maximum_phase() > 3) {
-   update_users("phase", 4, $mysql);
+   update_users("phase", 4, $db);
    $phase = 4;
 }
 
-$matt_collected = check_for_character('matt', $mysql);
+$matt_collected = check_for_character('matt', $db);
 
-$matt_collected = check_for_character('matt', $mysql);
+$matt_collected = check_for_character('matt', $db);
 if ($phase > 3 && !$matt_collected) {
-   $visited = get_value_from_users("new_character", $mysql);
+   $visited = get_value_from_users("new_character", $db);
    if ($visited != 'matt') {
-	add_equipment('EMD', $mysql);
+	add_equipment('EMD', $db);
    }
 }
 
-$ethan_collected = check_for_character('ethan', $mysql);
-$burton_collected = check_for_character('burton', $mysql);
+$ethan_collected = check_for_character('ethan', $db);
+$burton_collected = check_for_character('burton', $db);
 if ($matt_collected && $ethan_collected && $burton_collected && $phase==4 &&  maximum_phase() > 4) {
-   update_users("phase", 5, $mysql);
+   update_users("phase", 5, $db);
    $phase = 5;
 }
 
-$evan_collected = check_for_character('evan', $mysql);
+$evan_collected = check_for_character('evan', $db);
 
 
-      print_item_used(0, $mysql);
-      critter_attack(0, $mysql);
-      print_health($mysql);
-      print_anomaly($mysql);
-      print_wait($mysql);
+      print_item_used(0, $db);
+      critter_attack(0, $db);
+      print_health($db);
+      print_anomaly($db);
+      print_wait($db);
       print "</div>";
-      $has_device = get_value_from_users("has_device", $mysql);
+      $has_device = get_value_from_users("has_device", $db);
 
       $lester_recharges = 0;
       if ($phase > 1 || $has_device) {
@@ -103,22 +104,22 @@ $evan_collected = check_for_character('evan', $mysql);
 	   $lr = default_lester_recharges()*2;
 	}
         if ($d100_roll < $lr) {
-      	 $equip_list = get_value_from_users("equipment", $mysql);
+      	 $equip_list = get_value_from_users("equipment", $db);
 	 $equip_id_array = explode(",", $equip_list);
      	 $random = rand(0, count($equip_id_array) - 1);
-	 $name = get_value_for_equip_id("name", $equip_id_array[$random], $mysql);
-     	 add_equipment($name, $mysql);
-     	 $default_uses = get_value_for_equip_id("default_uses", $equip_id_array[$random], $mysql);
+	 $name = get_value_for_equip_id("name", $equip_id_array[$random], $db);
+     	 add_equipment($name, $db);
+     	 $default_uses = get_value_for_equip_id("default_uses", $equip_id_array[$random], $db);
      	 $lester_recharges = 1;
        } 
      }
 
-      $phase = get_value_from_users("phase", $mysql);
+      $phase = get_value_from_users("phase", $db);
       if ($phase > 1 || $has_device) {
-            update_prev_coordinates($mysql);
+            update_prev_coordinates($db);
       	    print "<div class=device>";
-          print_device($mysql);
-        print_equipment($mysql);
+          print_device($db);
+        print_equipment($db);
          print "</div>";
       }
       print "</div>";
@@ -139,7 +140,7 @@ if ($phase == 1) {
     <p><i>Helen</i></p>
 
 <?php
-    if (get_value_from_users("travel_type", $mysql) == "start") {
+    if (get_value_from_users("travel_type", $db) == "start") {
        anomaly(2);
     }
 
@@ -155,11 +156,11 @@ if ($phase == 1) {
 
   if ($phase == 4) {
      if (!$matt_collected) {
-        update_users("new_character", 'matt', $mysql);
+        update_users("new_character", 'matt', $db);
      	print "<img src=assets/matt.png align=left>";
 
         print "<p>Matt suddenly appears at the ARC.  He says he thinks all the time travelling you have been doing has altered some parts of history and that Ethan and Burton may now be at different locations.  To prove his point he finds Helen's note again and it now reads <i>Go to the Forest of Dean</i>.</p>";
-	add_location_clue(1, $mysql);
+	add_location_clue(1, $db);
      }
   }
 
@@ -177,11 +178,11 @@ if ($lester_recharges && $default_uses < 500) {
 
 if ($phase > 1 || $has_device) {
    print "<p>From here you can get by conventional transport to:<ul>";
-   $accessible = get_present_day_locations($mysql);
+   $accessible = get_present_day_locations($db);
    foreach ($accessible as $by_car) {
         if ($by_car != 1) {
    	      print "<li>";
-     	      print_accessible_location($by_car, $mysql);
+     	      print_accessible_location($by_car, $db);
 	      print "</li>";
 	  }
      }
