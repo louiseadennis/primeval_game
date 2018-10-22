@@ -8,16 +8,14 @@ require_once('utilities.php');
 session_start();
 sessionAuthenticate();
 
-$mysql = mysql_connect($mysql_host, $mysql_user, $mysql_password);
-if (!mysql_select_db($mysql_database))
-  showerror();
+$db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
 
 $uname = $_SESSION["loginUsername"];
-$location = get_location($mysql);
+$location = get_location($db);
 ?>
 <html>
 <head>
-<title>52 Weeks of Primeval - Log Book</title>
+<title>12 Months of Primeval Denial - Log Book</title>
 
 <link rel="stylesheet" href="./styles/default.css" type="text/css">
 </head>
@@ -36,87 +34,41 @@ echo $location
 <h2>Log Book</h2>
 <h3>Device Notes</h3>
 <?php
-$log = get_value_from_users("log", $mysql);
+$log = get_value_from_users("log", $db);
 print "<table>";
-print "<tr><th>Dial</th><th>Three Way Switch</th>";
-$user_phase = get_value_from_users("phase", $mysql);
-if ($user_phase > 2) {
-   print "<th>Second Switch</th>";
-}
-print "<th>Notes</th></tr>";
+print "<tr><th>Key</th><th>Notes</th></tr>";
 if ($log != '') {
    $log_array = explode(":", $log);
    sort ($log_array);
-   $current_dial=500;
-   $current_button1=500;
-   $current_button2=500;
+   $current_button1="Z";
+   $current_button2="Z";
+   $current_button3="Z";
    foreach ($log_array as $entry) {
       $entry_array = explode(',', $entry);
-      $dial = substr($entry_array[0], 1);
-      $button1 = $entry_array[1];
+      $button1 = substr($entry_array[0], 1);
+      $button2 = $entry_array[1];
+      $button3 = $entry_array[2];
       $same_as_previous = 0;
-      $phase_text = '';
-     if ($button1 == 0) {
-      	 $button_p = "A";
-      } else if ($button1 == 1) {
-      	$button_p = "B";
-      } else {
-      	$button_p = "C";
-      }
-      $button2 = $entry_array[2];
+      $text = '';
 
-      if ($button2 == 0) {
-      	 $button2_p = "Off";
-      } else {
-      	 $button2_p = "On";
-      }
-      $phase = $entry_array[3];
-
-      if ($current_dial == $dial && $current_button1 == $button1 && $current_button2 == $button2) {
+      if ($current_button1 == $button1 && $current_button2 == $button2 && $current_button3 == $button3) {
          $same_as_previous = 1;
       } else {
-      	  $current_dial = $dial;
 	  $current_button1 = $button1;
 	  $current_button2 = $button2;
+	  $current_button3 = $button3;
       } 
-      $location_id = get_location_from_coords((int)$dial, (int)$button1, (int)$button2, $mysql);
-      if ($user_phase == 2) {
-            $phase_text = get_value_for_location_id("static_text_p2", $location_id, $mysql);
-      }
+      $location_id = get_location_from_coords($button1, $button2, $button3, $mysql);
 
-      if ($user_phase == 3) {
-            $phase_text = get_value_for_location_id("static_text_p3", $location_id, $mysql);
-      }
+      $text = get_value_for_location_id("text", $location_id, $db);
 
-      if ($user_phase == 4) {
-            $phase_text = get_value_for_location_id("static_text_p4", $location_id, $mysql);
-      }
-
-      if ($user_phase == 5) {
-            $phase_text = get_value_for_location_id("static_text_p5", $location_id, $mysql);
-      }
-
-      if ((is_null($phase_text) || $phase_text == '') & $same_as_previous != 1) {
-            $phase_text = get_value_for_location_id("static_text_p1", $location_id, $mysql);
-      } else if ($same_as_previous != 1) {
-            $initial_phase_text = get_value_for_location_id("static_text_p1", $location_id, $mysql);
-      	    $phase_text = $initial_phase_text . "  " . $phase_text;
-      }
-
-      if (!is_null($phase_text) && $phase_text != '') {
-            print "<tr><td>$dial</td><td>$button_p</td>";
-      	    if ($user_phase > 2) {
-      	       print "<td>$button2_p</td>";
-      	    }
-
-      	    print "<td>$phase_text</td></tr>";
-      }
+      print "<td>$text</td></tr>";
    }
 }
 print "</table>";
 
 print "<h3>Clues</h3>";
-$clues = get_value_from_users("locationclues", $mysql);
+$clues = get_value_from_users("locationclues", $db);
 if (!is_null($clues)) {
    $clue_array = explode(",", $clues);
    print "<ul>";

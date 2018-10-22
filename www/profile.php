@@ -8,16 +8,14 @@ require_once('utilities.php');
 session_start();
 sessionAuthenticate();
 
-$mysql = mysql_connect($mysql_host, $mysql_user, $mysql_password);
-if (!mysql_select_db($mysql_database))
-  showerror();
+$mysql = connect_to_db($mysql_host, $mysql_user, $mysql_password, $mysql_database);
 
 $uname = $_SESSION["loginUsername"];
 $location = get_location($mysql);
 ?>
 <html>
 <head>
-<title>52 Weeks of Primeval -
+<title>12 Months of Primeval Denial -
 <?php
 echo $uname;
 ?>

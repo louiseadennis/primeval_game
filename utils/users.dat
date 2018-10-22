@@ -35,7 +35,6 @@ CREATE TABLE `users` (
   `phase` tinyint(4) NOT NULL DEFAULT '1',
   `equipment` text,
   `has_device` tinyint(4) NOT NULL DEFAULT '0',
-  `has_log` tinyint(4) NOT NULL DEFAULT '0',
   `random_anomalies` tinyint(4) NOT NULL DEFAULT '0',
   `hp` tinyint(4) NOT NULL DEFAULT '20',
   `prev_location` smallint(6) DEFAULT NULL,

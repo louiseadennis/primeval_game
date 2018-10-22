@@ -2,7 +2,7 @@
 require ('./config/accesscontrol.php');
 require ('./config/MySQL.php');
 
-$db = new mysqli($mysql_host, $mysql_user, $mysql_password,$mysql_database);
+$db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
 if ($db -> connect_errno > 0) {
    die('Unable to connect to database [' . $mysql_host . $mysql_user .  $mysql_password . $mysql_database . $db->connect_error . ']');
    }

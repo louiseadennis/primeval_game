@@ -33,6 +33,14 @@ function date_create_from_format( $dformat, $dvalue )
 if( !function_exists("date_create_from_format") )
  DEFINE_date_create_from_format();
 
+function connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database) {
+	 $db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
+    	 if ($db -> connect_errno > 0) {
+       	    die('Unable to connect to database [' . $db->connect_error . ']');
+    	 }
+    	 return $db;
+}
+
 // Stolen from PHP and MySQL by Hugh E. Williams and David Lane
 function showerror($mysql) 
 {
@@ -142,7 +150,7 @@ function get_value_from_users($column, $connection) {
   $sql = "SELECT {$column}  FROM users WHERE name = '{$uname}'";
 
   if (!$result = $connection->query($sql)) 
-      showerror();
+      return 0;
   
   if ($result->num_rows != 1)
       return 0;
@@ -494,11 +502,8 @@ function print_header($connection) {
     print "<div class=header>";
     collect_new_characters($connection);
     print "<a href=profile.php>User Profile</a>";
-    $has_log = get_value_from_users("has_log", $connection);
-    if ($has_log) {
-       print "&nbsp; &nbsp; &nbsp;       <a href=log.php>Log Book</a>";
-    }
-       print "&nbsp; &nbsp; &nbsp;       <a href=logout.php>Log Out</a>";
+    print "&nbsp; &nbsp; &nbsp;       <a href=log.php>Log Book</a>";
+    print "&nbsp; &nbsp; &nbsp;       <a href=logout.php>Log Out</a>";
     print "<hr>";
     print "</div>";
 }
@@ -969,126 +974,119 @@ function fight_event($user_id, $location_id, $connection) {
 function print_device($connection) {
      $h = get_value_from_users("has_device", $connection);
      if ($h == 1) {
-     	   $charge = get_value_from_users("charge", $connection);
-	   $c1 = get_value_from_users("c1_prev", $connection);
-	   $c2 = get_value_from_users("c2_prev", $connection);
-	   $c3 = get_value_from_users("c3_prev", $connection);
+         $charge = get_value_from_users("charge", $connection);
        
-       	   print "<h4>The Device</h4>";
-       	   if (is_null($charge)) {
-       	      $default_charge = default_charge();
-	      update_users("charge", $default_charge, $connection);
-	      $charge = $default_charge;
-           } else {
+         print "<h4>The Device</h4>";
+         if (is_null($charge)) {
+             $default_charge = default_charge();
+             update_users("charge", $default_charge, $connection);
+             $charge = $default_charge;
+         } else {
              $recharge_start = get_value_from_users("recharge_start", $connection);
-	     if (is_null($recharge_start)) {
-	     	$recharge_start = now();
-	     }
+             if (is_null($recharge_start)) {
+                 $recharge_start = now();
+             }
 	     
              $time_difference = check_charge($recharge_start, $connection);
              if ($time_difference > 0) {
-             if ($time_difference + $charge > default_charge()) {
-	     	$charge = default_charge();
-		 update_users("charge", $charge, $connection);
-	     } else {
-	        $charge = $time_difference + $charge;
-		$now = now();
-      	 	update_users("recharge_start", $now, $connection);
-		update_users("charge", $charge, $connection);
+                 if ($time_difference + $charge > default_charge()) {
+                     $charge = default_charge();
+                     update_users("charge", $charge, $connection);
+                 } else {
+                     $charge = $time_difference + $charge;
+                     $now = now();
+                     update_users("recharge_start", $now, $connection);
+                     update_users("charge", $charge, $connection);
+                 }
              }
-            }
-          }
-     print "<p>Charge: " . $charge . "</p>";
-     print "<p><form method=\"POST\" action=\"main.php\">";
-     print "<center><table>";
-     print "<tr><td><select name=\"dial\">";
-     $select0 = "";
-     $select1 = "";
-     $select2 = "";
-     $select3 = "";
-     $select4 = "";
-     $select5 = "";
-     $select6 = "";
-     $select7 = "";
-     $select8 = "";
-     $select9 = "";
-     if ($c1 == 0) {
-     	$select0 = 'selected';
-     } else if ($c1 == 1) {
-     	$select1 = 'selected';
-     } else if ($c1 == 2) {
-     	$select2 = 'selected';
-     } else if ($c1 == 3) {
-     	$select3 = 'selected';
-     } else if ($c1 == 4) {
-     	$select4 = 'selected';
-     } else if ($c1 == 5) {
-     	$select5 = 'selected';
-     } else if ($c1 == 6) {
-     	$select6 = 'selected';
-     } else if ($c1 == 7) {
-     	$select7 = 'selected';
-     } else if ($c1 == 8) {
-     	$select8 = 'selected';
-     } else {
-     	$select9 = 'selected';
-     }
-     print "<option $select0 value=\"0\">0</option>";
-     print "<option $select1 value=\"1\">1</option>";
-     print "<option $select2 value=\"2\">2</option>";
-     print "<option $select3 value=\"3\">3</option>";
-     print "<option $select4 value=\"4\">4</option>";
-     print "<option $select5 value=\"5\">5</option>";
-     print "<option $select6 value=\"6\">6</option>";
-     print "<option $select7 value=\"7\">7</option>";
-     print "<option $select8 value=\"8\">8</option>";
-     print "<option $select9 value=\"9\">9</option>";
-     print "</select> &nbsp; &nbsp; </td>";
-     print "<td>";
-     $checkedA = "";
-     $checkedB = "";
-     $checkedC = "";
-     if ($c2 == 0 ) {
-     	$checkedA = 'checked';
-     } else if ($c2 == 1) {
-     	$checkedB = 'checked';
-     } else {
-        $checkedC = 'checked';
-     }
-     print "<input $checkedA type=\"radio\" name=\"button1\" value=\"0\">A<br>";
-     print "<input $checkedB type=\"radio\" name=\"button1\" value=\"1\">B<br>";
-     print "<input $checkedC type=\"radio\" name=\"button1\" value=\"2\">C&nbsp; &nbsp;</td>";
-     print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
-     print "<input type=\"hidden\" name=\"travel_type\" value=\"device\">";
-     $phase = get_value_from_users("phase", $connection);
-     if ($phase < 3) {
-     	print "<input type=\"hidden\" name=\"button2\" value=\"0\"></tr></table></center></p>";
-     } else {
-     print "<td>";
-         if ($c3) {
-     	   print "<input type=\"radio\" name=\"button2\" value=\"0\">Off<br>";
-     	   print "<input checked type=\"radio\" name=\"button2\" value=\"1\">On<br></td></tr></table></center></p>";
-	 } else {
-     	   print "<input checked type=\"radio\" name=\"button2\" value=\"0\">Off<br>";
-     	   print "<input type=\"radio\" name=\"button2\" value=\"1\">On<br></td></tr></table></center></p>";
-	}
-     }
-     if ($charge > 0) {
-         $hp = get_value_from_users("hp", $connection);
-         $healing_start = get_value_from_users("healing_start", $connection);
-         if (!is_null($healing_start)) {
-            $heals = check_healing($healing_start, $connection);
          }
-         if ($hp > 0 ||  $heals > 0) {
-	    print "<input type=\"submit\" value=\"Activate Device\">";
-	 } else {
-	    print "<p>You are unconscious and unable to use the device.</p>";
-	 }
-     } else {
-        print "<p>The device is out of charge.  It recharges at 1 unit per hour.  You will need to wait.</p>";
+         print "<p>Charge: " . $charge . "</p>";
+         print "<p><form method=\"POST\" action=\"main.php\">";
+         print "<center><table>";
+         print "<tr>";
+         print_dial(1, $connection);
+         print_dial(2, $connection);
+         print_dial(3, $connection);
+         print "</tr></table></center>";
+     
+         if ($charge > 0) {
+             $hp = get_value_from_users("hp", $connection);
+             $healing_start = get_value_from_users("healing_start", $connection);
+             if (!is_null($healing_start)) {
+                 $heals = check_healing($healing_start, $connection);
+             }
+             if ($hp > 0 ||  $heals > 0) {
+                 print "<input type=\"submit\" value=\"Activate Device\">";
+             } else {
+                 print "<p>You are unconscious and unable to use the device.</p>";
+             }
+         } else {
+             print "<p>The device is out of charge.  It recharges at 1 unit per hour.  You will need to wait.</p>";
+         }
+         print "</form>";
      }
-     print "</form>";
-     }
+}
+    
+function print_dial($dial, $connection) {
+    $c1 = get_value_from_users("c$dial_prev", $connection);
+    print "<td><select name=\"dial$dial\">";
+    $select0 = "";
+    $select1 = "";
+    $select2 = "";
+    $select3 = "";
+    $select4 = "";
+    $select5 = "";
+    $select6 = "";
+    $select7 = "";
+    $select8 = "";
+    $select9 = "";
+    if ($c1 == 0) {
+        $select0 = 'selected';
+    } else if ($c1 == 1) {
+        $select1 = 'selected';
+    } else if ($c1 == 2) {
+        $select2 = 'selected';
+    } else if ($c1 == 3) {
+        $select3 = 'selected';
+    } else if ($c1 == 4) {
+        $select4 = 'selected';
+    } else if ($c1 == 5) {
+        $select5 = 'selected';
+    } else if ($c1 == 6) {
+        $select6 = 'selected';
+    } else if ($c1 == 7) {
+        $select7 = 'selected';
+    } else if ($c1 == 8) {
+        $select8 = 'selected';
+    } else {
+        $select9 = 'selected';
+    }
+    if ($dial == 1 || $dial == 3) {
+        print "<option $select0 value=\"A\">A</option>";
+        print "<option $select1 value=\"B\">B</option>";
+        print "<option $select2 value=\"C\">C</option>";
+        print "<option $select3 value=\"D\">D</option>";
+        print "<option $select4 value=\"E\">E</option>";
+        print "<option $select5 value=\"F\">F</option>";
+        print "<option $select6 value=\"G\">G</option>";
+        print "<option $select7 value=\"H\">H</option>";
+        print "<option $select8 value=\"I\">I</option>";
+        print "<option $select9 value=\"J\">J</option>";
+    } else if ($dial == 2) {
+        print "<option $select0 value=\"K\">K</option>";
+        print "<option $select1 value=\"L\">L</option>";
+        print "<option $select2 value=\"M\">M</option>";
+        print "<option $select3 value=\"N\">N</option>";
+        print "<option $select4 value=\"O\">O</option>";
+        print "<option $select5 value=\"P\">P</option>";
+        print "<option $select6 value=\"Q\">Q</option>";
+        print "<option $select7 value=\"R\">R</option>";
+        print "<option $select8 value=\"S\">S</option>";
+        print "<option $select9 value=\"T\">T</option>";
+
+    }
+    print "</select> &nbsp; &nbsp; </td>";
+    print "<td>";
 }
 
 function use_device($dial, $button1, $button2, $connection) {
@@ -1205,8 +1203,8 @@ function print_standard_start($mysql) {
             update_prev_coordinates($mysql);
       	    print "<div class=device>";
           print_device($mysql);
-        print_equipment($mysql);
-         print "</div>";
+          print_equipment($mysql);
+          print "</div>";
       }
       print "</div>";
       
