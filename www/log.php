@@ -47,21 +47,22 @@ if ($log != '') {
       $entry_array = explode(',', $entry);
       $button1 = substr($entry_array[0], 1);
       $button2 = $entry_array[1];
-      $button3 = $entry_array[2];
+      $button3 = substr($entry_array[2], 0, -1);
       $same_as_previous = 0;
       $text = '';
 
       if ($current_button1 == $button1 && $current_button2 == $button2 && $current_button3 == $button3) {
          $same_as_previous = 1;
       } else {
-	  $current_button1 = $button1;
-	  $current_button2 = $button2;
-	  $current_button3 = $button3;
+          $current_button1 = $button1;
+          $current_button2 = $button2;
+          $current_button3 = $button3;
       } 
-      $location_id = get_location_from_coords($button1, $button2, $button3, $mysql);
+      $location_id = get_location_from_coords($button1, $button2, $button3, $db);
 
       $text = get_value_for_location_id("text", $location_id, $db);
 
+       print "<td>$current_button1, $current_button2, $current_button3</td>";
       print "<td>$text</td></tr>";
    }
 }

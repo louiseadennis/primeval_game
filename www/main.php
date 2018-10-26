@@ -12,7 +12,7 @@ $db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
 if ($db -> connect_errno > 0) {
    die('Unable to connect to database [' . $mysql_host . $mysql_user .  $mysql_password . $mysql_database . $db->connect_error . ']');
    }
-
+    
 $last_action = mysqlclean($_POST, "last_action", 10, $db);
 
 
@@ -54,10 +54,10 @@ if ($last_action == "travel") {
 update_users("last_action", $last_action, $db);
 
 if ($travel_type == "device") {
-   $dial = mysqlclean($_POST, "dial", 10, $db);
-   $button1 = mysqlclean($_POST, "button1", 10, $db);
-   $button2 =$_POST["button2"];
-   $location_id = use_device($dial, $button1, $button2, $db);
+   $dial1 = mysqlclean($_POST, "dial1", 10, $db);
+   $dial2 = mysqlclean($_POST, "dial2", 10, $db);
+   $dial3 = mysqlclean($_POST, "dial3", 10, $db);
+   $location_id = use_device($dial1, $dial2, $dial3, $db);
 }
 
 

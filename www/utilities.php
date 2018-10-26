@@ -166,7 +166,7 @@ function update_users($column, $value, $connection) {
     $uname = $_SESSION["loginUsername"];
     $sql = "UPDATE users SET {$column}='{$value}' WHERE name='$uname'";
     if (!$connection->query($sql)) {
-       showerror();
+       showerror($connection);
     }
     return 1;
 }
@@ -1002,7 +1002,9 @@ function print_device($connection) {
          }
          print "<p>Charge: " . $charge . "</p>";
          print "<p><form method=\"POST\" action=\"main.php\">";
-         print "<center><table>";
+         print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+         print "<input type=\"hidden\" name=\"travel_type\" value=\"device\">";
+        print "<center><table>";
          print "<tr>";
          print_dial(1, $connection);
          print_dial(2, $connection);
@@ -1035,11 +1037,6 @@ function print_dial($dial, $connection) {
     $select2 = "";
     $select3 = "";
     $select4 = "";
-    $select5 = "";
-    $select6 = "";
-    $select7 = "";
-    $select8 = "";
-    $select9 = "";
     if ($c1 == 0) {
         $select0 = 'selected';
     } else if ($c1 == 1) {
@@ -1048,52 +1045,41 @@ function print_dial($dial, $connection) {
         $select2 = 'selected';
     } else if ($c1 == 3) {
         $select3 = 'selected';
-    } else if ($c1 == 4) {
+    } else if ($c1 == 4)    {
         $select4 = 'selected';
-    } else if ($c1 == 5) {
-        $select5 = 'selected';
-    } else if ($c1 == 6) {
-        $select6 = 'selected';
-    } else if ($c1 == 7) {
-        $select7 = 'selected';
-    } else if ($c1 == 8) {
-        $select8 = 'selected';
     } else {
-        $select9 = 'selected';
+        $select5 = 'selected';
     }
-    if ($dial == 1 || $dial == 3) {
+    if ($dial == 1 ) {
         print "<option $select0 value=\"A\">A</option>";
         print "<option $select1 value=\"B\">B</option>";
         print "<option $select2 value=\"C\">C</option>";
         print "<option $select3 value=\"D\">D</option>";
         print "<option $select4 value=\"E\">E</option>";
         print "<option $select5 value=\"F\">F</option>";
-        print "<option $select6 value=\"G\">G</option>";
-        print "<option $select7 value=\"H\">H</option>";
-        print "<option $select8 value=\"I\">I</option>";
-        print "<option $select9 value=\"J\">J</option>";
     } else if ($dial == 2) {
-        print "<option $select0 value=\"K\">K</option>";
-        print "<option $select1 value=\"L\">L</option>";
-        print "<option $select2 value=\"M\">M</option>";
-        print "<option $select3 value=\"N\">N</option>";
-        print "<option $select4 value=\"O\">O</option>";
-        print "<option $select5 value=\"P\">P</option>";
-        print "<option $select6 value=\"Q\">Q</option>";
-        print "<option $select7 value=\"R\">R</option>";
-        print "<option $select8 value=\"S\">S</option>";
-        print "<option $select9 value=\"T\">T</option>";
-
+        print "<option $select0 value=\"A\">A</option>";
+        print "<option $select1 value=\"I\">I</option>";
+        print "<option $select2 value=\"N\">N</option>";
+        print "<option $select3 value=\"O\">O</option>";
+        print "<option $select4 value=\"R\">R</option>";
+        print "<option $select5 value=\"T\">T</option>";
+    } else  {
+        print "<option $select0 value=\"C\">C</option>";
+        print "<option $select1 value=\"D\">D</option>";
+        print "<option $select2 value=\"E\">E</option>";
+        print "<option $select3 value=\"G\">G</option>";
+        print "<option $select4 value=\"S\">S</option>";
+        print "<option $select5 value=\"T\">T</option>";
     }
     print "</select> &nbsp; &nbsp; </td>";
     print "<td>";
 }
 
-function use_device($dial, $button1, $button2, $connection) {
-      $location_id = get_location_from_coords($dial, $button1, $button2, $connection);
-      $phase = get_value_from_users("phase", $connection);
+function use_device($dial1, $dial2, $dial3, $connection) {
+      $location_id = get_location_from_coords($dial1, $dial2, $dial3, $connection);
       $log = get_value_from_users("log", $connection);
-      $log_entry = "(" . $dial . "," . $button1 . "," . $button2 . "," . $phase . ")";
+      $log_entry = "(" . $dial1 . "," . $dial2 . "," . $dial3 .  ")";
       $log_array = explode(":", $log);
       if (!in_array($log_entry, $log_array)) {
       	 if ($log != '') {
@@ -1171,11 +1157,11 @@ function now() {
 	 return $now;
 }
 
-function get_location_from_coords($dial, $button1, $button2, $connection) {
-  $sql = "SELECT location_id FROM locations WHERE tm_coord_1 = {$dial} AND tm_coord_2 = {$button1} AND tm_coord_3 = {$button2}";
+function get_location_from_coords($dial1, $dial2, $dial3, $connection) {
+    $sql = "SELECT location_id FROM locations WHERE tm_coord_1 = '{$dial1}' AND tm_coord_2 = '{$dial2}' AND tm_coord_3 = '{$dial3}'";
 
-  if (!$result = $connection->query($sql)) 
-      showerror();
+   if (!$result = $connection->query($sql))
+      showerror($connection);
   
   if ($result->num_rows != 1)
       return 0;
@@ -1200,8 +1186,8 @@ function print_standard_start($mysql) {
       $has_device = get_value_from_users("has_device", $mysql);
       $phase = get_value_from_users("phase", $mysql);
       if ($phase > 1 || $has_device) {
-            update_prev_coordinates($mysql);
-      	    print "<div class=device>";
+          update_prev_coordinates($mysql);
+          print "<div class=device>";
           print_device($mysql);
           print_equipment($mysql);
           print "</div>";
@@ -1214,12 +1200,12 @@ function update_prev_coordinates($mysql) {
       $travel_type = get_value_from_users("travel_type", $mysql);
       if ($travel_type == 'device') {
       	 $location_id = get_location($mysql);
-	 $c1 = get_value_for_location_id("tm_coord_1", $location_id, $mysql);
-	 update_users("c1_prev", $c1, $mysql);
-	 $c2 = get_value_for_location_id("tm_coord_2", $location_id, $mysql);
-	 update_users("c2_prev", $c2, $mysql);
-	 $c3 = get_value_for_location_id("tm_coord_3", $location_id, $mysql);
-	 update_users("c3_prev", $c3, $mysql);
+         $c1 = get_value_for_location_id("tm_coord_1", $location_id, $mysql);
+         update_users("c1_prev", $c1, $mysql);
+         $c2 = get_value_for_location_id("tm_coord_2", $location_id, $mysql);
+         update_users("c2_prev", $c2, $mysql);
+         $c3 = get_value_for_location_id("tm_coord_3", $location_id, $mysql);
+         update_users("c3_prev", $c3, $mysql);
       }
 }
 

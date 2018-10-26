@@ -50,9 +50,9 @@ CREATE TABLE `users` (
   `leek_critter` tinyint(4) DEFAULT '1',
   `leek_critter_hp` tinyint(4) DEFAULT NULL,
   `locationclues` text,
-  `c1_prev` smallint(6) DEFAULT NULL,
-  `c2_prev` smallint(6) DEFAULT NULL,
-  `c3_prev` smallint(6) DEFAULT NULL,
+  `c1_prev` char(1) DEFAULT NULL,
+  `c2_prev` char(1) DEFAULT NULL,
+  `c3_prev` char(1) DEFAULT NULL,
   `critter_id_list` text,
   `needed_boat` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`user_id`)
