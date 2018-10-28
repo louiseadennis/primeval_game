@@ -24,8 +24,8 @@ body {
 	font-size: 1em;
 	line-height: 1.3em;
 	color: #333333;
-	float: right;
 	display: inline-block;
+	float: center;
     padding: 5px;
 }
 

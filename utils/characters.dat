@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `characters`;
 CREATE TABLE `characters` (
   `char_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text,
+  `gender` int(11) NOT NULL DEFAULT 1,
   PRIMARY KEY (`char_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -35,7 +36,7 @@ CREATE TABLE `characters` (
 
 LOCK TABLES `characters` WRITE;
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
-INSERT INTO `characters` VALUES (1,'stephen'),(2,'finn'),(3,'nick'),(4,'ross'),(5,'ditzy'),(6,'ryan'),(7,'fiver'),(8,'lester'),(9,'lyle'),(10,'connor'),(11,'matt Rees'),(12,'leek'),(13,'blade'),(14,'becker'),(15,'wilder'),(16,'captain Ross'),(17,'danny'),(18,'matt'),(19,'rex'),(20,'ethan'),(21,'sid'),(22,'burton'),(23,'evan'),(24,'colonel Hall'),(25,'preston'),(26,'Mac'),(27,'howard Kanan'),(28,'leeds'),(29,'hamza Sayed'),(30,'monty'),(31,'palliere'),(32,'stringer'),(33,'major Douglas'),(34,'duncan'),(35,'kermit'),(36,'alex and Marcus');
+INSERT INTO `characters` VALUES (1,'stephen', 1),(2,'finn',1),(3,'nick',1),(4,'ross',1),(5,'ditzy',1),(6,'ryan',1),(7,'fiver',1),(8,'lester',1),(9,'lyle',1),(10,'connor',1),(11,'matt Rees',1),(12,'leek',1),(13,'blade',1),(14,'becker',1),(15,'wilder',1),(16,'captain Ross',1),(17,'danny',1),(18,'matt',1),(19,'rex',1),(20,'ethan',1),(21,'sid',1),(22,'burton',1),(23,'evan',1),(24,'colonel Hall',1),(25,'preston',1),(26,'Mac',1),(27,'howard Kanan',1),(28,'leeds',1),(29,'hamza Sayed',1),(30,'monty',1),(31,'palliere',1),(32,'stringer',1),(33,'major Douglas',1),(34,'duncan',1),(35,'kermit',1),(36,'alex and Marcus',1),(37,'claudia',2);
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

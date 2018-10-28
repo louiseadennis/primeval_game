@@ -36,7 +36,7 @@ echo $location
 <?php
 $log = get_value_from_users("log", $db);
 print "<table>";
-print "<tr><th>Key</th><th>Notes</th></tr>";
+print "<tr><th>Key</th><th>Notes</th><th>Era</th></tr>";
 if ($log != '') {
    $log_array = explode(":", $log);
    sort ($log_array);
@@ -63,7 +63,9 @@ if ($log != '') {
       $text = get_value_for_location_id("text", $location_id, $db);
 
        print "<td>$current_button1, $current_button2, $current_button3</td>";
-      print "<td>$text</td></tr>";
+       print "<td>$text</td>";
+       $era = get_value_for_location_id("era", $location_id, $db);
+       print "<td>$era</td></tr>";
    }
 }
 print "</table>";
@@ -74,8 +76,11 @@ if (!is_null($clues)) {
    $clue_array = explode(",", $clues);
    print "<ul>";
    foreach ($clue_array as $clue_id) {
-   	   $clue = get_value_for_location_id("clue", $clue_id, $mysql);
-	   print "<li>$clue</li>";
+   	   $clue = get_value_for_location_id("clue", $clue_id, $db);
+       $d1 = get_value_for_location_id("tm_coord_1", $clue_id, $db);
+       $d2 = get_value_for_location_id("tm_coord_2", $clue_id, $db);
+       $d3 = get_value_for_location_id("tm_coord_3", $clue_id, $db);
+	   print "<li>$clue ($d1, $d2, $d3)</li>";
    }
    print "</ul>";
 }

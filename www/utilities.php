@@ -296,7 +296,7 @@ function get_value_for_name_from($column, $table, $name, $connection) {
   $sql = "SELECT {$column} FROM {$table} WHERE name = '{$name}'";
 
   if (!$result = $connection->query($sql)) 
-      showerror();
+      showerror($connection);
   
   if ($result->num_rows != 1)
       return 0;
@@ -1273,31 +1273,37 @@ function print_health($mysql) {
 function print_character_joined($connection) {
      $last_action = get_value_from_users("last_action", $connection);
      if ($last_action == "travel") {
-     	$new_character = get_value_from_users("new_character", $connection);
-	if ($new_character != '') {
-   	   $char_id_list = get_value_from_users("char_id_list", $connection);
-	   $char_id = get_value_for_name_from("char_id", "characters", $new_character, $connection);
-   	   if ($char_id_list != 0 ) {
-	      $new_char_id_list = $char_id_list . "," . $char_id;
-	      update_users("new_character", '', $connection);
-	      update_users("char_id_list", $new_char_id_list, $connection);
-           } else {
-	      $char_id_array = explode(",", $char_id_list);
-	      if (!in_array($char_id, $char_id_array)) {
-	      	      update_users("new_character", '', $connection);
-		      update_users("char_id_list", $char_id, $connection);
-	      }
-	   }
-	   $ucchar = ucfirst($new_character);
-	   print "<p>$ucchar has joined you on your travels.  He is stored in your user profile.</o>";	   
-	}
+         $new_character = get_value_from_users("new_character", $connection);
+         if ($new_character != '') {
+             $char_id_list = get_value_from_users("char_id_list", $connection);
+             $char_id = get_value_for_name_from("char_id", "characters", $new_character, $connection);
+             if ($char_id_list != 0 ) {
+                 $new_char_id_list = $char_id_list . "," . $char_id;
+                 update_users("new_character", '', $connection);
+                 update_users("char_id_list", $new_char_id_list, $connection);
+             } else {
+                 $char_id_array = explode(",", $char_id_list);
+                 if (!in_array($char_id, $char_id_array)) {
+                     update_users("new_character", '', $connection);
+                     update_users("char_id_list", $char_id, $connection);
+                 }
+             }
+             $ucchar = ucfirst($new_character);
+             $sex = get_value_for_name_from("gender", "characters", $new_character, $connection);
+             $pronoun = "He";
+             if ($sex == 2) {
+                 $pronoun = "She";
+             }
+        
+             print "<p>$ucchar has joined you on your travels.  $pronoun is stored in your user profile.</o>";
+         }
      }
 }
 
 function print_equipment($connection) {
    $equip_id_list = get_value_from_users("equipment", $connection);
    $uses_list = get_value_from_users("uses", $connection);
-   print "<div class=equipment>";
+   print "<center><div class=equipment>";
    if (! is_null($equip_id_list) && $equip_id_list != "") {
       print "<h2>Equipment</h2>";
       $hp = get_value_from_users("hp", $connection);
@@ -1334,7 +1340,7 @@ function print_equipment($connection) {
       	 print "<p>You are unconscious and unable to use your equipment.</p>";
       }
    }
-   print "</div>";
+   print "</div></center>";
 }
 
 function print_item_used($leek, $connection) {

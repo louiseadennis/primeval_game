@@ -8,16 +8,16 @@ require_once('utilities.php');
 session_start();
 sessionAuthenticate();
 
-$mysql = connect_to_db($mysql_host, $mysql_user, $mysql_password, $mysql_database);
+$db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
 
 $uname = $_SESSION["loginUsername"];
-$location = get_location($mysql);
+$location = get_location($db);
 ?>
 <html>
 <head>
 <title>12 Months of Primeval Denial -
 <?php
-echo $uname;
+    echo $uname;
 ?>
  Profile</title>
 
@@ -45,14 +45,14 @@ echo $location
 </p>
 
 <?php
-$char_id_list = get_value_from_users("char_id_list", $mysql);
+$char_id_list = get_value_from_users("char_id_list", $db);
 if ($char_id_list != '') {
    print "<h2>Characters</h2>";
    print "<table>";
    $char_id_array = explode(",", $char_id_list);
    $i = 0;
    foreach ($char_id_array as $char_id) {
-      $char_name = get_value_for_char_id("name", $char_id, $mysql);
+      $char_name = get_value_for_char_id("name", $char_id, $db);
       $uchar = ucfirst($char_name);
       if ($i == 0) {
       	 print "<tr>";
@@ -71,26 +71,26 @@ if ($char_id_list != '') {
 
 print "<h2>Creatures Encountered</h2>";
 print "<p>Hover over a square for a clue where to find the critter.</p>";
-$critter_id_list = get_value_from_users("critter_id_list", $mysql);
+$critter_id_list = get_value_from_users("critter_id_list", $db);
 $critter_id_array = explode(",", $critter_id_list);
 print "<table>";
 $i = 0;
 $j = 1;
-while ($j <= critter_number($mysql)) {
+while ($j <= critter_number($db)) {
     if ($i == 0) {
     	 print "<tr>";
     }
     if (in_array($j, $critter_id_array)) {
-        $icon = get_value_for_critter_id("icon", $j, $mysql);
+        $icon = get_value_for_critter_id("icon", $j, $db);
     } else {
         $icon = 'assets/unknown_critter.png';
     }
-    $era = get_value_for_critter_id("era", $j, $mysql);
+    $era = get_value_for_critter_id("era", $j, $db);
 
     if (!is_null($icon)) {
         print "<td><img src=$icon title=\"$era\"></td>";
     } else {
-        $critter_name = get_value_for_critter_id("name", $j, $mysql);
+        $critter_name = get_value_for_critter_id("name", $j, $db);
 	print "<td>$critter_name<br>Sorry no icon!</td>";
     }
     if ($i == 7) {
