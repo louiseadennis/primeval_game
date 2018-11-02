@@ -31,6 +31,24 @@ print_standard_start($db);
 
 <p>Whiteness surrounds you in all directions.</p>
 
+<?php
+    print "<p>You seem to have no option but to walk<ul>";
+    print "<li>";
+    print_accessible_location_foot(218, $db);
+    print "</li><li>";
+    print_accessible_location_foot(219, $db);
+    print "</li><li>";
+    print_accessible_location_foot(220, $db);
+    print "</li><li>";
+    print_accessible_location_foot(221, $db);
+    print "</li><li>";
+    print_accessible_location_foot(222, $db);
+    print "</li><li>";
+    print_accessible_location_foot(223, $db);
+    print "</li>";
+    print "</ul></p>";
+    
+?>
 </div>
 </body>
 </html>

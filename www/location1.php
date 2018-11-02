@@ -65,7 +65,7 @@
 <ol>
 <li>Major Operating System in the 1980s and early 1990s.</li>
 <li>You should revERSe.</li>
-<li>You should revERSe.</li>
+<li>The Democratic Republic of Congo.</li>
 </ol>
 </i></p>
 <?php

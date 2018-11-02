@@ -535,6 +535,18 @@ function print_accessible_location($location_id, $mysql) {
 	 print "</form>";
 	 print "</p>";
 }
+    
+    function print_accessible_location_foot($location_id, $mysql) {
+        print "<p><form method=\"POST\" action=\"main.php\">";
+        print "<input type=\"hidden\" name=\"location\" value=\"" . $location_id . "\">";
+        print "<input type=\"hidden\" name=\"travel_type\" value=\"foot\">";
+        print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+        $name = get_value_for_location_id("name", $location_id, $mysql);
+        print "<input type=\"submit\" value=\"$name\">";
+        print "</form>";
+        print "</p>";
+    }
+
 
 function get_location($connection) {
     return get_value_from_users("location_id", $connection);
@@ -768,7 +780,7 @@ function create_new_fight_event($critter_id, $connection) {
          $default_hp = get_value_for_critter_id("hp", $critter_id, $connection);
 	 $sql = "INSERT INTO events (user_id, location_id, fight, critter, critter_hp, resolved) values ('$user_id', $location_id, 1, $critter_id, $default_hp, 0)";
 	 if (!$connection->query($sql))
-	    showerror();
+	    showerror($connection);
 }
 
 function create_anomaly_junction($connection) {
@@ -810,24 +822,25 @@ function junction_anomaly_set($anomaly, $connection) {
 }
 
 function critter_attack($leek, $connection) {
-         $location_id = get_value_from_users("location_id", $connection);
-         $hp = get_value_from_users("hp", $connection);
-	 $critter_hp=1;
+    $location_id = get_value_from_users("location_id", $connection);
+    $hp = get_value_from_users("hp", $connection);
+    $critter_hp=1;
+    
+    $fight_just_done = 0;
+    if ($leek) {
+        $leek_critter = get_value_from_users("leek_critter", $connection);
+            if ($leek_critter < 4) {
+                $fight = 1;
+            }
+    } else {
+        $fight = fight($connection);
+    }
+    
 
-         $fight_just_done = 0;
-	 if ($leek) {
- 	      $leek_critter = get_value_from_users("leek_critter", $connection);
-	      if ($leek_critter < 4) {
-	       	  $fight = 1;
-	      }
-	 } else {
-	     $fight = fight($connection);
-	 }
+    $unresolved_event = unresolved_event($connection);
 
-	 $unresolved_event = unresolved_event($connection);
-
-	 if ($unresolved_event) {
-	    $event_id = get_unresolved_event_id($connection);
+    if ($unresolved_event) {
+        $event_id = get_unresolved_event_id($connection);
 	    if ($hp <= 0) {
 	       update_event($event_id, "fight", 0, $connection);
 	       update_event($event_id, "resolved", 1, $connection);
@@ -838,29 +851,31 @@ function critter_attack($leek, $connection) {
 	 } else {
 	    $critter_stunned = 0;
 	 }
+    
 
-	 if (!$unresolved_event && !$leek && !$fight_just_done && $hp > 0) {
-	    $fight_chance = get_value_for_location_id("fight_chance", $location_id, $connection);
+    if (!$unresolved_event && !$leek && !$fight_just_done && $hp > 0) {
+        $fight_chance = get_value_for_location_id("fight_chance", $location_id, $connection);
+ 
 	    if ($fight_chance > 0) {
 	       $dice = rand(0,100);
 	       if ($dice < $fight_chance) {
-	       	  $fight = 1;
-         	  $critter_id = get_a_critter($location_id, $connection);
-		  create_new_fight_event($critter_id, $connection);
-                  $event_id = get_unresolved_event_id($connection);
+               $fight = 1;
+               $critter_id = get_a_critter($location_id, $connection);
+               create_new_fight_event($critter_id, $connection);
+               $event_id = get_unresolved_event_id($connection);
 	       }
 	    }
-	 } 
-
+	 }
+ 
 	 if ($fight) {
-	         if ($leek) {
+         if ($leek) {
  	 	    $critter_id = leek_critter_id($leek_critter);
 		    $critter_hp = get_value_from_users("leek_critter_hp", $connection);
 		 } else {
  	 	   $critter_id = get_value_for_event_id("critter", $event_id, $connection);
 		   $critter_hp = get_value_for_event_id("critter_hp", $event_id, $connection);
 		 }
-          	 $critter_name = get_value_for_critter_id("name", $critter_id, $connection);
+         $critter_name = get_value_for_critter_id("name", $critter_id, $connection);
 
 		 if ($critter_hp > 0 && $critter_stunned == 0) {
 		    $critter_icon = get_value_for_critter_id("icon", $critter_id, $connection);
@@ -907,8 +922,8 @@ function critter_attack($leek, $connection) {
 	      	 print "<p>But it seems to be waking up.</p>";
 		 update_event($event_id, "fight", 1, $connection);
 	      }
-	 } 
-} 
+	 }
+}
 
 
 function player_attack($leek, $weapon_id, $connection) {
@@ -1053,9 +1068,16 @@ function print_device($connection) {
          print "<input type=\"hidden\" name=\"travel_type\" value=\"device\">";
         print "<center><table>";
          print "<tr>";
-         print_dial(1, $connection);
-         print_dial(2, $connection);
-         print_dial(3, $connection);
+         $coord1 = get_value_from_users("c1_prev", $connection);
+         if ($coord1 != 'X') {
+             print_dial(1, $connection);
+             print_dial(2, $connection);
+             print_dial(3, $connection);
+         } else {
+             print_z_dial(1, $connection);
+             print_z_dial(2, $connection);
+             print_z_dial(3, $connection);
+         }
          print "</tr></table></center>";
      
          if ($charge > 0) {
@@ -1161,6 +1183,18 @@ function print_dial($dial, $connection) {
         print "<option $select4 value=\"S\">S</option>";
         print "<option $select5 value=\"T\">T</option>";
     }
+    print "</select> &nbsp; &nbsp; </td>";
+    print "<td>";
+}
+    
+    
+function print_z_dial($dial, $connection) {
+    print "<td><select name=\"dial$dial\">";
+    $select0 = "";
+ 
+    $select0 = 'selected';
+
+    print "<option $select0 value=\"X\"> </option>";
     print "</select> &nbsp; &nbsp; </td>";
     print "<td>";
 }
@@ -1273,7 +1307,9 @@ function print_standard_start($mysql) {
       print_item_used(0, $mysql);
       critter_attack(0, $mysql);
       print_health($mysql);
-      print_anomaly($mysql);
+        if (! in_land_of_fiction($mysql)) {
+            print_anomaly($mysql);
+        }
       print_wait($mysql);
       print "</div>";
       $has_device = get_value_from_users("has_device", $mysql);
@@ -1287,6 +1323,14 @@ function print_standard_start($mysql) {
       }
       print "</div>";
       
+}
+    
+function in_land_of_fiction($mysql) {
+    $f = get_value_for_location_id("tm_coord_2", $location_id, $mysql);
+    if ($f == 'Z') {
+        return true;
+    }
+    return false;
 }
 
 function update_prev_coordinates($mysql) {

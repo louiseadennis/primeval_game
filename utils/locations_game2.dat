@@ -49,7 +49,7 @@ CREATE TABLE `locations` (
 
 LOCK TABLES `locations` WRITE;
 /*!40000 ALTER TABLE `locations` DISABLE KEYS */;
-INSERT INTO `locations` VALUES (1,'A','R','C','The ARC.',30,0,NULL,0,'',0,0,1,'The Arc','Five clues: 1. Major Operating System in the 1980s and early 1990s. 2. You should revERSe.','Holocene');
+INSERT INTO `locations` VALUES (1,'A','R','C','The ARC.',30,0,NULL,0,'',0,0,1,'The Arc','Five clues: 1. Major Operating System in the 1980s and early 1990s. 2. You should revERSe. 3. The Democratic Republic of Congo.','Holocene');
 INSERT INTO `locations` VALUES (2, 'A','A','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (3, 'A','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (4, 'A','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
@@ -88,7 +88,7 @@ INSERT INTO `locations` VALUES (36, 'A','T','T','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (37, 'B','A','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (38, 'B','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (39, 'B','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (40, 'B','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (40, 'B','A','G','An empty plain with no life.',5,0,NULL,0,'',0,0,0,'A Desolate Rocky Plain','No Clue Yet','Pre-Cambrian');
 INSERT INTO `locations` VALUES (41, 'B','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (42, 'B','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (43, 'B','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
@@ -181,14 +181,14 @@ INSERT INTO `locations` VALUES (129, 'D','O','E','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (130, 'D','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (131, 'D','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','I start and end in time but not in clock, my middle is in rune and also in rock','No Era Yet');
 INSERT INTO `locations` VALUES (132, 'D','O','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (133, 'D','R','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (133, 'D','R','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Should be up an arse','No Era Yet');
 INSERT INTO `locations` VALUES (134, 'D','R','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (135, 'D','R','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (136, 'D','R','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (137, 'D','R','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (138, 'D','R','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (139, 'D','T','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (140, 'D','T','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (140, 'D','T','D','A coniferous forest and a Stegosaurus',5,0,'34',0,'',0,0,0,'A forest of seed ferns.','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (141, 'D','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (142, 'D','T','G','Abby was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','A reverse trip to Goa','No Era Yet');
 INSERT INTO `locations` VALUES (143, 'D','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
@@ -265,7 +265,13 @@ INSERT INTO `locations` VALUES (213, 'F','T','E','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (214, 'F','T','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (215, 'F','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (216, 'F','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (217, 'Z','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Gateway to the Land of Fiction','No Clue Yet','The Land of Fiction');
+INSERT INTO `locations` VALUES (217, 'Z','Z','Z','A White Void',0,0,'33',0,'',0,20,0,'Gateway to the Land of Fiction','No Clue Yet','The Land of Fiction');
+INSERT INTO `locations` VALUES (218, 'A','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Forwards','No Clue Yet','The Land of Fiction');
+INSERT INTO `locations` VALUES (219, 'B','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Backwards','No Clue Yet','The Land of Fiction');
+INSERT INTO `locations` VALUES (220, 'C','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Forward Left','No Clue Yet','The Land of Fiction');
+INSERT INTO `locations` VALUES (221, 'D','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Forward Right','No Clue Yet','The Land of Fiction');
+INSERT INTO `locations` VALUES (222, 'E','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Backward Left','No Clue Yet','The Land of Fiction');
+INSERT INTO `locations` VALUES (223, 'F','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Backward Right','No Clue Yet','The Land of Fiction');
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
