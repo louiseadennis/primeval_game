@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(12, $db);
+check_location(17, $db);
 
 ?>
 <html>
@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location12.png>
-<h2>High Ground</h2>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<p>You are standing on high ground above a plain containing confiers and seed ferns.</p>
+<p>Placeholder</p>
 
 </div>
 </body>

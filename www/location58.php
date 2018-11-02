@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(12, $db);
+check_location(58, $db);
 
 ?>
 <html>
@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location12.png>
-<h2>High Ground</h2>
+<img src=assets/location58.png>
+<h2>The Edge of a Floodplain</h2>
 
-<p>You are standing on high ground above a plain containing confiers and seed ferns.</p>
+<p>You are standing on a small hillock in the middle of a flooded plain.  In the distance you can make out where you think the river must be.   A small pack of Coelophysis dart across the muddy ground, wading through pools of water and, it would appear, hunting for lizards.</p>
 
 </div>
 </body>

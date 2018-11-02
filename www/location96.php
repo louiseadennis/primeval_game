@@ -8,8 +8,8 @@
     sessionAuthenticate();
 
     $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-    check_location(187, $db);
-    add_location_clue(187, $db);
+    check_location(96, $db);
+    
 
 ?>
 <html>
@@ -20,7 +20,15 @@
 </head>
 <body>
 <?php
-print_header($db);
+    print_header($db);
+    $jenny_collected = check_for_character('jenny', $db);
+    if (!$jenny_collected) {
+        $visited = get_value_from_users("new_character", $db);
+        if ($visited != 'jenny') {
+            add_equipment("budget", $db);
+            add_location_clue(96, $db);
+        }
+    }
 ?>
 <div class=main>
 <?php
@@ -30,7 +38,15 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>First letters of the following: The era of the Dunkleosteus, Ryan's first name, and the Prehistoric creature at the airport.</p>
+<p>I See with 20 20 Vision</p>
+
+<?php
+    if (!$jenny_collected) {
+        update_users("new_character", 'jenny', $db);
+        print "<img src=assets/jenny.png align=left>";
+        print "<p>Jenny is here.</p>";
+    }
+?>
 
 </div>
 </body>

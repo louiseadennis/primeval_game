@@ -86,7 +86,6 @@ if (!is_null($clues)) {
 }
 
 
-
 ?>
 <p><form method="POST" action="main.php">
 <input type="hidden" name="location_id" value="

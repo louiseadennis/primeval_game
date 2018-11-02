@@ -103,6 +103,20 @@ while ($j <= critter_number($db)) {
 }
 print "</table>";
 
+    print "<h3>Stories</h3>";
+    $stories = get_value_from_users("fanfic_id_list", $db);
+    if (!is_null($stories)) {
+        $story_array = explode(",", $stories);
+        print "<ul>";
+        foreach ($story_array as $story_id) {
+            $story = get_value_for_fanfic_id("title", $story_id, $db);
+            $author = get_value_for_fanfic_id("author", $story_id, $db);
+            $url = get_value_for_fanfic_id("url", $story_id, $db);
+            $description = get_value_for_fanfic_id("description", $story_id, $db);
+            print "<li><a href=$url>$story</a> by $author: $descrption</li>";
+        }
+        print "</ul>";
+    }
 
 ?>
 <p><form method="POST" action="main.php">

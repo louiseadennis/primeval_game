@@ -69,6 +69,14 @@ function default_lester_recharges() {
 function default_stunned() {
 	 return 5;
 }
+    
+function default_zero_coordinates() {
+    return 20;
+}
+    
+function default_random_locations() {
+        return 216;
+}
 
 function critter_number($connection) {
   $sql = "SELECT * FROM critters";
@@ -110,6 +118,29 @@ function add_location_clue($location_id, $connection) {
 	 }
 }
 
+function add_fanfic($fanfic_id, $connection) {
+    $uname = $_SESSION["loginUsername"];
+    
+    $fanfic_id_list = get_value_from_users("fanfic_id_list", $connection);
+    $fanfic_id_array = explode(",", $fanfic_id_list);
+    
+    if (is_null($fanfic_id_list)) {
+        update_users("fanfic_id_list", $fanfic_id, $connection);
+    } else {
+        if (!in_array($fanfic_id, $fanfic_id_array)) {
+            $new_fanfic_id_list = $fanfic_id_list . "," . $fanfic_id;
+            update_users("fanfic_id_list", $new_fanfic_id_list, $connection);
+        }
+    }
+}
+    
+function print_fanfic($fanfic_id, $connection) {
+    $title = get_value_for_fanfic_id("title", $fanfic_id, $connection);
+    $author = get_value_for_fanfic_id("author", $fanfic_id, $connection);
+    $url = get_value_for_fanfic_id("url", $fanfic_id, $connection);
+    
+    print("<a href=$url>$title</a> by $author");
+}
 
 function add_critter($critter_id, $connection) {
       $uname = $_SESSION["loginUsername"];
@@ -197,7 +228,7 @@ function change_anomaly($anomaly,  $prev_location, $connection) {
     while ($row=$result->fetch_assoc()) {
           $value = $row["$anomaly_string"];
 	  if ($value == 0) {
-	    $d60 = rand(1, 60);
+	    $d60 = rand(1, default_random_locations());
     	    $sql = "UPDATE junctions SET {$anomaly_string}=$d60 WHERE location_id='$location_id' AND user_id='$user_id'";
 	    if (!$connection->query($sql)) {
        	       showerror();
@@ -392,7 +423,7 @@ function get_value_for_event_id($column, $event_id, $connection) {
   $sql = "SELECT {$column} FROM events WHERE event_id = '{$event_id}'";
 
   if (!$result = $connection->query($sql)) 
-      showerror();
+      showerror($connection);
   
   if ($result->num_rows != 1)
       return 0;
@@ -402,6 +433,22 @@ function get_value_for_event_id($column, $event_id, $connection) {
 	   return $value;
      }
   }
+}
+    
+function get_value_for_fanfic_id($column, $fanfic_id, $connection) {
+    $sql = "SELECT {$column} from fanfic WHERE fanfic_id = '{$fanfic_id}'";
+    
+    if (!$result = $connection->query($sql))
+        showerror($connection);
+    
+    if ($result->num_rows != 1)
+        return 0;
+    else {
+        while ($row = $result->fetch_assoc()) {
+            $value = $row["$column"];
+            return $value;
+        }
+    }
 }
 
 
@@ -521,7 +568,7 @@ function print_anomaly($connection) {
       $d100_roll = rand(1, 100);
       if ($d100_roll <= $anomaly_chance) {
 	    $second_anomaly = 1;
-	    $d60_roll = rand(1, 60);
+	    $d60_roll = rand(1, default_random_locations());
       }
    }
 
@@ -1030,34 +1077,63 @@ function print_device($connection) {
 }
     
 function print_dial($dial, $connection) {
-    $c1 = get_value_from_users("c$dial_prev", $connection);
+    $dial_prev = "c" . $dial . "_prev";
+    $c1 = get_value_from_users($dial_prev, $connection);
     print "<td><select name=\"dial$dial\">";
     $select0 = "";
     $select1 = "";
     $select2 = "";
     $select3 = "";
     $select4 = "";
-    if ($c1 == 0) {
-        $select0 = 'selected';
-    } else if ($c1 == 1) {
-        $select1 = 'selected';
-    } else if ($c1 == 2) {
-        $select2 = 'selected';
-    } else if ($c1 == 3) {
-        $select3 = 'selected';
-    } else if ($c1 == 4)    {
-        $select4 = 'selected';
-    } else {
-        $select5 = 'selected';
+    $select5 = "";
+    $select6 = "";
+    $zero_coordinates = 0;
+    if ($dial == 1) {
+        $d100_roll = rand(1, 100);
+        if ($d100_roll < default_zero_coordinates()) {
+            $zero_coordinates = 1;
+        }
     }
+
     if ($dial == 1 ) {
+        if ($c1 == 'F') {
+            $select5 = 'selected';
+        } else if ($c1 == 'B') {
+            $select1 = 'selected';
+        } else if ($c1 == 'C') {
+            $select2 = 'selected';
+        } else if ($c1 == 'D') {
+            $select3 = 'selected';
+        } else if ($c1 == 'E')    {
+            $select4 = 'selected';
+        } else if ($c1 == 'Z') {
+            $select6 = 'selected';
+        } else {
+            $select0 = 'selected';
+        }
         print "<option $select0 value=\"A\">A</option>";
         print "<option $select1 value=\"B\">B</option>";
         print "<option $select2 value=\"C\">C</option>";
         print "<option $select3 value=\"D\">D</option>";
         print "<option $select4 value=\"E\">E</option>";
         print "<option $select5 value=\"F\">F</option>";
+        if ($zero_coordinates || $c1 == 'Z') {
+            print "<option $select6 value=\"Z\"> </option>";
+        }
     } else if ($dial == 2) {
+        if ($c1 == 'T') {
+            $select5 = 'selected';
+        } else if ($c1 == 'I') {
+            $select1 = 'selected';
+        } else if ($c1 == 'N') {
+            $select2 = 'selected';
+        } else if ($c1 == 'O') {
+            $select3 = 'selected';
+        } else if ($c1 == 'R')    {
+            $select4 = 'selected';
+        } else {
+            $select0 = 'selected';
+        }
         print "<option $select0 value=\"A\">A</option>";
         print "<option $select1 value=\"I\">I</option>";
         print "<option $select2 value=\"N\">N</option>";
@@ -1065,6 +1141,19 @@ function print_dial($dial, $connection) {
         print "<option $select4 value=\"R\">R</option>";
         print "<option $select5 value=\"T\">T</option>";
     } else  {
+        if ($c1 == 'T') {
+            $select5 = 'selected';
+        } else if ($c1 == 'D') {
+            $select1 = 'selected';
+        } else if ($c1 == 'E') {
+            $select2 = 'selected';
+        } else if ($c1 == 'G') {
+            $select3 = 'selected';
+        } else if ($c1 == 'S')    {
+            $select4 = 'selected';
+        } else {
+            $select0 = 'selected';
+        }
         print "<option $select0 value=\"C\">C</option>";
         print "<option $select1 value=\"D\">D</option>";
         print "<option $select2 value=\"E\">E</option>";
@@ -1367,7 +1456,7 @@ function print_item_used($leek, $connection) {
 		      	   print "<p>$default_message</p>";
 		      } else {
 		      	   print "<p>$default_message";
-		           $d60_roll = rand(1, 60);
+		           $d60_roll = rand(1, default_random_locations());
 			   print "<form method=\"POST\" action=\"main.php\">";
 	 		   print "<input type=\"hidden\" name=\"location\" value=\"" . $d60_roll . "\">";
 	                   print "<input type=\"hidden\" name=\"travel_type\" value=\"anomaly\">";

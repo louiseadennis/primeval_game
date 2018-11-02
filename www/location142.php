@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(202, $db);
+check_location(142, $db);
 
 ?>
 <html>
@@ -20,12 +20,12 @@ check_location(202, $db);
 <body>
 <?php
     print_header($db);
-    $lester_collected = check_for_character('lester', $db);
-    if (!$lester_collected) {
-        add_location_clue(202, $db);
+    $abby_collected = check_for_character('abby', $db);
+    if (!$abby_collected) {
+        add_location_clue(142, $db);
         $visited = get_value_from_users("new_character", $db);
-        if ($visited != 'lester') {
-            add_equipment("budget", $db);
+        if ($visited != 'abby') {
+            add_equipment("tranquiliser rifle", $db);
         }
     }
 ?>
@@ -37,15 +37,15 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p><center><img src="assets/clue202.jpg" width=200></center></p>
+<p>A reverse trip to Goa.</p>
 <?php
-    
-    if (!$lester_collected) {
-        update_users("new_character", 'lester', $db);
-        print "<img src=assets/lester.png align=left>";
-        print "<p>Lester is here.  He brushes the lapels of his suit when he sees you.</p>";
+    if (!$abby_collected) {
+        update_users("new_character", "abby", $db);
+        print "<img src=assets/abby.png align=left>";
+        print "<p>Abby is here.  She has a tranquiliser rifle with darts.</p>";
     }
 ?>
+
 </div>
 </body>
 </html>

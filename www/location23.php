@@ -8,8 +8,8 @@
     sessionAuthenticate();
 
     $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-    check_location(187, $db);
-    add_location_clue(187, $db);
+    check_location(23, $db);
+    add_location_clue(23, $db);
 
 ?>
 <html>
@@ -30,7 +30,7 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>First letters of the following: The era of the Dunkleosteus, Ryan's first name, and the Prehistoric creature at the airport.</p>
+<p>Another way to spell EEK</p>
 
 </div>
 </body>

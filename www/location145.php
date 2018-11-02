@@ -8,8 +8,7 @@
     sessionAuthenticate();
 
     $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-    check_location(187, $db);
-    add_location_clue(187, $db);
+    check_location(145, $db);
 
 ?>
 <html>
@@ -20,7 +19,15 @@
 </head>
 <body>
 <?php
-print_header($db);
+    print_header($db);
+    $ryan_collected = check_for_character('ryan', $db);
+    if (!$ryan_collected) {
+        add_location_clue(145, $db);
+        $visited = get_value_from_users("new_character", $db);
+        if ($visited != 'ryan') {
+            add_equipment("assault rifle", $db);
+        }
+    }
 ?>
 <div class=main>
 <?php
@@ -30,7 +37,14 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>First letters of the following: The era of the Dunkleosteus, Ryan's first name, and the Prehistoric creature at the airport.</p>
+<p>A note that says "I fear you are starting to dither".</p>
+<?php
+    if (!$ryan_collected) {
+        update_users("new_character", "ryan", $db);
+        print "<img src=assets/ryan.png align=left>";
+        print "<p>Ryan is here.  He has a spare assault rifle.</p>";
+    }
+?>
 
 </div>
 </body>
