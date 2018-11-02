@@ -1166,7 +1166,11 @@ function print_dial($dial, $connection) {
 }
 
 function use_device($dial1, $dial2, $dial3, $connection) {
-      $location_id = get_location_from_coords($dial1, $dial2, $dial3, $connection);
+    if ($dial1 != 'Z') {
+        $location_id = get_location_from_coords($dial1, $dial2, $dial3, $connection);
+    } else {
+        $location_id = 217;
+    }
       $log = get_value_from_users("log", $connection);
       $log_entry = "(" . $dial1 . "," . $dial2 . "," . $dial3 .  ")";
       $log_array = explode(":", $log);
