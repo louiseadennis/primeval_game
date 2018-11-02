@@ -62,10 +62,12 @@ if ($log != '') {
 
       $text = get_value_for_location_id("text", $location_id, $db);
 
-       print "<td>$current_button1, $current_button2, $current_button3</td>";
-       print "<td>$text</td>";
-       $era = get_value_for_location_id("era", $location_id, $db);
-       print "<td>$era</td></tr>";
+       if ($current_button1 != 'Z') {
+           print "<tr><td>$current_button1, $current_button2, $current_button3</td>";
+           print "<td>$text</td>";
+           $era = get_value_for_location_id("era", $location_id, $db);
+           print "<td>$era</td></tr>";
+       }
    }
 }
 print "</table>";

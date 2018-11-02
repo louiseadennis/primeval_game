@@ -49,7 +49,7 @@ CREATE TABLE `locations` (
 
 LOCK TABLES `locations` WRITE;
 /*!40000 ALTER TABLE `locations` DISABLE KEYS */;
-INSERT INTO `locations` VALUES (1,'A','R','C','The ARC.',30,0,NULL,0,'',0,0,1,'The Arc','Five clues: 1. Major Operating System in the 1980s and early 1990s. 2. A Bed for a Baby. 3. You should revERSe.','Holocene');
+INSERT INTO `locations` VALUES (1,'A','R','C','The ARC.',30,0,NULL,0,'',0,0,1,'The Arc','Five clues: 1. Major Operating System in the 1980s and early 1990s. 2. You should revERSe.','Holocene');
 INSERT INTO `locations` VALUES (2, 'A','A','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (3, 'A','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (4, 'A','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
@@ -141,8 +141,8 @@ INSERT INTO `locations` VALUES (89, 'C','N','S','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (90, 'C','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (91, 'C','O','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (92, 'C','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (93, 'C','O','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (94, 'C','O','G','A river estuary: Finn was here.  You saw mosses, ferns and amonites.',5,0,NULL,0,'',0,0,0,'An Estuary','No Clue Yet','Silurian');
+INSERT INTO `locations` VALUES (93, 'C','O','E','A Tidal flat with microbial mats.',5,0,NULL,0,'',0,0,0,'Tidal Flat','No Clue Yet','Pre-Cambrian');
+INSERT INTO `locations` VALUES (94, 'C','O','G','A river estuary: You saw mosses, ferns and amonites.',5,0,NULL,0,'',0,0,0,'An Estuary','No Clue Yet','Silurian');
 INSERT INTO `locations` VALUES (95, 'C','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (96, 'C','O','T','Jenny was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','I See with 20 20 Vision.','No Era Yet');
 INSERT INTO `locations` VALUES (97, 'C','R','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
@@ -221,7 +221,7 @@ INSERT INTO `locations` VALUES (169, 'E','R','C','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (170, 'E','R','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (171, 'E','R','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (172, 'E','R','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (173, 'E','R','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (173, 'E','R','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','A Bed for a Baby.','No Era Yet');
 INSERT INTO `locations` VALUES (174, 'E','R','T','Claudia was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Claudia BrowNE','No Era Yet');
 INSERT INTO `locations` VALUES (175, 'E','T','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (176, 'E','T','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
@@ -265,7 +265,7 @@ INSERT INTO `locations` VALUES (213, 'F','T','E','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (214, 'F','T','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (215, 'F','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (216, 'F','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locatoins` VALUES (217, 'Z','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Gateway to the Land of Fiction','No Clue Yet','The Land of Fiction');
+INSERT INTO `locations` VALUES (217, 'Z','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Gateway to the Land of Fiction','No Clue Yet','The Land of Fiction');
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
