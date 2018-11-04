@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(13, $db);
+check_location(153, $db);
 
 ?>
 <html>
@@ -19,18 +19,25 @@ check_location(13, $db);
 </head>
 <body>
 <?php
-print_header($db);
+    print_header($db);
+    add_location_clue(153, $db);
 ?>
 <div class=main>
 <?php
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location13.png>
-<h2>A Mountain Range</h2>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<p>You are high up on a Mountain overlooking a vast forest.  You can see what appear to be giant dragonflies flitting up above the trees.</p>
-
+<table>
+<tr><td>A</td><td>B</td><td>B</td><td>Y</td><td>C</td></tr>
+<tr><td>D</td><td>U</td><td>E</td><td>F</td><td>G</td></tr>
+<tr><td>H</td><td>R</td><td>I</td><td>J</td><td>K</td></tr>
+<tr><td>L</td><td>T</td><td>M</td><td>A</td><td>N</td></tr>
+<tr><td>O</td><td>O</td><td>P</td><td>R</td><td>Q</td></tr>
+<tr><td>R</td><td>N</td><td>I</td><td>C</td><td>K</td></tr>
+</table>
 </div>
 </body>
 </html>

@@ -61,7 +61,7 @@ INSERT INTO `locations` VALUES (9, 'A','I','D','Nothing Here Yet',0,0,NULL,0,'',
 INSERT INTO `locations` VALUES (10, 'A','I','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (11, 'A','I','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (12, 'A','I','S','High ground above a plain of conifers and seed ferns.',5,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','Triassic');
-INSERT INTO `locations` VALUES (13, 'A','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (13, 'A','I','T','A mountain above a forest with giant dragonflies.',5,0,'22',0,'',0,20,0,'A Mountain Range','No Clue Yet','Carboniferous');
 INSERT INTO `locations` VALUES (14, 'A','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (15, 'A','N','D','It is foggy.',0,0,NULL,0,'',0,0,0,'No Name Yet','The clue is in the weather.','No Era Yet');
 INSERT INTO `locations` VALUES (16, 'A','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
@@ -201,7 +201,7 @@ INSERT INTO `locations` VALUES (149, 'E','A','S','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (150, 'E','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (151, 'E','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (152, 'E','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (153, 'E','I','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (153, 'E','I','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','<table><tr><td>A</td><td>B</td><td>B</td><td>Y</td><td>C</td></tr><tr><td>D</td><td>U</td><td>E</td><td>F</td><td>G</td></tr><tr><td>H</td><td>R</td><td>I</td><td>J</td><td>K</td></tr><tr><td>L</td><td>T</td><td>M</td><td>A</td><td>N</td></tr><tr><td>O</td><td>O</td><td>P</td><td>R</td><td>Q</td></tr><tr><td>R</td><td>N</td><td>I</td><td>C</td><td>K</td></tr></table>','No Era Yet');
 INSERT INTO `locations` VALUES (154, 'E','I','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (155, 'E','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (156, 'E','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');

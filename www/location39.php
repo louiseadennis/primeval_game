@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(13, $db);
+check_location(39, $db);
 
 ?>
 <html>
@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location13.png>
-<h2>A Mountain Range</h2>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<p>You are high up on a Mountain overlooking a vast forest.  You can see what appear to be giant dragonflies flitting up above the trees.</p>
+<p>Placeholder</p>
 
 </div>
 </body>

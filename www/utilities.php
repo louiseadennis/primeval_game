@@ -49,7 +49,7 @@ function showerror($mysql)
 
 function default_charge()
 {
-	return 10;
+	return 15;
 }
 
 function default_health()
@@ -1173,7 +1173,7 @@ function print_device($connection) {
                  print "<p>You are unconscious and unable to use the device.</p>";
              }
          } else {
-             print "<p>The device is out of charge.  It recharges at 1 unit per hour.  You will need to wait.</p>";
+             print "<p>The device is out of charge.  It recharges at 1 unit per 30 minutes.  You will need to wait.</p>";
          }
          print "</form>";
      }
@@ -1324,12 +1324,18 @@ function check_charge($recharge_start, $connection) {
 //	 else if (($t = $diff->format("%d")) > 0)
 //	    $charges = default_charge();
 //	 else if (($t = $diff->format("%H")) > 0)
-	 else if ($hours > 0)
-	    $charges = $hours;
+     else if ($hours > 0) {
+	    $charges = $hours*2;
+        if (($minutes - $hours*60) > 30) {
+            $charges = $charges + 1;
+        }
 //	 else if (($t = $diff->format("%i")) > 0)
 //	    $charges = 2; 
-	 else
+     } else if ($minutes > 30) {
+         $charges = 1;
+     } else {
 	    $charges = 0;
+     }
 	 return $charges;
 }
 
