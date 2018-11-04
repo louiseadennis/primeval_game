@@ -26,7 +26,7 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
+<img src=assets/location217.png>
 <h2>A White Void</h2>
 
 <p>Whiteness surrounds you in all directions.</p>

@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(218, $db);
+check_location(83, $db);
 
 ?>
 <html>
@@ -23,11 +23,20 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-    print_standard_start($db);
+print_standard_start($db);
 ?>
 <div class=location>
+<img src=assets/location83.png>
+<h2>A Coral Reef</h2>
+
+<p>You are in the middle of a wide ocean, though you can see a reef beneath you with ammonites swimming about.</p>
+
 <?php
-    print_land_of_fiction(218, $db);
+    
+    $action_done = get_value_from_users("action_done", $db);
+    if (!$action_done) {
+        print "<p><b>You will need a boat otherwise you will be swept out of the anomaly again!</b></p>";
+    }
 ?>
 
 </div>

@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS `lof_choices`;
+CREATE TABLE `lof_choices` (
+       `choice_id` int(11) NOT NULL,
+       `choice1` text,
+       `choice2` text,
+       `choice3` text,
+       `choice4` text,
+       `choice5` text,
+       `choice6` text       
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `lof_choices` VALUES (1, 'Picture 1', 'Picture 2', 'Picture 3', 'Picture 4', 'Picture 5', 'Picture 6');

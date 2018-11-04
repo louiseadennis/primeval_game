@@ -82,11 +82,51 @@ function critter_number($connection) {
   $sql = "SELECT * FROM critters";
 
   if (!$result = $connection->query($sql)) 
-      showerror();
+      showerror($connection);
   
   return $result->num_rows;
 }
 
+function print_land_of_fiction($location_id, $connection) {
+    $choice_point = get_value_for_lof_id("next_choice", $location_id, $connection);
+    if ($choice_point == 1) {
+        print "<img src=assets/location217.png>";
+        print "<p>An image of a place begins to form out of the whiteness.  You get the impression you can choose the image...</p>";
+        print "<form method=\"POST\" action=\"main.php\">";
+        print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+        print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
+        print "<select name=\"picture\">";
+        $sql = "SELECT * FROM lof_choices where choice_id=1";
+        print $sql;
+        
+        if (!$result = $connection->query($sql))
+            showerror($connection);
+        
+        $choice_array = array();
+        while ($row=$result->fetch_assoc()) {
+            $choice1 = $row["choice1"];
+            print "<option value=\"choice1\">$choice1</option>";
+            $choice2 = $row["choice2"];
+            print "<option value=\"choice2\">$choice2</option>";
+            $choice3 = $row["choice3"];
+            print "<option value=\"choice3\">$choice3</option>";
+           $choice4 = $row["choice4"];
+            print "<option value=\"choice4\">$choice4</option>";
+            $choice5 = $row["choice5"];
+            print "<option value=\"choice5\">$choice5</option>";
+            $choice6 = $row["choice6"];
+            print "<option value=\"choice6\">$choice6</option>";
+        }
+        print "</select>";
+        print "<p><input type=\"submit\" value=\"Choose image\"></p></form>";
+        print "<form method=\"POST\" action=\"main.php\">";
+        print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+        print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
+        print "<input type=\"hidden\" name=\"picture\" value=\"none\">";
+        print "<input type=\"submit\" value=\"No I don't want to choose!\"></p></form>";
+
+    }
+}
 
 function print_junction_anomaly($anomaly, $connection) {
     $destination = get_anomaly_destination($anomaly, $connection);
@@ -162,7 +202,7 @@ function get_present_day_locations($connection) {
     $sql = "SELECT * FROM locations WHERE present_day=1";
     
     if (!$result = $connection->query($sql)) 
-      showerror();
+      showerror($connection);
   
     $location_array = array();
     while ($row=$result->fetch_assoc()) {
@@ -418,6 +458,22 @@ function get_value_for_location_id($column, $location_id, $connection) {
      }
   }
 }
+    
+    function get_value_for_lof_id($column, $lof_id, $connection) {
+        $sql = "SELECT {$column} FROM landoffiction WHERE location_id = '{$lof_id}'";
+        
+        if (!$result = $connection->query($sql))
+            showerror($connection);
+        
+        if ($result->num_rows != 1)
+            return 0;
+        else {
+            while ($row=$result->fetch_assoc()) {
+                $value = $row["$column"];
+                return $value;
+            }
+        }
+    }
 
 function get_value_for_event_id($column, $event_id, $connection) {
   $sql = "SELECT {$column} FROM events WHERE event_id = '{$event_id}'";

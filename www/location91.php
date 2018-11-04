@@ -19,7 +19,15 @@ check_location(91, $db);
 </head>
 <body>
 <?php
-print_header($db);
+    print_header($db);
+    $becker_collected = check_for_character('becker',$db);
+    if (!$becker_collected) {
+        $visited =  get_value_from_users("new_character", $db);
+        if ($visited != 'becker') {
+            add_location_clue(91, $db);
+            add_equipment("shotgun", $db);
+        }
+    }
 ?>
 <div class=main>
 <?php
@@ -29,7 +37,14 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>What unites the plant that sugar comes from and the shape of the nose of a rocket.</p>
+<?php
+    if (!$becker_collected) {
+        update_users("new_character", 'becker', $db);
+        print "<img src=assets/becker.png align=left>";
+        print "<p>Becker is here.</p>";
+    }
+    ?>
 
 </div>
 </body>
