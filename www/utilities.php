@@ -87,6 +87,20 @@ function critter_number($connection) {
   return $result->num_rows;
 }
 
+function update_lof_choice($choice, $value, $location_id, $connection) {
+    if ($choice == 1) {
+        $sql = "UPDATE landoffiction SET picture='{$value}' WHERE location_id='$location_id'";
+        if (!$connection->query($sql)) {
+            showerror($connection);
+        }
+        $sql = "UPDATE landoffiction SET next_choice=2 WHERE location_id='$location_id'";
+        if (!$connection->query($sql)) {
+            showerror($connection);
+        }
+        return 1;
+    }
+}
+    
 function print_land_of_fiction($location_id, $connection) {
     $choice_point = get_value_for_lof_id("next_choice", $location_id, $connection);
     if ($choice_point == 1) {
@@ -95,9 +109,9 @@ function print_land_of_fiction($location_id, $connection) {
         print "<form method=\"POST\" action=\"main.php\">";
         print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
         print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
-        print "<select name=\"picture\">";
+        print "<input type=\"hidden\" name=\"choice_id\" value=\"choice1\">";
+       print "<select name=\"picture\">";
         $sql = "SELECT * FROM lof_choices where choice_id=1";
-        print $sql;
         
         if (!$result = $connection->query($sql))
             showerror($connection);
@@ -123,8 +137,19 @@ function print_land_of_fiction($location_id, $connection) {
         print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
         print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
         print "<input type=\"hidden\" name=\"picture\" value=\"none\">";
+        print "<input type=\"hidden\" name=\"choice_id\" value=\"choice1\">";
         print "<input type=\"submit\" value=\"No I don't want to choose!\"></p></form>";
 
+    } else {
+        $sql = "SELECT * FROM landoffiction where location_id={$location_id}";
+        if (!$result = $connection->query($sql))
+            showerror($connection);
+        
+        $choice_array = array();
+        while ($row=$result->fetch_assoc()) {
+            $picture_text = $row["picture"];
+            print "<p>$picture_text</p>";
+        }
     }
 }
 

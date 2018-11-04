@@ -48,7 +48,9 @@ if ($last_action == "item" || $last_action == "wait") {
 
 if ($last_action == "travel") {
    resolve_events($db);
-   update_users("anomaly", 0, $db);
+    if ($travel_type != "lof") {
+        update_users("anomaly", 0, $db);
+    }
 }
 
 update_users("last_action", $last_action, $db);
@@ -58,6 +60,18 @@ if ($travel_type == "device") {
    $dial2 = mysqlclean($_POST, "dial2", 10, $db);
    $dial3 = mysqlclean($_POST, "dial3", 10, $db);
    $location_id = use_device($dial1, $dial2, $dial3, $db);
+}
+    
+if ($travel_type == "lof") {
+    $choice_id = mysqlclean($_POST, "choice_id", 10, $db);
+    if ($choice_id == "choice1") {
+        $picture = mysqlclean($_POST, "picture", 10, $db);
+        if ($picture != "none") {
+            update_lof_choice(1, $picture, $prev_location, $db);
+        }
+    }
+    $location_id = 1;
+    
 }
 
 

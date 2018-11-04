@@ -175,7 +175,7 @@ INSERT INTO `locations` VALUES (123, 'D','N','E','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (124, 'D','N','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (125, 'D','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (126, 'D','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (127, 'D','O','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (127, 'D','O','C','A dark forest with large trees and giant insects.',5,0,'22',0,'',0,5,0,'A Dark Forest','No Clue Yet','Carboniferous');
 INSERT INTO `locations` VALUES (128, 'D','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (129, 'D','O','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (130, 'D','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
@@ -264,7 +264,7 @@ INSERT INTO `locations` VALUES (212, 'F','T','D','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (213, 'F','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (214, 'F','T','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (215, 'F','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (216, 'F','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (216, 'F','T','T','Danny was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Old MacDonald had a farm...','No Era Yet');
 INSERT INTO `locations` VALUES (217, 'Z','Z','Z','A White Void',0,0,'33',0,'',0,20,0,'Gateway to the Land of Fiction','No Clue Yet','The Land of Fiction');
 INSERT INTO `locations` VALUES (218, 'A','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Forwards','No Clue Yet','The Land of Fiction');
 INSERT INTO `locations` VALUES (219, 'B','Z','Z','A White Void',0,0,NULL,0,'',0,20,0,'Backwards','No Clue Yet','The Land of Fiction');
