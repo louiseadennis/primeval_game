@@ -27,9 +27,10 @@ check_location(153, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location14.png>
+<h2>A Spider-Web strewn Forest</h2>
 
+<p>You find yourself standing in a small clearing in a dense forest, made of tall trees with long and narrow leaves at the top.  Massive spider webs are strung between the trees.  Into the bark of a fallen tree is carved:</p>
 <table>
 <tr><td>A</td><td>B</td><td>B</td><td>Y</td><td>C</td></tr>
 <tr><td>D</td><td>U</td><td>E</td><td>F</td><td>G</td></tr>

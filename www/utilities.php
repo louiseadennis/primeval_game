@@ -102,6 +102,21 @@ function update_lof_choice($choice, $value, $location_id, $connection) {
             showerror($connection);
         }
         return 1;
+    } else if ($choice == 2) {
+        $sql = "UPDATE landoffiction SET racoon='{$value}' WHERE location_id='$location_id'";
+        if (!$connection->query($sql)) {
+            showerror($connection);
+        }
+        $sql = "UPDATE lof_choices SET {$value}='T' WHERE choice_id=102";
+        if (!$connection->query($sql)) {
+            showerror($connection);
+        }
+        $sql = "UPDATE landoffiction SET next_choice=3 WHERE location_id='$location_id'";
+        if (!$connection->query($sql)) {
+            showerror($connection);
+        }
+        return 1;
+
     }
 }
     
@@ -141,22 +156,22 @@ function print_land_of_fiction($location_id, $connection) {
         
         while ($row=$result->fetch_assoc()) {
             if ($row["choice1"] != 'T') {
-                print "<option value=\"choice1\">$choice1</option>";
+                print "<option value=\"$choice1\">$choice1</option>";
             }
             if ($row["choice2"] != 'T') {
-                print "<option value=\"choice2\">$choice2</option>";
+                print "<option value=\"$choice2\">$choice2</option>";
             }
             if ($row["choice3"] != 'T') {
-                print "<option value=\"choice3\">$choice3</option>";
+                print "<option value=\"$choice3\">$choice3</option>";
             }
             if ($row["choice4"] != 'T') {
-                print "<option value=\"choice4\">$choice4</option>";
+                print "<option value=\"$choice4\">$choice4</option>";
             }
             if ($row["choice5"] != 'T') {
-                print "<option value=\"choice5\">$choice5</option>";
+                print "<option value=\"$choice5\">$choice5</option>";
             }
             if ($row["choice6"] != 'T') {
-                print "<option value=\"choice6\">$choice6</option>";
+                print "<option value=\"$choice6\">$choice6</option>";
             }
         }
 
@@ -180,6 +195,82 @@ function print_land_of_fiction($location_id, $connection) {
             $picture_text = $row["picture"];
             print "<p>$picture_text</p>";
         }
+        
+        if ($choice_point == 2) {
+            print "<p>An figure begins to emerge.  You get the impression you can choose who it is...</p>";
+            print "<form method=\"POST\" action=\"main.php\">";
+            print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+            print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
+            print "<input type=\"hidden\" name=\"choice_id\" value=\"choice2\">";
+            print "<select name=\"racoon\">";
+            $sql = "SELECT * FROM lof_choices where choice_id=2";
+            print $sql;
+            
+            if (!$result = $connection->query($sql))
+                showerror($connection);
+            
+            $choice1 = 'X';
+            $choice2 = 'X';
+            $choice3 = 'X';
+            $choice4 = 'X';
+            $choice5 = 'X';
+            $choice6 = 'X';
+            while ($row=$result->fetch_assoc()) {
+                $choice1 = $row["choice1"];
+                $choice2 = $row["choice2"];
+                $choice3 = $row["choice3"];
+                $choice4 = $row["choice4"];
+                $choice5 = $row["choice5"];
+                $choice6 = $row["choice6"];
+            }
+            
+            $sql = "SELECT * FROM lof_choices where choice_id=102";
+            if (!$result = $connection->query($sql))
+                showerror($connection);
+            
+            while ($row=$result->fetch_assoc()) {
+                if ($row["choice1"] != 'T') {
+                    print "<option value=\"$choice1\">$choice1</option>";
+                }
+                if ($row["choice2"] != 'T') {
+                    print "<option value=\"$choice2\">$choice2</option>";
+                }
+                if ($row["choice3"] != 'T') {
+                    print "<option value=\"$choice3\">$choice3</option>";
+                }
+                if ($row["choice4"] != 'T') {
+                    print "<option value=\"$choice4\">$choice4</option>";
+                }
+                if ($row["choice5"] != 'T') {
+                    print "<option value=\"$choice5\">$choice5</option>";
+                }
+                if ($row["choice6"] != 'T') {
+                    print "<option value=\"$choice6\">$choice6</option>";
+                }
+            }
+            
+            print "</select>";
+            
+            print "<p><input type=\"submit\" value=\"Choose Who it Is\"></p></form>";
+            print "<form method=\"POST\" action=\"main.php\">";
+            print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+            print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
+            print "<input type=\"hidden\" name=\"racoon\" value=\"none\">";
+            print "<input type=\"hidden\" name=\"choice_id\" value=\"choice2\">";
+            print "<input type=\"submit\" value=\"No I don't want to choose!\"></p></form>";
+            
+        } else {
+            $sql = "SELECT * FROM landoffiction where location_id={$location_id}";
+            if (!$result = $connection->query($sql))
+                showerror($connection);
+            
+            while ($row=$result->fetch_assoc()) {
+                $racoon_text = $row["racoon"];
+                print "<p>$racoon_text</p>";
+            }
+
+        }
+        
     }
 }
 
@@ -1180,7 +1271,7 @@ function print_device($connection) {
         print "<center><table>";
          print "<tr>";
          $coord1 = get_value_from_users("c1_prev", $connection);
-         if ($coord1 != 'X') {
+         if ($coord1 != 'Z') {
              print_dial(1, $connection);
              print_dial(2, $connection);
              print_dial(3, $connection);

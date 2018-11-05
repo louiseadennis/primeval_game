@@ -2,15 +2,17 @@ DROP TABLE IF EXISTS `landoffiction`;
 CREATE TABLE `landoffiction` (
   `location_id` int(11) NOT NULL,
   `next_choice` int(11) NOT NULL DEFAULT 1,
-  `picture` text
+  `picture` text,
+  `racoon` text,
+  `title` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `landoffiction` VALUES (218, 1, '');
-INSERT INTO `landoffiction` VALUES (219, 1, '');
-INSERT INTO `landoffiction` VALUES (220, 1, '');
-INSERT INTO `landoffiction` VALUES (221, 1, '');
-INSERT INTO `landoffiction` VALUES (222, 1, '');
-INSERT INTO `landoffiction` VALUES (223, 1, '');
+INSERT INTO `landoffiction` VALUES (218, 1, 'choice1', '', '');
+INSERT INTO `landoffiction` VALUES (219, 1, '', '', '');
+INSERT INTO `landoffiction` VALUES (220, 1, '', '', '');
+INSERT INTO `landoffiction` VALUES (221, 1, '', '', '');
+INSERT INTO `landoffiction` VALUES (222, 1, '', '', '');
+INSERT INTO `landoffiction` VALUES (223, 1, '', '', '');
 
 
 

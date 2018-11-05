@@ -69,6 +69,11 @@ if ($travel_type == "lof") {
         if ($picture != "none") {
             update_lof_choice(1, $picture, $prev_location, $db);
         }
+    } else if ($choice_id == "choice2") {
+        $racoon = mysqlclean($_POST, "racoon", 10, $db);
+        if ($racoon != "none") {
+            update_lof_choice(2, $racoon, $prev_location, $db);
+        }
     }
     $location_id = 1;
     
