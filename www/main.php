@@ -75,6 +75,7 @@ if ($travel_type == "lof") {
             update_lof_choice(2, $racoon, $prev_location, $db);
         }
     }
+    update_users("c1_prev", 'A', $db);
     $location_id = 1;
     
 }

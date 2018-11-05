@@ -253,7 +253,7 @@ INSERT INTO `locations` VALUES (201, 'F','O','E','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (202, 'F','O','G','Lester was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','<img src=assets/clue202.jpg width=200>','No Era Yet');
 INSERT INTO `locations` VALUES (203, 'F','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (204, 'F','O','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (205, 'F','R','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (205, 'F','R','C','Poisonous Fog',5,0,'13',0,'breathing aparatus',0,5,0,'A Poisonons Fog','No Clue Yet','Pre-Cambrian');
 INSERT INTO `locations` VALUES (206, 'F','R','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (207, 'F','R','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (208, 'F','R','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
