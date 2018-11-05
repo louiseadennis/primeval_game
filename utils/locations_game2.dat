@@ -94,10 +94,10 @@ INSERT INTO `locations` VALUES (42, 'B','A','T','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (43, 'B','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (44, 'B','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (45, 'B','I','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (46, 'B','I','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (46, 'B','I','G','A Deserted Highway with a rusting car.',5,0,NULL,0,'',0,0,0,'A Deserted Highway','No Clue Yet','Post-Holocene');
 INSERT INTO `locations` VALUES (47, 'B','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (48, 'B','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (49, 'B','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (49, 'B','N','C','Sarah was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (50, 'B','N','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (51, 'B','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','3, 9, 20','No Era Yet');
 INSERT INTO `locations` VALUES (52, 'B','N','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');

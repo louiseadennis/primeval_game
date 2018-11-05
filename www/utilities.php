@@ -93,6 +93,10 @@ function update_lof_choice($choice, $value, $location_id, $connection) {
         if (!$connection->query($sql)) {
             showerror($connection);
         }
+        $sql = "UPDATE lof_choices SET {$value}='T' WHERE choice_id=101";
+        if (!$connection->query($sql)) {
+            showerror($connection);
+        }
         $sql = "UPDATE landoffiction SET next_choice=2 WHERE location_id='$location_id'";
         if (!$connection->query($sql)) {
             showerror($connection);
@@ -116,22 +120,48 @@ function print_land_of_fiction($location_id, $connection) {
         if (!$result = $connection->query($sql))
             showerror($connection);
         
-        $choice_array = array();
-        while ($row=$result->fetch_assoc()) {
+        $choice1 = 'X';
+        $choice2 = 'X';
+        $choice3 = 'X';
+        $choice4 = 'X';
+        $choice5 = 'X';
+        $choice6 = 'X';
+       while ($row=$result->fetch_assoc()) {
             $choice1 = $row["choice1"];
-            print "<option value=\"choice1\">$choice1</option>";
             $choice2 = $row["choice2"];
-            print "<option value=\"choice2\">$choice2</option>";
             $choice3 = $row["choice3"];
-            print "<option value=\"choice3\">$choice3</option>";
-           $choice4 = $row["choice4"];
-            print "<option value=\"choice4\">$choice4</option>";
+            $choice4 = $row["choice4"];
             $choice5 = $row["choice5"];
-            print "<option value=\"choice5\">$choice5</option>";
             $choice6 = $row["choice6"];
-            print "<option value=\"choice6\">$choice6</option>";
+         }
+        
+        $sql = "SELECT * FROM lof_choices where choice_id=101";
+        if (!$result = $connection->query($sql))
+            showerror($connection);
+        
+        while ($row=$result->fetch_assoc()) {
+            if ($row["choice1"] != 'T') {
+                print "<option value=\"choice1\">$choice1</option>";
+            }
+            if ($row["choice2"] != 'T') {
+                print "<option value=\"choice2\">$choice2</option>";
+            }
+            if ($row["choice3"] != 'T') {
+                print "<option value=\"choice3\">$choice3</option>";
+            }
+            if ($row["choice4"] != 'T') {
+                print "<option value=\"choice4\">$choice4</option>";
+            }
+            if ($row["choice5"] != 'T') {
+                print "<option value=\"choice5\">$choice5</option>";
+            }
+            if ($row["choice6"] != 'T') {
+                print "<option value=\"choice6\">$choice6</option>";
+            }
         }
+
         print "</select>";
+ 
         print "<p><input type=\"submit\" value=\"Choose image\"></p></form>";
         print "<form method=\"POST\" action=\"main.php\">";
         print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
