@@ -74,6 +74,11 @@ if ($travel_type == "lof") {
         if ($racoon != "none") {
             update_lof_choice(2, $racoon, $prev_location, $db);
         }
+    } else if ($choice_id == "choice3") {
+        $placename = mysqlclean($_POST, "placename", 50, $db);
+        if ($placename != "x1x1x1") {
+            update_lof_choice(3, $placename, $prev_location, $db);
+        }
     }
     update_users("c1_prev", 'A', $db);
     $location_id = 1;

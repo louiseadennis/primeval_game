@@ -88,8 +88,8 @@ function critter_number($connection) {
 }
     
 function update_lof_choice($choice, $value, $location_id, $connection) {
-    $choice_text = get_value_for_lof_choice_id($value, $choice, $connection);
     if ($choice == 1) {
+        $choice_text = get_value_for_lof_choice_id($value, $choice, $connection);
         $sql = "UPDATE landoffiction SET picture='{$choice_text}' WHERE location_id='$location_id'";
         if (!$connection->query($sql)) {
             showerror($connection);
@@ -104,6 +104,7 @@ function update_lof_choice($choice, $value, $location_id, $connection) {
         }
         return 1;
     } else if ($choice == 2) {
+        $choice_text = get_value_for_lof_choice_id($value, $choice, $connection);
         $sql = "UPDATE landoffiction SET racoon='{$choice_text}' WHERE location_id='$location_id'";
         if (!$connection->query($sql)) {
             showerror($connection);
@@ -118,6 +119,16 @@ function update_lof_choice($choice, $value, $location_id, $connection) {
         }
         return 1;
 
+    } else if ($choice == 3) {
+        $sql = "UPDATE locations SET name='{$value}' WHERE location_id='$location_id'";
+        if (!$connection->query($sql)) {
+            showerror($connection);
+        }
+        $sql = "UPDATE landoffiction SET next_choice=4 WHERE location_id='$location_id'";
+        if (!$connection->query($sql)) {
+            showerror($connection);
+        }
+        return 1;
     }
 }
     
@@ -127,6 +138,7 @@ function print_land_of_fiction($location_id, $connection) {
     $choice_point = get_value_for_lof_id("next_choice", $location_id, $connection);
     if ($choice_point == 1) {
         print "<img src=assets/location217.png>";
+        print "<h2>A White Void</h2>";
         print "<p>An image of a place begins to form out of the whiteness.  You get the impression you can choose the image...</p>";
         print "<form method=\"POST\" action=\"main.php\">";
         print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
@@ -199,6 +211,11 @@ function print_land_of_fiction($location_id, $connection) {
             print "<p>$picture_text</p>";
         }
         
+        if ($choice_point > 3) {
+            $placename = get_value_for_location_id("name", $location_id, $connection);
+            print "<h2>$placename</h2>";
+        }
+        
         if ($choice_point == 2) {
             print "<p>You can see a figure in the distance walking towards you.  You get the impression you can choose who it is...</p>";
             print "<form method=\"POST\" action=\"main.php\">";
@@ -269,9 +286,26 @@ function print_land_of_fiction($location_id, $connection) {
             
             while ($row=$result->fetch_assoc()) {
                 $racoon_text = $row["racoon"];
-                print "<p>$racoon_text</p>";
+                print "<p>$racoon_text is here.</p>";
             }
-
+            
+            if ($choice_point == 3) {
+                print "<p>You should name this place.</p>";
+                print "<form method=\"POST\" action=\"main.php\">";
+                print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+                print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
+                print "<input type=\"hidden\" name=\"choice_id\" value=\"choice3\">";
+                print "<input type=\"text\" size=\"50\" name=\"placename\"></a>";
+                print "<p><input type=\"submit\" value=\"Name the Place!\"></form></p>";
+                print "<form method=\"POST\" action=\"main.php\">";
+                print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+                print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
+                print "<input type=\"hidden\" name=\"placename\" value=\"x1x1x1\">";
+                print "<input type=\"hidden\" name=\"choice_id\" value=\"choice3\">";
+                print "<input type=\"submit\" value=\"No I don't want to choose!\"></p></form>";
+            } else {
+                
+            }
         }
         
     }

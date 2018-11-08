@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(5, $db);
+check_location(210, $db);
 
 ?>
 <html>
@@ -19,18 +19,17 @@ check_location(5, $db);
 </head>
 <body>
 <?php
-    print_header($db);
-    add_location_clue(5, $db);
+print_header($db);
 ?>
 <div class=main>
 <?php
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location210.png>
+<h2>A Cliff Top</h2>
 
-<p>For those who are reading this.  Often have I seen you.  Time and time again.</p>
+<p>You are standing on a cliff above a river.  There is a distinct chill in the air.  A few flowers are blossoming, amid trees and bushes.</p>
 
 </div>
 </body>

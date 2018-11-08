@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(5, $db);
+check_location(50, $db);
 
 ?>
 <html>
@@ -19,8 +19,7 @@ check_location(5, $db);
 </head>
 <body>
 <?php
-    print_header($db);
-    add_location_clue(5, $db);
+print_header($db);
 ?>
 <div class=main>
 <?php
@@ -30,7 +29,7 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>For those who are reading this.  Often have I seen you.  Time and time again.</p>
+<p>Placeholder</p>
 
 </div>
 </body>
