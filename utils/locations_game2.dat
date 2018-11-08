@@ -161,7 +161,7 @@ INSERT INTO `locations` VALUES (109, 'D','A','C','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (110, 'D','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (111, 'D','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (112, 'D','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (113, 'D','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (113, 'D','A','S','A dusty plain.  Seed ferns and conifers are visible.',5,0,'5,28',0,'',0,20,0,'A Dusty Plain','No Clue Yet','Permian');
 INSERT INTO `locations` VALUES (114, 'D','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (115, 'D','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (116, 'D','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
@@ -172,7 +172,7 @@ INSERT INTO `locations` VALUES (120, 'D','I','T','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (121, 'D','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (122, 'D','N','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (123, 'D','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
-INSERT INTO `locations` VALUES (124, 'D','N','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
+INSERT INTO `locations` VALUES (124, 'D','N','G','Sarah was here',0,0,NULL,0,'',0,0,0,'No Name Yet','117','No Era Yet');
 INSERT INTO `locations` VALUES (125, 'D','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (126, 'D','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet');
 INSERT INTO `locations` VALUES (127, 'D','O','C','A dark forest with large trees and giant insects.',5,0,'22',0,'',0,5,0,'A Dark Forest','No Clue Yet','Carboniferous');

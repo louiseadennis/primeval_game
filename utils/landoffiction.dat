@@ -7,7 +7,7 @@ CREATE TABLE `landoffiction` (
   `title` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `landoffiction` VALUES (218, 1, 'choice1', '', '');
+INSERT INTO `landoffiction` VALUES (218, 1, '', '', '');
 INSERT INTO `landoffiction` VALUES (219, 1, '', '', '');
 INSERT INTO `landoffiction` VALUES (220, 1, '', '', '');
 INSERT INTO `landoffiction` VALUES (221, 1, '', '', '');

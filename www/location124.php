@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(49, $db);
+check_location(124, $db);
 
 ?>
 <html>
@@ -20,14 +20,14 @@ check_location(49, $db);
 <body>
 <?php
     print_header($db);
-    $sarah_collected = check_for_character('sarah',$db);
-    if (!$sarah_collected) {
+    $emily_collected = check_for_character('emily',$db);
+    if (!$emily_collected) {
         $visited =  get_value_from_users("new_character", $db);
-        if ($visited != 'sarah') {
- //           add_equipment("a big stick", $db);
+        if ($visited != 'emily') {
+            add_equipment("knife", $db);
+            add_location_clue(124, $db);
         }
     }
-
 ?>
 <div class=main>
 <?php
@@ -37,14 +37,15 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>117</p>
 <?php
-    if (!$sarah_collected) {
-        update_users("new_character", 'sarah', $db);
-        print "<img src=assets/sarah.png align=left>";
-        print "<p>Sarah is here.  She says to go back to the ARC.</p>";
+    if (!$emily_collected) {
+        update_users("new_character", 'emily', $db);
+        print "<img src=assets/emily.png align=left>";
+        print "<p>Emily is here.</p>";
     }
     ?>
+
 </div>
 </body>
 </html>

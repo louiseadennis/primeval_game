@@ -86,10 +86,11 @@ function critter_number($connection) {
   
   return $result->num_rows;
 }
-
+    
 function update_lof_choice($choice, $value, $location_id, $connection) {
+    $choice_text = get_value_for_lof_choice_id($value, $choice, $connection);
     if ($choice == 1) {
-        $sql = "UPDATE landoffiction SET picture='{$value}' WHERE location_id='$location_id'";
+        $sql = "UPDATE landoffiction SET picture='{$choice_text}' WHERE location_id='$location_id'";
         if (!$connection->query($sql)) {
             showerror($connection);
         }
@@ -103,7 +104,7 @@ function update_lof_choice($choice, $value, $location_id, $connection) {
         }
         return 1;
     } else if ($choice == 2) {
-        $sql = "UPDATE landoffiction SET racoon='{$value}' WHERE location_id='$location_id'";
+        $sql = "UPDATE landoffiction SET racoon='{$choice_text}' WHERE location_id='$location_id'";
         if (!$connection->query($sql)) {
             showerror($connection);
         }
@@ -119,6 +120,8 @@ function update_lof_choice($choice, $value, $location_id, $connection) {
 
     }
 }
+    
+
     
 function print_land_of_fiction($location_id, $connection) {
     $choice_point = get_value_for_lof_id("next_choice", $location_id, $connection);
@@ -156,22 +159,22 @@ function print_land_of_fiction($location_id, $connection) {
         
         while ($row=$result->fetch_assoc()) {
             if ($row["choice1"] != 'T') {
-                print "<option value=\"$choice1\">$choice1</option>";
+                print "<option value=\"choice1\">$choice1</option>";
             }
             if ($row["choice2"] != 'T') {
-                print "<option value=\"$choice2\">$choice2</option>";
+                print "<option value=\"choice2\">$choice2</option>";
             }
             if ($row["choice3"] != 'T') {
-                print "<option value=\"$choice3\">$choice3</option>";
+                print "<option value=\"choice3\">$choice3</option>";
             }
             if ($row["choice4"] != 'T') {
-                print "<option value=\"$choice4\">$choice4</option>";
+                print "<option value=\"choice4\">$choice4</option>";
             }
             if ($row["choice5"] != 'T') {
-                print "<option value=\"$choice5\">$choice5</option>";
+                print "<option value=\"choice5\">$choice5</option>";
             }
             if ($row["choice6"] != 'T') {
-                print "<option value=\"$choice6\">$choice6</option>";
+                print "<option value=\"choice6\">$choice6</option>";
             }
         }
 
@@ -197,7 +200,7 @@ function print_land_of_fiction($location_id, $connection) {
         }
         
         if ($choice_point == 2) {
-            print "<p>An figure begins to emerge.  You get the impression you can choose who it is...</p>";
+            print "<p>You can see a figure in the distance walking towards you.  You get the impression you can choose who it is...</p>";
             print "<form method=\"POST\" action=\"main.php\">";
             print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
             print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
@@ -230,22 +233,22 @@ function print_land_of_fiction($location_id, $connection) {
             
             while ($row=$result->fetch_assoc()) {
                 if ($row["choice1"] != 'T') {
-                    print "<option value=\"$choice1\">$choice1</option>";
+                    print "<option value=\"choice1\">$choice1</option>";
                 }
                 if ($row["choice2"] != 'T') {
-                    print "<option value=\"$choice2\">$choice2</option>";
+                    print "<option value=\"choice2\">$choice2</option>";
                 }
                 if ($row["choice3"] != 'T') {
-                    print "<option value=\"$choice3\">$choice3</option>";
+                    print "<option value=\"choice3\">$choice3</option>";
                 }
                 if ($row["choice4"] != 'T') {
-                    print "<option value=\"$choice4\">$choice4</option>";
+                    print "<option value=\"choice4\">$choice4</option>";
                 }
                 if ($row["choice5"] != 'T') {
-                    print "<option value=\"$choice5\">$choice5</option>";
+                    print "<option value=\"choice5\">$choice5</option>";
                 }
                 if ($row["choice6"] != 'T') {
-                    print "<option value=\"$choice6\">$choice6</option>";
+                    print "<option value=\"choice6\">$choice6</option>";
                 }
             }
             
@@ -605,8 +608,24 @@ function get_value_for_location_id($column, $location_id, $connection) {
   }
 }
     
-    function get_value_for_lof_id($column, $lof_id, $connection) {
+function get_value_for_lof_id($column, $lof_id, $connection) {
         $sql = "SELECT {$column} FROM landoffiction WHERE location_id = '{$lof_id}'";
+        
+        if (!$result = $connection->query($sql))
+            showerror($connection);
+        
+        if ($result->num_rows != 1)
+            return 0;
+        else {
+            while ($row=$result->fetch_assoc()) {
+                $value = $row["$column"];
+                return $value;
+            }
+        }
+}
+    
+    function get_value_for_lof_choice_id($column, $lof_id, $connection) {
+        $sql = "SELECT {$column} FROM lof_choices WHERE choice_id = '{$lof_id}'";
         
         if (!$result = $connection->query($sql))
             showerror($connection);
