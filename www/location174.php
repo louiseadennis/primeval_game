@@ -35,9 +35,10 @@ $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location174.png>
+<h2>A Cliff overlooking a Canyon</h2>
 
+<p>You are standing on a high cliff above a canyon through which a river runs.  You can see many strange plants on the canyon  floor.  A crossword puzzle has been painted onto the rocks:</p>
 <p><img src=assets/clue82.png></p>
 
 <p><ol>
