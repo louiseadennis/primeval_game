@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location4.png>
+<h2>A Rocky Shore</h2>
 
-<p>Placeholder</p>
+<p>You are on a bare rocky sea shore.  You can see strange tubular, frond-shaped organisms in the rock pools.</p>
 
 </div>
 </body>

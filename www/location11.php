@@ -26,10 +26,12 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location11.png>
+<h2>A Medieval Village</h2>
 
-<p>Placeholder</p>
+<p>You are standing on a muddy road with small cottages alongside it made from stone and wood.  There is a tiny church at the end of the street next to where you are standing.  Several of the cottages have a pig or chickens penned nearby.</p>
+
+<p>One grave in the churchyard catches your eye.  It has a trilobite carved into the headstone.  It says Ann Newsom Hughes, 1334-1372.</p>
 
 </div>
 </body>

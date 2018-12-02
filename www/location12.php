@@ -29,7 +29,7 @@ print_standard_start($db);
 <img src=assets/location12.png>
 <h2>High Ground</h2>
 
-<p>You are standing on high ground above a plain containing confiers and seed ferns.</p>
+<p>You are standing on high ground above a plain containing confiers and seed ferns.  A scrap of paper is pinned down with a rock.  It reads `The sisters again, but this time my third is the King who ordered my first entombed.'</p>
 
 </div>
 </body>

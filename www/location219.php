@@ -28,6 +28,8 @@ print_header($db);
 <div class=location>
 <?php
     print_land_of_fiction(219, $db);
+    
+    print_accessible_location_foot(217, $db);
 ?>
 
 </div>

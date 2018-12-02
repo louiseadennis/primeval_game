@@ -34,10 +34,11 @@ check_location(202, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location202.png>
+<h2>A Forest Stream</h2>
 
-<p><center><img src="assets/clue202.jpg" width=200></center></p>
+<p>You are standing by a stream through a forest of seed ferns.  A piece of paper has been left on a rock.  It reads:
+<center><img src="assets/clue202.jpg" width=200></center></p>
 <?php
     
     if (!$lester_collected) {

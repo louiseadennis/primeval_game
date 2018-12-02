@@ -24,7 +24,7 @@ check_location(49, $db);
     if (!$sarah_collected) {
         $visited =  get_value_from_users("new_character", $db);
         if ($visited != 'sarah') {
- //           add_equipment("a big stick", $db);
+            add_equipment("breathing aparatus", $db);
         }
     }
 
@@ -42,7 +42,7 @@ print_standard_start($db);
     if (!$sarah_collected) {
         update_users("new_character", 'sarah', $db);
         print "<img src=assets/sarah.png align=left>";
-        print "<p>Sarah is here.  She says to go back to the ARC.</p>";
+        print "<p>Sarah is here.  She has breathing aparatus with her.  She says to go back to the ARC.</p>";
     }
     ?>
 </div>

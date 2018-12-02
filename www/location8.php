@@ -19,7 +19,15 @@ check_location(8, $db);
 </head>
 <body>
 <?php
-print_header($db);
+    print_header($db);
+    $matt_collected = check_for_character('matt',$db);
+    if (!$matt_collected) {
+        $visited =  get_value_from_users("new_character", $db);
+        if ($visited != 'matt') {
+            add_equipment("emd", $db);
+        }
+    }
+
 ?>
 <div class=main>
 <?php
@@ -30,6 +38,13 @@ print_standard_start($db);
 <h2>Placeholder</h2>
 
 <p>Placeholder</p>
+<?php
+    if (!$matt_collected) {
+        update_users("new_character", 'matt', $db);
+        print "<img src=assets/matt.png align=left>";
+        print "<p>Matt is here.  He has an EMD at full charge.  He suggests you head back to the ARC.</p>";
+    }
+    ?>
 
 </div>
 </body>

@@ -38,17 +38,23 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
+<p><img src=assets/clue82.png></p>
+
+<p><ol>
+<li>A group of extinct marine arachnomorph arthropods.</li>
+<li>A genus  of theropod dinosaur which lived in the Barremain stage of the early Cretaceous.</li>
+<li>An extend group of marine mollusc animals.</li>
+<li>Flying reptiles that existed during most of the Mesozoic.</li>
+</ol>
+</p>
 
 <?PHP
     if (!$claudia_collected) {
         update_users("new_character", 'claudia', $db);
         print "<img src=assets/claudia.png align=left>";
         print "<p>Claudia is  here.</p>";
-        
-        print "<p>Claudia is holding a misspelled name badge that reads `Claudia BrowNE'</p>";
-    } else {
-        print "<p>This is where you met Claudia holding a misspelled name badge that reads `Claudia BrowNE'</p>";
-    }
+ 
+    } 
 ?>
 </div>
 </body>

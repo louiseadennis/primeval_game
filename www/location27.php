@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location27.png>
+<h2>Marshy Pools</h2>
 
-<p>Placeholder</p>
+<p>You are standing in a landscape of marshy pools.  An Eryops flops about in the water of one of the larger ones.</p>
 
 </div>
 </body>

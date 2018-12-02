@@ -29,7 +29,7 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>Multiple cute aliens</p>
 
 </div>
 </body>

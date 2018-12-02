@@ -67,6 +67,7 @@
 <li>You should revERSe.</li>
 <li>The Democratic Republic of Congo.</li>
 <li><img src=assets/clue1.png></li>
+<li>Set the dials on the device to A, N, E and activate it.</li>
 </ol>
 </i></p>
 <?php
@@ -74,18 +75,8 @@
             print "<p>Lester agrees to resupply your $name.  He refuses to buy a tank.</p>";
     }
 
-
-    print "<p>From here you can get by conventional transport to:<ul>";
-    $accessible = get_present_day_locations($db);
-    foreach ($accessible as $by_car) {
-        if ($by_car != 1) {
-            print "<li>";
-            print_accessible_location($by_car, $db);
-            print "</li>";
-        }
-    }
-    print "</ul></p>";
-
+    print_travel(1, $db);
+    print_equipment_purchase($db);
 ?>
 </div>
 </body>
