@@ -43,7 +43,7 @@ print_sanctuary_start($db);
 
 <?php
     add_fanfic(2, $db);
-    print "<p>Now read on:";    print_fanfic(2, $db);
+    print "<p>Now read on: ";    print_fanfic(2, $db);
     ?>
 
 </div>

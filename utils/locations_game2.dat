@@ -40,7 +40,7 @@ INSERT INTO `locations` VALUES (6, 'A','A','S','Nothing Here Yet',0,0,NULL,0,'',
 INSERT INTO `locations` VALUES (7, 'A','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (8, 'A','I','C','Matt was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (9, 'A','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (10, 'A','I','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (10, 'A','I','E','A Desert full of Diictodon burrows.  Sid and Nancy were here',20,0,NULL,0,'',0,0,0,'A Hot Desert','No Clue Yet','Permian',NULL);
 INSERT INTO `locations` VALUES (11, 'A','I','G','A Medieval Village',20,0,'7',0,'',0,10,0,'A Medieval Village','A grave for Ann Newsom Hughes, 1334-1372, with a trilobite in carved into the headstone.','Holocene',NULL);
 INSERT INTO `locations` VALUES (12, 'A','I','S','High ground above a plain of conifers and seed ferns.',5,0,NULL,0,'',0,0,0,'No Name Yet','The sisters again, but this time my third is the King who ordered my first entombed.','Triassic',NULL);
 INSERT INTO `locations` VALUES (13, 'A','I','T','A mountain above a forest with giant dragonflies.',5,0,'22',0,'',0,20,0,'A Mountain Range','No Clue Yet','Carboniferous',NULL);
@@ -228,7 +228,7 @@ INSERT INTO `locations` VALUES (194, 'F','N','D','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (195, 'F','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (196, 'F','N','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (197, 'F','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (198, 'F','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (198, 'F','N','T','Blade was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Middle Caucasian','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (199, 'F','O','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (200, 'F','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (201, 'F','O','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);

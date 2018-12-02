@@ -1817,7 +1817,7 @@
          $last_action = get_value_from_users("last_action", $connection);
          if ($last_action == "travel") {
              $new_character = get_value_from_users("new_character", $connection);
-             if ($new_character != '') {
+             if ($new_character != '' && $new_character != 'sid') {
                  $char_id_list = get_value_from_users("char_id_list", $connection);
                  $char_id = get_value_for_name_from("char_id", "characters", $new_character, $connection);
                  if ($char_id_list != 0 ) {
@@ -1838,7 +1838,21 @@
                      $pronoun = "She";
                  }
             
-                 print "<p>$ucchar has joined you on your travels.  $pronoun is stored in your user profile.</o>";
+                 print "<p>$ucchar has joined you on your travels.  $pronoun is stored in your user profile.</p>";
+             } else if ($new_character == 'sid') {
+                 $char_id_list = get_value_from_users("char_id_list", $connection);
+                 if ($char_id_list != 0 ) {
+                     $new_char_id_list = $char_id_list . "," . "21" . "," . "47";
+                     update_users("new_character", '', $connection);
+                     update_users("char_id_list", $new_char_id_list, $connection);
+                 } else {
+                     $char_id_array = explode(",", $char_id_list);
+                     if (!in_array("21", $char_id_array)) {
+                         update_users("new_character", '', $connection);
+                         update_users("char_id_list", "21,47", $connection);
+                     }
+                 }
+                 print "<p>Sid and Nancy have joined you on your travels.  They are stored in your user profile.</p>";
              }
          }
     }
