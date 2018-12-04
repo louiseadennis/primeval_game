@@ -8,18 +8,17 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(198, $db);
-
-    $blade_collected = check_for_character('blade', $db);
-    if (!$blade_collected) {
+check_location(77, $db);
+    
+    $char_collected = check_for_character('finn', $db);
+    if (!$char_collected) {
         $visited_already = get_value_from_users("new_character", $db);
-        if ($visited_already != 'blade') {
-            add_location_clue(198, $db);
-            add_equipment("knife", $db);
+        if ($visited_already != 'finn') {
+            add_location_clue(77, $db);
+            add_equipment("sniper rifle", $db);
         }
     }
-
-    ?>
+?>
 <html>
 <head>
 <title>12 Months of Primeval Denial</title>
@@ -38,18 +37,17 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Middle Caucasian</p>
+<p>The closest you can get to blowing a kiss</p>
 
 <?php
     
-    if (!$blade_collected) {
-        update_users("new_character", 'blade', $db);
-        print "<img src=assets/blade.png align=left>";
-        print "<p>Blade is here.  He lends you a knife.</p>";
+    if (!$char_collected) {
+        update_users("new_character", 'finn', $db);
+        print "<img src=assets/finn.png align=left>";
+        print "<p>Finn is here.  He has a sniper rifle.</p>";
     }
     
     ?>
-
 </div>
 </body>
 </html>

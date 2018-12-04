@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS `lof_paired_choices`;
+CREATE TABLE `lof_paired_choices` (
+       `choice_id` int(11) NOT NULL,
+       `name` text,
+       `picture` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `lof_paired_choices` VALUES (1, 'A Dark Wood', 'rw1.png');
+INSERT INTO `lof_paired_choices` VALUES (2, 'An Icy Wilderness', 'rw2.png');
+INSERT INTO `lof_paired_choices` VALUES (3, 'Sunset in the Mountains','rw3.png');
+INSERT INTO `lof_paired_choices` VALUES (4, 'A Lone Tree','rw4.png');
+INSERT INTO `lof_paired_choices` VALUES (5, 'Sunshine in a Forest','rw5.png');
+INSERT INTO `lof_paired_choices` VALUES (6, 'A Waterfall at Night','rw6.png');

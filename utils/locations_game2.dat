@@ -107,7 +107,7 @@ INSERT INTO `locations` VALUES (73, 'C','A','C','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (74, 'C','A','D','Tobie was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (75, 'C','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (76, 'C','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (77, 'C','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (77, 'C','A','S','Finn was here',0,0,NULL,0,'',0,0,0,'No Name Yet','The closest you can get to blowing a kiss.','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (78, 'C','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (79, 'C','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (80, 'C','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
@@ -188,7 +188,7 @@ INSERT INTO `locations` VALUES (154, 'E','I','G','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (155, 'E','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (156, 'E','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (157, 'E','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (158, 'E','N','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (158, 'E','N','D','A grassy plain with small horses.',5,0,'18',0,'',0,20,0,'A Grassy Plain','No Clue Yet','Neogene',NULL);
 INSERT INTO `locations` VALUES (159, 'E','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (160, 'E','N','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (161, 'E','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);

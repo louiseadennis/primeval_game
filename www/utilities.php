@@ -144,7 +144,8 @@
     function update_lof_choice($choice, $value, $location_id, $connection) {
         if ($choice == 1) {
             $choice_text = get_value_for_lof_choice_id($value, $choice, $connection);
-            $sql = "UPDATE landoffiction SET picture='{$choice_text}' WHERE location_id='$location_id'";
+            $choice_img = get_value_for_name_from("picture", "lof_paired_choices", $choice_text,  $connection);
+            $sql = "UPDATE landoffiction SET picture='{$choice_img}' WHERE location_id='$location_id'";
             if (!$connection->query($sql)) {
                 showerror($connection);
             }
@@ -279,7 +280,7 @@
             $choice_array = array();
             while ($row=$result->fetch_assoc()) {
                 $picture_text = $row["picture"];
-                print "<p>$picture_text</p>";
+                print "<img src=assets/$picture_text>";
             }
             
             if ($choice_point > 3) {

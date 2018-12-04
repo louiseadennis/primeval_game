@@ -10,6 +10,6 @@ CREATE TABLE `lof_choices` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `lof_choices` VALUES (1, 'A Dark Wood', 'An Icy Wilderness', 'Sunset in the Mountains', 'A Lone Tree', 'Sunshine in a Forest', 'A Waterfall at Night');
-INSERT INTO `lof_choices` VALUES (101, 'rw1.png', 'rw2.png', 'rw3.png', 'rw4.png', 'rw5.png', 'rw6.png');
+INSERT INTO `lof_choices` VALUES (101, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `lof_choices` VALUES (2, 'racoon', 'timmy', 'torrence', 'angela', 'hippo', 'crocodile');
 INSERT INTO `lof_choices` VALUES (102, NULL, NULL, NULL, NULL, NULL, NULL);
