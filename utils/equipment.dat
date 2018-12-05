@@ -29,6 +29,7 @@ INSERT INTO `equipment` VALUES
 (11,'EMD','You fire the EMD.',10,0,10),
 (12,'ADD','The Anomaly Detection Device leads you to an Anomaly',10,0,10),
 (13,'throwing screwdriver','You throw the screwdriver',1000,0,0),
-(14,'budget','You spend some money',10,0,0);
+(14,'budget','You spend some money',10,0,0),
+(15, 'torrence','You allow Torrence to attack',1000,0,0);
 UNLOCK TABLES;
 

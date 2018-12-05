@@ -10,7 +10,16 @@ sessionAuthenticate();
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(83, $db);
 
-?>
+    $char_collected = check_for_character('fiver', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'fiver') {
+            add_location_clue(83, $db);
+            add_equipment("inflatable dinghy", $db);
+        }
+    }
+    
+    ?>
 <html>
 <head>
 <title>12 Months of Primeval Denial</title>
@@ -34,8 +43,12 @@ print_standard_start($db);
 <?php
     
     $action_done = get_value_from_users("action_done", $db);
-    if (!$action_done) {
+    if (!$action_done && $char_collected) {
         print "<p><b>You will need a boat otherwise you will be swept out of the anomaly again!</b></p>";
+    } else if (!$char_collected) {
+        update_users("new_character", 'fiver', $db);
+        print "<img src=assets/fiver.png align=left>";
+        print "<p>Fiver is here in an inflatable dinghy.  He has been given a picture: <img src=assets/buffy_title_card.png></p>";
     }
 ?>
 

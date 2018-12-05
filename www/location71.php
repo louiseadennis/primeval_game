@@ -10,7 +10,14 @@ sessionAuthenticate();
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(71, $db);
 
-?>
+    $char_collected = check_for_character('ditzy', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'ditzy') {
+            add_location_clue(71, $db);
+            add_equipment("first aid kit", $db);
+        }
+    }?>
 <html>
 <head>
 <title>12 Months of Primeval Denial</title>
@@ -29,8 +36,16 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
-
+<p>My first is five.  Add one and multiply by three for my second.  Divide by six for my third.</p>
+<?php
+    
+    if (!$char_collected) {
+        update_users("new_character", 'ditzy', $db);
+        print "<img src=assets/ditzy.png align=left>";
+        print "<p>Ditzy is here.  He has a first aid kit.</p>";
+    }
+    
+    ?>
 </div>
 </body>
 </html>

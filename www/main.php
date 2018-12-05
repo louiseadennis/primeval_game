@@ -14,11 +14,12 @@ if ($db -> connect_errno > 0) {
    }
     
 $last_action = mysqlclean($_POST, "last_action", 10, $db);
+    
 
 
 $travel_type = mysqlclean($_POST, "travel_type", 10, $db);
 $prev_location = get_location($db);
-    $prev_era = get_value_for_location_id("era", $prev_location, $db);
+$prev_era = get_value_for_location_id("era", $prev_location, $db);
 $location_id = mysqlclean($_POST, "location", 10, $db);
 
 if ($last_action == "item" || $last_action == "wait" ) {
@@ -123,7 +124,7 @@ if ($travel_type == "lof") {
            } else {
               update_users("item_used", 2, $db);
            }
-        } else if ($last_action = "purcahse") {
+        } else if ($last_action == "purchase") {
             $item_purchased = mysqlclean($_POST, "item_purchased", 10, $db);
             $name = get_value_for_equip_id("name", $item_purchased, $db);
             add_equipment($name, $db);

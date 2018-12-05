@@ -358,7 +358,24 @@
                 
                 while ($row=$result->fetch_assoc()) {
                     $racoon_text = $row["racoon"];
-                    print "<p>$racoon_text is here.</p>";
+                    $uchar = ucfirst($racoon_text);
+                    
+                    $char_collected = check_for_character($racoon_text, $connection);
+                    if (!$char_collected) {
+                    
+                        
+                        print "<p><img src=assets/$racoon_text.png align=left>";
+                        print "<p>$uchar is here.</p>";
+                        update_users("new_character", $racoon_text, $connection);
+                        if ($racoon_text == "torrence") {
+                            $visited_already = get_value_from_users("new_character", $connection);
+                            if ($visited_already != "torrence'") {
+                                add_equipment("torrence", $connection);
+                            }
+                        }
+                    } else {
+                        print "<p>$uchar was here.</p>";
+                    }
                 }
                 
                 if ($choice_point == 3) {
