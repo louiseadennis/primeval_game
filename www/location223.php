@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(65, $db);
+check_location(223, $db);
 
 ?>
 <html>
@@ -23,13 +23,14 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+    print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location65.png>
-<h2>A Lake Shore</h2>
-
-<p>You are standing on the shores of a lake.  Flying reptiles dart overhead which you identify as Eudimorphodons.</p>
+<?php
+    print_land_of_fiction(223, $db);
+    
+    print_accessible_location_foot(223, $db);
+?>
 
 </div>
 </body>
