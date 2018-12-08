@@ -8,18 +8,16 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(45, $db);
+check_location(169, $db);
 
-    $char_collected = check_for_character('lacey', $db);
+    $char_collected = check_for_character('preston', $db);
     if (!$char_collected) {
         $visited_already = get_value_from_users("new_character", $db);
-        if ($visited_already != 'lacey') {
+        if ($visited_already != 'preston') {
             add_location_clue(169, $db);
-            add_equipment("assault rifle", $db);
+            add_equipment("hand gun", $db);
         }
-    }
-
-?>
+    }?>
 <html>
 <head>
 <title>12 Months of Primeval Denial</title>
@@ -38,18 +36,16 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Something small or unimportant of its kind</p>
+<p>Placeholder</p>
 
 <?php
     
     if (!$char_collected) {
-        update_users("new_character", 'lacey', $db);
-        print "<img src=assets/lacey.png align=left>";
-        print "<p>Lacey is here.  She is armed with an assault rifle.</p>";
+        update_users("new_character", 'preston', $db);
+        print "<img src=assets/preston.png align=left>";
+        print "<p>Preston is here.  He is armed with a hand gun.  He says a strange voice said 'Bye'</p>";
     }
     ?>
-
-
 
 </div>
 </body>

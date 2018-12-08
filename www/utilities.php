@@ -917,6 +917,8 @@
             $cost = 0;
         } else if (abs($old_area - $this_area) < 50) {
             $cost = 1;
+        } else {
+            $cost = 10;
         }
         return $cost;
     }

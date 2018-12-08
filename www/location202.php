@@ -44,7 +44,7 @@ print_standard_start($db);
     if (!$lester_collected) {
         update_users("new_character", 'lester', $db);
         print "<img src=assets/lester.png align=left>";
-        print "<p>Lester is here.  He brushes the lapels of his suit when he sees you.</p>";
+        print "<p>Lester is here.  He brushes the lapels of his suit when he sees you and agrees to review your budget.</p>";
     }
 ?>
 </div>

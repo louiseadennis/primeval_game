@@ -75,7 +75,7 @@ INSERT INTO `locations` VALUES (41, 'B','A','S','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (42, 'B','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (43, 'B','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (44, 'B','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (45, 'B','I','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (45, 'B','I','E','Lacey was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Something small or unimportant of its kind','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (46, 'B','I','G','A Deserted Highway with a rusting car.',5,0,NULL,0,'',0,0,0,'A Deserted Highway','No Clue Yet','Post-Holocene',NULL);
 INSERT INTO `locations` VALUES (47, 'B','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (48, 'B','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
@@ -159,7 +159,7 @@ INSERT INTO `locations` VALUES (125, 'D','N','S','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (126, 'D','N','T','A freshwater lake.  Hot and humid weather.  Large trees on the shore.',5,0,'8',0,'inflatable dinghy',1,30,0,'A Freshwater Laker','No Clue Yet','Carboniferous',NULL);
 INSERT INTO `locations` VALUES (127, 'D','O','C','A dark forest with large trees and giant insects.',5,0,'22',0,'',0,5,0,'A Dark Forest','No Clue Yet','Carboniferous',NULL);
 INSERT INTO `locations` VALUES (128, 'D','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (129, 'D','O','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (129, 'D','O','E','Cross Photonics',5,0,'12',0,'',0,5,1,'Cross Photonics','No Clue Yet','Holocene',100);
 INSERT INTO `locations` VALUES (130, 'D','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (131, 'D','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','I start and end in time but not in clock, my middle is in rune and also in rock','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (132, 'D','O','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
@@ -199,7 +199,7 @@ INSERT INTO `locations` VALUES (165, 'E','O','E','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (166, 'E','O','G','Leek\'s Warehouse',0,0,NULL,0,'',0,0,1,'Leek\'s Warehouse','No Clue Yet','Holocene',2);
 INSERT INTO `locations` VALUES (167, 'E','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (168, 'E','O','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (169, 'E','R','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (169, 'E','R','C','Preston was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','A strange voice said bye','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (170, 'E','R','D','A river in forest of seed ferns.  Coelophysis and Placerias sighted.', 5,0,'9,29',0,'',0,20,0,'A River in a Forest','No Clue Yet','Triassic',NULL);
 INSERT INTO `locations` VALUES (171, 'E','R','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (172, 'E','R','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Head for the CreTaceouS','No Era Yet',NULL);

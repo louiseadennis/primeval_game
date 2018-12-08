@@ -53,7 +53,7 @@ print_standard_start($db);
     if (!$claudia_collected) {
         update_users("new_character", 'claudia', $db);
         print "<img src=assets/claudia.png align=left>";
-        print "<p>Claudia is  here.</p>";
+        print "<p>Claudia is  here.  She observes that something needs to be done about the budget - this could prove expensive.</p>";
  
     } 
 ?>
