@@ -9,6 +9,15 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(48, $db);
+    
+    $char_collected = check_for_character('tremayne', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'tremayne') {
+            add_location_clue(48, $db);
+            add_equipment("tranquiliser rifle", $db);
+        }
+    }
 
 ?>
 <html>
@@ -29,7 +38,16 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>Tick and tock goes the clock.  First and last in three but two's in only two.</p>
+
+<?php
+    
+    if (!$char_collected) {
+        update_users("new_character", 'tremayne', $db);
+        print "<img src=assets/tremayne.png align=left>";
+        print "<p>Tremayne is here.  She is armed with a tranquiliser rifle.</p>";
+    }
+    ?>
 
 </div>
 </body>

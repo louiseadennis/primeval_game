@@ -26,10 +26,20 @@
     print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location2.png>
+<h2>The Shores of a Lake</h2>
 
-<p>Placeholder</p>
+<p>You are standing on the shore of a lake and you can see a volcano in the distance.  The ground is bare of life and the atmosphere is difficult to breath.</p>
+
+<?php
+    
+    $action_done = get_value_from_users("action_done", $db);
+    if (!$action_done) {
+        print "<p><b>You must use breathing apparatus or will take damage.</b></p>";
+    }
+    ?>
+</div>
+
 
 </div>
 </body>

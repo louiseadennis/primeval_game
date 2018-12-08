@@ -14,7 +14,7 @@ check_location(45, $db);
     if (!$char_collected) {
         $visited_already = get_value_from_users("new_character", $db);
         if ($visited_already != 'lacey') {
-            add_location_clue(169, $db);
+            add_location_clue(45, $db);
             add_equipment("assault rifle", $db);
         }
     }

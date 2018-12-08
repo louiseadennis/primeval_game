@@ -32,7 +32,7 @@ CREATE TABLE `locations` (
 
 LOCK TABLES `locations` WRITE;
 INSERT INTO `locations` VALUES (1,'A','R','C','The ARC.',30,0,NULL,0,'',0,0,1,'The Arc','Five clues: 1. Major Operating System in the 1980s and early 1990s. 2. You should revERSe. 3. The Democratic Republic of Congo. 4. <img src=assets/clue1.png> 5. Set the dials on your device to \'A\', \'N\', \'E\' and activate it','Holocene',1);
-INSERT INTO `locations` VALUES (2, 'A','A','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (2, 'A','A','C','The shores of a lake across from a volcano.  There is no life to be seen and the atmosphere is difficult to breath.',10,0,'13',0,'breathing aparatus',0,60,0,'The Shores of a Lake','No Clue Yet','Pre-cambrian',NULL);
 INSERT INTO `locations` VALUES (3, 'A','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (4, 'A','A','E','A rocky sea shore.  Strange tubular, frond-shaped organisms exist in the rock pools.',10,0,NULL,0,'',0,0,0,'A Rocky Shore','No Clue Yet','Cambrian',NULL);
 INSERT INTO `locations` VALUES (5, 'A','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','For those who are reading this.  Often have I seen you.  Time and time again.','No Era Yet',NULL);
@@ -78,7 +78,7 @@ INSERT INTO `locations` VALUES (44, 'B','I','D','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (45, 'B','I','E','Lacey was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Something small or unimportant of its kind','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (46, 'B','I','G','A Deserted Highway with a rusting car.',5,0,NULL,0,'',0,0,0,'A Deserted Highway','No Clue Yet','Post-Holocene',NULL);
 INSERT INTO `locations` VALUES (47, 'B','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (48, 'B','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (48, 'B','I','T','Lacey was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Tick and tock goes the clock.  First and last in three but two\'s in only two.','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (49, 'B','N','C','Sarah was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (50, 'B','N','D','Dylan was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Apparently its a machine for exercising rowers gently.','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (51, 'B','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','3, 9, 20','No Era Yet',NULL);
