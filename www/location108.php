@@ -27,10 +27,10 @@ check_location(108, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location108.png>
+<h2>A Jungle</h2>
 
-<p>101 Emperors (of the Roman Kind)</p>
+<p>You are standing at the edge of a  jungle, looking out over a plain teaming with mammalian life.  A piece of paper is pinned to a tree.  It reads: 101 Emperors (of the Roman Kind)</p>
 
 </div>
 </body>
