@@ -1314,79 +1314,72 @@
 
 
     function player_attack($leek, $weapon_id, $connection) {
-             $location_id = get_value_from_users("location_id", $connection);
-         if ($leek) {
-                $critter_hp = get_value_from_users("leek_critter_hp", $connection);
+        $location_id = get_value_from_users("location_id", $connection);
+        if ($leek) {
+            $critter_hp = get_value_from_users("leek_critter_hp", $connection);
             $critter = get_value_from_users("leek_critter", $connection);
             $critter_id = leek_critter_id($critter);
-         } else {
-               $event_id = get_unresolved_event_id($connection);
-           $critter_hp = get_value_for_event_id("critter_hp", $event_id, $connection);
-           $critter_id = get_value_for_event_id("critter", $event_id, $connection);
-         }
+        } else {
+            $event_id = get_unresolved_event_id($connection);
+            $critter_hp = get_value_for_event_id("critter_hp", $event_id, $connection);
+            $critter_id = get_value_for_event_id("critter", $event_id, $connection);
+        }
         
-             $critter_name = get_value_for_critter_id("name", $critter_id, $connection);
-         if ($critter_hp > 0) {
+        $critter_name = get_value_for_critter_id("name", $critter_id, $connection);
+        if ($critter_hp > 0) {
             $hit_percentage = get_value_for_weapon_id("hit_percentage", $weapon_id, $connection);
             $d10_roll = rand(0, 100);
             if ($d10_roll < $hit_percentage) {
-                   $damage = get_value_for_weapon_id("damage", $weapon_id, $connection);
-                   $critter_hp = $critter_hp - $damage;
-                   if ($leek) {
-                      update_users("leek_critter_hp", $critter_hp, $connection);
-                   } else {
-                      update_event($event_id, "critter_hp", $critter_hp, $connection);
-                   }
-                   if ($critter_hp <= 0) {
-                      $water = get_value_for_location_id("water", $location_id, $connection);
-                  if (!$water) {
-                         print "<p>The $critter_name falls to the ground dead.</p>";
-                  } else {
-                     print "<p>The $critter_name sinks beneath the waves.</p>";
-                  }
-                   } else {
-                 $present_day = get_value_for_location_id("present_day", $location_id, $connection);
-                         $water = get_value_for_location_id("water", $location_id, $connection);
-                     if ($weapon_id == 5) {
-                        print "<p>You stab the $critter_name but it continues to attack.</p>";
-                 } else if ($weapon_id == 6) {
-                        print "<p>You hit the $critter_name and knock it out.</p>";
-                    if ($water) {
-                       print "<p>It sinks beneath the waves.</p>";
-                               update_event($event_id, "critter_hp", -1, $connection);
-                    }
-                    if (!$present_day) {
-                       update_event($event_id, "stunned", default_stunned(), $connection);
+                $damage = get_value_for_weapon_id("damage", $weapon_id, $connection);
+                $critter_hp = $critter_hp - $damage;
+                
+                if ($leek) {
+                    update_users("leek_critter_hp", $critter_hp, $connection);
+                } else {
+                    update_event($event_id, "critter_hp", $critter_hp, $connection);
+                }
+                
+                if ($critter_hp <= 0) {
+                    $present_day = get_value_for_location_id("present_day", $location_id, $connection);
+                    $water = get_value_for_location_id("water", $location_id, $connection);
+                    if (get_value_for_weapon_id("stuns", $weapon_id, $connection)) {
+                        print "<p>You stun the $critter_name.</p>";
+                        if ($water) {
+                            print "<p>It sinks beneath the waves.</p>";
+                            update_event($event_id, "critter_hp", -1, $connection);
+                        }
+                        
+                        if ($present_day) {
+                            print "<p>It is removed to the menagerie</p>";
+                            if (!$leek) {
+                                update_event($event_id, "critter_hp", -1, $connection);
+                            } else {
+                                update_users("leek_critter_hp", -1, $connection);
+                            }
+                        } else {
+                            update_event($event_id, "stunned", default_stunned(), $connection);
+                        }
+                    } else if (!$water) {
+                        print "<p>The $critter_name falls to the ground dead.</p>";
                     } else {
-                      if ($leek) {
-                         update_users("leek_critter_hp", -1, $connection);
-                      }
-                      print "<p>It is removed to the menagerie</p>";
+                        print "<p>The $critter_name sinks beneath the waves.</p>";
                     }
-                 } else if (get_value_for_weapon_id("stuns", $weapon_id, $connection)) {
-                    print "<p>You stun the $critter_name.</p>";
-                    if ($water) {
-                       print "<p>It sinks beneath the waves.</p>";
-                               update_event($event_id, "critter_hp", -1, $connection);
+                } else {
+                    $water = get_value_for_location_id("water", $location_id, $connection);
+                    if ($weapon_id == 5) {
+                        print "<p>You stab the $critter_name but it continues to attack.</p>";
+                    } else if ($weapon_id == 10) {
+                        print "<p>Torrence savages the $critter_name but it continues to attack.</p>";
+                    } else if ($weapon_id == 6 || $weapon_id == 9) {
+                        print "<p>You hit the $critter_name but it continues to attack.</p>";
+                    } else {
+                        print "<p>You shoot the $critter_name but it continues to attack.</p>";
                     }
-                    if ($present_day) {
-                      print "<p>It is removed to the menagerie</p>";
-                      if (!$leek) {
-                          update_event($event_id, "critter_hp", -1, $connection);
-                      } else {
-                        update_users("leek_critter_hp", -1, $connection);
-                     }
-                   } else {
-                       update_event($event_id, "stunned", default_stunned(), $connection);
-                   }
-                } else {
-                      print "<p>You shoot the $critter_name but it continues to attack.</p>";
                 }
-                   }
-                } else {
-                     print "<p>You miss the $critter_name.</p>";
-                }
-         }
+            } else {
+                print "<p>You miss the $critter_name.</p>";
+            }
+        }
     }
 
     function resolve_events($connection) {

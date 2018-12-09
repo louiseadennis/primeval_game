@@ -8,13 +8,14 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(103, $db);
-    $char_collected = check_for_character('matt Rees', $db);
+check_location(163, $db);
+    
+    $char_collected = check_for_character('ross', $db);
     if (!$char_collected) {
         $visited_already = get_value_from_users("new_character", $db);
-        if ($visited_already != 'matt Rees') {
-            add_location_clue(103, $db);
-            add_equipment("first aid kit", $db);
+        if ($visited_already != 'ross') {
+            add_location_clue(163, $db);
+            add_equipment("hand gun", $db);
         }
     }
 
@@ -38,14 +39,23 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Start of the Eocene</p>
+<p>First Letters:</p>
+
+<table>
+<tr><td>B</td><td>O</td><td>N</td><td>E</td><td>T</td></tr>
+<tr><td>E</td><td>F</td><td>G</td><td>H</td><td>O</td></tr>
+<tr><td>D</td><td>O</td><td>P</td><td>I</td><td>O</td></tr>
+<tr><td>C</td><td>N</td><td>Q</td><td>J</td><td>T</td></tr>
+<tr><td>B</td><td>M</td><td>L</td><td>K</td><td>H</td></tr>
+<tr><td>A</td><td>W</td><td>A</td><td>L</td><td>C</td></tr>
+</table>
 
 <?php
     
     if (!$char_collected) {
-        update_users("new_character", 'matt Rees', $db);
-        print "<img src=assets/matt_Rees.png align=left>";
-        print "<p>Matt Rees is here.  He has a first aid kit.</p>";
+        update_users("new_character", 'ross', $db);
+        print "<img src=assets/ross.png align=left>";
+        print "<p>Ross Jenkins is here.  He has a hand gun.</p>";
     }
     ?>
 

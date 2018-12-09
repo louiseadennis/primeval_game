@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(88, $db);
+check_location(92, $db);
 
 ?>
 <html>
@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location88.png>
-<h2>A Swamp</h2>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<p>You are standing in the middle of a swamp.  It is hot and humid and you are surrounded by giant seed ferns.</p>
+<p>Placeholder</p>
 
 </div>
 </body>
