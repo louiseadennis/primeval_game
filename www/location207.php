@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(222, $db);
+check_location(207, $db);
 
 ?>
 <html>
@@ -23,14 +23,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-    print_standard_start($db);
+print_standard_start($db);
 ?>
 <div class=location>
-<?php
-    print_land_of_fiction(222, $db);
-    
-    print_accessible_location_foot(217, $db);
-?>
+<img src=assets/location207.png>
+<h2>High Cliffs</h2>
+
+<p>You are standing on high cliffs.  Below you the cliffs are full of the nests of Anurognathus.</p>
 
 </div>
 </body>

@@ -72,7 +72,18 @@
 </i></p>
 <?php
     if ($lester_recharges && $default_uses < 500) {
+        $sql = "SELECT * FROM characters;";
+        if (!$result = $db->query($sql))
+            showerror($db);
+        $total = $result->num_rows;
+        $char_id_list = get_value_from_users("char_id_list", $db);
+        $char_id_array = explode(",", $char_id_list);
+        if ($char_id_array->count == $total && !check_for_equipment("tank", $db)) {
+            print "<p>Lester congratulates you on finding everyone.  He resupplies your $name and agrees to buy a tank.</p>";
+        } else {
             print "<p>Lester agrees to resupply your $name.  He refuses to buy a tank.</p>";
+            add_equipment('tank', $db);
+        }
     }
 
     print_travel(1, $db);

@@ -29,7 +29,7 @@ print_header($db);
 <?php
     print_land_of_fiction(221, $db);
     
-    print_accessible_location_foot(221, $db);
+    print_accessible_location_foot(217, $db);
 ?>
 
 </div>

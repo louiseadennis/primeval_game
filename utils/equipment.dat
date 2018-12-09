@@ -31,5 +31,6 @@ INSERT INTO `equipment` VALUES
 (13,'throwing screwdriver','You throw the screwdriver',1000,0,0),
 (14,'budget','You spend some money',10,0,0),
 (15, 'torrence','You allow Torrence to attack',1000,0,0);
+(16, 'tank', 'You can not use the tank! Don't be silly', 1000, 0, 0);
 UNLOCK TABLES;
 
