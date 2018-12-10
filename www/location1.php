@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     require_once('./config/accesscontrol.php');
     require_once('./utilities.php');
@@ -88,6 +88,8 @@
 
     print_travel(1, $db);
     print_equipment_purchase($db);
+    
+    print_footer(1, $db);
 ?>
 </div>
 </body>

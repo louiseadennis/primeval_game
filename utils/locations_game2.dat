@@ -70,7 +70,7 @@ INSERT INTO `locations` VALUES (35, 'A','T','S','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (36, 'A','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (37, 'B','A','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (38, 'B','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (39, 'B','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (39, 'B','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','<img src=assets/clue39.png>','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (40, 'B','A','G','An empty plain with no life.',5,0,NULL,0,'',0,0,0,'A Desolate Rocky Plain','No Clue Yet','Pre-Cambrian',NULL, NULL);
 INSERT INTO `locations` VALUES (41, 'B','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (42, 'B','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -243,7 +243,7 @@ INSERT INTO `locations` VALUES (208, 'F','R','G','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (209, 'F','R','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (210, 'F','R','T','Cretaceous Australia or Antarctica.',5,0,'23',0,'',0,10,0,'A Cliff Top','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (211, 'F','T','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Ding, Dong, Joined the Bell.','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (212, 'F','T','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (212, 'F','T','D','Connor and Abby\'s camp in the Cretaceous.',30,0,'16,25',0,'',0,30,0,'Cretaceous Camp','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (213, 'F','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (214, 'F','T','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (215, 'F','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);

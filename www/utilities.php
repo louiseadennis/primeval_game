@@ -221,16 +221,12 @@
                 }
                 
                 print "<form method=\"POST\" action=\"main.php\">";
-                print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
-                print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
-                print "<input type=\"hidden\" name=\"choice_id\" value=\"choice4\">";
+                print "<input type=\"hidden\" name=\"last_action\" value=\"write\">";
                 print "<input type=\"text\" size=\"100\" name=\"story\"></a>";
                 print "<p><input type=\"submit\" value=\"Is what happens next!!\"></form></p>";
                 print "<form method=\"POST\" action=\"main.php\">";
-                print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
-                print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
+                print "<input type=\"hidden\" name=\"last_action\" value=\"write\">";
                 print "<input type=\"hidden\" name=\"story\" value=\"x1x1x1\">";
-                print "<input type=\"hidden\" name=\"choice_id\" value=\"choice4\">";
                 print "<input type=\"submit\" value=\"No I don't want to choose!\"></p></form>";
             }
             

@@ -155,6 +155,24 @@ if ($travel_type == "lof") {
                 }
                 update_users("master", 1, $db);
             }
+        } else if ($last_action == "write") {
+            $story = mysqlclean($_POST, "story", 100, $db);
+            $sql = "SELECT * FROM locations where location_id={$location_id}";
+            if (!$result = $connection->query($sql))
+                showerror($connection);
+            
+            while ($row=$result->fetch_assoc()) {
+                $story = $row["story"];
+                
+                $new_story = $story . "<br>" . $value;
+                
+                $sql = "UPDATE locations SET story='{$new_story}' WHERE location_id='$location_id'";
+                if (!$connection->query($sql)) {
+                    showerror($connection);
+                }
+                return 1;
+            }
+            return 1;
         }
     }
 

@@ -8,8 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(34, $db);
-  
+check_location(212, $db);
 
 ?>
 <html>
@@ -27,15 +26,14 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location34.png>
-<h2>The Banks of a Stream</h2>
+<img src=assets/location212.png>
+<h2>An Abandoned Camp</h2>
 
-<p>You are standing on the banks of a Stream.  Massive pterosaurs circle overhead.</p>
-
+<p>You are in the middle of a forest of conifers and leafy trees.  Someone seems to have been camping here.  You can see traces of a fire pit and hand-made wooden spears inside the remains of a makeshift hut made from tree roots.   Tin cans are suspended from string around the area.  You think this must be where Connor and Abby lived for a year.</p>
 
 <?php
-    print_footer(34, $db);
-    ?>
+print_footer(212, $db);
+?>
 </div>
 </body>
 </html>
