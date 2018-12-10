@@ -8,13 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(24, $db);
-    add_location_clue(24, $db);
-    
-    $hp = get_value_from_users("hp", $db);
-    $new_hp = $hp - 1;
-    
-    update_users("hp", $new_hp, $db);
+check_location(99, $db);
 
 ?>
 <html>
@@ -32,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location24.png>
-<h2>A Frozen Landscape</h2>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<p>You are standing in a frozen landscape and the air is hard to breathe.  <b>You can not survive here long.</b>  Carved into the ice are the words: "Protest against Nuclear Weapons"</p>
+<p>Placeholder</p>
 
 </div>
 </body>

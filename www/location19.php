@@ -29,7 +29,7 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>I'm starting to be fascinated.</p>
 
 </div>
 </body>
