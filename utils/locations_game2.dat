@@ -103,7 +103,7 @@ INSERT INTO `locations` VALUES (69, 'B','T','E','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (70, 'B','T','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (71, 'B','T','S','Ditzy was here',0,0,NULL,0,'',0,0,0,'No Name Yet','My first is five.  Add one and multiply by three for my second.  Divide by six for my third.','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (72, 'B','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (73, 'C','A','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (73, 'C','A','C','Stringer was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Every third in carriages','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (74, 'C','A','D','Tobie was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (75, 'C','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (76, 'C','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
@@ -190,7 +190,7 @@ INSERT INTO `locations` VALUES (156, 'E','I','T','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (157, 'E','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (158, 'E','N','D','A grassy plain with small horses.',5,0,'18',0,'',0,20,0,'A Grassy Plain','No Clue Yet','Pliocene',NULL);
 INSERT INTO `locations` VALUES (159, 'E','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (160, 'E','N','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (160, 'E','N','G','A forest clearing.  Pteranodons were flying overhead.',5,0,'24',0,'',0,20,0,'A Forest Clearing','No Clue Yet','Jurassic',NULL);
 INSERT INTO `locations` VALUES (161, 'E','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (162, 'E','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (163, 'E','O','C','Ross Jenkins was here',0,0,NULL,0,'',0,0,0,'No Name Yet','First Letters: <table><tr><td>B</td><td>O</td><td>N</td><td>E</td><td>T</td></tr><tr><td>E</td><td>F</td><td>G</td><td>H</td><td>O</td></tr><tr><td>D</td><td>O</td><td>P</td><td>I</td><td>O</td></tr><tr><td>C</td><td>N</td><td>Q</td><td>J</td><td>T</td></tr><tr><td>B</td><td>M</td><td>L</td><td>K</td><td>H</td></tr><tr><td>A</td><td>W</td><td>A</td><td>L</td><td>C</td></tr></table>','No Era Yet',NULL);

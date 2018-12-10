@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(223, $db);
+check_location(160, $db);
 
 ?>
 <html>
@@ -23,14 +23,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-    print_standard_start($db);
+print_standard_start($db);
 ?>
 <div class=location>
-<?php
-    print_land_of_fiction(223, $db);
-    
-    print_accessible_location_foot(217, $db);
-?>
+<img src=assets/location160.png>
+<h2>A Forest Clearing</h2>
+
+<p>You are standing in a clearing in a forest of conifers and broad leafed trees.  Pteranodons fly in the sky over head.</p>
 
 </div>
 </body>

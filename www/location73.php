@@ -9,6 +9,16 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(73, $db);
+    
+    $char_collected = check_for_character('stringer', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'stringer') {
+            add_location_clue(73, $db);
+            add_equipment("tranquiliser rifle", $db);
+        }
+    }
+
 
 ?>
 <html>
@@ -29,7 +39,18 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>Every third in carriages.</p>
+
+<?php
+    
+    if (!$char_collected) {
+        update_users("new_character", 'stringer', $db);
+        print "<img src=assets/stringer.png align=left>";
+        print "<p>Stringer is here.  He has a tranquiliser rifle.</p>";
+    }
+    ?>
+
+
 
 </div>
 </body>
