@@ -8,7 +8,15 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(34, $db);
+check_location(114, $db);
+    
+    $char_collected = check_for_character('caroline', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'caroline') {
+            add_location_clue(114, $db);
+        }
+    }
 
 ?>
 <html>
@@ -26,15 +34,21 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location34.png>
-<h2>The Banks of a Stream</h2>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<p>You are standing on the banks of a Stream.  Massive pterosaurs circle overhead.</p>
-
+<p>Be a Entrepeneur or Elf or Engineer</p>
 
 <?php
-    print_footer(34, $db);
+    
+    if (!$char_collected) {
+        update_users("new_character", 'caroline', $db);
+        print "<img src=assets/caroline.png align=left>";
+        print "<p>Caroline is here.</p>";
+    }
     ?>
+
+
 </div>
 </body>
 </html>

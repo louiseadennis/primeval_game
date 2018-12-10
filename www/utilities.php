@@ -204,7 +204,38 @@
         }
     }
     
-
+    function print_footer($location_id, $connection) {
+        $master = get_value_from_users("master", $connection);
+        if ($master == 1) {
+            $sql = "SELECT * FROM locations where location_id={$location_id}";
+            if (!$result = $connection->query($sql))
+                showerror($connection);
+            
+            while ($row=$result->fetch_assoc()) {
+                $story = $row["story"];
+                if ($story == '') {
+                    print "<p>You should start writing what has happened here.</p>";
+                } else {
+                    print $story;
+                    print "<p>What happens next?</p>";
+                }
+                
+                print "<form method=\"POST\" action=\"main.php\">";
+                print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+                print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
+                print "<input type=\"hidden\" name=\"choice_id\" value=\"choice4\">";
+                print "<input type=\"text\" size=\"100\" name=\"story\"></a>";
+                print "<p><input type=\"submit\" value=\"Is what happens next!!\"></form></p>";
+                print "<form method=\"POST\" action=\"main.php\">";
+                print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
+                print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
+                print "<input type=\"hidden\" name=\"story\" value=\"x1x1x1\">";
+                print "<input type=\"hidden\" name=\"choice_id\" value=\"choice4\">";
+                print "<input type=\"submit\" value=\"No I don't want to choose!\"></p></form>";
+            }
+            
+        }
+    }
     
     function print_land_of_fiction($location_id, $connection) {
         $choice_point = get_value_for_lof_id("next_choice", $location_id, $connection);

@@ -35,6 +35,13 @@ print_standard_start(\$db);
 
 <p>Placeholder</p>
 
+<?php
+print_footer(";
+
+print $ARGV[0];
+
+print ", \$db);
+?>
 </div>
 </body>
 </html>";
