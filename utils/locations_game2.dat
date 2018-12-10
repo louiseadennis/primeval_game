@@ -160,7 +160,7 @@ INSERT INTO `locations` VALUES (126, 'D','N','T','A freshwater lake.  Hot and hu
 INSERT INTO `locations` VALUES (127, 'D','O','C','A dark forest with large trees and giant insects.',5,0,'22',0,'',0,5,0,'A Dark Forest','No Clue Yet','Carboniferous',NULL);
 INSERT INTO `locations` VALUES (128, 'D','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (129, 'D','O','E','Cross Photonics',5,0,'12',0,'',0,5,1,'Cross Photonics','No Clue Yet','Holocene',100);
-INSERT INTO `locations` VALUES (130, 'D','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (130, 'D','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','At, Ate, _, Date','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (131, 'D','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','I start and end in time but not in clock, my middle is in rune and also in rock','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (132, 'D','O','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (133, 'D','R','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Should be up an arse','No Era Yet',NULL);
@@ -185,7 +185,7 @@ INSERT INTO `locations` VALUES (151, 'E','I','C','Mac was here.',0,0,NULL,0,'',0
 INSERT INTO `locations` VALUES (152, 'E','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (153, 'E','I','E','A forest with giant spider webs strung between the trees.',5,1,'3',0,'',0,30,0,'A Spider-Web Strewn Forest','<table><tr><td>A</td><td>B</td><td>B</td><td>Y</td><td>C</td></tr><tr><td>D</td><td>U</td><td>E</td><td>F</td><td>G</td></tr><tr><td>H</td><td>R</td><td>I</td><td>J</td><td>K</td></tr><tr><td>L</td><td>T</td><td>M</td><td>A</td><td>N</td></tr><tr><td>O</td><td>O</td><td>P</td><td>R</td><td>Q</td></tr><tr><td>R</td><td>N</td><td>I</td><td>C</td><td>K</td></tr></table>','Carboniferous',NULL);
 INSERT INTO `locations` VALUES (154, 'E','I','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
-INSERT INTO `locations` VALUES (155, 'E','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
+INSERT INTO `locations` VALUES (155, 'E','I','S','The edge of a forest overlooking a plain full of sauropods.',5,0,'31',0,'',0,15,0,'No Name Yet','No Clue Yet','Jurassic',NULL);
 INSERT INTO `locations` VALUES (156, 'E','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (157, 'E','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL);
 INSERT INTO `locations` VALUES (158, 'E','N','D','A grassy plain with small horses.',5,0,'18',0,'',0,20,0,'A Grassy Plain','No Clue Yet','Pliocene',NULL);

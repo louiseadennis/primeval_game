@@ -384,7 +384,7 @@
                     print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
                     print "<input type=\"hidden\" name=\"travel_type\" value=\"lof\">";
                     print "<input type=\"hidden\" name=\"choice_id\" value=\"choice3\">";
-                    print "<input type=\"text\" size=\"50\" name=\"placename\"></a>";
+                    print "<input type=\"text\" size=\"50\" name=\"placename\">";
                     print "<p><input type=\"submit\" value=\"Name the Place!\"></form></p>";
                     print "<form method=\"POST\" action=\"main.php\">";
                     print "<input type=\"hidden\" name=\"last_action\" value=\"travel\">";
