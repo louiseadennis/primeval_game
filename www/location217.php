@@ -10,12 +10,12 @@ sessionAuthenticate();
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(217, $db);
     
-    $master = get_value_from_users("master", db);
+    $master = get_value_from_users("master", $db);
     $master_query = 0;
     
     $sql = "SELECT * FROM characters;";
     if (!$result = $db->query($sql))
-    showerror($db);
+        showerror($db);
     $total = $result->num_rows;
     $char_id_list = get_value_from_users("char_id_list", $db);
     $char_id_array = explode(",", $char_id_list);

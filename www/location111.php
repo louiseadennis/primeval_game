@@ -8,15 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(185, $db);
-    
-    $char_collected = check_for_character('leek', $db);
-    if (!$char_collected) {
-        $visited_already = get_value_from_users("new_character", $db);
-        if ($visited_already != 'leek') {
-            add_location_clue(185, $db);
-        }
-    }
+check_location(111, $db);
 
 ?>
 <html>
@@ -37,17 +29,7 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>First known example found in Oberkassel</p>
-
-<?php
-    
-    if (!$char_collected) {
-        update_users("new_character", 'leek', $db);
-        print "<img src=assets/leek.png align=left>";
-        print "<p>Leek is here.</p>";
-    }
-    ?>
-
+<p>Placeholder</p>
 
 </div>
 </body>

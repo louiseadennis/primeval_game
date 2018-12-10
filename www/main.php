@@ -140,6 +140,21 @@ if ($travel_type == "lof") {
             $uses_array[$budget_index] = $new_budget;
             $new_uses_list = join(",", $uses_array);
             update_users("uses", $new_uses_list, $db);
+        } else if ($last_action == "master") {
+            $master = mysqlclean($_POST, "master", 10, $db);
+            if ($master == 1) {
+                $sql = "SELECT user_id from users where master = 1";
+                if (!$result = $db -> query($sql))
+                    showerror($db);
+                $masters = $result->num_rows;
+                if ($master > 0) {
+                    $user_id = $result["user_id"];
+                    $sql = "UPDATE users SET master = 0 where user_id = $user_id";
+                    if (!$result = $db -> query($sql))
+                        showerror($db);
+                }
+                update_users("master", 1, $db);
+            }
         }
     }
 
