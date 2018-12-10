@@ -1,4 +1,4 @@
-<?php 
+<?php
     require_once('./config/accesscontrol.php');
     require_once('./utilities.php');
 
@@ -37,6 +37,8 @@
     if (!$action_done) {
         print "<p><b>You must use breathing apparatus or will take damage.</b></p>";
     }
+    
+    print_footer(2, $db);
     ?>
 </div>
 

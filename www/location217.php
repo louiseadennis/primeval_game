@@ -71,7 +71,9 @@ print_standard_start($db);
     print_accessible_location_foot(222, $db);
     print "</li><li>";
     print_accessible_location_foot(223, $db);
-    print "</li>";
+    print "</li><li>";
+    print_accessible_location_foot(225, $db);
+    print "</li>";";
     print "</ul></p>";
     
 ?>

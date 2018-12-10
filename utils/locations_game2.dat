@@ -166,7 +166,7 @@ INSERT INTO `locations` VALUES (131, 'D','O','S','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (132, 'D','O','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (133, 'D','R','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Should be up an arse','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (134, 'D','R','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (135, 'D','R','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (135, 'D','R','E','Christine was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','End of the drafts','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (136, 'D','R','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (137, 'D','R','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (138, 'D','R','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -198,7 +198,7 @@ INSERT INTO `locations` VALUES (163, 'E','O','C','Ross Jenkins was here',0,0,NUL
 INSERT INTO `locations` VALUES (164, 'E','O','D','A desert with cycads and a gorgonopsid.',5,0,'6',0,'',0,20,0,'A Desert','No Clue Yet','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (165, 'E','O','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (166, 'E','O','G','Leek\'s Warehouse',0,0,NULL,0,'',0,0,1,'Leek\'s Warehouse','No Clue Yet','Holocene',2, NULL);
-INSERT INTO `locations` VALUES (167, 'E','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (167, 'E','O','S','The pool where Helen and Nick met after Nick swam through an anomaly',30,0,'17',0,'',0,5,0,'A Deep Pool','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (168, 'E','O','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (169, 'E','R','C','Preston was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','A strange voice said bye','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (170, 'E','R','D','A river in forest of seed ferns.  Coelophysis and Placerias sighted.', 5,0,'9,29',0,'',0,20,0,'A River in a Forest','No Clue Yet','Triassic',NULL, NULL);
@@ -256,5 +256,6 @@ INSERT INTO `locations` VALUES (221, 'D','Z','Z','A White Void',0,0,NULL,0,'',0,
 INSERT INTO `locations` VALUES (222, 'E','Z','Z','A White Void',0,0,NULL,0,'',0,0,0,'Backward Left','No Clue Yet','The Land of Fiction',NULL, NULL);
 INSERT INTO `locations` VALUES (223, 'F','Z','Z','A White Void',0,0,NULL,0,'',0,0,0,'Backward Right','No Clue Yet','The Land of Fiction',NULL, NULL);
 INSERT INTO `locations` VALUES (224, 'X','X','X','Sanctuary Bedroom',0,0,NULL,0,'',0,0,0,'Sanctuary Bedroom','No Clue Yet','Sanctuary',NULL, NULL);
+INSERT INTO `locations` VALUES (225, 'Z','A','Z','The Library',0,0,NULL,0,'',0,0,0,'The Library','No Clue Yet','The Land of Fiction',NULL, NULL);
 UNLOCK TABLES;
 
