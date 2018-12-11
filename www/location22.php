@@ -37,7 +37,7 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Bing, Bang, Bong</p>
+<p>Did Jack Harkness become the face of this?</p>
 
 <?php
     

@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are on a bare rocky sea shore.  You can see strange tubular, frond-shaped organisms in the rock pools.</p>
 
+<?php
+    print_footer('4', $db);
+    ?>
+
 </div>
 </body>
 </html>

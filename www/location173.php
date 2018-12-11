@@ -27,10 +27,10 @@ check_location(173, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location173.png>
+<h2>A Prairie</h2>
 
-<p>A Bed for a Baby.</p>
+<p>You are standing in a wide grassy plain.  Letters hang surreally in the air saying "A Bed for a Baby."</p>
 
 <?php
     print_footer(173, $db);

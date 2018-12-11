@@ -532,6 +532,14 @@
         }
     }
     
+    function print_fanfic_with_cover($fanfic_id, $connection) {
+        $cover = get_value_for_fanfic_id("cover", $fanfic_id, $connection);
+        if (! is_null($cover)) {
+            print "<p><center><img src=$cover></center></p>";
+        }
+        print_fanfic($fanfic_id, $connection);
+    }
+    
     function print_fanfic($fanfic_id, $connection) {
         $title = get_value_for_fanfic_id("title", $fanfic_id, $connection);
         $author = get_value_for_fanfic_id("author", $fanfic_id, $connection);

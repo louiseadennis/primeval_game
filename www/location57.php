@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(57, $db);
+    add_location_clue(57, $db);
 
 ?>
 <html>
@@ -29,7 +30,11 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>What the Lion did to Jim who ran away from his nurse.</p>
+
+<?php
+    print_footer('57',$db);
+    ?>
 
 </div>
 </body>
