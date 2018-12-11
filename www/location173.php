@@ -32,6 +32,10 @@ print_standard_start($db);
 
 <p>A Bed for a Baby.</p>
 
+<?php
+    print_footer(173, $db);
+    ?>
+
 </div>
 </body>
 </html>

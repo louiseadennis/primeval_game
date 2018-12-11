@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(225, $db);
+check_location(117, $db);
 
 ?>
 <html>
@@ -23,27 +23,17 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-    print_standard_start($db);
+print_standard_start($db);
 ?>
 <div class=location>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<h2>The Library of the Land of Fiction</h2>
+<p>Placeholder</p>
 
 <?php
-    $library_f = get_value_from_users("library_fanfic", $db);
-    if ($library_f == 0) {
-        print "You select a book from the shelves.  It is:";
-        $fanfic = random_fic($db);
-        update_users("library_fanfic", $fanfic, $db);
-        print_fanfic($fanfic, $db);
-    } else {
-        print "You are reading:";
-        print_fanfic($library_f, $db);
-    }
-    print_accessible_location_foot(217, $db);
-
+print_footer(117, $db);
 ?>
-
 </div>
 </body>
 </html>

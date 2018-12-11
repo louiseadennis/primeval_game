@@ -93,7 +93,7 @@
         if (!$result = $connection->query($sql)) {
             showerror($connection);
         }
-        $fanfic_array = ();
+        $fanfic_array = array();
         
         if (!is_null($fanfic_id_list)) {
             $fanfic_id_array = explode(",", $fanfic_id_list);
@@ -114,8 +114,8 @@
         if ($size == 0 ) {
             return 0;
         } else {
-            $dice = rand(1, $size);
-            return $fanfic_array($dice);
+            $dice = rand(0, $size - 1);
+            return $fanfic_array[$dice];
         }
     }
     
@@ -1909,6 +1909,9 @@
                  if ($sex == 2) {
                      $pronoun = "She";
                  }
+                 if ($sex == 3) {
+                     $pronoun = "They";
+                 }
             
                  print "<p>$ucchar has joined you on your travels.  $pronoun is stored in your user profile.</p>";
              } else if ($new_character == 'sid') {
@@ -2115,6 +2118,13 @@
 
     function check_location($location, $connection) {
         $real_location = get_location($connection);
+        
+        if ($location != 225) {
+            $library_f = get_value_from_users("library_fanfic", $connection);
+            if ($library_f != 0) {
+                update_users("library_fanfic", 0, $connection);
+            }
+        }
 
         if ($real_location == $location) {
             return 1;

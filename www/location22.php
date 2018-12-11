@@ -9,6 +9,14 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(22, $db);
+    $char_collected = check_for_character('wilder', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'wilder') {
+            add_location_clue(22, $db);
+        }
+    }
+
 
 ?>
 <html>
@@ -29,7 +37,21 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>Bing, Bang, Bong</p>
+
+<?php
+    
+    if (!$char_collected) {
+        update_users("new_character", 'wilder', $db);
+        print "<img src=assets/wilder.png align=left>";
+        print "<p>Wilder is here.</p>";
+    }
+    ?>
+
+
+<?php
+    print_footer(22, $db);
+    ?>
 
 </div>
 </body>
