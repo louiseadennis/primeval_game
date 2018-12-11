@@ -8,12 +8,8 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(17, $db);
-    
-    $char_collected = check_for_character('monty', $db);
-    if (!$char_collected) {
-        $visited_already = get_value_from_users("new_character", $db);
-    }
+check_location(215, $db);
+    add_location_clue(215, $db);
 
 ?>
 <html>
@@ -31,22 +27,14 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location17.png>
-<h2>A Snowy Plain</h2>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<p>You are standing in a snowy plain amid a herd of mammoths.  You can see a glacier in the distance.</p>
+<p>Vowels: one, three, one</p>
 
 <?php
-    
-    if (!$char_collected) {
-        update_users("new_character", 'monty', $db);
-        print "<img src=assets/monty.png align=left>";
-        print "<p>Monty is here.</p>";
-    }
-    
-    print_footer(17, $db)
-    ?>
-
+print_footer(215, $db);
+?>
 </div>
 </body>
 </html>

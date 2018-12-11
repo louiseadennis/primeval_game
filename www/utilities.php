@@ -87,6 +87,38 @@
       return $result->num_rows;
     }
     
+    function random_fic($connection) {
+        $fanfic_id_list = get_value_from_users("fanfic_id_list", $connection);
+        $sql = "SELECT fanfic_id from fanfic";
+        if (!$result = $connection->query($sql)) {
+            showerror($connection);
+        }
+        $fanfic_array = ();
+        
+        if (!is_null($fanfic_id_list)) {
+            $fanfic_id_array = explode(",", $fanfic_id_list);
+            while ($row = $result->fetch_assoc()) {
+                $fanfic_id = $row["fanfic_id"];
+                if (!in_array($fanfic_id, $fanfic_id_array)) {
+                    array_push($fanfic_array, $fanfic_id);
+                }
+            }
+        } else {
+            while ($row = $result->fetch_assoc()) {
+                $fanfic_id = $row["fanfic_id"];
+                array_push($fanfic_array, $fanfic_id);
+            }
+        }
+        
+        $size = count($fanfic_array);
+        if ($size == 0 ) {
+            return 0;
+        } else {
+            $dice = rand(1, $size);
+            return $fanfic_array($dice);
+        }
+    }
+    
     function print_equipment_purchase ($connection) {
         $budget = check_for_equipment("budget", $connection);
         if ($budget) {

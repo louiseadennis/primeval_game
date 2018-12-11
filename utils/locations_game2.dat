@@ -48,7 +48,7 @@ INSERT INTO `locations` VALUES (13, 'A','I','T','A mountain above a forest with 
 INSERT INTO `locations` VALUES (14, 'A','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (15, 'A','N','D','It is foggy.',0,0,NULL,0,'',0,0,0,'No Name Yet','The clue is in the weather.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (16, 'A','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Multiple Cute Aliens','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (17, 'A','N','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (17, 'A','N','G','A snowy plain and a herd of mammoths.  Monty was here',10,0,NULL,0,'',0,0,0,'A Snowy Plain','No Clue Yet','Pleistocene',NULL, NULL);
 INSERT INTO `locations` VALUES (18, 'A','N','S','A rocky plain with graves and a dead future predator.  Leeds was here.',50,1,'1,5,6',0,'',0,30,0,'A Rocky Plain','One of the boxes has the initial B.N.T. stamped on it.','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (19, 'A','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','I\'m starting to be fascinated','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (20, 'A','O','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -246,7 +246,7 @@ INSERT INTO `locations` VALUES (211, 'F','T','C','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (212, 'F','T','D','Connor and Abby\'s camp in the Cretaceous.',30,0,'16,25',0,'',0,30,0,'Cretaceous Camp','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (213, 'F','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (214, 'F','T','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (215, 'F','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (215, 'F','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Vowels: one, three, one','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (216, 'F','T','T','Danny was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Old MacDonald had a farm...','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (217, 'Z','Z','Z','A White Void',0,0,'33',0,'',0,20,0,'Gateway to the Land of Fiction','No Clue Yet','The Land of Fiction',NULL, NULL);
 INSERT INTO `locations` VALUES (218, 'A','Z','Z','A White Void',0,0,NULL,0,'',0,0,0,'Forwards','No Clue Yet','The Land of Fiction',NULL, NULL);
