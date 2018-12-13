@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(92, $db);
+    add_location_clue(92, $db);
 
 ?>
 <html>
@@ -29,7 +30,11 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>Caps do it and you can keep it.</p>
+
+<?php
+    print_footer(92,$db);
+    ?>
 
 </div>
 </body>

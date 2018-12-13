@@ -45,8 +45,8 @@ print_standard_start($db);
     ?>
 
 <?php
-    print_travel(200, $db);
-print_footer(137, $db);
+    print_travel(137, $db);
+    print_footer(137, $db);
 ?>
 </div>
 </body>
