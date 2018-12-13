@@ -81,7 +81,7 @@ INSERT INTO `locations` VALUES (46, 'B','I','G','A Deserted Highway with a rusti
 INSERT INTO `locations` VALUES (47, 'B','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (48, 'B','I','T','Lacey was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Tick and tock goes the clock.  First and last in three but two\'s in only two.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (49, 'B','N','C','Sarah was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (50, 'B','N','D','Dylan was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Apparently its a machine for exercising rowers gently.','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (50, 'B','N','D','Rocky cliffs above the sea where a colony of mer-creatures live.  Dylan was here',10,0,'21',0,'',0,10,0,'Rocky Cliffs above the Sea','Apparently its a machine for exercising rowers gently.','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (51, 'B','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','3, 9, 20','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (52, 'B','N','G','Helen was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Social insects of the family Formicidae','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (53, 'B','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -223,7 +223,7 @@ INSERT INTO `locations` VALUES (188, 'F','I','D','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (189, 'F','I','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (190, 'F','I','G','Stephen was here',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (191, 'F','I','S','A rocky outcrop in a sandy desert.  Low oxygen',5,0,'10',0,'breathing aparatus',0,30,0,'A Sandy Desert','No Clue Yet','Silurian',NULL, NULL);
-INSERT INTO `locations` VALUES (192, 'F','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (192, 'F','I','T','Ethan was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Ancestor of the Future Predator','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (193, 'F','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (194, 'F','N','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (195, 'F','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);

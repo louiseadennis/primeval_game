@@ -24,6 +24,7 @@ INSERT INTO `fanfic` VALUES (2,'https://primeval-denial.livejournal.com/5496.htm
 INSERT INTO `fanfic` VALUES (3,'https://goldarrow.livejournal.com/18211.html','goldarrow','Alternatives','A Fix-it set 2 weeks after the end of S2', 'http://ic.pics.livejournal.com/goldarrow/5927896/1993/1993_original.png');
 INSERT INTO `fanfic` VALUES (4, 'https://archiveofourown.org/works/13755639','missyvortexdv','Don\`t Give Up the Day Job', 'Stephen/Connor, action/humour and established relationship. He could complain that life was never normal but it had its upsides.', null);
 INSERT INTO `fanfic` VALUES (5, 'https://goldarrow.livejournal.com/53376.html','goldarrow','None so Blind','Stephen/Clint Avengers Crossover', 'https://ic.pics.livejournal.com/goldarrow/5927896/10691/10691_original.png');
+INSERT INTO `fanfic` VALUES (6, 'https://primeval-denial.livejournal.com/3926002.html','...? well, fififolle started it','PupVerse!','Alpha/Beta/Omega story that took a left turn into puppies and never recovered', 'https://ic.pics.livejournal.com/fififolle/9666436/163552/163552_600.jpg');
 
 
 

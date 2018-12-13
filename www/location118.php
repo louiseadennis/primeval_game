@@ -38,12 +38,16 @@ if (!$pups_collected) {
     update_users("new_character", "alex Kay and Marcus", $db);
     print "<img src=assets/alex_Kay_and_Marcus.png align=left>";
     print "<p>Alex, Kay and Marcus are here.  They come running eagerly towards you.</p>";
+    
+    add_fanfic(6, $db);
+    print_fanfic(6, $db);
 }
 ?>
 
 
 <?php
-print_footer(118, $db);
+    
+    print_footer(118, $db);
 ?>
 </div>
 </body>

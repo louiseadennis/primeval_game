@@ -34,10 +34,10 @@ check_location(50, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location50.png>
+<h2>Rocky Cliffs above the Sea</h2>
 
-<p>Apparently its a machine for exercising rowers gently.</p>
+<p>You are standing on rocky cliffs above a sea.  Not far from you is a colony of far future mer-creatures.  Carved  into the rocks are the words `Apparently its a machine for exercising rowers gently.'</p>
 <?php
     if (!$dylan_collected) {
         update_users("new_character", "dylan", $db);
