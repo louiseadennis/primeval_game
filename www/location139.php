@@ -27,10 +27,14 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location139.png>
+<h2>A Forest Pool</h2>
 
-<p>You are a cad.</p>
+<p>You are standing on the edge of a pool in a forest of ferns and conifers.  Many animals come here to drink including therocephalians.  A scrap of paper in old-fashioned writing is pinned to a tree which reads `You, sir, are a cad.'</p>
+
+<?php
+    print_footer(139, $db);
+    ?>
 
 </div>
 </body>

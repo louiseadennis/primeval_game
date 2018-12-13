@@ -64,7 +64,7 @@ INSERT INTO `locations` VALUES (29, 'A','R','S','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (30, 'A','R','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (31, 'A','T','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (32, 'A','T','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (33, 'A','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (33, 'A','T','E','Captain Ross was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Fish, liable to cause wars.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (34, 'A','T','G','The banks of a stream.  Massive pterosaurs circle overhead.',5,0,'15',0,'',0,30,0,'The Banks of a Stream','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (35, 'A','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (36, 'A','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -168,9 +168,9 @@ INSERT INTO `locations` VALUES (133, 'D','R','C','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (134, 'D','R','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (135, 'D','R','E','Christine was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','End of the drafts','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (136, 'D','R','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (137, 'D','R','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (137, 'D','R','S','A French Farmhouse',30,0,'15',0,'',0,30,0,'A French Farmhouse','No Clue Yet','Holocence',200, NULL);
 INSERT INTO `locations` VALUES (138, 'D','R','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (139, 'D','T','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','You are a cad','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (139, 'D','T','C','A forest pool where therocephalians are drinking',5,0,'28',0,'',0,30,0,'A Forest Pool','You, sir, are a cad','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (140, 'D','T','D','A coniferous forest and a Stegosaurus',5,0,'34',0,'',0,0,0,'A forest of seed ferns.','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (141, 'D','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (142, 'D','T','G','Abby was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','A reverse trip to Goa','No Era Yet',NULL, NULL);

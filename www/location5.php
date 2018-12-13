@@ -32,6 +32,10 @@ print_standard_start($db);
 
 <p>For those who are reading this.  Often have I seen you.  Time and time again.</p>
 
+<?php
+    print_footer(5, $db);
+    ?>
+
 </div>
 </body>
 </html>
