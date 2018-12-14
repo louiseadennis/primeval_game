@@ -61,7 +61,7 @@ INSERT INTO `locations` VALUES (26, 'A','R','D','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (27, 'A','R','E','Marshy Pools and and Erypos',5,0,'26',0,'',0,10,0,'Marshy Pools','No Clue Yet','Carboniferous',NULL, NULL);
 INSERT INTO `locations` VALUES (28, 'A','R','G','An Airport.  Duncan was here.',80,0,'19,20',0,'',0,30,1,'An Airport','No Clue Yet','Holocene',4, NULL);
 INSERT INTO `locations` VALUES (29, 'A','R','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (30, 'A','R','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (30, 'A','R','T','A Lake Shore with a herd of Diplodocus',5,0,'35,36',0,'',0,30,0,'A Lake Shore','No Clue Yet','Jurassic',NULL, NULL);
 INSERT INTO `locations` VALUES (31, 'A','T','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (32, 'A','T','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (33, 'A','T','E','Captain Ross was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Fish, liable to cause wars.','No Era Yet',NULL, NULL);
@@ -106,7 +106,7 @@ INSERT INTO `locations` VALUES (71, 'B','T','S','Ditzy was here',0,0,NULL,0,'',0
 INSERT INTO `locations` VALUES (72, 'B','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (73, 'C','A','C','Stringer was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Every third in carriages','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (74, 'C','A','D','Tobie was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (75, 'C','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (75, 'C','A','E','April was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','1119','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (76, 'C','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (77, 'C','A','S','Finn was here',0,0,NULL,0,'',0,0,0,'No Name Yet','The closest you can get to blowing a kiss.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (78, 'C','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);

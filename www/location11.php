@@ -33,6 +33,10 @@ print_standard_start($db);
 
 <p>One grave in the churchyard catches your eye.  It has a trilobite carved into the headstone.  It says Ann Newsom Hughes, 1334-1372.</p>
 
+<?php
+    print_footer(11, $db);
+    ?>
+
 </div>
 </body>
 </html>

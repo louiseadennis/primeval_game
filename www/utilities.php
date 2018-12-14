@@ -246,20 +246,19 @@
             while ($row=$result->fetch_assoc()) {
                 $story = $row["story"];
                 if ($story == '') {
-                    print "<p>You should start writing what has happened here.</p>";
+                    print "<p>You can write what has happened here.</p>";
                 } else {
+                    print "<p>";
                     print $story;
                     print "<p>What happens next?</p>";
                 }
                 
                 print "<form method=\"POST\" action=\"main.php\">";
                 print "<input type=\"hidden\" name=\"last_action\" value=\"write\">";
+                print "<input type=\"hidden\" name=\"location\" value=\"$location_id\">";
                 print "<input type=\"text\" size=\"100\" name=\"story\"></a>";
                 print "<p><input type=\"submit\" value=\"Is what happens next!!\"></form></p>";
-                print "<form method=\"POST\" action=\"main.php\">";
-                print "<input type=\"hidden\" name=\"last_action\" value=\"write\">";
-                print "<input type=\"hidden\" name=\"story\" value=\"x1x1x1\">";
-                print "<input type=\"submit\" value=\"No I don't want to choose!\"></p></form>";
+                
             }
             
         }

@@ -26,10 +26,18 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location30.png>
+<h2>A Lake Shore</h2>
 
-<p>Placeholder</p>
+<i><p>A wide expanse of water sparkled in the sunlight. A lake, stretching as far as the eye could see, surrounded by a flat expanse of dried mud. Horsetail ferns rose up out of the ground, and in the distance he could see a tall stand of some sort of pine trees. All around him, in the mud and sand of the shore, he could see tracks left by creatures that had come down to the water to drink. Some small prints, no bigger than a horse’s hoof, some huge, larger than the biggest elephant’s foot.
+</p></i>
+
+<?php
+    add_fanfic(8, $db);
+    print "To find  out more: ";
+    print_fanfic(8, $db);
+    print_footer(30, $db)
+    ?>
 
 </div>
 </body>

@@ -26,6 +26,7 @@ INSERT INTO `fanfic` VALUES (4, 'https://archiveofourown.org/works/13755639','mi
 INSERT INTO `fanfic` VALUES (5, 'https://goldarrow.livejournal.com/53376.html','goldarrow','None so Blind','Stephen/Clint Avengers Crossover', 'https://ic.pics.livejournal.com/goldarrow/5927896/10691/10691_original.png');
 INSERT INTO `fanfic` VALUES (6, 'https://primeval-denial.livejournal.com/3926002.html','...? well, fififolle started it','PupVerse!','Alpha/Beta/Omega story that took a left turn into puppies and never recovered', 'https://ic.pics.livejournal.com/fififolle/9666436/163552/163552_600.jpg');
 INSERT INTO `fanfic` VALUES (7, 'queentakesknight.html','knitekat','Queen Takes Knight','Retelling of part of series 1 from Helen\'s Viewpoint', null);
+INSERT INTO `fanfic` VALUES (8, 'tracksintime.html','fredbassett','Tracks in Time','An anomaly opens, leading to a problematic incursion of the present into the past.', null);
 
 
 
