@@ -44,6 +44,8 @@ print_standard_start($db);
         print "<img src=assets/matt.png align=left>";
         print "<p>Matt is here.  He has an EMD at full charge.  He suggests you head back to the ARC.</p>";
     }
+    
+    print_footer(8, $db);
     ?>
 
 </div>

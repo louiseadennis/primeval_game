@@ -34,16 +34,18 @@ check_location(142, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location142.png>
+<h2>An Underground Bunker</h2>
 
-<p>A reverse trip to Goa.</p>
+<p>You are in an underground bunker that seems to be deserted.  Outside toxic winds blow.  On a metal box in the bunker is printed the words: A reverse trip to Goa.</p>
 <?php
     if (!$abby_collected) {
         update_users("new_character", "abby", $db);
         print "<img src=assets/abby.png align=left>";
         print "<p>Abby is here.  She has a tranquiliser rifle with darts.</p>";
     }
+    
+    print_footer(142, $db);
 ?>
 
 </div>
