@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location37.png>
+<h2>The End</h2>
 
-<p>Placeholder</p>
+<p>You are standing on bare rock.  The air is hot and dry and you can see no signs of life.  The sun hangs low and much larger than you are accustomed to in the sky.</p>
 
 </div>
 </body>

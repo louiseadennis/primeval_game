@@ -68,8 +68,8 @@ INSERT INTO `locations` VALUES (33, 'A','T','E','Captain Ross was here.',0,0,NUL
 INSERT INTO `locations` VALUES (34, 'A','T','G','The banks of a stream.  Massive pterosaurs circle overhead.',5,0,'15',0,'',0,30,0,'The Banks of a Stream','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (35, 'A','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (36, 'A','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (37, 'B','A','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (38, 'B','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (37, 'B','A','C','Bare rock and a large sun hanging in the sky.',10,0,NULL,0,'',0,0,0,'The End','No Clue Yet','Post-Holocene',NULL, NULL);
+INSERT INTO `locations` VALUES (38, 'B','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Enigma Variation I','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (39, 'B','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','<img src=assets/clue39.png>','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (40, 'B','A','G','An empty plain with no life.',5,0,NULL,0,'',0,0,0,'A Desolate Rocky Plain','No Clue Yet','Pre-Cambrian',NULL, NULL);
 INSERT INTO `locations` VALUES (41, 'B','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);

@@ -40,6 +40,8 @@ print_standard_start($db);
         print "<img src=assets/sid.png align=left> <img src=assets/nancy.png align=left>";
         print "<p>Sid and Nancy are here.  They leap out of their burrow and run eagerly towards you.</p>";
     }
+    
+    print_footer(10, $db);
     ?>
 </div>
 </body>

@@ -14,7 +14,7 @@ if ($db -> connect_errno > 0) {
    }
     
 $last_action = mysqlclean($_POST, "last_action", 10, $db);
-    
+//    print $last_action;
 
 
 $travel_type = mysqlclean($_POST, "travel_type", 10, $db);
@@ -142,13 +142,14 @@ if ($travel_type == "lof") {
             update_users("uses", $new_uses_list, $db);
         } else if ($last_action == "master") {
             $master = mysqlclean($_POST, "master", 10, $db);
-            if ($master == 1) {
+            // print $master;
+            if ($master == '1') {
                 $sql = "SELECT user_id from users where master = 1";
                 if (!$result = $db -> query($sql))
                     showerror($db);
                 $masters = $result->num_rows;
                 if ($master > 0) {
-                    $user_id = $result["user_id"];
+                    $user_id = get_user_id($db);
                     $sql = "UPDATE users SET master = 0 where user_id = $user_id";
                     if (!$result = $db -> query($sql))
                         showerror($db);
