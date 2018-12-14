@@ -27,10 +27,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location215.png>
+<h2>A Deserted City</h2>
 
-<p>Vowels: one, three, one</p>
+<p>You are on the streets of a deserted city.  It is filled with the remains of rusting cars.  One a crumbling wall is written "Vowels: one, three, one"</p>
 
 <?php
 print_footer(215, $db);

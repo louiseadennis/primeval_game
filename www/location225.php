@@ -32,13 +32,19 @@ print_header($db);
 <?php
     $library_f = get_value_from_users("library_fanfic", $db);
     if ($library_f == 0) {
-        print "You select a book from the shelves.  It is:";
+    
         $fanfic = random_fic($db);
-        update_users("library_fanfic", $fanfic, $db);
-        print_fanfic($fanfic, $db);
+        if ($fanfic != 0) {
+            print "You select a book from the shelves.  It is: ";
+            update_users("library_fanfic", $fanfic, $db);
+            print_fanfic_with_cover($fanfic, $db);
+            add_fanfic($fanfic, $db);
+        } else {
+            print "You have read all the books in the library";
+        }
     } else {
-        print "You are reading:";
-        print_fanfic($library_f, $db);
+        print "You are reading: ";
+        print_fanfic_with_cover($library_f, $db);
     }
     print_accessible_location_foot(217, $db);
 
