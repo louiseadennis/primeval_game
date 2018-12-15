@@ -84,7 +84,7 @@ INSERT INTO `locations` VALUES (49, 'B','N','C','Sarah was here.',0,0,NULL,0,'',
 INSERT INTO `locations` VALUES (50, 'B','N','D','Rocky cliffs above the sea where a colony of mer-creatures live.  Dylan was here',10,0,'21',0,'',0,10,0,'Rocky Cliffs above the Sea','Apparently its a machine for exercising rowers gently.','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (51, 'B','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','3, 9, 20','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (52, 'B','N','G','Helen was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Social insects of the family Formicidae','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (53, 'B','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (53, 'B','N','S','The house where Patrick Quinn when missing.',10,0,'38',0,'',0,30,1,'An Abandoned House.','No Clue Yet','Holocene',300, NULL);
 INSERT INTO `locations` VALUES (54, 'B','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Rotating clockwise on the ice.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (55, 'B','O','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (56, 'B','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -207,7 +207,7 @@ INSERT INTO `locations` VALUES (172, 'E','R','G','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (173, 'E','R','S','A prarie',5,0,'4',0,'',0,15,0,'A prarie','A Bed for a Baby.','Pleistocene',NULL, NULL);
 INSERT INTO `locations` VALUES (174, 'E','R','T','Cliffs above a canyon filled with strange plants.  Claudia was here.',5,0,NULL,0,'',0,0,0,'A Cliff overlooking a Canyon','<img src=assets/clue82.png><ol><li>A group of extinct marine arachnomorph arthropods.</li><li>A genus  of theropod dinosaur which lived in the Barremain stage of the early Cretaceous.</li><li>An extend group of marine mollusc animals.</li><li>Flying reptiles that existed during most of the Mesozoic.</li></ol>','Cambrian',NULL, NULL);
 INSERT INTO `locations` VALUES (175, 'E','T','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (176, 'E','T','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (176, 'E','T','D','Colonel Hall was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Fair, Fey, Other Folk','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (177, 'E','T','E','A dusty landscape.',5,0,'1',0,'breathing aparatus',0,20,0,'A Desolate Landsacpe','No Clue Yet','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (178, 'E','T','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (179, 'E','T','S','Ange was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','A cigarette','No Era Yet',NULL, NULL);

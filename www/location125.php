@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(53, $db);
+check_location(125, $db);
 
 ?>
 <html>
@@ -26,19 +26,14 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location53.png>
-<h2>An Abandoned House</h2>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<p>The house where Patrick Quinn went missing.</p>
+<p>Placeholder</p>
 
 <?php
-    print_travel(53, $db);
-
-    print_footer(53, $db);
-    
-    
-    ?>
-
+print_footer(125, $db);
+?>
 </div>
 </body>
 </html>

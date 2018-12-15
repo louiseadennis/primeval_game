@@ -8,7 +8,15 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(15, $db);
+check_location(176, $db);
+    
+    $char_collected = check_for_character('colonel Hall', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'colonel Hall') {
+            add_location_clue(176, $db);
+        }
+    }
 
 ?>
 <html>
@@ -19,8 +27,7 @@ check_location(15, $db);
 </head>
 <body>
 <?php
-    print_header($db);
-    add_location_clue(15, $db);
+print_header($db);
 ?>
 <div class=main>
 <?php
@@ -30,12 +37,17 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>It is foggy.  The clue is  in the weather.</p>
+<p>Fair, Fey, Other Folk</p>
 
 <?php
-    print_footer(15, $db);
-    ?>
-
+    
+    if (!$char_collected) {
+        update_users("new_character", 'colonel Hall', $db);
+        print "<img src=assets/colonel_Hall.png align=left>";
+        print "<p>Colonel Henderson Hall is here.</p>";
+    }
+print_footer(176, $db);
+?>
 </div>
 </body>
 </html>
