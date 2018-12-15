@@ -33,6 +33,7 @@ INSERT INTO `fanfic` VALUES (10, 'https://goldarrow.livejournal.com/22089.html',
 INSERT INTO `fanfic` VALUES (11, 'https://fredbassett.livejournal.com/148368.html', 'fredbassett', 'Bye, Baby Bunting', 'Ryan and Lyle having to look after a baby.', null, '15');
 INSERT INTO `fanfic` VALUES (12, 'https://nietie.livejournal.com/66302.html', 'nietie', 'Stuff Professionalism', 'The ultimate fix-it with a competent Claudia', null, 'G');
 INSERT INTO `fanfic` VALUES (13, 'https://goldarrow.livejournal.com/9092.html', 'goldarrow', 'Reflection of Loss', 'A story about the team\'s discovery of a clone of Stephen Hart and what happened when they brought him home.', 'https://ic.pics.livejournal.com/goldarrow/5927896/312/312_original.png', '18');
+INSERT INTO `fanfic` VALUES (14, 'https://archiveofourown.org/works/85780', 'Annariel', 'Dragonfly over Kazakhstan', 'Nick is catapulted into a strange future world where the anomalies have wreaked havoc.', 'assets/dragonfly.png', 'Teen and Up');
 
 
 

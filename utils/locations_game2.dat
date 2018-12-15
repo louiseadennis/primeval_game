@@ -214,7 +214,7 @@ INSERT INTO `locations` VALUES (179, 'E','T','S','Ange was here.',0,0,NULL,0,'',
 INSERT INTO `locations` VALUES (180, 'E','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (181, 'F','A','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (182, 'F','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (183, 'F','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (183, 'F','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Bing Bang Bong','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (184, 'F','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (185, 'F','A','S','Leek was  here.',0,0,NULL,0,'',0,0,0,'No Name Yet','First known example found in Oberkassel','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (186, 'F','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -226,14 +226,14 @@ INSERT INTO `locations` VALUES (191, 'F','I','S','A rocky outcrop in a sandy des
 INSERT INTO `locations` VALUES (192, 'F','I','T','Ethan was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Ancestor of the Future Predator','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (193, 'F','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (194, 'F','N','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (195, 'F','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (195, 'F','N','E','A large shop selling auto parts.',5,0,'39',0,'',0,40,0,'A Canadian Tire Store','No Clue Yet','Holocene',101, NULL);
 INSERT INTO `locations` VALUES (196, 'F','N','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (197, 'F','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (198, 'F','N','T','Blade was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Middle Caucasian','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (199, 'F','O','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (200, 'F','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (201, 'F','O','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (202, 'F','O','G','A Forest Stream.  Lester was here.',5,0,'9',0,'',0,20,0,'A Forest Stream','<img src=assets/clue202.jpg width=200>','Triassic',NULL, NULL);
+INSERT INTO `locations` VALUES (202, 'F','O','G','A Forest Stream.  Lester was here.',5,0,'9,39',0,'',0,20,0,'A Forest Stream','<img src=assets/clue202.jpg width=200>','Triassic',NULL, NULL);
 INSERT INTO `locations` VALUES (203, 'F','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (204, 'F','O','T','Jess was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','My first buried her brother and was buried in turn as punishment her name is the title of a play written by my third.  My second was her sister.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (205, 'F','R','C','Poisonous Fog',5,0,'13',0,'breathing aparatus',0,5,0,'A Poisonons Fog','No Clue Yet','Pre-Cambrian',NULL, NULL);

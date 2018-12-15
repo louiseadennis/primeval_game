@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(16, $db);
+check_location(128, $db);
 
 ?>
 <html>
@@ -29,12 +29,11 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Multiple cute aliens</p>
+<p>Placeholder</p>
 
 <?php
-    print_footer(16, $db);
-    ?>
-
+print_footer(128, $db);
+?>
 </div>
 </body>
 </html>

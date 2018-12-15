@@ -8,7 +8,8 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(16, $db);
+check_location(183, $db);
+    add_location_clue(183, $db);
 
 ?>
 <html>
@@ -29,12 +30,11 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Multiple cute aliens</p>
+<p>Bing Bang Bong</p>
 
 <?php
-    print_footer(16, $db);
-    ?>
-
+print_footer(183, $db);
+?>
 </div>
 </body>
 </html>

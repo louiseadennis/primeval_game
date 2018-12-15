@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(16, $db);
+check_location(195, $db);
 
 ?>
 <html>
@@ -26,15 +26,15 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location195.png>
+<h2>A Canadian Tire Store</h2>
 
-<p>Multiple cute aliens</p>
+<p>A large shop selling auto parts.</p>
 
 <?php
-    print_footer(16, $db);
-    ?>
-
+    print_travel(195, $db);
+print_footer(195, $db);
+?>
 </div>
 </body>
 </html>
