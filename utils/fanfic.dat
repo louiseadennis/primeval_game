@@ -27,6 +27,8 @@ INSERT INTO `fanfic` VALUES (5, 'https://goldarrow.livejournal.com/53376.html','
 INSERT INTO `fanfic` VALUES (6, 'https://primeval-denial.livejournal.com/3926002.html','...? well, fififolle started it','PupVerse!','Alpha/Beta/Omega story that took a left turn into puppies and never recovered', 'https://ic.pics.livejournal.com/fififolle/9666436/163552/163552_600.jpg');
 INSERT INTO `fanfic` VALUES (7, 'queentakesknight.html','knitekat','Queen Takes Knight','Retelling of part of series 1 from Helen\'s Viewpoint', null);
 INSERT INTO `fanfic` VALUES (8, 'tracksintime.html','fredbassett','Tracks in Time','An anomaly opens, leading to a problematic incursion of the present into the past.', null);
+INSERT INTO `fanfic` VALUES (9, 'fivedays.html','deinonychus-1','Five Days','Connor and Ryan get trapped in the past.', null);
+INSERT INTO `fanfic` VALUES (10, 'https://goldarrow.livejournal.com/22089.html', 'goldarrow', 'Possessed', 'Stephen belongs to the unit. PWP. 18-rated', null);
 
 
 

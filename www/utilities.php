@@ -1701,33 +1701,40 @@
          } else {
             $charges = 0;
          }
-         return $charges;
+        return $charges;
     }
 
     function check_healing($healing_start, $connection) {
-         $unixOriginalDate = strtotime($healing_start);
-             $unixNowDate = strtotime('now');
-             $difference = $unixNowDate - $unixOriginalDate ;
-             $days = (int)($difference / 86400);
-             $hours = (int)($difference / 3600);
-             $minutes = (int)($difference / 60);
-             $seconds = $difference;
+            $unixOriginalDate = strtotime($healing_start);
+            $unixNowDate = strtotime('now');
+            $difference = $unixNowDate - $unixOriginalDate ;
+            $days = (int)($difference / 86400);
+            $hours = (int)($difference / 3600);
+            $minutes = (int)($difference / 60);
+            $seconds = $difference;
          //$now = new DateTime();
          //$rtime = date_create_from_format('Y\-m\-d\ H:i:s', $recharge_start);
          // $diff  = $rtime->diff($now);
         // if (($t = $diff->format("%m")) > 0)
-         if ($days > 0)
-            $charges = default_health();
+        // print "Difference: $difference";
+        print "Minutes: $minutes";
+        print "Hours: $hours";
+        $charges = 0;
+            if ($days > 0)
+                $charges = default_health();
     //	 else if (($t = $diff->format("%d")) > 0)
     //	    $charges = default_health();
     //	 else if (($t = $diff->format("%H")) > 0)
-         else if ($hours > 0)
-            $charges = $hours;
+            else if ($hours > 0)
+                $charges = $hours*2;
     //	 else if (($t = $diff->format("%i")) > 0)
     //	    $charges = 2;
-         else
-            $charges = 0;
-         return $charges;
+            else if ($minutes > 30)
+                $charges = $charges + 1;
+            else
+                $charges = 0;
+        print "Charges: $charges";
+            return $charges;
     }
 
     function now() {
@@ -1860,19 +1867,19 @@
     function print_health($mysql) {
          $hp = get_value_from_users("hp", $mysql);
          if ($hp < default_health()) {
-              $healing_start = get_value_from_users("healing_start", $mysql);
-          if (!is_null($healing_start)) {
-              $time_difference = check_healing($healing_start, $mysql);
-                  if ($time_difference > 0) {
-                         if ($time_difference + $hp > default_health()) {
-                        $hp = default_health();
-                update_users("hp", $hp, $mysql);
+             $healing_start = get_value_from_users("healing_start", $mysql);
+             if (!is_null($healing_start)) {
+                 $time_difference = check_healing($healing_start, $mysql);
+                 if ($time_difference > 0) {
+                     if ($time_difference + $hp > default_health()) {
+                         $hp = default_health();
+                         update_users("hp", $hp, $mysql);
                      } else {
-                       $hp = $time_difference + $hp;
-                   $now = now();
-                       update_users("healing_start", $now, $mysql);
-                   update_users("hp", $hp, $mysql);
-                        }
+                         $hp = $time_difference + $hp;
+                         $now = now();
+                         update_users("healing_start", $now, $mysql);
+                         update_users("hp", $hp, $mysql);
+                    }
                  }
               }
          }

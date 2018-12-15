@@ -26,12 +26,16 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location122.png>
+<h2>A Cave halfway up a Cliff Face</h2>
 
-<p>Placeholder</p>
+<p><i>He pointed out of the tree at a rocky outcropping that ran out of the forest and along the edge of the plain as a bluff maybe thirty or forty feet high. Not far from the forest, there seemed to be a, not quite a cave exactly, but a hollow in the rock. </i></p>
 
 <?php
+    add_fanfic(9, $db);
+    print "To find  out more: ";
+    print_fanfic(9, $db);
+
 print_footer(122, $db);
 ?>
 </div>

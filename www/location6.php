@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(6, $db);
+    add_location_clue(6, $db);
 
 ?>
 <html>
@@ -29,7 +30,7 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>FaTeD</p>
 
 <?php
     print_footer(6, $db);

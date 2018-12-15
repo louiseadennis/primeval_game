@@ -37,7 +37,7 @@ INSERT INTO `locations` VALUES (2, 'A','A','C','The shores of a lake across from
 INSERT INTO `locations` VALUES (3, 'A','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (4, 'A','A','E','A rocky sea shore.  Strange tubular, frond-shaped organisms exist in the rock pools.',10,0,NULL,0,'',0,0,0,'A Rocky Shore','No Clue Yet','Cambrian',NULL, NULL);
 INSERT INTO `locations` VALUES (5, 'A','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','For those who are reading this.  Often have I seen you.  Time and time again.','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (6, 'A','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (6, 'A','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','FaTeD','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (7, 'A','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (8, 'A','I','C','Matt was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (9, 'A','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -153,7 +153,7 @@ INSERT INTO `locations` VALUES (118, 'D','I','G','Grassy savannah and neandertha
 INSERT INTO `locations` VALUES (119, 'D','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (120, 'D','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','An Asian species of flowering plant in the mulberry family.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (121, 'D','N','C','A dusty plain with Coelurosauravus overhead.  Rex was here.',30,0,'6',0,'',0,0,0,'A Dusty Plain','No Clue Yet','Permian',NULL, NULL);
-INSERT INTO `locations` VALUES (122, 'D','N','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (122, 'D','N','D','A Cave halfway up a Cliff Face',0,0,NULL,0,'',0,0,0,'A Cave halfway up a Cliff Face','No Clue Yet','Jurassic',NULL, NULL);
 INSERT INTO `locations` VALUES (123, 'D','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (124, 'D','N','G','Emily was here',0,0,NULL,0,'',0,0,0,'No Name Yet','117','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (125, 'D','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
