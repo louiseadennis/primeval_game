@@ -8,7 +8,8 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(14, $db);
+check_location(144, $db);
+    add_location_clue(144, $db);
 
 ?>
 <html>
@@ -29,12 +30,11 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>A secondary electron and back-scattered electron detector used in scanning electron microscopes</p>
 
 <?php
-    print_footer(14, $db);
-    ?>
-
+print_footer(144, $db);
+?>
 </div>
 </body>
 </html>

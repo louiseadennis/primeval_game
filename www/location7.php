@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location7.png>
+<h2>An Abandoned Amusement Park</h2>
 
-<p>Placeholder</p>
+<p>You are in an overgrown wildnerness that may once have been an amusement park.  You can hear movement all around you but, try as you might, you can't see anything.</p>
 
 <?php
     print_footer(7, $db);

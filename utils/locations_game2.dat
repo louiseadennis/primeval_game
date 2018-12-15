@@ -38,7 +38,7 @@ INSERT INTO `locations` VALUES (3, 'A','A','D','Nothing Here Yet',0,0,NULL,0,'',
 INSERT INTO `locations` VALUES (4, 'A','A','E','A rocky sea shore.  Strange tubular, frond-shaped organisms exist in the rock pools.',10,0,NULL,0,'',0,0,0,'A Rocky Shore','No Clue Yet','Cambrian',NULL, NULL);
 INSERT INTO `locations` VALUES (5, 'A','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','For those who are reading this.  Often have I seen you.  Time and time again.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (6, 'A','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','FaTeD','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (7, 'A','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (7, 'A','A','T','An abandoned amusement park.  Invisible creatures move in the trees.',10,0,'38',0,'',0,30,0,'An Abandoned Amusement Park','No Clue Yet','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (8, 'A','I','C','Matt was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (9, 'A','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (10, 'A','I','E','A Desert full of Diictodon burrows.  Sid and Nancy were here',20,0,NULL,0,'',0,0,0,'A Hot Desert','No Clue Yet','Permian',NULL, NULL);
@@ -175,7 +175,7 @@ INSERT INTO `locations` VALUES (140, 'D','T','D','A coniferous forest and a Steg
 INSERT INTO `locations` VALUES (141, 'D','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (142, 'D','T','G','An Underground Bunker.  Abby was here.',7,0,NULL,0,'',0,0,0,'An Underground Bunker','A reverse trip to Goa','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (143, 'D','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (144, 'D','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (144, 'D','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','A secondary electron and back-scattered electron detector used in scanning electron microscopes','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (145, 'E','A','C','Ryan was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Starting to Dither','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (146, 'E','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (147, 'E','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);

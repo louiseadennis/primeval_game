@@ -1910,7 +1910,9 @@
                  if ($char_id_list != 0 ) {
                      $new_char_id_list = $char_id_list . "," . $char_id;
                      update_users("new_character", '', $connection);
-                     update_users("char_id_list", $new_char_id_list, $connection);
+                     if (!check_for_character($new_character, $connection)) {
+                         update_users("char_id_list", $new_char_id_list, $connection);
+                         }
                  } else {
                      $char_id_array = explode(",", $char_id_list);
                      if (!in_array($char_id, $char_id_array)) {

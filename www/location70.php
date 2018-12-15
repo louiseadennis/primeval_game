@@ -32,9 +32,9 @@ print_standard_start($db);
 <p><i>The two men had stumbled into a cave at the base of a high-sided cliff, flurries of fat white flakes swirling around them. A brief glance around had shown them that they weren’t the cave’s first inhabitants. A rough hearth of stones contained the remains of a fire and there was a stack of wood and dried moss further into the cave, but the blackened wood was cold and there were no signs of recent occupation. Lyle had stared at a mass of flint flakes on the floor near to the fire and had informed Ryan that they had probably stumbled on a temporary encampment for hunting parties. The captain had deferred to his companion’s greater knowledge of caves and archaeology.</i></p>
 
 <?php
-    add_fanfic(9, $db);
+    add_fanfic(11, $db);
     print "To find  out more: ";
-    print_fanfic(9, $db);
+    print_fanfic(11, $db);
     
     print_footer(70, $db);
     ?>
