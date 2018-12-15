@@ -543,8 +543,9 @@
         $title = get_value_for_fanfic_id("title", $fanfic_id, $connection);
         $author = get_value_for_fanfic_id("author", $fanfic_id, $connection);
         $url = get_value_for_fanfic_id("url", $fanfic_id, $connection);
+        $rating = get_value_for_fanfic_id("rating", $fanfic_id, $connection);
         
-        print("<a href=$url>$title</a> by $author");
+        print("<a href=$url>$title</a> by $author (Rating: $rating)");
     }
 
     function add_critter($critter_id, $connection) {

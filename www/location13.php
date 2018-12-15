@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are high up on a Mountain overlooking a vast forest.  You can see what appear to be giant dragonflies flitting up above the trees.</p>
 
+<?php
+    print_footer(13, $db);
+    ?>
+
 </div>
 </body>
 </html>
