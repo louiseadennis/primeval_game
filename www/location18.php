@@ -48,6 +48,7 @@ print_standard_start($db);
         print "<p>Leeds is here.  He lets you borrow a screwdriver.</p>";
     }
     
+    print_footer(18, $db);
     ?>
 </div>
 </body>

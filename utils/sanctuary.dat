@@ -1,0 +1,20 @@
+-- MySQL dump 10.13  Distrib 5.7.18, for osx10.12 (x86_64)
+--
+-- Host: localhost    Database: primeval_game
+-- ------------------------------------------------------
+-- Server version	5.5.28
+
+--
+-- Table structure for table `characters`
+--
+
+DROP TABLE IF EXISTS `sanctuary`;
+CREATE TABLE `sanctuary` (
+  `sanctuary_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fanfic_id` int(11),
+  PRIMARY KEY (`sanctuary_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `sanctuary` VALUES (1, 2);
+INSERT INTO `sanctuary` VALUES (2, 16);
+

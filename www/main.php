@@ -180,6 +180,8 @@ if ($travel_type == "lof") {
     } else if ($prev_location!=$location_id) {
         if ($prev_era != 'Sanctuary') {
             update_users("prev_location", $prev_location, $db);
+        } else {
+            visited_sanctuary($db);
         }
        update_location($prev_location, "anomaly", 0, $db);
        update_users("location_id", $location_id, $db);

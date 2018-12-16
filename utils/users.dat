@@ -58,6 +58,7 @@ CREATE TABLE `users` (
   `fanfic_id_list` text,
   `master` tinyint(4) DEFAULT '0',
   `library_fanfic` smallint(6) DEFAULT '0',
+  `sanctuary` smallint(6) DEFAULT '1',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

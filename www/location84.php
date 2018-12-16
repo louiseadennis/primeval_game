@@ -33,8 +33,17 @@ check_location(84, $db);
  print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location84.png>
+<h2>A Cave in Gwinthin Vale</h2>
+
+<p>The ground was uneven, the rock walls narrowing and widening randomly, forcing him to squeeze in some places, while in others he couldn’t touch both sides at the same time with outstretched hands. The ground started to slope steeply downwards, and abruptly became wetter and muddier.</p>
+
+<?php
+    add_fanfic(15, $db);
+    print "<p>Now read on: ";    print_fanfic(15, $db);
+    ?>
+
+<p>Into the rock has been carved the letters:
 
 <p><table>
 <tr><td>T</td><td>T</td><td>T</td></tr>
@@ -51,6 +60,9 @@ check_location(84, $db);
         print "<p>Connor is here.  He has an anomaly detection device.</p>";
         add_location_clue(84, $db);
     }
+    
+    print_travel(84, $db);
+    print_footer(84, $db);
 ?>
 </div>
 </body>

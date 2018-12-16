@@ -23,27 +23,59 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_sanctuary_start($db);
-?>
+    print_sanctuary_start($db);
+    $sanctuary_visits = get_value_from_users("sanctuary", $db);
+    $fanfic_id = get_value_for_sanctary_id("fanfic_id", $sanctuary_visits, $db);
+    
+    ?>
 <div class=location>
 <img src=assets/location224.jpg>
 <h2>Sanctuary</h2>
 
-<i><p>The smilodon padded in front of the door, blocking Stephen's view of Nick's appalled gaze. Stephen focused on the ripple of muscle beneath the thick, sandy fur in a vain attempt to distract himself from the scrape of claws on concrete behind him, and the movements above him at the edge of his field of vision. Not that he need concern himself with the future predators - he'd be dead long before they would bother to join in.</p>
+<?php
+    if ($sanctuary_vists == 2) {
+        print "Ow.";
+        
+        print "Stephen?";
+        
+        print "Ouch ... ow ... bugger!";
+        
+        print "What are you doing in there?";
+        
+        print "Aarrhh ...";
+        
+        print "Stephen, are you going to open this door or am I going to have to break it down?";
+        
+        print "All right, all right, keep your hair on.";
+        
+        print "What's the matter?";
+        
+        print "It's your bloody kinks, that's what's the matter.";
+        
+        print "What?";
+        
+        print "Apparently, you now have a piercing kink.";
+        
+        print "What do you mean, I have a piercing kink ... holy shit!?!";
+    } else {
 
-<p>The smilodon was turning towards him now, moving into a crouch, preparing to spring. An odd kind of calm descended over Stephen, although he could still feel the thump of his racing heartbeat. There was nothing more he could do. It would soon be over.</p>
+        print "<i><p>The smilodon padded in front of the door, blocking Stephen's view of Nick's appalled gaze. Stephen focused on the ripple of muscle beneath the thick, sandy fur in a vain attempt to distract himself from the scrape of claws on concrete behind him, and the movements above him at the edge of his field of vision. Not that he need concern himself with the future predators - he'd be dead long before they would bother to join in.</p>";
 
-<p>He closed his eyes and waited.</p>
+        print "<p>The smilodon was turning towards him now, moving into a crouch, preparing to spring. An odd kind of calm descended over Stephen, although he could still feel the thump of his racing heartbeat. There was nothing more he could do. It would soon be over.</p>";
 
-<p>The thump knocked all the breath from him, the collision sending him flying through the air, gasping in a desperate bid for oxygen as consciousness left him ...</p>
+        print "<p>He closed his eyes and waited.</p>";
 
-<p>...</p>
+        print  "<p>The thump knocked all the breath from him, the collision sending him flying through the air, gasping in a desperate bid for oxygen as consciousness left him ...</p>";
 
-<p>"I wondered when you'd turn up."</p></i>
+        print "<p>...</p>";
+
+        print "<p>"I wondered when you'd turn up."</p></i>";
+    }
 
 <?php
-    add_fanfic(2, $db);
-    print "<p>Now read on: ";    print_fanfic(2, $db);
+    add_fanfic($fanfic_id, $db);
+    print "<p>Now read on: ";
+    print_fanfic($fanfic_id, $db);
     ?>
 
 </div>

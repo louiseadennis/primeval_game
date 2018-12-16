@@ -8,7 +8,16 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(19, $db);
+check_location(181, $db);
+    
+    $char_collected = check_for_character('liz Lester', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'liz Lester') {
+            add_location_clue(181, $db);
+            add_equipment("knife", $db);
+        }
+    }
 
 ?>
 <html>
@@ -29,12 +38,18 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>I'm starting to be fascinated.</p>
+<p>Runner Sebastian</p>
 
 <?php
-    print_footer(19, $db);
-    ?>
+    
+    if (!$char_collected) {
+        update_users("new_character", 'liz Lester', $db);
+        print "<img src=assets/liz_Lester.png align=left>";
+        print "<p>Liz Lester is here. She has a knife</p>";
+    }
 
+print_footer(181, $db);
+?>
 </div>
 </body>
 </html>

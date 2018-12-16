@@ -514,6 +514,12 @@
               }
          }
     }
+    
+    function visited_sanctuary($connection) {
+        $sanctuary_visits = get_value_from_users("sanctuary", $connection);
+        $sanctuary_visits++;
+        update_users("sanctuary", $sanctuary_visits, $connection);
+    }
 
     function add_fanfic($fanfic_id, $connection) {
         $uname = $_SESSION["loginUsername"];
@@ -888,6 +894,23 @@
             }
         }
     }
+    
+    function get_value_for_sanctuary_id($column, $sanctuary_id, $connection) {
+        $sql = "SELECT {$column} from sanctuary WHERE sanctuary_id = '{$sanctuary_id}'";
+        
+        if (!$result = $connection->query($sql))
+            showerror($connection);
+        
+        if ($result->num_rows != 1)
+            return 0;
+        else {
+            while ($row = $result->fetch_assoc()) {
+                $value = $row["$column"];
+                return $value;
+            }
+        }
+    }
+
 
 
     function get_value_for_char_id($column, $char_id, $connection) {

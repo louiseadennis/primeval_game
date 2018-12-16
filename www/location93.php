@@ -9,6 +9,15 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(93, $db);
+    
+    $char_collected = check_for_character('claire Bradley', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'claire Bradley') {
+            add_location_clue(93, $db);
+            add_equipment("breathing aparatus", $db);
+        }
+    }
 
 ?>
 <html>
@@ -30,6 +39,17 @@ print_standard_start($db);
 <h2>A Tidal Flat at Sunset</h2>
 
 <p>You are on the banks of a beach or tidal flat at sunset.  Nothing much appears to be growing on land, but there are mat like structures floating in pools left behind by the receding tide.  Layered biological seeming structures also cluster in the shallows.</p>
+
+<?php
+    
+    if (!$char_collected) {
+        update_users("new_character", 'claire Bradley', $db);
+        print "<img src=assets/claire_Bradley.png align=left>";
+        print "<p>Claire Bradley is here. She has breathing aparatus.  She has been given some kind of lettuce.</p>";
+    }
+    
+    print_footer(93, $db);
+    ?>
 
 </div>
 </body>
