@@ -1741,9 +1741,9 @@
          // $diff  = $rtime->diff($now);
         // if (($t = $diff->format("%m")) > 0)
         // print "Difference: $difference";
-        print "Minutes: $minutes";
-        print "Hours: $hours";
-        $charges = 0;
+        // print "Minutes: $minutes";
+       //  print "Hours: $hours";
+            $charges = 0;
             if ($days > 0)
                 $charges = default_health();
     //	 else if (($t = $diff->format("%d")) > 0)
@@ -1757,7 +1757,7 @@
                 $charges = $charges + 1;
             else
                 $charges = 0;
-        print "Charges: $charges";
+        // print "Charges: $charges";
             return $charges;
     }
 

@@ -26,10 +26,14 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location72.png>
+<h2>A termite ridden landscape</h2>
 
-<p>Placeholder</p>
+<p>You are standing in a desolate landscape.  Giant termite mounds stretch as far as the eye can see.</p>
+
+<?php
+    print_footer(72, $db);
+    ?>
 
 </div>
 </body>

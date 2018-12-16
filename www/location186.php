@@ -8,17 +8,16 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(95, $db);
+check_location(186, $db);
     
-    $char_collected = check_for_character('cara Cooper', $db);
+    $char_collected = check_for_character('annie Morris', $db);
     if (!$char_collected) {
         $visited_already = get_value_from_users("new_character", $db);
-        if ($visited_already != 'cara Cooper') {
-            add_location_clue(95, $db);
-            add_equipment("first aid kit", $db);
+        if ($visited_already != 'annie Morris') {
+            add_location_clue(186, $db);
+            add_equipment("budget", $db);
         }
     }
-
 
 ?>
 <html>
@@ -39,20 +38,19 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Loosing a letter from fast is one reason why you might not be.</p>
+<p>Placeholder</p>
 
 <?php
     
     if (!$char_collected) {
-        update_users("new_character", 'cara Cooper', $db);
-        print "<img src=assets/cara_Cooper.png align=left>";
-        print "<p>Cara Cooper is here. She has a first aid kit.</p>";
+        update_users("new_character", 'annie Morris', $db);
+        print "<img src=assets/annie_Morris.png align=left>";
+        print "<p>Annie Morris is here. She says she must talk to Lester about your budget.  In fact she's been given a note saying you should bid.</p>";
     }
     
-    print_footer(95, $db);
-    ?>
 
-
+print_footer(186, $db);
+?>
 </div>
 </body>
 </html>

@@ -36,5 +36,6 @@ INSERT INTO `fanfic` VALUES (13, 'https://goldarrow.livejournal.com/9092.html', 
 INSERT INTO `fanfic` VALUES (14, 'https://archiveofourown.org/works/85780', 'Annariel', 'Dragonfly over Kazakhstan', 'Nick is catapulted into a strange future world where the anomalies have wreaked havoc.', 'assets/dragonfly.png', 'Teen and Up');
 INSERT INTO `fanfic` VALUES (15, 'https://deinonychus-1.livejournal.com/21879.html','deinonychus-1','Lines of Communication', 'It seemed like a routine creature investigation. Then it all started to go wrong.','http://www.dennis-sellers.com/ljimages/covers/lines_communication.png','PG');
 INSERT INTO `fanfic` VALUES (16, 'https://mysteriousaliwz.livejournal.com/94023.html','mysteriousaliwz','Kink','Complete crack!fic. Contains explicit language. Um, and ... beverage warning? If you were one of the ones who sporfled their coffee over the keyboard when you read \'Sanctuary\', you might want to put the mug down now. Just saying.',null,'PG 15');
-
+INSERT INTO `fanfic` VALUES (17, 'dinohos.html','ethelfleda','Primeval, the Role Play','What if Primeval episode 1 were a roleplaying game? A Comic',null,'15/R');
+INSERT INTO `fanfic` VALUES (18, 'https://nietie.livejournal.com/84095.html','nietie','Safe Haven','Blue eyes crying in the rain',null,'18');
 
