@@ -9,6 +9,15 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(44, $db);
+    
+    $char_collected = check_for_character('morris', $db);
+    if (!$char_collected) {
+        $visited_already = get_value_from_users("new_character", $db);
+        if ($visited_already != 'morris') {
+            add_location_clue(44, $db);
+            add_equipment("trowel", $db);
+        }
+    }
 
 ?>
 <html>
@@ -29,7 +38,20 @@ print_standard_start($db);
 <img src=assets/location44.png>
 <h2>A Peaceful River</h2>
 
-<p>A riverside with a variety of tress and grasses.</p>
+<p>A riverside with a variety of tress and grasses.  Into a tree is carved the works `Short robot'</p>
+
+<?php
+    
+    if (!$char_collected) {
+        update_users("new_character", 'morris', $db);
+        print "<img src=assets/morris.png align=left>";
+        print "<p>Morris is here.  She has a trowel.</p>";
+    }
+    
+    
+    print_footer(44, $db);
+    ?>
+
 
 </div>
 </body>

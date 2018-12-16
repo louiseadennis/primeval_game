@@ -75,7 +75,7 @@ INSERT INTO `locations` VALUES (40, 'B','A','G','An empty plain with no life.',5
 INSERT INTO `locations` VALUES (41, 'B','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (42, 'B','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','<img src=assets/clue42.png','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (43, 'B','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (44, 'B','I','D','A peaceful riverside.',5,0,'40',0,'',0,30,0,'A peaceful riverside.','No Clue Yet','Eocene',NULL, NULL);
+INSERT INTO `locations` VALUES (44, 'B','I','D','A peaceful riverside. Morris was here.',5,0,'40',0,'',0,30,0,'A peaceful riverside.','Short Robot','Eocene',NULL, NULL);
 INSERT INTO `locations` VALUES (45, 'B','I','E','Lacey was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Something small or unimportant of its kind','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (46, 'B','I','G','A Deserted Highway with a rusting car.',5,0,NULL,0,'',0,0,0,'A Deserted Highway','No Clue Yet','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (47, 'B','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -145,7 +145,7 @@ INSERT INTO `locations` VALUES (110, 'D','A','D','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (111, 'D','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (112, 'D','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (113, 'D','A','S','A dusty plain.  Seed ferns and conifers are visible.',5,0,'5,28',0,'',0,20,0,'A Dusty Plain','No Clue Yet','Permian',NULL, NULL);
-INSERT INTO `locations` VALUES (114, 'D','A','T','Caroline was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Be a Entrepeneur or Elf or Engineer','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (114, 'D','A','T','A cave in the far future.  Caroline was here.',5,0,'45',0,'',0,30,0,'Cave in the far future','Be a Entrepeneur or Elf or Engineer','Post Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (115, 'D','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (116, 'D','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (117, 'D','I','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);

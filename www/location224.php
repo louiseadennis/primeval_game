@@ -25,7 +25,7 @@ print_header($db);
 <?php
     print_sanctuary_start($db);
     $sanctuary_visits = get_value_from_users("sanctuary", $db);
-    $fanfic_id = get_value_for_sanctary_id("fanfic_id", $sanctuary_visits, $db);
+    $fanfic_id = get_value_for_sanctuary_id("fanfic_id", $sanctuary_visits, $db);
     
     ?>
 <div class=location>
@@ -34,29 +34,29 @@ print_header($db);
 
 <?php
     if ($sanctuary_vists == 2) {
-        print "Ow.";
+        print "<p>\"Ow.\"</p>";
         
-        print "Stephen?";
+        print "<p>\"Stephen?\"</p>";
         
-        print "Ouch ... ow ... bugger!";
+        print "<p>\"Ouch ... ow ... bugger!\"</p>";
         
-        print "What are you doing in there?";
+        print "<p>\"What are you doing in there?\"</p>";
         
-        print "Aarrhh ...";
+        print "<p>\"Aarrhh ...\"</p>";
         
-        print "Stephen, are you going to open this door or am I going to have to break it down?";
+        print "<p>\"Stephen, are you going to open this door or am I going to have to break it down?\"</p>";
         
-        print "All right, all right, keep your hair on.";
+        print "<p>\"All right, all right, keep your hair on.\"</p>";
         
-        print "What's the matter?";
+        print "<p>\"What's the matter?\"</p>";
         
-        print "It's your bloody kinks, that's what's the matter.";
+        print "<p>\"It's your bloody kinks, that's what's the matter.\"</p>";
         
-        print "What?";
+        print "<p>\"What?\"</p>";
         
-        print "Apparently, you now have a piercing kink.";
+        print "<p>\"Apparently, you now have a piercing kink.\"</p>";
         
-        print "What do you mean, I have a piercing kink ... holy shit!?!";
+        print "<p>\"What do you mean, I have a piercing kink ... holy shit!?!\"</p>";
     } else {
 
         print "<i><p>The smilodon padded in front of the door, blocking Stephen's view of Nick's appalled gaze. Stephen focused on the ripple of muscle beneath the thick, sandy fur in a vain attempt to distract himself from the scrape of claws on concrete behind him, and the movements above him at the edge of his field of vision. Not that he need concern himself with the future predators - he'd be dead long before they would bother to join in.</p>";
@@ -69,10 +69,9 @@ print_header($db);
 
         print "<p>...</p>";
 
-        print "<p>"I wondered when you'd turn up."</p></i>";
+        print "<p>\"I wondered when you'd turn up.\"</p></i>";
     }
 
-<?php
     add_fanfic($fanfic_id, $db);
     print "<p>Now read on: ";
     print_fanfic($fanfic_id, $db);

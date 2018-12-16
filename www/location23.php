@@ -32,6 +32,10 @@ print_standard_start($db);
 
 <p>Another way to spell EEK</p>
 
+<?php
+    print_footer(23,$db);
+    ?>
+
 </div>
 </body>
 </html>

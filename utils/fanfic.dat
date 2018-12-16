@@ -38,4 +38,4 @@ INSERT INTO `fanfic` VALUES (15, 'https://deinonychus-1.livejournal.com/21879.ht
 INSERT INTO `fanfic` VALUES (16, 'https://mysteriousaliwz.livejournal.com/94023.html','mysteriousaliwz','Kink','Complete crack!fic. Contains explicit language. Um, and ... beverage warning? If you were one of the ones who sporfled their coffee over the keyboard when you read \'Sanctuary\', you might want to put the mug down now. Just saying.',null,'PG 15');
 INSERT INTO `fanfic` VALUES (17, 'dinohos.html','ethelfleda','Primeval, the Role Play','What if Primeval episode 1 were a roleplaying game? A Comic',null,'15/R');
 INSERT INTO `fanfic` VALUES (18, 'https://nietie.livejournal.com/84095.html','nietie','Safe Haven','Blue eyes crying in the rain',null,'18');
-
+INSERT INTO `fanfic` VALUES (19, 'https://fredbassett.livejournal.com/2796.html','fredbassett','On the Beach','An anomaly incursion on a CMU field trip',null,'U');

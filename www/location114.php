@@ -34,10 +34,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location114.png>
+<h2>An underground cave in the far future</h2>
 
-<p>Be a Entrepeneur or Elf or Engineer</p>
+<p>Written in neon lights on one wall is:  Be a Entrepeneur or Elf or Engineer</p>
 
 <?php
     
