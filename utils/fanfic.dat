@@ -39,3 +39,5 @@ INSERT INTO `fanfic` VALUES (16, 'https://mysteriousaliwz.livejournal.com/94023.
 INSERT INTO `fanfic` VALUES (17, 'dinohos.html','ethelfleda','Primeval, the Role Play','What if Primeval episode 1 were a roleplaying game? A Comic',null,'15/R');
 INSERT INTO `fanfic` VALUES (18, 'https://nietie.livejournal.com/84095.html','nietie','Safe Haven','Blue eyes crying in the rain',null,'18');
 INSERT INTO `fanfic` VALUES (19, 'https://fredbassett.livejournal.com/2796.html','fredbassett','On the Beach','An anomaly incursion on a CMU field trip',null,'U');
+INSERT INTO `fanfic` VALUES (20, 'https://knitekat.livejournal.com/189213.html','knitekat','Wolfverse','An AU in which Lester can turn into a large wolf',null,'vary');
+INSERT INTO `fanfic` VALUES (21, 'https://goldarrow.livejournal.com/85023.html','goldarrow','Merry Christmas to All','Claudia/Lyle at Christmas',null,'15');

@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location128.png>
+<h2>A Plain at Sunset</h2>
 
-<p>Placeholder</p>
+<p>You are standing on a grassy plain at sunset.  Somewhere a hyaenodon howls.</p>
 
 <?php
 print_footer(128, $db);

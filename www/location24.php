@@ -37,6 +37,9 @@ print_standard_start($db);
 
 <p>You are standing in a frozen landscape and the air is hard to breathe.  <b>You can not survive here long.</b>  Carved into the ice are the words: "Protest against Nuclear Weapons"</p>
 
+<?php
+    print_footer(24,$db);
+    ?>
 </div>
 </body>
 </html>

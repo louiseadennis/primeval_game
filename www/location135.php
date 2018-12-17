@@ -34,10 +34,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location135.png>
+<h2>Basement of an under-construction Supermarket</h2>
 
-<p>End of the drafts.</p>
+<p>Daubed on the wall in graffitti are the words:  End of the drafts.</p>
 
 <?php
     
@@ -50,6 +50,7 @@ print_standard_start($db);
 
 
 <?php
+    print_travel(135, $db);
 print_footer(135, $db);
 ?>
 </div>
