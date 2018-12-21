@@ -44,7 +44,7 @@ print_standard_start($db);
         print "<img src=assets/ditzy.png align=left>";
         print "<p>Ditzy is here.  He has a first aid kit.</p>";
     }
-    print_travel(8, $db);
+    print_travel(71, $db);
     print_footer(17, $db);
     
     ?>

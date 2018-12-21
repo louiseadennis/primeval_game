@@ -26,12 +26,17 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location3.png>
+<h2>Arthur's Seat</h2>
 
-<p>Placeholder</p>
+<p><i>Nick Cutter sat in the grass, his hair being blown by the fickle breeze. His eyes narrow, he stared resolutely out over the city, no joy in seeing it bathed in the weak early evening sunshine. He barely moved when the man sat down beside him, but merely said, “Is that the best you can do, Ryan? I've seen you coming ever since you passed John Lewis.”</i></p>
 
 <?php
+    add_fanfic(24, $db);
+    print "<p>Now read on: ";
+    print_fanfic(24, $db);
+
+    print_travel(3, $db);
     print_footer(3, $db);
     ?>
 

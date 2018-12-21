@@ -27,10 +27,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location144.png>
+<h2>A forest in the Cretaceous</h2>
 
-<p>A secondary electron and back-scattered electron detector used in scanning electron microscopes</p>
+<p>You are in a primeval forest.  Strange cries echo on the air and strange creatures fly overhead.  A page, apparently torn from a textbook, has been nailed to a tree saying: A secondary electron and back-scattered electron detector used in scanning electron microscopes</p>
 
 <?php
 print_footer(144, $db);

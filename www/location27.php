@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are standing in a landscape of marshy pools.  An Eryops flops about in the water of one of the larger ones.</p>
 
+<?php
+    print_footer(27, $db);
+    ?>
+
 </div>
 </body>
 </html>
