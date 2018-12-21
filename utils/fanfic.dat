@@ -42,3 +42,4 @@ INSERT INTO `fanfic` VALUES (19, 'https://fredbassett.livejournal.com/2796.html'
 INSERT INTO `fanfic` VALUES (20, 'https://knitekat.livejournal.com/189213.html','knitekat','Wolfverse','An AU in which Lester can turn into a large wolf',null,'vary');
 INSERT INTO `fanfic` VALUES (21, 'https://goldarrow.livejournal.com/85023.html','goldarrow','Merry Christmas to All','Claudia/Lyle at Christmas',null,'15');
 INSERT INTO `fanfic` VALUES (22, 'https://lukadreaming.livejournal.com/67164.html','lukadreaming','Spicing it Up','Ryan and Stephen put a dinner-time ingredient to unconventional use',null,'18');
+INSERT INTO `fanfic` VALUES (23, 'https://knitekat.livejournal.com/114227.html','knitekat','What was Missed','Fixit-it: Lester/Stephen and sounds of the city',null,15);

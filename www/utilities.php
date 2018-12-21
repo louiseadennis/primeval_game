@@ -1889,6 +1889,7 @@
             $critter_hp = get_value_for_critter_id("hp", $critter_id, $mysql);
             update_event($event_id, "critter_hp", $critter_hp, $mysql);
             add_critter($critter_id, $mysql);
+            critter_attack(0, $mysql);
         } else {
             critter_attack(0, $mysql);
         }

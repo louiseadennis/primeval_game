@@ -26,10 +26,14 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location97.png>
+<h2>A desert and a crashed plane.</h2>
 
-<p>Placeholder</p>
+<p>You are standing in a dry, dusty landscape next to a crashed plane.</p>
+
+<?php
+    print_footer(97, $db);
+    ?>
 
 </div>
 </body>
