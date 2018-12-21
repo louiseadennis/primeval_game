@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(4, $db);
+    add_location_clue(4, $db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(1, $db);
 ?>
 <div class=location>
 <img src=assets/location4.png>
 <h2>A Rocky Shore</h2>
 
-<p>You are on a bare rocky sea shore.  You can see strange tubular, frond-shaped organisms in the rock pools.</p>
+<p>You are on a bare rocky sea shore.  You can see strange tubular, frond-shaped organisms in the rock pools.  Hanging mysterious in the air are the words `In morse there are these and dashes'.</p>
 
 <?php
     print_footer('4', $db);

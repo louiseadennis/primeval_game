@@ -569,6 +569,22 @@
             }
           }
     }
+    
+    function met_critter($critter_id, $connection) {
+        $uname = $_SESSION["loginUsername"];
+        
+        $critter_id_list = get_value_from_users("critter_id_list", $connection);
+        $critter_id_array = explode(",", $critter_id_list);
+        
+        if (is_null($critter_id_list)) {
+            return 0;
+        } else {
+            if (!in_array($critter_id, $critter_id_array)) {
+                return 0;
+            }
+            return 1;
+        }
+    }
 
     function get_present_day_locations($connection) {
         $sql = "SELECT * FROM locations WHERE present_day=1";
@@ -1858,6 +1874,40 @@
               print "</div>";
           }
           print "</div>";
+        
+    }
+    
+    function print_critter_trail_start($critter_id, $mysql) {
+        print "<div class=\"dynamic\">";
+        print "<div class=\"action\">";
+        print_character_joined($mysql);
+        print_item_used(0, $mysql);
+        print "You are on the Critter Trail!";
+        if (!met_critter($critter_id, $mysql)) {
+            create_new_fight_event($critter_id, $mysql);
+            $event_id = get_unresolved_event_id($mysql);
+            $critter_hp = get_value_for_critter_id("hp", $critter_id, $mysql);
+            update_event($event_id, "critter_hp", $critter_hp, $mysql);
+            add_critter($critter_id, $mysql);
+        } else {
+            critter_attack(0, $mysql);
+        }
+        print_health($mysql);
+        if (! in_land_of_fiction($mysql)) {
+            print_anomaly($mysql);
+        }
+        print_wait($mysql);
+        print "</div>";
+        $has_device = get_value_from_users("has_device", $mysql);
+        $phase = get_value_from_users("phase", $mysql);
+        if ($phase > 1 || $has_device) {
+            update_prev_coordinates($mysql);
+            print "<div class=device>";
+            print_device($mysql);
+            print_equipment($mysql);
+            print "</div>";
+        }
+        print "</div>";
         
     }
     

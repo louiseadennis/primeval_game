@@ -33,10 +33,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location71.png>
+<h2>A Stately Home</h2>
 
-<p>My first is five.  Add one and multiply by three for my second.  Divide by six for my third.</p>
+<p>You are standing outside an impresive stately home that is used as a Wedding Venue.  A glossy leaflet stand is set up in the entrance but strangely the only leaflet is a flyer that says:  My first is five.  Add one and multiply by three for my second.  Divide by six for my third.</p>
 <?php
     
     if (!$char_collected) {
@@ -44,6 +44,8 @@ print_standard_start($db);
         print "<img src=assets/ditzy.png align=left>";
         print "<p>Ditzy is here.  He has a first aid kit.</p>";
     }
+    print_travel(8, $db);
+    print_footer(17, $db);
     
     ?>
 </div>

@@ -35,7 +35,7 @@ LOCK TABLES `locations` WRITE;
 INSERT INTO `locations` VALUES (1,'A','R','C','The ARC.',30,0,NULL,0,'',0,0,1,'The Arc','Five clues: 1. Major Operating System in the 1980s and early 1990s. 2. You should revERSe. 3. The Democratic Republic of Congo. 4. <img src=assets/clue1.png> 5. Set the dials on your device to \'A\', \'N\', \'E\' and activate it','Holocene',1, NULL);
 INSERT INTO `locations` VALUES (2, 'A','A','C','The shores of a lake across from a volcano.  There is no life to be seen and the atmosphere is difficult to breath.',10,0,'13',0,'breathing aparatus',0,60,0,'The Shores of a Lake','No Clue Yet','Pre-cambrian',NULL, NULL);
 INSERT INTO `locations` VALUES (3, 'A','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (4, 'A','A','E','A rocky sea shore.  Strange tubular, frond-shaped organisms exist in the rock pools.',10,0,NULL,0,'',0,0,0,'A Rocky Shore','No Clue Yet','Cambrian',NULL, NULL);
+INSERT INTO `locations` VALUES (4, 'A','A','E','A rocky sea shore.  Strange tubular, frond-shaped organisms exist in the rock pools.',50,0,'1',0,'',0,5,0,'A Rocky Shore','In morse there are these and dashes','Cambrian',NULL, NULL);
 INSERT INTO `locations` VALUES (5, 'A','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','For those who are reading this.  Often have I seen you.  Time and time again.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (6, 'A','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','FaTeD','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (7, 'A','A','T','An abandoned amusement park.  Invisible creatures move in the trees.',10,0,'38',0,'',0,30,0,'An Abandoned Amusement Park','No Clue Yet','Post-Holocene',NULL, NULL);
@@ -102,7 +102,7 @@ INSERT INTO `locations` VALUES (67, 'B','T','C','Kermit was here',0,0,NULL,0,'',
 INSERT INTO `locations` VALUES (68, 'B','T','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (69, 'B','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (70, 'B','T','G','A cave in the snow.  It\'s been inhabited in the past.',5,0,NULL,0,'',0,0,0,'A Cave in the Snow','No Clue Yet','Holocene',NULL, NULL);
-INSERT INTO `locations` VALUES (71, 'B','T','S','Ditzy was here',0,0,NULL,0,'',0,0,0,'No Name Yet','My first is five.  Add one and multiply by three for my second.  Divide by six for my third.','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (71, 'B','T','S','Ditzy was here',10,0,'46',0,'',0,30,1,'A Stately Home','My first is five.  Add one and multiply by three for my second.  Divide by six for my third.','Holocene',8, NULL);
 INSERT INTO `locations` VALUES (72, 'B','T','T','Giant terminte mounds',5,0,'41',0,'',0,30,0,'A termite ridden landscape','No Clue Yet','Post Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (73, 'C','A','C','Stringer was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Every third in carriages','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (74, 'C','A','D','Tobie was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
