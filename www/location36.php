@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(36, $db);
+    add_location_clue(36,$db);
 
 ?>
 <html>
@@ -23,15 +24,20 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(8, $db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location36.png>
+<h2>A Shallow Sea</h2>
 
-<p>Placeholder</p>
+<p>You are floating on a shallow sea above coral.  In the sky mysteriously hangs a message `The start of an encounter'.</p>
 
 <?php
+    $action_done = get_value_from_users("action_done", $db);
+    if (!$action_done) {
+        print "<p><b>You will need a boat otherwise you will be swept out of the anomaly again!</b></p>";
+    }
+
     print_footer(36, $db);
     ?>
 

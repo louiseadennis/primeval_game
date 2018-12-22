@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are standing on a deserted highway.  A rusting car has been abandoned here.  Its windows long  since smashed.  A dry wind carries a strange acidic smell on the air.</p>
 
+<?php
+    print_footer(46,$db);
+    ?>
+
 </div>
 </body>
 </html>

@@ -53,7 +53,7 @@ INSERT INTO `locations` VALUES (18, 'A','N','S','A rocky plain with graves and a
 INSERT INTO `locations` VALUES (19, 'A','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','I\'m starting to be fascinated','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (20, 'A','O','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (21, 'A','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (22, 'A','O','E','Wilder was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Did Jack Harkness become the face of this?','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (22, 'A','O','E','A warm lush riverside.  Wilder was here.',5,0,'53',0,'',0,30,0,'A Lush Riverside','Did Jack Harkness become the face of this?','Eocene',NULL, NULL);
 INSERT INTO `locations` VALUES (23, 'A','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Another way to spell eek!','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (24, 'A','O','S','A Frozen Wasteland.',5,0,NULL,0,'',0,0,0,'A Frozen Landscape.','Protest against Nuclear Weapons.','Pre-Cambrian',NULL, NULL);
 INSERT INTO `locations` VALUES (25, 'A','O','T','Vancouver',5,0,'52',0,'',0,10,1,'Vancouver','No Clue Yet','Holocene',103, NULL);
@@ -67,7 +67,7 @@ INSERT INTO `locations` VALUES (32, 'A','T','D','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (33, 'A','T','E','Captain Ross was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Fish, liable to cause wars.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (34, 'A','T','G','The banks of a stream.  Massive pterosaurs circle overhead.',5,0,'15',0,'',0,30,0,'The Banks of a Stream','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (35, 'A','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (36, 'A','T','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (36, 'A','T','T','A shallow sea above a coral reef',5,0,'8',0,'',0,20,0,'A Shallow Sea','The start of an encounter','Carboniferous',NULL, NULL);
 INSERT INTO `locations` VALUES (37, 'B','A','C','Bare rock and a large sun hanging in the sky.',10,0,'42',0,'',0,20,0,'The End','No Clue Yet','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (38, 'B','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Enigma Variation I','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (39, 'B','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','<img src=assets/clue39.png>','No Era Yet',NULL, NULL);
@@ -159,7 +159,7 @@ INSERT INTO `locations` VALUES (124, 'D','N','G','Emily was here',0,0,NULL,0,'',
 INSERT INTO `locations` VALUES (125, 'D','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (126, 'D','N','T','A freshwater lake.  Hot and humid weather.  Large trees on the shore.',5,0,'8',0,'inflatable dinghy',1,30,0,'A Freshwater Laker','No Clue Yet','Carboniferous',NULL, NULL);
 INSERT INTO `locations` VALUES (127, 'D','O','C','A dark forest with large trees and giant insects.',5,0,'22',0,'',0,5,0,'A Dark Forest','No Clue Yet','Carboniferous',NULL, NULL);
-INSERT INTO `locations` VALUES (128, 'D','O','D','A grasspy plain at sunset.  Hyaenodon are somewhere.',5,0,'46',0,'',0,39,0,'A Plain at Sunset','No Clue Yet','Eocene',NULL, NULL);
+INSERT INTO `locations` VALUES (128, 'D','O','D','A grassy plain at sunset.  Hyaenodon are somewhere.',5,0,'46',0,'',0,39,0,'A Plain at Sunset','No Clue Yet','Eocene',NULL, NULL);
 INSERT INTO `locations` VALUES (129, 'D','O','E','Cross Photonics',5,0,'12',0,'',0,5,1,'Cross Photonics','No Clue Yet','Holocene',100, NULL);
 INSERT INTO `locations` VALUES (130, 'D','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','At, Ate, _, Date','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (131, 'D','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','I start and end in time but not in clock, my middle is in rune and also in rock','No Era Yet',NULL, NULL);

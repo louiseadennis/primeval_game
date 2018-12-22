@@ -34,10 +34,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location22.png>
+<h2>A Riverside</h2>
 
-<p>Did Jack Harkness become the face of this?</p>
+<p>A warm lush riverside.   A note pinned to a tree says: Did Jack Harkness become the face of this?</p>
 
 <?php
     
