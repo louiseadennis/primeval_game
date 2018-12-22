@@ -47,6 +47,8 @@ print_standard_start($db);
         print "<img src=assets/lacey.png align=left>";
         print "<p>Lacey is here.  She is armed with an assault rifle.</p>";
     }
+    
+    print_footer(45,$db);
     ?>
 
 

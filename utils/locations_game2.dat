@@ -56,13 +56,13 @@ INSERT INTO `locations` VALUES (21, 'A','O','D','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (22, 'A','O','E','Wilder was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Did Jack Harkness become the face of this?','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (23, 'A','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Another way to spell eek!','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (24, 'A','O','S','A Frozen Wasteland.',5,0,NULL,0,'',0,0,0,'A Frozen Landscape.','Protest against Nuclear Weapons.','Pre-Cambrian',NULL, NULL);
-INSERT INTO `locations` VALUES (25, 'A','O','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (25, 'A','O','T','Vancouver',5,0,'52',0,'',0,10,1,'Vancouver','No Clue Yet','Holocene',103, NULL);
 INSERT INTO `locations` VALUES (26, 'A','R','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (27, 'A','R','E','Marshy Pools and and Erypos',5,0,'26',0,'',0,10,0,'Marshy Pools','No Clue Yet','Carboniferous',NULL, NULL);
 INSERT INTO `locations` VALUES (28, 'A','R','G','An Airport.',80,0,'19,20',0,'',0,30,1,'An Airport','No Clue Yet','Holocene',4, NULL);
 INSERT INTO `locations` VALUES (29, 'A','R','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (30, 'A','R','T','A Lake Shore with a herd of Diplodocus',5,0,'35,36',0,'',0,30,0,'A Lake Shore','No Clue Yet','Jurassic',NULL, NULL);
-INSERT INTO `locations` VALUES (31, 'A','T','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (31, 'A','T','C','High in the mountains near a flock of Dracorex',5,0,'7',0,'',0,10,0,'High in the Mountains','An AT\&T cell phone.','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (32, 'A','T','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (33, 'A','T','E','Captain Ross was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Fish, liable to cause wars.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (34, 'A','T','G','The banks of a stream.  Massive pterosaurs circle overhead.',5,0,'15',0,'',0,30,0,'The Banks of a Stream','No Clue Yet','Cretaceous',NULL, NULL);

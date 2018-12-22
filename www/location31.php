@@ -9,7 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(31, $db);
-
+    add_location_clue(31, $db);
 ?>
 <html>
 <head>
@@ -23,13 +23,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(7,$db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location31.png>
+<h2>In the Mountains</h2>
 
-<p>Placeholder</p>
+<p>You are high up in the mountains.  A flock of Dracorex are wandering past.  Someone has left an AT&T cell phone on the ground.</p>
 
 <?php
     print_footer(31,$db);

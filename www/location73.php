@@ -47,6 +47,10 @@ print_standard_start($db);
         update_users("new_character", 'stringer', $db);
         print "<img src=assets/stringer.png align=left>";
         print "<p>Stringer is here.  He has a tranquiliser rifle.</p>";
+        
+        print "<p>You can read about Stringer in:</p>";
+        add_fanfic(32,$db);
+        print_fanfic(32,$db);
     }
     ?>
 

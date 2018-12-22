@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location25.png>
+<h2>Vancouver</h2>
 
-<p>Placeholder</p>
+<p>You are near the river in Vancouver.</p>
 
 <?php
     print_footer(25,$db);
