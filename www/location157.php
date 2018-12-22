@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(47, $db);
+check_location(157, $db);
 
 ?>
 <html>
@@ -23,18 +23,19 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(9, $db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location157.png>
+<h2>A Rocky Landscape</h2>
 
-<p>Placeholder</p>
+<p>Letters are carved into one of the cliffs.</p>
+
+<p><img src=assets/clue157.png></p>
 
 <?php
-    print_footer(47,$db);
-    ?>
-
+print_footer(157, $db);
+?>
 </div>
 </body>
 </html>

@@ -27,12 +27,14 @@ check_location(5, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location5.png>
+<h2>The British Museum</h2>
 
-<p>For those who are reading this.  Often have I seen you.  Time and time again.</p>
+<p>At the desk of the British Museum, you are handed a note: For those who are reading this.  Often have I seen you.  Time and time again.</p>
 
 <?php
+    
+    print_travel(5, $db);
     print_footer(5, $db);
     ?>
 

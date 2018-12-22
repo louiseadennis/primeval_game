@@ -52,4 +52,5 @@ INSERT INTO `fanfic` VALUES (29, 'https://eriah211.livejournal.com/29108.html','
 INSERT INTO `fanfic` VALUES (30, 'https://knitekat.livejournal.com/256396.html','knitekat','To Ride a Dragon', 'A Dragonriders of Pern Crossover',null,'12');
 INSERT INTO `fanfic` VALUES (31, 'bornfree.html','goldarrow','Born Free','Slave!Fic AU',null,'18');
 INSERT INTO `fanfic` VALUES (32, 'https://goldarrow.livejournal.com/72372.html','goldarrow','Eye of the Beholder','Abby/Stringer',null,'15');
-INSERT INTO `fanfic` VALUES (33, 'https://knitekat.livejournal.com/114227.html','knitekate','What was Missed','A Stephen Fixit',null,'15');
+INSERT INTO `fanfic` VALUES (33, 'https://knitekat.livejournal.com/114227.html','knitekat','What was Missed','A Stephen Fixit',null,'15');
+INSERT INTO `fanfic` VALUES (34, 'https://de-corbeau.livejournal.com/593.html','de-corbeau','Fractured','A year ago, Nick Cutter and Connor Temple vanished without a trace, disappeared through an anomaly and believed dead. Under leadership of new leader Danny Quinn, the remaining team has managed to hold together, until one of them reappears. But more has changed than the team realises, and a new threat is coming ever closer.',null,'PG-13');
