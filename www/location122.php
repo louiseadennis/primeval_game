@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(122, $db);
+    add_location_clue(122, $db);
 
 ?>
 <html>
@@ -23,7 +24,7 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(35, $db);
 ?>
 <div class=location>
 <img src=assets/location122.png>
@@ -35,6 +36,11 @@ print_standard_start($db);
     add_fanfic(9, $db);
     print "To find  out more: ";
     print_fanfic(9, $db);
+    ?>
+
+<p>Someone has been doodling in a notebook.  There is a picture of a worm on a hook and someone standing at a bus stop, looking at their watch.  Underneath is written `what unites the two?'.
+
+<?php
 
 print_footer(122, $db);
 ?>

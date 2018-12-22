@@ -44,3 +44,6 @@ INSERT INTO `fanfic` VALUES (21, 'https://goldarrow.livejournal.com/85023.html',
 INSERT INTO `fanfic` VALUES (22, 'https://lukadreaming.livejournal.com/67164.html','lukadreaming','Spicing it Up','Ryan and Stephen put a dinner-time ingredient to unconventional use',null,'18');
 INSERT INTO `fanfic` VALUES (23, 'https://knitekat.livejournal.com/114227.html','knitekat','What was Missed','Fixit-it: Lester/Stephen and sounds of the city',null,15);
 INSERT INTO `fanfic` VALUES (24, 'https://fififolle.livejournal.com/45344.html','fififolle','Sleeping Lion','Nick Cutter goes AWOL, and Tom Ryan is sent to get him. He finds him on Arthur\'s seat, the hill above Edinburgh.',null,'PG-13');
+INSERT INTO `fanfic` VALUES (25, 'https://archiveofourown.org/works/86032','Annariel','Making Teams, Breaking Teams','Connor Temple becomes friends with Toshiko and finds himself seconded to Torchwood after her death.','assets/makingteams.png','General Audiences');
+INSERT INTO `fanfic` VALUES (26, 'https://faye-dartmouth.livejournal.com/138936.html','faye_dartmouth','Whatever Waits Beyond','It\’s not heaven, but it\’s not hell.','http://www.dennis-sellers.com/ljimages/covers/whatever_waits.png','PG');
+INSERT INTO `fanfic` VALUES (27, 'https://mysteriousaliwz.livejournal.com/95300.html','mysteriousaliwz','Crush with Eyeliner','An out-break of badfic in Sanctuary',null,'PG 15');

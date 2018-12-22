@@ -20,16 +20,21 @@ check_location(89, $db);
 <body>
 <?php
 print_header($db);
+    add_location_clue(89, $db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(4, $db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location89.png>
+<h2>A Pleistocene Plain</h2>
 
-<p>Placeholder</p>
+<p>You are standing on the edge of a plain teeming with Pleistocene wild life.  Someone has left a copy of the Dungeons and Dragons Player's Handbook here.</p>
+
+<?php
+    print_footer(89, $db);
+    ?>
 
 </div>
 </body>

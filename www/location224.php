@@ -25,7 +25,9 @@ print_header($db);
 <?php
     print_sanctuary_start($db);
     $sanctuary_visits = get_value_from_users("sanctuary", $db);
-    $fanfic_id = get_value_for_sanctuary_id("fanfic_id", $sanctuary_visits, $db);
+    if ($sanctuary_visits > 1) {
+        $fanfic_id = get_value_for_sanctuary_id("fanfic_id", 2, $db);
+    }
     
     ?>
 <div class=location>
@@ -33,8 +35,8 @@ print_header($db);
 <h2>Sanctuary</h2>
 
 <?php
-    if ($sanctuary_vists == 2) {
-        print "<p>\"Ow.\"</p>";
+    if ($sanctuary_visits == 2) {
+        print "<i><p>\"Ow.\"</p>";
         
         print "<p>\"Stephen?\"</p>";
         
@@ -56,7 +58,7 @@ print_header($db);
         
         print "<p>\"Apparently, you now have a piercing kink.\"</p>";
         
-        print "<p>\"What do you mean, I have a piercing kink ... holy shit!?!\"</p>";
+        print "<p>\"What do you mean, I have a piercing kink ... holy shit!?!\"</p></i>";
     } else {
 
         print "<i><p>The smilodon padded in front of the door, blocking Stephen's view of Nick's appalled gaze. Stephen focused on the ripple of muscle beneath the thick, sandy fur in a vain attempt to distract himself from the scrape of claws on concrete behind him, and the movements above him at the edge of his field of vision. Not that he need concern himself with the future predators - he'd be dead long before they would bother to join in.</p>";
@@ -75,6 +77,12 @@ print_header($db);
     add_fanfic($fanfic_id, $db);
     print "<p>Now read on: ";
     print_fanfic($fanfic_id, $db);
+    
+    if ($sanctuary_visits > 2) {
+        print_accessible_location_foot(226, $db);
+    }
+    
+    print_footer(226, $db);
     ?>
 
 </div>

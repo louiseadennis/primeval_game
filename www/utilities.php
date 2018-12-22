@@ -2210,7 +2210,7 @@
     function check_location($location, $connection) {
         $real_location = get_location($connection);
         
-        if ($location != 225) {
+        if ($real_location != 225) {
             $library_f = get_value_from_users("library_fanfic", $connection);
             if ($library_f != 0) {
                 update_users("library_fanfic", 0, $connection);

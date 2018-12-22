@@ -27,10 +27,10 @@ check_location(15, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location15.png>
+<h2>A Permian Swamp</h2>
 
-<p>It is foggy.  The clue is  in the weather.</p>
+<p>You are standing in a pre-historic swamp.  Pinned to a tree is a note that says.  The clue is  in the weather.</p>
 
 <?php
     print_footer(15, $db);

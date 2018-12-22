@@ -9,7 +9,6 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(28, $db);
-    $duncan_collected = check_for_character('duncan', $db);
 
 ?>
 <html>
@@ -34,11 +33,6 @@ print_standard_start($db);
 
 <?php
     
-    if (!$duncan_collected) {
-        update_users("new_character", "duncan", $db);
-        print "<img src=assets/duncan.png align=left>";
-        print "<p>Duncan is here investigating rumours of anomalies.</p>";
-    }
     
     print_travel(28, $db);
     print_footer(28, $db);

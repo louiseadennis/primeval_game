@@ -27,7 +27,7 @@ print_header($db);
 print_critter_trail_start(2, $db);
 ?>
 <div class=location>
-<img src=assets/location.png>
+<img src=assets/location132.png>
 <h2>The Open Ocean</h2>
 
 <p>You are in a vast open ocean!  Nevertheless a wooden plank is floating near you with the words `Equally Divided Clothed'</p>
