@@ -164,7 +164,7 @@ INSERT INTO `locations` VALUES (129, 'D','O','E','Cross Photonics',5,0,'12',0,''
 INSERT INTO `locations` VALUES (130, 'D','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','At, Ate, _, Date','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (131, 'D','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','I start and end in time but not in clock, my middle is in rune and also in rock','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (132, 'D','O','T','The Open Ocean',10,0,'2',0,'inflatable dinghy',1,30,0,'The Open Ocean','Equally Divided Clothed','Devonian',NULL, NULL);
-INSERT INTO `locations` VALUES (133, 'D','R','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Should be up an arse','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (133, 'D','R','C','A lake side where anomalies have been sighted.',20,0,'51',0,'',0,30,1,'A Lake Side','Should be up an arse','Holocene',11, NULL);
 INSERT INTO `locations` VALUES (134, 'D','R','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (135, 'D','R','E','Basement of an under-construction Supermarket.  Christine was here.',5,0,'45',0,'',0,30,1,'An Under-Construction Supermarket','End of the drafts','Holocene',7, NULL);
 INSERT INTO `locations` VALUES (136, 'D','R','G','The Docks.  Duncan was here.',10,0,'48',0,'',0,20,1,'The Docks','No Clue Yet','Holocene',10, NULL);
@@ -226,7 +226,7 @@ INSERT INTO `locations` VALUES (191, 'F','I','S','A rocky outcrop in a sandy des
 INSERT INTO `locations` VALUES (192, 'F','I','T','Ethan was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Ancestor of the Future Predator','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (193, 'F','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (194, 'F','N','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (195, 'F','N','E','A large shop selling auto parts.',5,0,'39',0,'',0,40,1,'A Canadian Tire Store','No Clue Yet','Holocene',101, NULL);
+INSERT INTO `locations` VALUES (195, 'F','N','E','A large shop selling auto parts.',5,0,'39',0,'',0,40,1,'A Canadian Tire Store','A Palindrome of Vowels: a middle.','Holocene',101, NULL);
 INSERT INTO `locations` VALUES (196, 'F','N','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (197, 'F','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (198, 'F','N','T','Blade was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Middle Caucasian','No Era Yet',NULL, NULL);

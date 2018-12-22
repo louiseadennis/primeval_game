@@ -49,3 +49,4 @@ INSERT INTO `fanfic` VALUES (26, 'https://faye-dartmouth.livejournal.com/138936.
 INSERT INTO `fanfic` VALUES (27, 'https://mysteriousaliwz.livejournal.com/95300.html','mysteriousaliwz','Crush with Eyeliner','An out-break of badfic in Sanctuary',null,'PG 15');
 INSERT INTO `fanfic` VALUES (28, 'whatelsearefriendsfor.html','rain_sleet_snow','What else are Friends for?','It was a communal camping trip. It was doomed from the word \‘go\’. ',null,'15');
 INSERT INTO `fanfic` VALUES (29, 'https://eriah211.livejournal.com/29108.html','eriah211','Holidays and Other Suprises','Becker/Danny in the Canary Islands',null,'PG-15');
+INSERT INTO `fanfic` VALUES (30, 'https://knitekat.livejournal.com/256396.html','knitekat','To Ride a Dragon', 'A Dragonriders of Pern Crossover',null,'12');

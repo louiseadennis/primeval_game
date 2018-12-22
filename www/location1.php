@@ -71,6 +71,13 @@
 </ol>
 </i></p>
 <?php
+    $location_count = get_value_from_users("location_count", $db);
+    if ($location_count > 10) {
+        update_users("location_count", 0, $db);
+        add_equipment("budget", $db);
+        print "<p>Your budget is renewed.</p>";
+    }
+    
     if ($lester_recharges && $default_uses < 500) {
         $sql = "SELECT * FROM characters;";
         if (!$result = $db->query($sql))

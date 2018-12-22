@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(133, $db);
+    add_equipment("inflatable dinghy",$db);
 
 ?>
 <html>
@@ -27,10 +28,15 @@ check_location(133, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location133.png>
+<h2>A lakeside</h2>
 
-<p>Should be up an arse.</p>
+<p>You are beside a lake where anomalies have been reported.  The ARC supplies you with an inflatable dinghy.  Someone has graffittied `Should be up an arse' on one of the piers.</p>
+
+<?php
+    print_travel(133,$db);
+    print_footer(133,$db);
+    ?>
 
 </div>
 </body>
