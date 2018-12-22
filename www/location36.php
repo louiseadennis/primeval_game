@@ -32,7 +32,7 @@ print_standard_start($db);
 <p>Placeholder</p>
 
 <?php
-    print_footer(33, $db);
+    print_footer(36, $db);
     ?>
 
 </div>

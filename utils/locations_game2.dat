@@ -44,7 +44,7 @@ INSERT INTO `locations` VALUES (9, 'A','I','D','Nothing Here Yet',0,0,NULL,0,'',
 INSERT INTO `locations` VALUES (10, 'A','I','E','A Desert full of Diictodon burrows.  Sid and Nancy were here',20,0,NULL,0,'',0,0,0,'A Hot Desert','No Clue Yet','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (11, 'A','I','G','A Medieval Village',20,0,'7',0,'',0,10,0,'A Medieval Village','A grave for Ann Newsom Hughes, 1334-1372, with a trilobite in carved into the headstone.','Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (12, 'A','I','S','High ground above a plain of conifers and seed ferns.',5,0,NULL,0,'',0,0,0,'No Name Yet','The sisters again, but this time my third is the King who ordered my first entombed.','Triassic',NULL, NULL);
-INSERT INTO `locations` VALUES (13, 'A','I','T','A mountain above a forest with giant dragonflies.',5,0,'22',0,'',0,20,0,'A Mountain Range','No Clue Yet','Carboniferous',NULL, NULL);
+INSERT INTO `locations` VALUES (13, 'A','I','T','A mountain above a forest with giant dragonflies.',5,0,'22',0,'',0,20,0,'A Mountain Range','Was he a Fellow of the Royal Society?','Carboniferous',NULL, NULL);
 INSERT INTO `locations` VALUES (14, 'A','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (15, 'A','N','D','A Permian swamp.  It is foggy.',10,0,'50',0,'',0,30,0,'A Permian Swamp','The clue is in the weather.','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (16, 'A','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Multiple Cute Aliens','No Era Yet',NULL, NULL);
@@ -147,7 +147,7 @@ INSERT INTO `locations` VALUES (112, 'D','A','G','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (113, 'D','A','S','A dusty plain.  Seed ferns and conifers are visible.',5,0,'5,28',0,'',0,20,0,'A Dusty Plain','No Clue Yet','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (114, 'D','A','T','A cave in the far future.  Caroline was here.',5,0,'45',0,'',0,30,0,'Cave in the far future','Be a Entrepeneur or Elf or Engineer','Post Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (115, 'D','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (116, 'D','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (116, 'D','I','D','A University Campus',10,0,'50',0,'',0,30,1,'A University Campus','No Clue Yet','Holocene',102, NULL);
 INSERT INTO `locations` VALUES (117, 'D','I','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (118, 'D','I','G','Grassy savannah and neanderthals.  Alex, Kay and Marcus are among the neanderthal\'s dogs.',10,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','Pleistocene',NULL, NULL);
 INSERT INTO `locations` VALUES (119, 'D','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);

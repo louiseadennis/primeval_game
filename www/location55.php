@@ -46,6 +46,9 @@ print_standard_start($db);
         update_users("new_character", 'lizzie Preston', $db);
         print "<img src=assets/lizzie_Preston.png align=left>";
         print "<p>Lizzie Preston is here.  She is definitely going to talk to Major Preston about your budget.</p>";
+        print "<p>You can read about Lizzie Preston in:";
+        add_fanfic(28,$db);
+        print_fanfic(28,$db);
     }
     
     

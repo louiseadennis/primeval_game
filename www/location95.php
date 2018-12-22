@@ -47,6 +47,9 @@ print_standard_start($db);
         update_users("new_character", 'cara Cooper', $db);
         print "<img src=assets/cara_Cooper.png align=left>";
         print "<p>Cara Cooper is here. She has a first aid kit.</p>";
+        print "<p>You can read about Cara in:</p>";
+        add_fanfic(28,$db);
+        print_fanfic(28,$db);
     }
     
     print_footer(95, $db);

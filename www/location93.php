@@ -46,6 +46,10 @@ print_standard_start($db);
         update_users("new_character", 'claire Bradley', $db);
         print "<img src=assets/claire_Bradley.png align=left>";
         print "<p>Claire Bradley is here. She has breathing aparatus.  She has been given some kind of lettuce.</p>";
+        print "You can read about Claire in:";
+        add_fanfic(28,$db);
+        print_fanfic(28,$db);
+        
     }
     
     print_footer(93, $db);
