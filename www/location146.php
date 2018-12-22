@@ -8,8 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(39, $db);
-    add_location_clue(39, $db);
+check_location(146, $db);
 
 ?>
 <html>
@@ -30,12 +29,11 @@ print_standard_start($db);
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p><img src=assets/clue39.png></p>
+<p>Placeholder</p>
 
 <?php
-    print_footer(39, $db);
-    ?>
-
+print_footer(146, $db);
+?>
 </div>
 </body>
 </html>

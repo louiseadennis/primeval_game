@@ -36,16 +36,16 @@ print_standard_start($db);
 ?>
 <div class=location>
 <img src=assets/location.png>
-<h2>Placeholder</h2>
+<h2>A Permian River Estuary</h2>
 
-<p>Sounds like FAQ</p>
+<p>You are standing on the banks of an estuary some time in the Permian</p>
 
 <?php
     
     if (!$char_collected) {
         update_users("new_character", 'lizzie Preston', $db);
         print "<img src=assets/lizzie_Preston.png align=left>";
-        print "<p>Lizzie Preston is here.  She is definitely going to talk to Major Preston about your budget.</p>";
+        print "<p>Lizzie Preston is here.  She is definitely going to talk to Major Preston about your budget.  She has a note that says `Sounds like FAQ'</p>";
         print "<p>You can read about Lizzie Preston in:";
         add_fanfic(28,$db);
         print_fanfic(28,$db);

@@ -108,10 +108,11 @@ if ($travel_type == "lof") {
 }
     
     $hp = get_value_from_users("hp", $db);
-    if ($hp < 1) {
+    $current_era = get_value_for_location_id("era", $location_id, $db);
+    if ($hp < 1 && $current_era != 'Sanctuary') {
         $location_id = 224;
     }
-
+    
 
     if ($travel_type != '' && $travel_type != "none") {
        update_users("travel_type", $travel_type, $db);
@@ -181,16 +182,17 @@ if ($travel_type == "lof") {
         if ($prev_era != 'Sanctuary') {
             update_users("prev_location", $prev_location, $db);
         } else {
-            $current_era = get_value_for_location_id("era", $location_id, $db);
             if ($current_era != 'Sanctuary') {
                 visited_sanctuary($db);
                 }
         }
+        update_location_count($db);
        update_location($prev_location, "anomaly", 0, $db);
        update_users("location_id", $location_id, $db);
     }
 
     $location_string = "location" . $location_id;
+    
     header("Location: $location_string.php");
     exit;
     

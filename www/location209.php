@@ -8,8 +8,8 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(39, $db);
-    add_location_clue(39, $db);
+check_location(209, $db);
+    add_location_clue(209, $db);
 
 ?>
 <html>
@@ -24,18 +24,17 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(5, $db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location209.png>
+<h2>A Herd of Scutosaurus</h2>
 
-<p><img src=assets/clue39.png></p>
+<p>You are standing on a hillside observing a herd of Scutosaurus.  Into the wood of a tree is carved:  I'm all in fine, my first  is in forest and my ending in Tyne.</p>
 
 <?php
-    print_footer(39, $db);
-    ?>
-
+print_footer(209, $db);
+?>
 </div>
 </body>
 </html>

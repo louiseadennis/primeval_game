@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are standing on a rocky plain.  Nothing is growing.</p>
 
+<?php
+    print_footer(40,$db);
+    ?>
+
 </div>
 </body>
 </html>

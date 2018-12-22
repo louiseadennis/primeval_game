@@ -86,7 +86,7 @@ INSERT INTO `locations` VALUES (51, 'B','N','E','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (52, 'B','N','G','Helen was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Social insects of the family Formicidae','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (53, 'B','N','S','The house where Patrick Quinn when missing.',10,0,'38',0,'',0,30,1,'An Abandoned House.','No Clue Yet','Holocene',5, NULL);
 INSERT INTO `locations` VALUES (54, 'B','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Rotating clockwise on the ice.','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (55, 'B','O','C','Lizzie Preston was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Sounds like FAQ','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (55, 'B','O','C','A Permian river estuary.  Lizzie Preston was here.',10,0,'51',0,'',0,30,0,'A Permian River Estuary','Sounds like FAQ','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (56, 'B','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (57, 'B','O','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','What the Lion did to Jim who ran away from his Nurse','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (58, 'B','O','G','A flooded plain and Coelophysis.  Hamza was here.',5,0,'9',0,'',0,30,0,'A Flooded Plain','Hamza was told to see a sea.','Triassic',NULL, NULL);
@@ -107,7 +107,7 @@ INSERT INTO `locations` VALUES (72, 'B','T','T','Giant terminte mounds',5,0,'41'
 INSERT INTO `locations` VALUES (73, 'C','A','C','Stringer was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Every third in carriages','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (74, 'C','A','D','Tobie was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (75, 'C','A','E','April was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','1119','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (76, 'C','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (76, 'C','A','G','Tenerife',10,0,'1',0,'',0,10,1,'Tenerife','No Clue Yet','Holocene',400, NULL);
 INSERT INTO `locations` VALUES (77, 'C','A','S','Finn was here',0,0,NULL,0,'',0,0,0,'No Name Yet','The closest you can get to blowing a kiss.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (78, 'C','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (79, 'C','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -240,7 +240,7 @@ INSERT INTO `locations` VALUES (205, 'F','R','C','Poisonous Fog',5,0,'13',0,'bre
 INSERT INTO `locations` VALUES (206, 'F','R','D','A forest track made by a herd of Triceratops.  Howard Kanan was here.',10,0,NULL,0,'',0,0,0,'A Forest Track','No Clue Yet','Triassic',NULL, NULL);
 INSERT INTO `locations` VALUES (207, 'F','R','E','High Cliffs above nesting anurognathus',5,0,'14',0,'',0,50,0,'High Cliffs','- . - . / - . / ...','Jurassic',NULL, NULL);
 INSERT INTO `locations` VALUES (208, 'F','R','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (209, 'F','R','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (209, 'F','R','S','A herd of scutosaurus',10,0,'5',0,'',0,30,0,'A Herd of Scutosaurus','I\'m all in fine, my first  is in forest and my ending in Tyne.','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (210, 'F','R','T','Cretaceous Australia or Antarctica.',5,0,'23',0,'',0,10,0,'A Cliff Top','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (211, 'F','T','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Ding, Dong, Joined the Bell.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (212, 'F','T','D','Connor and Abby\'s camp in the Cretaceous. Major Douglas was here.',30,0,'16,25',0,'',0,30,0,'Cretaceous Camp','He was given binoculars and told they were for 20 20 vision','Cretaceous',NULL, NULL);

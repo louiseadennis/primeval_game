@@ -643,6 +643,12 @@
          return 1;
       }
     }
+    
+    function update_location_count($db) {
+        $count = get_value_from_users("location_count", $db);
+        $new_count = $count+1;
+        update_users("location_count", $new_count, $db);
+    }
 
     function change_anomaly($anomaly,  $prev_location, $connection) {
         $user_id = get_user_id($connection);

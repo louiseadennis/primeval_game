@@ -35,7 +35,7 @@ print_header($db);
 <h2>Sanctuary</h2>
 
 <?php
-    if ($sanctuary_visits == 2) {
+    if ($sanctuary_visits > 1) {
         print "<i><p>\"Ow.\"</p>";
         
         print "<p>\"Stephen?\"</p>";
@@ -79,6 +79,7 @@ print_header($db);
     print_fanfic($fanfic_id, $db);
     
     if ($sanctuary_visits > 2) {
+        print "<p>From here you can get to:";
         print_accessible_location_foot(226, $db);
     }
     

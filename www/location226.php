@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(224, $db);
+check_location(226, $db);
 
 ?>
 <html>
@@ -29,7 +29,7 @@ print_header($db);
     
     ?>
 <div class=location>
-<img src=assets/location224.jpg>
+<img src=assets/location226.png>
 <h2>Sanctuary Bathroom</h2>
 
 <i><p>"Hello, Management?"</p>
