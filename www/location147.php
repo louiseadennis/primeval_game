@@ -8,7 +8,8 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(43, $db);
+check_location(147, $db);
+    add_location_clue(147,$db);
 
 ?>
 <html>
@@ -23,18 +24,17 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(6, $db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location147.png>
+<h2>Permian Desert</h2>
 
-<p>Placeholder</p>
+<p>You are standing in a dry and dusty Permian landscape.  As you arrive a disembodied voice intones `Air Training Corps'</p>
 
 <?php
-    print_footer(43, $db);
-    ?>
-
+print_footer(147, $db);
+?>
 </div>
 </body>
 </html>

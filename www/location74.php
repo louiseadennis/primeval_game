@@ -35,10 +35,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location74.png>
+<h2>A Cretaceous Lake</h2>
 
-<p>Placeholder</p>
+<p>You are standing on the shores of a lake, teaming with wildlife, in the late Cretaceous.</p>
 
 <?php
     
@@ -47,6 +47,8 @@ print_standard_start($db);
         print "<img src=assets/tobie.png align=left>";
         print "<p>Tobie is here.  She has a first aid kit.  She suggests returning to the ARC.</p>";
     }
+    
+    print_footer(74, $db);
     
     ?>
 

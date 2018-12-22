@@ -105,7 +105,7 @@ INSERT INTO `locations` VALUES (70, 'B','T','G','A cave in the snow.  It\'s been
 INSERT INTO `locations` VALUES (71, 'B','T','S','Ditzy was here',10,0,'46',0,'',0,30,1,'A Stately Home','My first is five.  Add one and multiply by three for my second.  Divide by six for my third.','Holocene',8, NULL);
 INSERT INTO `locations` VALUES (72, 'B','T','T','Giant terminte mounds',5,0,'41',0,'',0,30,0,'A termite ridden landscape','No Clue Yet','Post Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (73, 'C','A','C','Stringer was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Every third in carriages','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (74, 'C','A','D','Tobie was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (74, 'C','A','D','A Cretaceous Lake.  Tobie was here.',10,0,'12,52',0,'',0,30,0,'A Cretaceous Lake.','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (75, 'C','A','E','April was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','1119','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (76, 'C','A','G','Tenerife',10,0,'1',0,'',0,10,1,'Tenerife','No Clue Yet','Holocene',400, NULL);
 INSERT INTO `locations` VALUES (77, 'C','A','S','Finn was here',0,0,NULL,0,'',0,0,0,'No Name Yet','The closest you can get to blowing a kiss.','No Era Yet',NULL, NULL);
@@ -178,7 +178,7 @@ INSERT INTO `locations` VALUES (143, 'D','T','S','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (144, 'D','T','T','A Forest in the Cretaceous',10,0,'48',0,'',0,30,0,'A Forest','A secondary electron and back-scattered electron detector used in scanning electron microscopes','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (145, 'E','A','C','Ryan was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Starting to Dither','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (146, 'E','A','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (147, 'E','A','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (147, 'E','A','E','Permian Desert',10,0,'6',0,'',0,30,0,'Permian Desert','Air Training Corps','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (148, 'E','A','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (149, 'E','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (150, 'E','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
