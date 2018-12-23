@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(46, $db);
+    add_location_clue(46,$db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(20,$db);
 ?>
 <div class=location>
 <img src=assets/location46.png>
 <h2>A Deserted Highway</h2>
 
-<p>You are standing on a deserted highway.  A rusting car has been abandoned here.  Its windows long  since smashed.  A dry wind carries a strange acidic smell on the air.</p>
+<p>You are standing on a deserted highway.  A rusting car has been abandoned here.  Its windows long  since smashed.  A dry wind carries a strange acidic smell on the air. Someone has spray-painted `second person plural of to be' onto the car.</p>
 
 <?php
     print_footer(46,$db);

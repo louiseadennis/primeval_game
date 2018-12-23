@@ -26,10 +26,10 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location154.png>
+<h2>A Cretaceous Plain</h2>
 
-<p>Placeholder</p>
+<p>You find yourself in the middle of a grassy plain surrounded by Triceratops.</p>
 
 <?php
 print_footer(154, $db);

@@ -77,7 +77,7 @@ INSERT INTO `locations` VALUES (42, 'B','A','T','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (43, 'B','I','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (44, 'B','I','D','A peaceful riverside. Morris was here.',5,0,'40',0,'',0,30,0,'A peaceful riverside.','Short Robot','Eocene',NULL, NULL);
 INSERT INTO `locations` VALUES (45, 'B','I','E','Lacey was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Something small or unimportant of its kind','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (46, 'B','I','G','A Deserted Highway with a rusting car.',5,0,NULL,0,'',0,0,0,'A Deserted Highway','No Clue Yet','Post-Holocene',NULL, NULL);
+INSERT INTO `locations` VALUES (46, 'B','I','G','A Deserted Highway with a rusting car.',5,0,'20',0,'',0,10,0,'A Deserted Highway','Second person plural of to be','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (47, 'B','I','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (48, 'B','I','T','Lacey was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Tick and tock goes the clock.  First and last in three but two\'s in only two.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (49, 'B','N','C','Merison Oil Loading Facility.  Sarah was here.',25,0,'56',0,'',0,30,1,'Merison Oil Loading Facility','No Clue Yet','Holocene',104, NULL);
@@ -185,10 +185,10 @@ INSERT INTO `locations` VALUES (150, 'E','A','T','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (151, 'E','I','C','Mac was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Deontic Logic','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (152, 'E','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (153, 'E','I','E','A forest with giant spider webs strung between the trees.',5,1,'3',0,'',0,30,0,'A Spider-Web Strewn Forest','<table><tr><td>A</td><td>B</td><td>B</td><td>Y</td><td>C</td></tr><tr><td>D</td><td>U</td><td>E</td><td>F</td><td>G</td></tr><tr><td>H</td><td>R</td><td>I</td><td>J</td><td>K</td></tr><tr><td>L</td><td>T</td><td>M</td><td>A</td><td>N</td></tr><tr><td>O</td><td>O</td><td>P</td><td>R</td><td>Q</td></tr><tr><td>R</td><td>N</td><td>I</td><td>C</td><td>K</td></tr></table>','Carboniferous',NULL, NULL);
-INSERT INTO `locations` VALUES (154, 'E','I','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (154, 'E','I','G','A plain surrounded by Triceratops',5,0,'60',0,'',0,20,0,'A Cretaceous Plain','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (155, 'E','I','S','The edge of a forest overlooking a plain full of sauropods.',5,0,'31',0,'',0,15,0,'No Name Yet','No Clue Yet','Jurassic',NULL, NULL);
 INSERT INTO `locations` VALUES (156, 'E','I','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (157, 'E','N','C','A Rocky Landscape',5,0,'9',0,'',0,5,0,'A Rockay Landscape','<img src=assets/clue157.png>','Triassic',NULL, NULL);
+INSERT INTO `locations` VALUES (157, 'E','N','C','A Rocky Landscape',5,0,'9',0,'',0,5,0,'A Rocky Landscape','<img src=assets/clue157.png>','Triassic',NULL, NULL);
 INSERT INTO `locations` VALUES (158, 'E','N','D','A grassy plain with small horses.',5,0,'18',0,'',0,20,0,'A Grassy Plain','No Clue Yet','Pliocene',NULL, NULL);
 INSERT INTO `locations` VALUES (159, 'E','N','E','The Centre of Nottingham',5,0,'58',0,'',0,20,0,'The Centre of Nottingham','No Clue Yet','Holocene',15, NULL);
 INSERT INTO `locations` VALUES (160, 'E','N','G','A forest clearing.  Pteranodons were flying overhead.',5,0,'24',0,'',0,20,0,'A Forest Clearing','No Clue Yet','Jurassic',NULL, NULL);
@@ -237,7 +237,7 @@ INSERT INTO `locations` VALUES (202, 'F','O','G','A Forest Stream.  Lester was h
 INSERT INTO `locations` VALUES (203, 'F','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (204, 'F','O','T','Jess was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','My first buried her brother and was buried in turn as punishment her name is the title of a play written by my third.  My second was her sister.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (205, 'F','R','C','Poisonous Fog',5,0,'13',0,'breathing aparatus',0,5,0,'A Poisonons Fog','No Clue Yet','Pre-Cambrian',NULL, NULL);
-INSERT INTO `locations` VALUES (206, 'F','R','D','A forest track made by a herd of Triceratops.  Howard Kanan was here.',10,0,NULL,0,'',0,0,0,'A Forest Track','No Clue Yet','Triassic',NULL, NULL);
+INSERT INTO `locations` VALUES (206, 'F','R','D','A forest track made by a herd of Triceratops.  Howard Kanan was here.',10,0,'60',0,'',0,5,0,'A Forest Track','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (207, 'F','R','E','High Cliffs above nesting anurognathus',5,0,'14',0,'',0,50,0,'High Cliffs','- . - . / - . / ...','Jurassic',NULL, NULL);
 INSERT INTO `locations` VALUES (208, 'F','R','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (209, 'F','R','S','A herd of scutosaurus',10,0,'5',0,'',0,30,0,'A Herd of Scutosaurus','I\'m all in fine, my first  is in forest and my ending in Tyne.','Permian',NULL, NULL);
