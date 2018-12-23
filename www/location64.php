@@ -26,10 +26,15 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location64.png>
+<h2>Howard Kanan's House</h2>
 
-<p>Placeholder</p>
+<p>Howard Kanan's House is deserted.  He does not appear to be home.</p>
+
+<?php
+    print_travel(64,$db);
+    print_footer(64,$db);
+    ?>
 
 </div>
 </body>

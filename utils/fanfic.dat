@@ -63,3 +63,4 @@ INSERT INTO `fanfic` VALUES (40, 'https://archiveofourown.org/works/83711/chapte
 INSERT INTO `fanfic` VALUES (41, 'https://knitekat.livejournal.com/239282.html','knitekat','The ARC Files: The Locked Room Mystery','AU in which supernatural creatures exist',null,'18');
 INSERT INTO `fanfic` VALUES (42, 'https://fredbassett.livejournal.com/151858.html','fredbassett','Under a Starlit Sky','Abby is trapped in the past, but can she trust her only companion?',null,'18');
 INSERT INTO `fanfic` VALUES (43, 'becarefulwhatyouwishfor.html','bigtitch','Be Careful What you Wish For and Other Stories','The Fixit that Wouldn\'t Die','http://dennis-sellers.com/ljimages/covers/carefulwishfor.png','NC-17');
+INSERT INTO `fanfic` VALUES (44, 'https://eriah211.livejournal.com/1779.html','eriah211','A New Pet','After the funeral Nick needs some company so he buys a pet.',null,'PG');

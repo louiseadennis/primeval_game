@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>Placeholder</p>
 
+<?php
+    print_footer(60, $db);
+    ?>
+
 </div>
 </body>
 </html>
