@@ -47,6 +47,8 @@ print_standard_start($db);
         print "<img src=assets/hamza_Sayed.png align=left>";
         print "<p>Hamza Sayed is here.  He has a first aid kit.  He says he was told to see a sea.</p>";
     }
+    
+    print_footer(58,$db);
     ?>
 
 

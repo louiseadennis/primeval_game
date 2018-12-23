@@ -8,8 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(99, $db);
-    add_location_clue(99,$db);
+check_location(178, $db);
 
 ?>
 <html>
@@ -24,18 +23,18 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_critter_trail_start(56, $db);
+print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location99.png>
-<h2>A Neotropical Rainforest.</h2>
+<img src=assets/location178.png>
+<h2>Baker Street Plaza</h2>
 
-<p>You are standing in a hot and humid rain forest.  A damp piece of paper says `The size of that monster!'</p>
+<p>A Shopping Plaza in London</p>
 
 <?php
-    print_footer(99, $db);
-    ?>
-
+    print_travel(178,$db);
+print_footer(178, $db);
+?>
 </div>
 </body>
 </html>
