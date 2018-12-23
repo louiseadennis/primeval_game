@@ -30,7 +30,7 @@ print_standard_start($db);
 <img src=assets/location99.png>
 <h2>A Neotropical Rainforest.</h2>
 
-<p>You are standing in a hot and humid rain forest.  A damp piece of paper says `Bounce 145'</p>
+<p>You are standing in a hot and humid rain forest.  A damp piece of paper says `?'</p>
 
 <?php
     print_footer(99, $db);

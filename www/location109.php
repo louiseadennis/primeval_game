@@ -26,10 +26,15 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location109.png>
+<h2>A Theatre</h2>
 
-<p>Placeholder</p>
+<p>You are standing in the auditorium of a large theatre.</p>
+
+<?php
+    print_travel(109, $db);
+    print_footer(109, $db);
+    ?>
 
 </div>
 </body>

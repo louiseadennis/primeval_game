@@ -72,11 +72,12 @@
 </i></p>
 <?php
     $location_count = get_value_from_users("location_count", $db);
-    if ($location_count > 10) {
+    if ($location_count > 5) {
         update_users("location_count", 0, $db);
         add_equipment("budget", $db);
         print "<p>Your budget is renewed.</p>";
     }
+
     
     if ($lester_recharges && $default_uses < 500) {
         $sql = "SELECT * FROM characters;";
@@ -87,9 +88,9 @@
         $char_id_array = explode(",", $char_id_list);
         if ($char_id_array->count == $total && !check_for_equipment("tank", $db)) {
             print "<p>Lester congratulates you on finding everyone.  He resupplies your $name and agrees to buy a tank.</p>";
+            add_equipment('tank', $db);
         } else {
             print "<p>Lester agrees to resupply your $name.  He refuses to buy a tank.</p>";
-            add_equipment('tank', $db);
         }
     }
 
