@@ -117,7 +117,7 @@ INSERT INTO `locations` VALUES (82, 'C','I','G','Nothing Here Yet',0,0,NULL,0,''
 INSERT INTO `locations` VALUES (83, 'C','I','S','Sea above a reef with amonites.  Fiver was here.  You will need a boat.',5,0,'2',0,'inflatable dinghy',1,20,0,'A Coral Reef','<img src=assets/buffy_title_card.png>','Devonian',NULL, NULL);
 INSERT INTO `locations` VALUES (84, 'C','I','T','A Cave in Gwithin Vale.  Connor was here.',10,0,NULL,0,'',0,0,1,'A Cave in Gwithin Vale','<table><tr><td>T</td><td>T</td><td>T</td></tr><tr><td>T</td><td>F</td><td>F</td></tr><tr><td>F</td><td>T</td><td>F</td></tr><tr><td>F</td><td>F</td><td>F</td></tr></table>','Holocene',4, NULL);
 INSERT INTO `locations` VALUES (85, 'C','N','C','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (86, 'C','N','D','Nick was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Nick was given something to read, was told it was a clue, but didn\'t know what it was.','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (86, 'C','N','D','Mountains above the salt plains of Salar de Surire.  Nick was here.',0,0,NULL,0,'',0,0,1,'Salar de Surire, Chile','Nick was given something to read, was told it was a clue, but didn\'t know what it was.','Holocene',500, NULL);
 INSERT INTO `locations` VALUES (87, 'C','N','E','Ootmarusum in the Netherlands',5,0,'44',0,'',0,0,1,'Ootmarusm, the Netherlands','The last letters.','Holocene',300, NULL);
 INSERT INTO `locations` VALUES (88, 'C','N','G','A swamp surrounded by seed ferms.',5,0,'27',0,'',0,20,0,'No Name Yet','No Clue Yet','Carboniferous',NULL, NULL);
 INSERT INTO `locations` VALUES (89, 'C','N','S','A Pleistocene Plain',10,0,'4',0,'',0,30,0,'Pleistocene Plain','Dungeons and Dragons Player\'s Handbook','Pleistocene',NULL, NULL);
@@ -172,7 +172,7 @@ INSERT INTO `locations` VALUES (137, 'D','R','S','A French Farmhouse',30,0,'15',
 INSERT INTO `locations` VALUES (138, 'D','R','T','A Forest of Firs',5,0,'12',0,'',0,20,0,'A Cretaceous Forest','Song lyrics for the Cell Block Tango have been pinned to one tree with \'5 start\' written on it.','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (139, 'D','T','C','A forest pool where therocephalians are drinking',5,0,'28',0,'',0,30,0,'A Forest Pool','You, sir, are a cad','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (140, 'D','T','D','A coniferous forest and a Stegosaurus',5,0,'34',0,'',0,0,0,'A forest of seed ferns.','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (141, 'D','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (141, 'D','T','E','A lake shore surrounded by hespernornis',5,0,'17',0,'',0,20,0,'A Lake Shore','CNG','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (142, 'D','T','G','An Underground Bunker.  Abby was here.',7,0,NULL,0,'',0,0,0,'An Underground Bunker','A reverse trip to Goa','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (143, 'D','T','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (144, 'D','T','T','A Forest in the Cretaceous',10,0,'48',0,'',0,30,0,'A Forest','A secondary electron and back-scattered electron detector used in scanning electron microscopes','Cretaceous',NULL, NULL);

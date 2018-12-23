@@ -19,3 +19,4 @@ INSERT INTO `sanctuary` VALUES (1, 2);
 INSERT INTO `sanctuary` VALUES (2, 16);
 INSERT INTO `sanctuary` VALUES (3, 27);
 INSERT INTO `sanctuary` VALUES (4, 37);
+INSERT INTO `sanctuary` VALUES (5, 47);

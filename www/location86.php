@@ -35,8 +35,10 @@ check_location(86, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location86.png>
+<h2>Moutains above the salt plains of Salar de Surire</h2>
+
+<i><p>If he hadn't been sitting on top of a crashed helicopter fuselage with two dead bodies inside, Blade would have whistled with admiration. In the pale evening sunlight, there was an incredible vista before him. The wreck was tucked into the side of a dark grey jagged mountainside, and down below there stretched away into the distance a flat, white expanse. The salt plains of Salar de Surire.</p></i>
 
 <?php
     if (!$nick_collected) {
@@ -46,6 +48,9 @@ print_standard_start($db);
         print "<p>You examine the paper it is ";
         print_fanfic(1, $db);
     }
+    
+    print_travel(86,$db);
+    print_footer(86,$db);
 ?>
 
 </div>

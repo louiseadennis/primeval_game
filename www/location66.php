@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are standing in a rocky landscape.  Strange green plants cover the ground but nothing tall can be seen.  The air seems very thin, making you hyperventilate.</p>
 
+<?php
+    print_footer(66,$db);
+    ?>
+
 </div>
 </body>
 </html>

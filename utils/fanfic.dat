@@ -20,7 +20,7 @@ CREATE TABLE `fanfic` (
   PRIMARY KEY (`fanfic_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `fanfic` VALUES (1,'http://www.dennis-sellers.com', 'Author', 'Title', 'Description', null, '18');
+INSERT INTO `fanfic` VALUES (1,'https://fififolle.livejournal.com/63064.html', 'fififolle', 'Upside Down', 'Cutter and Blade are involved in a helicopter crash in Chile, just because.', null, 'NC-17');
 INSERT INTO `fanfic` VALUES (2,'https://primeval-denial.livejournal.com/5496.html','mysteriousaliwz','Sanctuary','The beginning of a institution', null, 'PG-13-ish?');
 INSERT INTO `fanfic` VALUES (3,'https://goldarrow.livejournal.com/18211.html','goldarrow','Alternatives','A Fix-it set 2 weeks after the end of S2', 'http://ic.pics.livejournal.com/goldarrow/5927896/1993/1993_original.png','15');
 INSERT INTO `fanfic` VALUES (4, 'https://archiveofourown.org/works/13755639','missyvortexdv','Don\`t Give Up the Day Job', 'Stephen/Connor, action/humour and established relationship. He could complain that life was never normal but it had its upsides.', null, 'Teen and Up');
@@ -66,3 +66,4 @@ INSERT INTO `fanfic` VALUES (43, 'becarefulwhatyouwishfor.html','bigtitch','Be C
 INSERT INTO `fanfic` VALUES (44, 'https://eriah211.livejournal.com/1779.html','eriah211','A New Pet','After the funeral Nick needs some company so he buys a pet.',null,'PG');
 INSERT INTO `fanfic` VALUES (45, 'https://archiveofourown.org/works/88281','Annariel','Accidents and Meetings','Nick meets Jenny\'s Parents','assets/accidentsandmeetings.png','General Audiences');
 INSERT INTO `fanfic` VALUES (46, 'https://archiveofourown.org/works/223293','Zetaori','Bloody Thirsty Bastards','It\'s the end of the world. Becker and Connor are the only people left. They get in the car and start driving.','http://dennis-sellers.com/ljimages/covers/bloodthirsty.png','Explicit');
+INSERT INTO `fanfic` VALUES (47, 'https://fredbassett.livejournal.com/46925.html','fredbassett','Sunday in Sanctuary','Stephen has to broach an awkward subject with the Management',null,'18');
