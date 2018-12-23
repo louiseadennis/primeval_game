@@ -1,4 +1,4 @@
- <?php
+<?php
 require_once('./config/accesscontrol.php');
 require_once('./utilities.php');
 
@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(106, $db);
+     add_location_clue(106,$db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(21,$db);
 ?>
 <div class=location>
 <img src=assets/location106.png>
 <h2>The Future Sea</h2>
 
-<p>You are in a future sea.  Mer-creatures crowd the cliffs above you.</p>
+<p>You are in a future sea.  Mer-creatures crowd the cliffs above you.  Carved into the cliffs are the words `A Muslim Religious Festival'</p>
 
 <?php
     

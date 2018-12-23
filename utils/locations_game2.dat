@@ -40,7 +40,7 @@ INSERT INTO `locations` VALUES (5, 'A','A','G','The British Museum',10,0,'53',0,
 INSERT INTO `locations` VALUES (6, 'A','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','FaTeD','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (7, 'A','A','T','An abandoned amusement park.  Invisible creatures move in the trees.',10,0,'38',0,'',0,30,0,'An Abandoned Amusement Park','No Clue Yet','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (8, 'A','I','C','Matt was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (9, 'A','I','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (9, 'A','I','D','A lush forest with a utahraptor',5,0,'61',0,'',0,20,0,'A Lush Forest','No Clue Yet','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (10, 'A','I','E','A Desert full of Diictodon burrows.  Sid and Nancy were here',20,0,NULL,0,'',0,0,0,'A Hot Desert','No Clue Yet','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (11, 'A','I','G','A Medieval Village',20,0,'7',0,'',0,10,0,'A Medieval Village','A grave for Ann Newsom Hughes, 1334-1372, with a trilobite in carved into the headstone.','Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (12, 'A','I','S','High ground above a plain of conifers and seed ferns.',5,0,NULL,0,'',0,0,0,'No Name Yet','The sisters again, but this time my third is the King who ordered my first entombed.','Triassic',NULL, NULL);
@@ -137,7 +137,7 @@ INSERT INTO `locations` VALUES (102, 'C','R','T','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (103, 'C','T','C','Matt Rees was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Start of the Eocene','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (104, 'C','T','D','The Forest of Dean',60,0,'3,5,6',0,'',0,10,1,'The Forest of Dean','Start to be Free','Holocene',3, NULL);
 INSERT INTO `locations` VALUES (105, 'C','T','E','A river bank with crocodile-like creatures.',5,0,'11',0,'',0,30,0,'A River Bank','No Clue Yet','Triassic',NULL, NULL);
-INSERT INTO `locations` VALUES (106, 'C','T','G','A future sea, surrounded by mer-creatures',10,0,'21,43',0,'inflatable dinghy',1,30,0,'The Future Sea','No Clue Yet','Post Holocene',NULL, NULL);
+INSERT INTO `locations` VALUES (106, 'C','T','G','A future sea, surrounded by mer-creatures',10,0,'21,43',0,'inflatable dinghy',1,30,0,'The Future Sea','A Muslim Religious Festival','Post Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (107, 'C','T','S','Evan was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Andrewsarchus, Brontisaur, Ichthyosaur, Pachykefalosaurus, Gorgonopsid','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (108, 'C','T','T','The edge of a plain teaming with animal life.',10,0,'4',0,'',0,30,0,'A Jungle','101 Emperors (of the Roman Kind)','Pleistocene',NULL, NULL);
 INSERT INTO `locations` VALUES (109, 'D','A','C','A Theatre',10,0,'57',0,'',0,30,1,'A Theatre','No Clue Yet','Holocene',16, NULL);

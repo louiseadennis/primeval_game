@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are standing by the banks of a river.  There are flowering shrubs and seed fern trees.  You can see a volcano in the distance.</p>
 
+<?php
+    print_footer(62, $db);
+    ?>
+
 </div>
 </body>
 </html>
