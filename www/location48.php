@@ -47,6 +47,8 @@ print_standard_start($db);
         print "<img src=assets/tremayne.png align=left>";
         print "<p>Tremayne is here.  She is armed with a tranquiliser rifle.</p>";
     }
+    
+    print_footer(48, $db);
     ?>
 
 </div>

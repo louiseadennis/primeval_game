@@ -8,8 +8,8 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(99, $db);
-    add_location_clue(99,$db);
+check_location(214, $db);
+    add_location_clue(214,$db);
 
 ?>
 <html>
@@ -24,18 +24,17 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(10,$db);
 ?>
 <div class=location>
-<img src=assets/location99.png>
-<h2>A Neotropical Rainforest.</h2>
+<img src=assets/location214.png>
+<h2>Desert under a Red Sun</h2>
 
-<p>You are standing in a hot and humid rain forest.  A damp piece of paper says `Bounce 145'</p>
+<p>You are standing in a sandy red desert.  Someone has written DnD+1 in the sand.</p>
 
 <?php
-    print_footer(99, $db);
-    ?>
-
+print_footer(214, $db);
+?>
 </div>
 </body>
 </html>

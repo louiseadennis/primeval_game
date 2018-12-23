@@ -27,10 +27,14 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location187.png>
+<h2>A Forested Hill Range</h2>
 
-<p>First letters of the following: The era of the Dunkleosteus, Ryan's first name, and the Prehistoric creature at the airport.</p>
+<p>You are standing in the foothills of a mountain range, covered in sparse forest.  A note is pinned to a tree: `First letters of the following: The era of the Dunkleosteus, Ryan's first name, and the Prehistoric creature at the airport.'</p>
+
+<?php
+    print_footer(187,$db);
+    ?>
 
 </div>
 </body>

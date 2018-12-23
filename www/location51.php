@@ -32,6 +32,10 @@ print_standard_start($db);
 
 <p>3, 9, 20</p>
 
+<?php
+    print_footer(51, $db);
+    ?>
+
 </div>
 </body>
 </html>

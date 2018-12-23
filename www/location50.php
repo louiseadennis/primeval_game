@@ -44,6 +44,7 @@ print_standard_start($db);
         print "<img src=assets/dylan.png align=left>";
         print "<p>Dylan is here.  She has a tranquiliser rifle with darts.</p>";
     }
+    print_footer(50,$db);
     ?>
 
 </div>

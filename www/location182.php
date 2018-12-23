@@ -8,8 +8,8 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(99, $db);
-    add_location_clue(99,$db);
+check_location(182, $db);
+    
 
 ?>
 <html>
@@ -27,15 +27,15 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location99.png>
-<h2>A Neotropical Rainforest.</h2>
+<img src=assets/location182.png>
+<h2>A Nuclear Submarine Base</h2>
 
-<p>You are standing in a hot and humid rain forest.  A damp piece of paper says `Bounce 145'</p>
+<p>You find yourself in a nuclear submarine base.  </p>
 
 <?php
-    print_footer(99, $db);
-    ?>
-
+    print_travel(182, $db);
+print_footer(182, $db);
+?>
 </div>
 </body>
 </html>

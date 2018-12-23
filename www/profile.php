@@ -113,7 +113,12 @@ print "</table>";
             $author = get_value_for_fanfic_id("author", $story_id, $db);
             $url = get_value_for_fanfic_id("url", $story_id, $db);
             $description = get_value_for_fanfic_id("description", $story_id, $db);
-            print "<li><a href=$url>$story</a> by $author: $description</li>";
+            $cover = get_value_for_fanfic_id("cover", $story_id, $db);
+            if (!is_null($cover)) {
+                print "<li><img src=$cover width=50><a href=$url>$story</a> by $author: $description</li>";
+            } else {
+                print "<li><a href=$url>$story</a> by $author: $description</li>";
+            }
         }
         print "</ul>";
     }

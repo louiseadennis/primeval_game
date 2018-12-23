@@ -79,10 +79,16 @@ if (!is_null($clues)) {
    print "<ul>";
    foreach ($clue_array as $clue_id) {
    	   $clue = get_value_for_location_id("clue", $clue_id, $db);
-       $d1 = get_value_for_location_id("tm_coord_1", $clue_id, $db);
-       $d2 = get_value_for_location_id("tm_coord_2", $clue_id, $db);
-       $d3 = get_value_for_location_id("tm_coord_3", $clue_id, $db);
-	   print "<li>$clue ($d1, $d2, $d3)</li>";
+       $present_day = get_value_for_location_id("present_day", $clue_id, $db);
+       if ($present_day != 1) {
+           $d1 = get_value_for_location_id("tm_coord_1", $clue_id, $db);
+           $d2 = get_value_for_location_id("tm_coord_2", $clue_id, $db);
+           $d3 = get_value_for_location_id("tm_coord_3", $clue_id, $db);
+           print "<li>$clue ($d1, $d2, $d3)</li>";
+       } else {
+           $d1 = get_value_for_location_id("name", $clue_id, $db);
+           print "<li>$clue (Present Day: $d1)</li>";
+       }
    }
    print "</ul>";
 }

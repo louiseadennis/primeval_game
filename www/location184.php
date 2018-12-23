@@ -8,8 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(99, $db);
-    add_location_clue(99,$db);
+check_location(184, $db);
 
 ?>
 <html>
@@ -27,15 +26,18 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location99.png>
-<h2>A Neotropical Rainforest.</h2>
+<img src=assets/location184.png>
+<h2>Desert under a Blistering sun</h2>
 
-<p>You are standing in a hot and humid rain forest.  A damp piece of paper says `Bounce 145'</p>
+<p>You are standing in a large desert with a thin atmosphere.</p>
 
 <?php
-    print_footer(99, $db);
-    ?>
-
+        $action_done = get_value_from_users("action_done", $db);
+        if (!$action_done) {
+            print "<p><b>You must use breathing apparatus or you will take damage.</b></p>";
+        }
+print_footer(184, $db);
+?>
 </div>
 </body>
 </html>

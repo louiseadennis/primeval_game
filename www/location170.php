@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(170, $db);
+    add_location_clue(170,$db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(29,$db);
 ?>
 <div class=location>
 <img src=assets/location170.png>
 <h2>A River in a Forest</h2>
 
-<p>You are standing on a river bank in a forest of conifers and seed ferns.  Coelphysis dart along the banks opposite more placid Placerias.</p>
+<p>You are standing on a river bank in a forest of conifers and seed ferns.  Coelphysis dart along the banks opposite more placid Placerias.  Watch Out! says a sign `Or you'll be dead right there.'</p>
 
 </div>
 </body>

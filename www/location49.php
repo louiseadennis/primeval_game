@@ -34,16 +34,19 @@ check_location(49, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location49.png>
+<h2>Merison Oil Loading Facility</h2>
 
-<p>Placeholder</p>
+<p>You are in an industrial site next to a large bay.</p>
 <?php
     if (!$sarah_collected) {
         update_users("new_character", 'sarah', $db);
         print "<img src=assets/sarah.png align=left>";
         print "<p>Sarah is here.  She has breathing aparatus with her.  She says to go back to the ARC.</p>";
     }
+    
+    print_travel(49, $db);
+    print_footer(49, $db);
     ?>
 </div>
 </body>
