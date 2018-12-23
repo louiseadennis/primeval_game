@@ -67,3 +67,5 @@ INSERT INTO `fanfic` VALUES (44, 'https://eriah211.livejournal.com/1779.html','e
 INSERT INTO `fanfic` VALUES (45, 'https://archiveofourown.org/works/88281','Annariel','Accidents and Meetings','Nick meets Jenny\'s Parents','assets/accidentsandmeetings.png','General Audiences');
 INSERT INTO `fanfic` VALUES (46, 'https://archiveofourown.org/works/223293','Zetaori','Bloody Thirsty Bastards','It\'s the end of the world. Becker and Connor are the only people left. They get in the car and start driving.','http://dennis-sellers.com/ljimages/covers/bloodthirsty.png','Explicit');
 INSERT INTO `fanfic` VALUES (47, 'https://fredbassett.livejournal.com/46925.html','fredbassett','Sunday in Sanctuary','Stephen has to broach an awkward subject with the Management',null,'18');
+INSERT INTO `fanfic` VALUES (48, 'devilscrowl.html','fredbassett','The Devil\'s Crowll','A Fandom Classic','https://ic.pics.livejournal.com/fredbassett/11883678/43103/43103_600.png','18');
+INSERT INTO `fanfic` VALUES (49, 'endangeredspecies.html','fredbassett','Endangered Species','Nasty things in the woods','https://ic.pics.livejournal.com/fredbassett/11883678/52026/52026_600.png','18');

@@ -23,13 +23,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(27,$db);
 ?>
 <div class=location>
 <img src=assets/location88.png>
 <h2>A Swamp</h2>
 
-<p>You are standing in the middle of a swamp.  It is hot and humid and you are surrounded by giant seed ferns.</p>
+<p>You are standing in the middle of a swamp.  It is hot and humid and you are surrounded by giant seed ferns.  Someone has written BURT in the mud.</p>
 
 </div>
 </body>

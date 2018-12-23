@@ -45,8 +45,13 @@ print_standard_start($db);
         update_users("new_character", 'lyle', $db);
         print "<img src=assets/lyle.png align=left>";
         print "<p>Lyle is here.  He has an assault rifle.</p>";
+        
+        print "<p>You can read about Lyle in:</p>";
+        add_fanfic(48,$db);
+        print_fanfic(48,$db);
     }
     
+    print_footer(100,$db);
     ?>
 
 </div>

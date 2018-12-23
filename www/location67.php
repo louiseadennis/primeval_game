@@ -46,7 +46,13 @@ print_standard_start($db);
         update_users("new_character", 'kermit', $db);
         print "<img src=assets/kermit.png align=left>";
         print "<p>Kermit is here.  He has a hand gun.</p>";
+        
+        print "<p>You can read about Kermit in:</p>";
+        add_fanfic(48,$db);
+        print_fanfic(48,$db);
     }
+    
+    print_footer(67, $db);
     ?>
 
 </div>
