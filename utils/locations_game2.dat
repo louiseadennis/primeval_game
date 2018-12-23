@@ -84,7 +84,7 @@ INSERT INTO `locations` VALUES (49, 'B','N','C','Merison Oil Loading Facility.  
 INSERT INTO `locations` VALUES (50, 'B','N','D','Rocky cliffs above the sea where a colony of mer-creatures live.  Dylan was here',10,0,'21',0,'',0,10,0,'Rocky Cliffs above the Sea','Apparently its a machine for exercising rowers gently.','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (51, 'B','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','3, 9, 20','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (52, 'B','N','G','Helen was here',0,0,NULL,0,'',0,0,0,'No Name Yet','Social insects of the family Formicidae','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (53, 'B','N','S','The house where Patrick Quinn when missing.',10,0,'38',0,'',0,30,1,'An Abandoned House.','No Clue Yet','Holocene',5, NULL);
+INSERT INTO `locations` VALUES (53, 'B','N','S','The house where Patrick Quinn when missing.',10,0,'38',0,'',0,30,1,'An Abandoned House.','A rec rotated','Holocene',5, NULL);
 INSERT INTO `locations` VALUES (54, 'B','N','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Rotating clockwise on the ice.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (55, 'B','O','C','A Permian river estuary.  Lizzie Preston was here.',10,0,'51',0,'',0,30,0,'A Permian River Estuary','Sounds like FAQ','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (56, 'B','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
@@ -161,7 +161,7 @@ INSERT INTO `locations` VALUES (126, 'D','N','T','A freshwater lake.  Hot and hu
 INSERT INTO `locations` VALUES (127, 'D','O','C','A dark forest with large trees and giant insects.',5,0,'22',0,'',0,5,0,'A Dark Forest','No Clue Yet','Carboniferous',NULL, NULL);
 INSERT INTO `locations` VALUES (128, 'D','O','D','A grassy plain at sunset.  Hyaenodon are somewhere.',5,0,'46',0,'',0,39,0,'A Plain at Sunset','No Clue Yet','Eocene',NULL, NULL);
 INSERT INTO `locations` VALUES (129, 'D','O','E','Cross Photonics',5,0,'12',0,'',0,5,1,'Cross Photonics','No Clue Yet','Holocene',100, NULL);
-INSERT INTO `locations` VALUES (130, 'D','O','G','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','At, Ate, _, Date','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (130, 'D','O','G','A cretaceous plain where you hid from a T-Rex',5,0,'59',0,'',0,20,0,'A Cretaceous Plain','At, Ate, _, Date','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (131, 'D','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','I start and end in time but not in clock, my middle is in rune and also in rock','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (132, 'D','O','T','The Open Ocean',10,0,'2',0,'inflatable dinghy',1,30,0,'The Open Ocean','Equally Divided Clothed','Devonian',NULL, NULL);
 INSERT INTO `locations` VALUES (133, 'D','R','C','A lake side where anomalies have been sighted.',20,0,'51',0,'',0,30,1,'A Lake Side','Should be up an arse','Holocene',11, NULL);

@@ -32,6 +32,10 @@ print_standard_start($db);
 
 <p>Rotating clockwise on the ice.</p>
 
+<?php
+    print_footer(54,$db);
+    ?>
+
 </div>
 </body>
 </html>

@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(53, $db);
+    add_location_clue(53,$db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(38,$db);
 ?>
 <div class=location>
 <img src=assets/location53.png>
 <h2>An Abandoned House</h2>
 
-<p>The house where Patrick Quinn went missing.</p>
+<p>The house where Patrick Quinn went missing.  Someone has scratched `A rec rotated' into the door.</p>
 
 <?php
     print_travel(53, $db);

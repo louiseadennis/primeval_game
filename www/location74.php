@@ -14,7 +14,7 @@ check_location(74, $db);
     if (!$tobie_collected) {
         $visited_already = get_value_from_users("new_character", $db);
         if ($visited_already != 'tobie') {
-            add_location_clue(74, $db);
+            // add_location_clue(74, $db);
             add_equipment('first aid kit', $db);
         }
     }

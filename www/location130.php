@@ -27,10 +27,14 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location130.png>
+<h2>A Creteaceous Plain.</h2>
 
-<p>At, Ate, Dat, Date</p>
+<p>There isn't much vegetation here, but you hide behind a rock hoping  to avoid the attention of the local T-Rex.  On the rock someone has scratched `At, Ate, _, Date'</p>
+
+<?php
+    print_footer(130, $db);
+    ?>
 
 </div>
 </body>
