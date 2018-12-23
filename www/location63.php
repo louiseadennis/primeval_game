@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are the edge of a stream.  Strange and small vascular plants cluster at the water's edge, but inland all is bare rock.</p>
 
+<?php
+    print_footer(63,$db);
+    ?>
+
 </div>
 </body>
 </html>

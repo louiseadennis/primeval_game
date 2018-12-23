@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(152, $db);
+    add_location_clue(152,$db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(16,$db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location152.png>
+<h2>The  Shores of a Lake</h2>
 
-<p>Placeholder</p>
+<p>You are standing on the shores of a lake.  You can see a spinosaurus diving for fish out on hte water.  Into the sand at the shore has been drawn a picture of Dora the Explorer</p>
 
 <?php
 print_footer(152, $db);

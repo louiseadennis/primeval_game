@@ -26,12 +26,13 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location115.png>
+<h2>Stanley Park, Vancouver</h2>
 
-<p>Placeholder</p>
+<p>You are standing in Stanley Park in Vancouver</p>
 
 <?php
+    print_travel(115,$db);
 print_footer(115, $db);
 ?>
 </div>

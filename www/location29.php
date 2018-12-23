@@ -26,13 +26,17 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location29.png>
+<h2>A Deserted Road</h2>
 
-<p>Placeholder</p>
+<i><p>Connor opens his eyes and blinks against the blinding sun. He realises he's lying on the ground, but he can't really remember how he got there. There are only vague images of something burning, exploding, and oh my God, all that noise, and then this distinct feeling of losing the ground under his feet. He thinks of roller-coaster rides, memories of laughter and pretending to fly for just a few seconds.</p></i>
 
 <?php
+    add_fanfic(46,$db);
+    print "<p>Now Read On:";
+    print_fanfic(46,$db);
     print_footer(29, $db);
+
     ?>
 
 </div>
