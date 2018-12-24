@@ -8,8 +8,8 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(14, $db);
-    add_location_clue(14,$db);
+check_location(189, $db);
+    add_location_clue(189,$db);
 
 ?>
 <html>
@@ -24,18 +24,17 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_critter_trail_start(44, $db);
+print_critter_trail_start(18,$db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location189.png>
+<h2>A Plain with grazing animals</h2>
 
-<p>Beginning of Disney</p>
+<p>You are looking out over a plain of grazing animals.  Someone from CID has dropped their ID badge.</p>
 
 <?php
-    print_footer(14, $db);
-    ?>
-
+print_footer(189, $db);
+?>
 </div>
 </body>
 </html>

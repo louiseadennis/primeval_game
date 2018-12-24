@@ -8,8 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(14, $db);
-    add_location_clue(14,$db);
+check_location(175, $db);
 
 ?>
 <html>
@@ -24,18 +23,17 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_critter_trail_start(44, $db);
+print_standard_start($db);
 ?>
 <div class=location>
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Beginning of Disney</p>
+<p>Placeholder</p>
 
 <?php
-    print_footer(14, $db);
-    ?>
-
+print_footer(175, $db);
+?>
 </div>
 </body>
 </html>

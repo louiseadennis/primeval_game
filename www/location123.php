@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(123, $db);
+    add_location_clue(123,$db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(40,$db);
 ?>
 <div class=location>
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>FuNdS</p>
 
 <?php
 print_footer(123, $db);

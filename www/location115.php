@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(115, $db);
+    add_location_clue(115,$db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(61, $db);
 ?>
 <div class=location>
 <img src=assets/location115.png>
 <h2>Stanley Park, Vancouver</h2>
 
-<p>You are standing in Stanley Park in Vancouver</p>
+<p>You are standing in Stanley Park in Vancouver.  One of the information boards strangely says `No A Card'</p>
 
 <?php
     print_travel(115,$db);
