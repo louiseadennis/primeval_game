@@ -90,7 +90,7 @@ INSERT INTO `locations` VALUES (55, 'B','O','C','A Permian river estuary.  Lizzi
 INSERT INTO `locations` VALUES (56, 'B','O','D','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (57, 'B','O','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','What the Lion did to Jim who ran away from his Nurse','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (58, 'B','O','G','A flooded plain and Coelophysis.  Hamza was here.',5,0,'9',0,'',0,30,0,'A Flooded Plain','Hamza was told to see a sea.','Triassic',NULL, NULL);
-INSERT INTO `locations` VALUES (59, 'B','O','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (59, 'B','O','S','The Senckenberg Museum',10,0,'59',0,'',0,30,1,'The Senckenberg Museum','No Clue Yet','Holocene',600, NULL);
 INSERT INTO `locations` VALUES (60, 'B','O','T','Helena Ramsey was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','The oldest bank in mainland China still in existence.','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (61, 'B','R','C','A verdant forest of firs and ferns',5,0,'48',0,'',0,30,0,'A Forest of Ferns','Fund','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (62, 'B','R','D','The banks of a river with flowering shrubs and seed ferns.',5,0,'16,25',0,'',0,5,0,'Coastal Area','No Clue Yet','Cretaceous',NULL, NULL);
@@ -155,7 +155,7 @@ INSERT INTO `locations` VALUES (120, 'D','I','T','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (121, 'D','N','C','A dusty plain with Coelurosauravus overhead.  Rex was here.',30,0,'6',0,'',0,0,0,'A Dusty Plain','No Clue Yet','Permian',NULL, NULL);
 INSERT INTO `locations` VALUES (122, 'D','N','D','A Cave halfway up a Cliff Face',5,0,'35,36',0,'',0,0,0,'A Cave halfway up a Cliff Face','There is a picture of a worm on a hook and someone standing at a bus stop, looking at their watch.  Underneath is written \`what unites the two?\'','Jurassic',NULL, NULL);
 INSERT INTO `locations` VALUES (123, 'D','N','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','FuNdS','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (124, 'D','N','G','Emily was here',0,0,NULL,0,'',0,0,0,'No Name Yet','117','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (124, 'D','N','G','The bank of a stream.  Emily was here',5,0,'58',0,'',0,20,0,'Banks of a Stream','117','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (125, 'D','N','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (126, 'D','N','T','A freshwater lake.  Hot and humid weather.  Large trees on the shore.',5,0,'8',0,'inflatable dinghy',1,30,0,'A Freshwater Laker','No Clue Yet','Carboniferous',NULL, NULL);
 INSERT INTO `locations` VALUES (127, 'D','O','C','A dark forest with large trees and giant insects.',5,0,'22',0,'',0,5,0,'A Dark Forest','No Clue Yet','Carboniferous',NULL, NULL);

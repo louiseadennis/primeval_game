@@ -34,16 +34,18 @@ check_location(124, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location124.png>
+<h2>The Bank of a Stream</h2>
 
-<p>117</p>
+<p>You are standing on the bank of a stream that teams with wildlife.  Someone has carved 117 into a tree.</p>
 <?php
     if (!$emily_collected) {
         update_users("new_character", 'emily', $db);
         print "<img src=assets/emily.png align=left>";
         print "<p>Emily is here.</p>";
     }
+    
+    print_footer(124,$db);
     ?>
 
 </div>
