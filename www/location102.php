@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(102, $db);
+    add_location_clue(102,$db);
 
 ?>
 <html>
@@ -23,13 +24,17 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(59, $db);
 ?>
 <div class=location>
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>It happens to us all in the end.</p>
+
+<?php
+    print_footer(59,$db);
+    ?>
 
 </div>
 </body>
