@@ -8,7 +8,7 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(69, $db);
+check_location(199, $db);
 
 ?>
 <html>
@@ -32,9 +32,8 @@ print_standard_start($db);
 <p>Placeholder</p>
 
 <?php
-    print_footer(69, $db);
-    ?>
-
+print_footer(199, $db);
+?>
 </div>
 </body>
 </html>

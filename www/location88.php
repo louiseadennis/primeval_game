@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(88, $db);
+    add_location_clue(88,$db);
 
 ?>
 <html>
@@ -30,6 +31,10 @@ print_critter_trail_start(27,$db);
 <h2>A Swamp</h2>
 
 <p>You are standing in the middle of a swamp.  It is hot and humid and you are surrounded by giant seed ferns.  Someone has written BURT in the mud.</p>
+
+<?php
+    print_footer(88,$db);
+    ?>
 
 </div>
 </body>

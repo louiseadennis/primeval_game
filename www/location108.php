@@ -32,6 +32,10 @@ print_standard_start($db);
 
 <p>You are standing at the edge of a  jungle, looking out over a plain teaming with mammalian life.  A piece of paper is pinned to a tree.  It reads: 101 Emperors (of the Roman Kind)</p>
 
+<?php
+    print_footer(108,$db);
+    ?>
+
 </div>
 </body>
 </html>

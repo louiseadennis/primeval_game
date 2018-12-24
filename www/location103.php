@@ -47,6 +47,8 @@ print_standard_start($db);
         print "<img src=assets/matt_Rees.png align=left>";
         print "<p>Matt Rees is here.  He has a first aid kit.</p>";
     }
+    
+    print_footer(103,$db);
     ?>
 
 

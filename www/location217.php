@@ -16,7 +16,7 @@ check_location(217, $db);
     $sql = "SELECT * FROM characters;";
     if (!$result = $db->query($sql))
         showerror($db);
-    $total = $result->num_rows;
+    $total = ($result->num_rows) - 1;
     $char_id_list = get_value_from_users("char_id_list", $db);
     $char_id_array = explode(",", $char_id_list);
     // $total = 19;
@@ -38,6 +38,8 @@ print_header($db);
 <div class=main>
 <?php
 print_standard_start($db);
+//    print $total;
+ //   print count($char_id_array);
 ?>
 <div class=location>
 <img src=assets/location217.png>

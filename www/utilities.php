@@ -560,6 +560,8 @@
             print "<p><center><img src=$cover></center></p>";
         }
         print_fanfic($fanfic_id, $connection);
+        $summary = get_value_for_fanfic_id("description",$fanfic_id,$connection);
+        print "<p>$summary</p>";
     }
     
     function print_fanfic($fanfic_id, $connection) {

@@ -45,7 +45,7 @@ print_standard_start($db);
         print "<p>Ditzy is here.  He has a first aid kit.</p>";
     }
     print_travel(71, $db);
-    print_footer(17, $db);
+    print_footer(71, $db);
     
     ?>
 </div>

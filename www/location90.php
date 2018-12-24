@@ -177,6 +177,8 @@ print_header($mysql);
     if (!$extra_anomaly) {
         print_anomaly_no_random($mysql);
     }
+    
+    print_footer(90,$db);
     ?>
 
 </div>

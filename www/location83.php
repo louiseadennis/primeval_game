@@ -50,6 +50,8 @@ print_standard_start($db);
         print "<img src=assets/fiver.png align=left>";
         print "<p>Fiver is here in an inflatable dinghy.  He has been given a picture: <img src=assets/buffy_title_card.png></p>";
     }
+    
+    print_footer(83,$db);
 ?>
 
 </div>

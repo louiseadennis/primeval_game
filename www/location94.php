@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are on the banks of a wide estuary that flows into the sea.  Mosses and ferns surround you, none growing very high.  In the water of the river, amonites can  be seen.</p>
 
+<?php
+    print_footer(94,$db);
+    ?>
+
 </div>
 </body>
 </html>

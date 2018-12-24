@@ -52,6 +52,8 @@ print_standard_start($db);
         add_fanfic(32,$db);
         print_fanfic(32,$db);
     }
+    
+    print_footer(73, $db);
     ?>
 
 

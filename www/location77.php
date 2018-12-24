@@ -47,6 +47,7 @@ print_standard_start($db);
         print "<p>Finn is here.  He has a sniper rifle.</p>";
     }
     
+    print_footer(77,$db);
     ?>
 </div>
 </body>

@@ -9,7 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(143, $db);
-    add_location_clue(51,$db);
+    add_location_clue(143,$db);
 
 ?>
 <html>

@@ -33,7 +33,7 @@ print_critter_trail_start(59, $db);
 <p>It happens to us all in the end.</p>
 
 <?php
-    print_footer(59,$db);
+    print_footer(102,$db);
     ?>
 
 </div>

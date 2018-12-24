@@ -31,6 +31,10 @@ print_standard_start($db);
 
 <p>You are standing on the banks of a sluggish river.  Creatures that look like primitive crocodiles are sunning themselves a little further up-stream.</p>
 
+<?php
+    print_footer(105,$db);
+    ?>
+
 </div>
 </body>
 </html>

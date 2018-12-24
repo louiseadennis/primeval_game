@@ -32,6 +32,10 @@ print_standard_start($db);
 
 <p>The ties that BiND</p>
 
+<?php
+    print_footer(82,$db);
+    ?>
+
 </div>
 </body>
 </html>

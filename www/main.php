@@ -149,11 +149,14 @@ if ($travel_type == "lof") {
                 if (!$result = $db -> query($sql))
                     showerror($db);
                 $masters = $result->num_rows;
-                if ($master > 0) {
-                    $user_id = get_user_id($db);
-                    $sql = "UPDATE users SET master = 0 where user_id = $user_id";
-                    if (!$result = $db -> query($sql))
-                        showerror($db);
+                if ($masters > 0) {
+                    $array = $result->fetch_assoc();
+                    //foreach ($array as $row) {
+                        $user_id = $array["user_id"];
+                        $sql = "UPDATE users SET master = 0 where user_id = $user_id";
+                        if (!$result = $db -> query($sql))
+                            showerror($db);
+                    //}
                 }
                 update_users("master", 1, $db);
             }

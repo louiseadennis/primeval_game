@@ -182,7 +182,7 @@ INSERT INTO `locations` VALUES (147, 'E','A','E','Permian Desert',10,0,'6',0,'',
 INSERT INTO `locations` VALUES (148, 'E','A','G','Central Metropolitan University',5,0,NULL,0,'',0,0,1,'Central Metropolitan University','No Clue Yet','Holocene',21, NULL);
 INSERT INTO `locations` VALUES (149, 'E','A','S','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (150, 'E','A','T','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','No Clue Yet','No Era Yet',NULL, NULL);
-INSERT INTO `locations` VALUES (151, 'E','I','C','Mac was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Deontic Logic','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (151, 'E','I','C','Mac was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','DeonTiC Logic','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (152, 'E','I','D','A lake shore were a spinosaurus fishes',5,0,'16',0,'',0,30,0,'A lake shore','A Picture of Dora the Explorer','Cretaceous',NULL, NULL);
 INSERT INTO `locations` VALUES (153, 'E','I','E','A forest with giant spider webs strung between the trees.',5,1,'3',0,'',0,30,0,'A Spider-Web Strewn Forest','<table><tr><td>A</td><td>B</td><td>B</td><td>Y</td><td>C</td></tr><tr><td>D</td><td>U</td><td>E</td><td>F</td><td>G</td></tr><tr><td>H</td><td>R</td><td>I</td><td>J</td><td>K</td></tr><tr><td>L</td><td>T</td><td>M</td><td>A</td><td>N</td></tr><tr><td>O</td><td>O</td><td>P</td><td>R</td><td>Q</td></tr><tr><td>R</td><td>N</td><td>I</td><td>C</td><td>K</td></tr></table>','Carboniferous',NULL, NULL);
 INSERT INTO `locations` VALUES (154, 'E','I','G','A plain surrounded by Triceratops',5,0,'60',0,'',0,20,0,'A Cretaceous Plain','Start with a Dodo','Cretaceous',NULL, NULL);
@@ -248,7 +248,7 @@ INSERT INTO `locations` VALUES (213, 'F','T','E','Nothing Here Yet',0,0,NULL,0,'
 INSERT INTO `locations` VALUES (214, 'F','T','G','A Red Desert',5,0,'10',0,'',0,30,0,'','DnD+1','Silurian',NULL, NULL);
 INSERT INTO `locations` VALUES (215, 'F','T','S','A Deserted City',20,0,'1,20',0,'',0,30,0,'A Deserted City','Vowels: one, three, one','Post-Holocene',NULL, NULL);
 INSERT INTO `locations` VALUES (216, 'F','T','T','Site 333.  Danny was here.',0,0,NULL,0,'',0,0,0,'Site 333','Old MacDonald had a farm...','Pliocene',NULL, NULL);
-INSERT INTO `locations` VALUES (217, 'Z','Z','Z','A White Void',0,0,'33',0,'',0,20,0,'Gateway to the Land of Fiction','No Clue Yet','The Land of Fiction',NULL, NULL);
+INSERT INTO `locations` VALUES (217, 'Z','Z','Z','A White Void',0,0,'33',0,'',0,15,0,'Gateway to the Land of Fiction','No Clue Yet','The Land of Fiction',NULL, NULL);
 INSERT INTO `locations` VALUES (218, 'A','Z','Z','A White Void',0,0,NULL,0,'',0,0,0,'Forwards','No Clue Yet','The Land of Fiction',NULL, NULL);
 INSERT INTO `locations` VALUES (219, 'B','Z','Z','A White Void',0,0,NULL,0,'',0,0,0,'Backwards','No Clue Yet','The Land of Fiction',NULL, NULL);
 INSERT INTO `locations` VALUES (220, 'C','Z','Z','A White Void',0,0,NULL,0,'',0,0,0,'Forward Left','No Clue Yet','The Land of Fiction',NULL, NULL);

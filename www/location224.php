@@ -25,6 +25,7 @@ print_header($db);
 <?php
     print_sanctuary_start($db);
     $sanctuary_visits = get_value_from_users("sanctuary", $db);
+    $fanfic_id = get_value_for_sanctuary_id("fanfic_id", 1, $db);
     if ($sanctuary_visits > 1) {
         $fanfic_id = get_value_for_sanctuary_id("fanfic_id", 2, $db);
     }

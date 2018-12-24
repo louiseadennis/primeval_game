@@ -27,13 +27,13 @@ print_header($db);
     $selected = 1;
     $sanctuary_visits = get_value_from_users("sanctuary", $db);
     $fanfic_id = get_value_for_sanctuary_id("fanfic_id", 3, $db);
-    if ($sanctuary_visits > 3 && have_fanfic($fanfic_id)) {
+    if ($sanctuary_visits > 3 && have_fanfic($fanfic_id, $db)) {
         $fanfic_id = get_value_for_sanctuary_id("fanfic_id", 4, $db);
         $selected = 2;
-        if ($sanctuary_visits > 4 && have_fanfic($fanfic_id)) {
+        if ($sanctuary_visits > 4 && have_fanfic($fanfic_id, $db)) {
             $fanfic_id = get_value_for_sanctuary_id("fanfic_id", 5, $db);
             $selected = 3;
-            if ($sanctuary_vists > 5 && have_fanfic($fanfic_id)) {
+            if ($sanctuary_vists > 5 && have_fanfic($fanfic_id, $db)) {
                 $fanfic_id = get_value_for_sanctuary_id("fanfic_id", 6, $db);
                 $selected = 4;
             }
@@ -53,7 +53,7 @@ print_header($db);
 
         print "<p>\"Yes, and could you tell me how I can get the sodding stuff off? Camouflage face paint is bad enough, but at least that comes off with soap and water.\"</p></i>";
     } else if ($selected == 2){
-        print "<i><p>Ryan was enjoying a leisurely shower when he heard someone knocking on the door. Well, not just someone, given that the only other person here was Stephen. It couldn’t be anyone else. Although the fact that he bothered to knock was a bit strange. Either way, Ryan just called out, \“Come in,\” and carried on showering.</p>";
+        print "<i><p>Ryan was enjoying a leisurely shower when he heard someone knocking on the door. Well, not just someone, given that the only other person here was Stephen. It couldn’t be anyone else. Although the fact that he bothered to knock was a bit strange. Either way, Ryan just called out, “Come in,” and carried on showering.</p>";
         
         print "<p>“Wait a min- bloody hell!”</p>";
         
