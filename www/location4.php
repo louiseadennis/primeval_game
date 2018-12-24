@@ -33,7 +33,7 @@ print_critter_trail_start(1, $db);
 <p>You are on a bare rocky sea shore.  You can see strange tubular, frond-shaped organisms in the rock pools.  Hanging mysterious in the air are the words `In morse there are these and dashes'.</p>
 
 <?php
-    print_footer('4', $db);
+    print_footer(4, $db);
     ?>
 
 </div>

@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(47, $db);
+    add_location_clue(47, $db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(39,$db);
 ?>
 <div class=location>
 <img src=assets/location.png>
 <h2>Placeholder</h2>
 
-<p>Placeholder</p>
+<p>An intense and widely shared enthusiasm for something, especially one that is short-lived; a craze.</p>
 
 <?php
     print_footer(47,$db);

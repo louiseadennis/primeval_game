@@ -27,10 +27,10 @@ print_header($db);
 print_critter_trail_start(43, $db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location188.png>
+<h2>A Partially Sunken City</h2>
 
-<p>African National Congress</p>
+<p>You are in the ruins of a city that is becoming submerged under water.  African National Congress banners hang from the windows.</p>
 
 <?php
 print_footer(188, $db);
