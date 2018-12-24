@@ -247,7 +247,7 @@ INSERT INTO `locations` VALUES (212, 'F','T','D','Connor and Abby\'s camp in the
 INSERT INTO `locations` VALUES (213, 'F','T','E','Nothing Here Yet',0,0,NULL,0,'',0,0,0,'No Name Yet','Department of Business, Innovation and Science','No Era Yet',NULL, NULL);
 INSERT INTO `locations` VALUES (214, 'F','T','G','A Red Desert',5,0,'10',0,'',0,30,0,'','DnD+1','Silurian',NULL, NULL);
 INSERT INTO `locations` VALUES (215, 'F','T','S','A Deserted City',20,0,'1,20',0,'',0,30,0,'A Deserted City','Vowels: one, three, one','Post-Holocene',NULL, NULL);
-INSERT INTO `locations` VALUES (216, 'F','T','T','Danny was here.',0,0,NULL,0,'',0,0,0,'No Name Yet','Old MacDonald had a farm...','No Era Yet',NULL, NULL);
+INSERT INTO `locations` VALUES (216, 'F','T','T','Site 333.  Danny was here.',0,0,NULL,0,'',0,0,0,'Site 333','Old MacDonald had a farm...','Pliocene',NULL, NULL);
 INSERT INTO `locations` VALUES (217, 'Z','Z','Z','A White Void',0,0,'33',0,'',0,20,0,'Gateway to the Land of Fiction','No Clue Yet','The Land of Fiction',NULL, NULL);
 INSERT INTO `locations` VALUES (218, 'A','Z','Z','A White Void',0,0,NULL,0,'',0,0,0,'Forwards','No Clue Yet','The Land of Fiction',NULL, NULL);
 INSERT INTO `locations` VALUES (219, 'B','Z','Z','A White Void',0,0,NULL,0,'',0,0,0,'Backwards','No Clue Yet','The Land of Fiction',NULL, NULL);

@@ -537,6 +537,23 @@
         }
     }
     
+    function have_fanfic($fanfic_id,$connection) {
+        $uname = $_SESSION["loginUsername"];
+        
+        $fanfic_id_list = get_value_from_users("fanfic_id_list", $connection);
+        $fanfic_id_array = explode(",", $fanfic_id_list);
+        
+        if (is_null($fanfic_id_list)) {
+            return 0;
+        } else {
+            if (!in_array($fanfic_id, $fanfic_id_array)) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+    }
+    
     function print_fanfic_with_cover($fanfic_id, $connection) {
         $cover = get_value_for_fanfic_id("cover", $fanfic_id, $connection);
         if (! is_null($cover)) {

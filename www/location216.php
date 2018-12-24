@@ -35,10 +35,12 @@ check_location(216, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location216.png>
+<h2>Site 333</h2>
 
-<p>Old MacDonald had a farm...</p>
+<p>You are standing in the Rift Valley watching a family of Hominins</p>
+
+<p>Faint music floats on the air: Old MacDonald had a farm...</p>
 
 <?php
     if (!$danny_collected) {
@@ -46,6 +48,7 @@ print_standard_start($db);
         print "<img src=assets/danny.png align=left>";
         print "<p>Danny is here.</p>";
     }
+    print_footer(216,$db);
     ?>
 
 </div>
