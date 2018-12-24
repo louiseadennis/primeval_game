@@ -46,7 +46,12 @@ print_standard_start($db);
         update_users("new_character", 'hamza Sayed', $db);
         print "<img src=assets/hamza_Sayed.png align=left>";
         print "<p>Hamza Sayed is here.  He has a first aid kit.  He says he was told to see a sea.</p>";
+        
+        print "<p>You can read about Hamza Sayed in:";
+        add_fanfic(58,$db);
+        print_fanfic(58, $db);
     }
+    
     
     print_footer(58,$db);
     ?>

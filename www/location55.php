@@ -35,7 +35,7 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
+<img src=assets/location55.png>
 <h2>A Permian River Estuary</h2>
 
 <p>You are standing on the banks of an estuary some time in the Permian</p>

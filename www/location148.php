@@ -26,12 +26,15 @@ print_header($db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location148.png>
+<h2>Central Metropolitan University</h2>
 
-<p>Placeholder</p>
+<p>Teaming with students and secret home of an alternative universe</p>
 
 <?php
+    add_fanfic(59,$db);
+    print "<p>University AU is here:";
+    print_fanfic(59,$db);
 print_footer(148, $db);
 ?>
 </div>

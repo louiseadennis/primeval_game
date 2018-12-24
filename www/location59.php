@@ -35,7 +35,7 @@ print_standard_start($db);
 
 <?php
     add_fanfic(57, $db);
-    print "<p>Now Read On:</p>"
+    print "<p>Now Read On:</p>";
     print_fanfic(57,$db);
     print_footer(59, $db);
     ?>

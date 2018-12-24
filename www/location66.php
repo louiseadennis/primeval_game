@@ -24,7 +24,7 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_critter_start_start(54, $db);
+print_critter_trail_start(54, $db);
 ?>
 <div class=location>
 <img src=assets/location66.png>

@@ -44,6 +44,7 @@ print_standard_start($db);
         print "<img src=assets/helen.png align=left>";
         print "<p>Helen is here.</p>";
     }
+    print_footer(52,$db);
     ?>
 
 </div>
