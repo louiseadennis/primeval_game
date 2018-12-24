@@ -49,12 +49,12 @@
 
     function default_charge()
     {
-        return 15;
+        return 30;
     }
 
     function default_health()
     {
-        return 20;
+        return 30;
     }
 
     function maximum_phase()
@@ -1451,33 +1451,33 @@
                     update_event($event_id, "critter_hp", $critter_hp, $connection);
                 }
                 
-                if ($critter_hp <= 0) {
+                if (get_value_for_weapon_id("stuns", $weapon_id, $connection)) {
+                    print "<p>You stun the $critter_name.</p>";
+                    if ($water) {
+                        print "<p>It sinks beneath the waves.</p>";
+                        update_event($event_id, "critter_hp", -1, $connection);
+                    }
+                    
                     $present_day = get_value_for_location_id("present_day", $location_id, $connection);
-                    $water = get_value_for_location_id("water", $location_id, $connection);
-                    if (get_value_for_weapon_id("stuns", $weapon_id, $connection)) {
-                        print "<p>You stun the $critter_name.</p>";
-                        if ($water) {
-                            print "<p>It sinks beneath the waves.</p>";
+                    if ($present_day) {
+                        print "<p>It is removed to the menagerie</p>";
+                        if (!$leek) {
                             update_event($event_id, "critter_hp", -1, $connection);
-                        }
-                        
-                        if ($present_day) {
-                            print "<p>It is removed to the menagerie</p>";
-                            if (!$leek) {
-                                update_event($event_id, "critter_hp", -1, $connection);
-                            } else {
-                                update_users("leek_critter_hp", -1, $connection);
-                            }
                         } else {
-                            update_event($event_id, "stunned", default_stunned(), $connection);
+                            update_users("leek_critter_hp", -1, $connection);
                         }
-                    } else if (!$water) {
+                    } else {
+                        update_event($event_id, "stunned", default_stunned(), $connection);
+                    }
+                } else if ($critter_hp <= 0) {
+                    $water = get_value_for_location_id("water", $location_id, $connection);
+                    
+                    if (!$water) {
                         print "<p>The $critter_name falls to the ground dead.</p>";
                     } else {
                         print "<p>The $critter_name sinks beneath the waves.</p>";
                     }
                 } else {
-                    $water = get_value_for_location_id("water", $location_id, $connection);
                     if ($weapon_id == 5) {
                         print "<p>You stab the $critter_name but it continues to attack.</p>";
                     } else if ($weapon_id == 10) {
@@ -2236,22 +2236,31 @@
         $budget = check_for_equipment("budget", $db);
         $hp = get_value_from_users("hp", $db);
         if ($hp > 0 && $budget) {
-            print "<p>From here you can get by conventional transport to:<ul>";
-            $accessible = get_present_day_locations($db);
-            foreach ($accessible as $by_car) {
-                if ($by_car != 19) {
-                    print "<li>";
-                    print_accessible_location($location, $by_car, $db);
-                    print "</li>";
-                }
-            }
-            print "</ul></p>";
-            
             $budget_count = get_budget_index($db);
             $uses_list = get_value_from_users("uses", $db);
             $uses_array = explode(",", $uses_list);
             $budget_value = $uses_array[$budget_count];
             print ("Your budget is $budget_value");
+            print "<p>From here you can get by conventional transport to:<ul>";
+            $accessible = get_present_day_locations($db);
+            $sorted = array();
+            foreach ($accessible as $by_car) {
+                $name = get_value_for_location_id("name",$by_car,$db);
+                array_push($sorted, $name);
+            }
+            sort($sorted);
+            foreach ($sorted as $by_car) {
+                if ($by_car != 19) {
+                    print "<li>";
+                    $s_id = get_value_for_name_from("location_id","locations",addslashes($by_car),$db);
+                    print_accessible_location($location, $s_id, $db);
+                    print "</li>";
+                }
+            }
+            print "</ul></p>";
+            
+            
+            
         }
     }
     

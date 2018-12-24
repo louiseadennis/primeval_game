@@ -33,8 +33,10 @@ check_location(81, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location81.png>
+<h2>The London Underground</h2>
+
+<p>You are standing in a London Underground tunnel.</p>
 
 <?php
     if (!$lorraine_collected) {
@@ -42,6 +44,7 @@ print_standard_start($db);
         print "<img src=assets/lorraine.png align=left>";
         print "<p>Lorraine is here.  She says you should go back to the ARC.</p>";
     }
+    print_footer(81,$db);
 ?>
 </div>
 </body>
