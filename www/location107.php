@@ -34,19 +34,21 @@ check_location(107, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location107.png>
+<h2>Hiding from a Giganatosaurus.</h2>
 
-<p>Andrewsarchus, Brontisaur, Ichthyosaur, Pachykefalosaurus, Gorgonopsid</p>
+<p>You are deep within the primeval forest, hiding from a Giganatosaurus.</p>
 
 <?php
     
     if (!$evan_collected) {
         update_users("new_character", 'evan', $db);
         print "<img src=assets/evan.png align=left>";
-        print "<p>Evan is here.  He shares his tranquiliser darts with you.</p>";
+        print "<p>Evan is here.  He shares his tranquiliser darts with you and a strange list of pre-historic creatures: Andrewsarchus, Brontisaur, Ichthyosaur, Pachykefalosaurus, Gorgonopsid.</p>";
         add_location_clue(107, $db);
     }
+    
+    print_footer(107,$db);
     ?>
 
 

@@ -27,10 +27,10 @@ print_header($db);
 print_critter_trail_start(48,$db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location61.png>
+<h2>A forest of ferns</h2>
 
-<p>Fund</p>
+<p>You are standing in a verdant forest of ferns and firs.  Someone has carved 'Fund' into the trunk of one tree.</p>
 
 <?php
     print_footer(61, $db);

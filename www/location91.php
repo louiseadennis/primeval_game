@@ -34,16 +34,18 @@ check_location(91, $db);
 print_standard_start($db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location91.png>
+<h2>A School</h2>
 
-<p>What unites the plant that sugar comes from and the shape of the nose of a rocket.</p>
+<p>On a blackboard is written: What unites the plant that sugar comes from and the shape of the nose of a rocket.</p>
 <?php
     if (!$becker_collected) {
         update_users("new_character", 'becker', $db);
         print "<img src=assets/becker.png align=left>";
         print "<p>Becker is here.</p>";
     }
+    print_travel(91,$db);
+    print_footer(91,$db);
     ?>
 
 </div>

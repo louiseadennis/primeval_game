@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(66, $db);
+    add_location_clue(66,$db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_start_start(54, $db);
 ?>
 <div class=location>
 <img src=assets/location66.png>
 <h2>A Rocky Landscape</h2>
 
-<p>You are standing in a rocky landscape.  Strange green plants cover the ground but nothing tall can be seen.  The air seems very thin, making you hyperventilate.</p>
+<p>You are standing in a rocky landscape.  Strange green plants cover the ground but nothing tall can be seen.  The air seems very thin, making you hyperventilate.  Someone has written 'Fie, fie' in the sand.</p>
 
 <?php
     print_footer(66,$db);
