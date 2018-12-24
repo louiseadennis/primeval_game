@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(159, $db);
+    add_location_clue(159, $db);
 
 ?>
 <html>
@@ -23,7 +24,7 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(58,$db);
 ?>
 <div class=location>
 <img src=assets/location159.png>
@@ -35,6 +36,10 @@ print_standard_start($db);
     add_fanfic(39, $db);
     print "<p>Now Read On:</p>";
     print_fanfic(39, $db);
+    
+    
+    print "<p>A traffic sign has been replaced to read ATD</p>";
+    
     print_footer(159, $db);
 ?>
 </div>

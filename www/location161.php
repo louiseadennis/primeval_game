@@ -9,6 +9,7 @@ sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
 check_location(161, $db);
+    add_location_clue(161,$db);
 
 ?>
 <html>
@@ -23,13 +24,13 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(24,$db);
 ?>
 <div class=location>
-<img src=assets/location.png>
-<h2>Placeholder</h2>
+<img src=assets/location161.png>
+<h2>A Swampy Forest</h2>
 
-<p>Placeholder</p>
+<p>You are standing on the edge of a swamp.  Someone has written Forest of Dean in the mud.</p>
 
 <?php
 print_footer(161, $db);

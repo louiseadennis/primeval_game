@@ -94,6 +94,7 @@
         }
     }
 
+    
     print_travel(1, $db);
     print_equipment_purchase($db);
     

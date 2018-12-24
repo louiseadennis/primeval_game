@@ -8,8 +8,8 @@ session_start();
 sessionAuthenticate();
 
 $db = connect_to_db ( $mysql_host, $mysql_user, $mysql_password, $mysql_database);
-check_location(12, $db);
-    add_location_clue(12,$db);
+check_location(197, $db);
+    add_location_clue(197,$db);
 
 ?>
 <html>
@@ -24,18 +24,17 @@ print_header($db);
 ?>
 <div class=main>
 <?php
-print_standard_start($db);
+print_critter_trail_start(41,$db);
 ?>
 <div class=location>
-<img src=assets/location12.png>
-<h2>High Ground</h2>
+<img src=assets/location.png>
+<h2>Placeholder</h2>
 
-<p>You are standing on high ground above a plain containing confiers and seed ferns.  A scrap of paper is pinned down with a rock.  It reads `The sisters again, but this time my third is the King who ordered my first entombed.'</p>
+<p>One of seven communes that produces Faug&egrave;res AOC wine.</p>
 
 <?php
-    print_footer(12,$db);
-    ?>
-
+print_footer(197, $db);
+?>
 </div>
 </body>
 </html>
